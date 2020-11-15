@@ -19,6 +19,7 @@ jobs:
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
+          always-auth: true
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
