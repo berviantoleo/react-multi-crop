@@ -37,8 +37,8 @@
     "babel-loader": "^8.1.0",
     "clsx": "^1.1.1",
     "css-loader": "^4.3.0",
-    "node-sass": "^4.14.1",
     "fabric": "3.4.0",
+    "node-sass": "^4.14.1",
     "prop-types": "^15.7.2",
     "source-map-loader": "^1.1.0"
   },
@@ -57,7 +57,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "license": "MIT",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }
