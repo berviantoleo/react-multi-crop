@@ -1,0 +1,26 @@
+{
+  "packages": [
+    "packages/*",
+    "examples/*"
+  ],
+  "command": {
+    "publish": {
+      "conventionalCommits": true,
+      "message": "chore(release): publish",
+      "registry": "https://npm.pkg.github.com",
+      "createRelease": "github",
+      "allowBranch": "master"
+    }
+  },
+  "version": "0.0.0",
+  "npmClient": "yarn",
+  "ignoreChanges": [
+    "**/changelog.md",
+    "**/CHANGELOG.md",
+    "**/package-lock.json",
+    "**/yarn.lock",
+    "**/test/**",
+    "lerna.json",
+    "readme.md"
+  ]
+}
