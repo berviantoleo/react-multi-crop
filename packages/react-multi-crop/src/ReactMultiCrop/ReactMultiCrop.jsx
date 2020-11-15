@@ -27,7 +27,10 @@ class ReactMultiCrop extends Component {
   }
 
   componentDidMount() {
-    this.initialCanvas()
+    const { canvas } = this.state;
+    if (!canvas) {
+      this.initialCanvas()
+    }
   }
 
   componentDidUpdate() {
