@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.2](https://github.com/berviantoleo/react-multi-crop/compare/v0.0.1...v0.0.2) (2020-11-15)
+
+
+### Bug Fixes
+
+* add GH_TOKEN ([4dcb2b3](https://github.com/berviantoleo/react-multi-crop/commit/4dcb2b3193b2150c05630388b81853637b991b80))
+
+
+
+
+
 ## [0.0.1](https://github.com/berviantoleo/react-multi-crop/compare/v1.0.0...v0.0.1) (2020-11-15)
 
 
