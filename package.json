@@ -7,9 +7,7 @@
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-lerna-scopes": "^11.0.0",
     "husky": "^4.3.0",
-    "lerna": "^3.22.1",
-    "semantic-release": "^17.2.2",
-    "semantic-release-monorepo": "^7.0.3"
+    "lerna": "^3.22.1"
   },
   "husky": {
     "hooks": {
