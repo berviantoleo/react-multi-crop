@@ -37,6 +37,7 @@ jobs:
             contains(github.event.head_commit.message, '[cd skip]')) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
           yarn lerna publish --yes
