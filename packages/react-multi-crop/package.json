@@ -11,6 +11,11 @@
     "build": " webpack --mode production",
     "transpile": "babel src -d dist --ignore '**/*.spec.js,**/*.stories.js'"
   },
+  "repository": {
+    "type": "git",
+    "url": "ssh://git@github.com/berviantoleo/react-multi-crop.git",
+    "directory": "packages/react-multi-crop"
+  },
   "author": {
     "name": "Bervianto Leo Pratama",
     "email": "bervianto.leo@gmail.com",
