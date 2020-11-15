@@ -1,9 +1,7 @@
 {
   "name": "root",
   "version": "0.0.0",
-  "scripts": {
-    "commitmsg": "commitlint -e $GIT_PARAMS"
-  },
+  "scripts": {},
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
@@ -11,5 +9,10 @@
     "husky": "^4.3.0",
     "lerna": "^3.22.1",
     "semantic-release": "^17.2.2"
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
+    }
   }
 }
