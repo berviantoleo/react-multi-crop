@@ -1,0 +1,57 @@
+{
+  "name": "@berviantoleo/react-component-multi-crop-demo",
+  "description": "Demo for Multicrop.js in React.js",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://gitlab.com/edaun/multicropjs/tree/master/react-component/demo",
+  "repository": {
+    "type": "git",
+    "url": "https://gitlab.com/edaun/multicropjs.git"
+  },
+  "bugs": {
+    "email": "bervianto.leo@gmail.com",
+    "url": "https://gitlab.com/edaun/multicropjs/issues"
+  },
+  "author": {
+    "name": "Bervianto Leo Pratama",
+    "email": "bervianto.leo@gmail.com",
+    "url": "https://berviantoleo.github.io"
+  },
+  "contributors": [
+    {
+      "name": "Bervianto Leo Pratama",
+      "email": "bervianto.leo@gmail.com",
+      "url": "https://berviantoleo.github.io"
+    }
+  ],
+  "dependencies": {
+    "@berviantoleo/react-multi-crop": "^2.0.0",
+    "@material-ui/core": "^4.5.2",
+    "fabric": "^3.4.0",
+    "prop-types": "^15.7.2",
+    "react": "^16.11.0",
+    "react-admin": "^2.9.8",
+    "react-dom": "^16.11.0",
+    "react-redux": "^7.1.1",
+    "react-scripts": "3.2.0",
+    "redux": "4.0.4",
+    "redux-form": "^8.2.6",
+    "redux-form-website-template": "1.0.1"
+  },
+  "license": "MIT",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
