@@ -13,15 +13,21 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
         uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: "https://npm.pkg.github.com"
           scope: "@berviantoleo"
       - name: Install dependencies
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: yarn
       - name: Release
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn lerna publish --yes
+        run: lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
