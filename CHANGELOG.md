@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.1.1](https://github.com/berviantoleo/react-multi-crop/compare/v0.1.0...v0.1.1) (2020-11-15)
+
+
+### Bug Fixes
+
+* npmrc change owner ([ffa72b6](https://github.com/berviantoleo/react-multi-crop/commit/ffa72b63a1350988eddd9a337dd4615070ecc148))
+
+
+
+
+
 # [0.1.0](https://github.com/berviantoleo/react-multi-crop/compare/v0.0.3...v0.1.0) (2020-11-15)
 
 
