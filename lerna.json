@@ -12,6 +12,9 @@
       "allowBranch": "master"
     }
   },
+  "publishConfig": {
+    "access": "public"
+  },
   "npmClient": "yarn",
   "version": "independent",
   "ignoreChanges": [

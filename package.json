@@ -1,6 +1,5 @@
 {
-  "name": "react-multi-crop",
-  "version": "0.0.0",
+  "name": "root",
   "scripts": {},
   "private": true,
   "devDependencies": {
@@ -13,5 +12,8 @@
     "hooks": {
       "commit-msg": "commitlint -e $HUSKY_GIT_PARAMS"
     }
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/"
   }
 }
