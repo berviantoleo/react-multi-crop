@@ -16,10 +16,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 12
+          registry-url: "https://npm.pkg.github.com"
+          scope: "@berviantoleo"
       - name: Install dependencies
         run: yarn
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: yarn semantic-release
+        run: yarn lerna publish
