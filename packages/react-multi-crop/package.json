@@ -57,7 +57,7 @@
     "webpack-dev-server": "^3.11.0"
   },
   "license": "MIT",
-  "version": "0.0.3",
+  "version": "0.1.0",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com"
   }
