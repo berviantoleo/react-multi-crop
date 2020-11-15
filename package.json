@@ -1,0 +1,15 @@
+{
+  "name": "root",
+  "version": "0.0.0",
+  "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS"
+  },
+  "private": true,
+  "devDependencies": {
+    "@commitlint/cli": "^11.0.0",
+    "@commitlint/config-lerna-scopes": "^11.0.0",
+    "husky": "^4.3.0",
+    "lerna": "^3.22.1",
+    "semantic-release": "^17.2.2"
+  }
+}
