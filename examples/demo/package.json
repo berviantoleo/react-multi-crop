@@ -1,7 +1,7 @@
 {
   "name": "@berviantoleo/react-component-multi-crop-demo",
   "description": "Demo for Multicrop.js in React.js",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
   "homepage": "https://gitlab.com/edaun/multicropjs/tree/master/react-component/demo",
   "repository": {
