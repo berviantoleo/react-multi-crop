@@ -3,6 +3,61 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.2.0 (2020-11-15)
+
+
+### Bug Fixes
+
+* add new rule ([6a2d3a2](https://github.com/berviantoleo/react-multi-crop/commit/6a2d3a256b52d389ed8e6e61a8794b4b6205dcc4))
+* add readme for multicrop ([c74d375](https://github.com/berviantoleo/react-multi-crop/commit/c74d37561e0aaf71c14ab850268ce9c9e241010f))
+* add repository ([6897e91](https://github.com/berviantoleo/react-multi-crop/commit/6897e91e64596747852105503294bf7e28f70261))
+* remove npmrc ([4c132a9](https://github.com/berviantoleo/react-multi-crop/commit/4c132a911dd8e55a21e29676ee0e20cb7472ef3f))
+* update license ([cd5d3ec](https://github.com/berviantoleo/react-multi-crop/commit/cd5d3ec2862ee63e8a0e9ae32fd88affdc4dfb4a))
+* update to not init when not null ([3cde66a](https://github.com/berviantoleo/react-multi-crop/commit/3cde66a4e9dbabab4970e218ad8d982c263201eb))
+
+
+
+## 0.1.2 (2020-11-15)
+
+
+### Bug Fixes
+
+* move npmrc ([f5c519b](https://github.com/berviantoleo/react-multi-crop/commit/f5c519b85b730dece4ac5ca35f0f7fbb98a1978f))
+
+
+
+## 0.1.1 (2020-11-15)
+
+
+
+# 0.1.0 (2020-11-15)
+
+
+### Features
+
+* add license ([0ab9e42](https://github.com/berviantoleo/react-multi-crop/commit/0ab9e42c6042be9dbd1a1db17b65adbe5573b8d7))
+
+
+
+## 0.0.3 (2020-11-15)
+
+
+
+## 0.0.2 (2020-11-15)
+
+
+
+## 0.0.1 (2020-11-15)
+
+
+### Features
+
+* Initial Commit ([45fd330](https://github.com/berviantoleo/react-multi-crop/commit/45fd33031c2d12f06eaad0ba4e92aa2735191b70))
+
+
+
+
+
 ## [0.1.2](https://github.com/berviantoleo/react-multi-crop/compare/v0.1.1...v0.1.2) (2020-11-15)
 
 
