@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.0.3](https://github.com/berviantoleo/react-multi-crop/compare/v0.0.2...v0.0.3) (2020-11-15)
+
+
+### Bug Fixes
+
+* change the registry ([56c3218](https://github.com/berviantoleo/react-multi-crop/commit/56c32187878a5d086183b88d87b74d436f11eb06))
+
+
+
+
+
 ## [0.0.2](https://github.com/berviantoleo/react-multi-crop/compare/v0.0.1...v0.0.2) (2020-11-15)
 
 
