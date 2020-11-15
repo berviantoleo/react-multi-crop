@@ -40,4 +40,4 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          yarn lerna publish --yes
+          yarn lerna publish from-package --yes

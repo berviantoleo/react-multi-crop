@@ -12,8 +12,8 @@
       "allowBranch": "master"
     }
   },
-  "version": "0.1.2",
   "npmClient": "yarn",
+  "version": "independent",
   "ignoreChanges": [
     "**/changelog.md",
     "**/CHANGELOG.md",
