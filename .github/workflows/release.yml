@@ -20,12 +20,16 @@ jobs:
           node-version: 12
           registry-url: "https://npm.pkg.github.com"
           scope: "@berviantoleo"
+      - name: Git Identity
+        run: |
+          git config --global user.name 'github-actions[bot]'
+          git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+          git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
       - name: Install dependencies
         if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
             contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn
-          yarn global add lerna
       - name: Release
         if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
             contains(github.event.head_commit.message, '[cd skip]')) }}
@@ -33,5 +37,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
         run: |
-          export PATH="$PATH:$(yarn global bin)"
-          lerna exec --concurrency 1 -- npx --no-install semantic-release -e semantic-release-monorepo
+          yarn lerna publish --yes
