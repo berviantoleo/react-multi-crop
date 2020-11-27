@@ -38,6 +38,10 @@ class ReactMultiCrop extends Component {
   }
 
   changeImage() {
+    const { canvas } = this.state;
+    if (canvas.backgroundImage) {
+      return;
+    }
     const { record, image } = this.props
     let setImage = this.loadImage.bind(this)
     if (typeof record === 'object' && record.image) {
@@ -61,7 +65,7 @@ class ReactMultiCrop extends Component {
   initialImage() {
     const { record, image } = this.props
     let loadImageNow = this.loadImage.bind(this)
-    if (typeof record === 'object') {
+    if (typeof record === 'object' && record.image) {
       fabric.Image.fromURL(record.image, loadImageNow)
     } else if (typeof image === 'string') {
       fabric.Image.fromURL(image, loadImageNow)
