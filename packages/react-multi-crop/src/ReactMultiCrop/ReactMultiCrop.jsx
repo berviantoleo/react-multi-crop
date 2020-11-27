@@ -40,7 +40,7 @@ class ReactMultiCrop extends Component {
   changeImage() {
     const { record, image } = this.props
     let setImage = this.loadImage.bind(this)
-    if (typeof record === 'object') {
+    if (typeof record === 'object' && record.image) {
       fabric.Image.fromURL(record.image, setImage)
     } else if (typeof image === 'string') {
       fabric.Image.fromURL(image, setImage)
