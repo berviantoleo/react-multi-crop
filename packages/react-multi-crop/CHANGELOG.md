@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.2.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.2.1...@berviantoleo/react-multi-crop@0.2.2) (2020-11-27)
+
+
+### Bug Fixes
+
+* update the image wrong reload after update ([15bfd3e](https://github.com/berviantoleo/react-multi-crop/commit/15bfd3e45aa3b133714646619e60b70a6b63453f))
+
+
+
+
+
 ## [0.2.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.2.0...@berviantoleo/react-multi-crop@0.2.1) (2020-11-27)
 
 
