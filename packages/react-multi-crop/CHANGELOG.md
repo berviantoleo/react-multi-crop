@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.3.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.2.2...@berviantoleo/react-multi-crop@0.3.0) (2020-11-28)
+
+
+### Features
+
+* new arch ([c7e1229](https://github.com/berviantoleo/react-multi-crop/commit/c7e12290ca77ccec017ded6c2331f0c25c557254))
+
+
+
+
+
 ## [0.2.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.2.1...@berviantoleo/react-multi-crop@0.2.2) (2020-11-27)
 
 
