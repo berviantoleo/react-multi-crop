@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.1...@berviantoleo/react-multi-crop@0.5.2) (2020-11-28)
+
+
+### Bug Fixes
+
+* Add pointer detection ([0c983d3](https://github.com/berviantoleo/react-multi-crop/commit/0c983d3d9d303e3a48afa00659d78e3e87fb0005))
+
+
+
+
+
 ## [0.5.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.0...@berviantoleo/react-multi-crop@0.5.1) (2020-11-28)
 
 
