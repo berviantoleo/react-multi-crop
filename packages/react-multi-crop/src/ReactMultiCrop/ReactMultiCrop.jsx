@@ -172,8 +172,23 @@ class ReactMultiCrop extends Component {
       canvas.add(rect);
       canvas.renderAll();
       this.setState({ canvas }, this.setOutput);
-    } else {
-      this.addNew();
+    } else if (
+      typeof options === "object" &&
+      typeof options.pointer === "object" &&
+      options.pointer
+    ) {
+      const left = options.pointer.x;
+      const top = options.pointer.y;
+      let attribute = {};
+      attribute.left = left;
+      attribute.top = top;
+      attribute.width = 100;
+      attribute.height = 100;
+      let rect = this.createObjectByAttribute(attribute);
+      rect.lockRotation = true;
+      canvas.add(rect);
+      canvas.renderAll();
+      this.setState({ canvas }, this.setOutput);
     }
   }
 
@@ -205,6 +220,7 @@ class ReactMultiCrop extends Component {
     let y2 = (element.top + element.height * element.scaleY) / canvas.height;
     let rectangle = { x1: x1, y1: y1, x2: x2, y2: y2 };
     coord.rect = JSON.stringify(rectangle);
+
     if (
       typeof canvas === "object" &&
       typeof canvas.backgroundImage === "object" &&
