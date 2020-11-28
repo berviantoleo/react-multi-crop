@@ -32,6 +32,17 @@ jobs:
             contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn
+      - name: Prepare package
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
+        run: |
+          yarn bootstrap
+      - name: Build Package
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
+        run: |
+          cd packages/react-multi-crop
+          yarn transpile
       - name: Release
         if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
             contains(github.event.head_commit.message, '[cd skip]')) }}
@@ -40,4 +51,5 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
+          cd ~
           yarn lerna publish --yes
