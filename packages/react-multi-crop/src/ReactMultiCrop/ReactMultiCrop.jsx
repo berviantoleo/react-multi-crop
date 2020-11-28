@@ -248,6 +248,7 @@ class ReactMultiCrop extends Component {
           width: element.width,
           left: element.left,
           top: element.top,
+          format: 'jpeg'
         });
       } catch (error) {
         console.log(error);
