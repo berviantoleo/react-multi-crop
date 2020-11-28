@@ -104,13 +104,31 @@ class ReactMultiCrop extends Component {
     }
   }
 
+  zoom(options) {
+    const { canvas } = this.state;
+    if (!canvas) {
+      return;
+    }
+    var delta = options.e.deltaY;
+    var zoom = canvas.getZoom();
+    zoom *= 0.999 ** delta;
+    if (zoom > 20) zoom = 20;
+    if (zoom < 0.01) zoom = 0.01;
+    canvas.setZoom(zoom);
+    options.e.preventDefault();
+    options.e.stopPropagation();
+    this.setState({ canvas });
+  }
+
   initialCanvas() {
     let canvas = new fabric.Canvas(this.props.id);
     canvas.uniScaleTransform = true;
     let doubleClickEvent = this.doubleClickEvent.bind(this);
     let objectModifiedEvent = this.setOutput.bind(this);
+    let zoomHandler = this.zoom.bind(this);
     canvas.on("mouse:dblclick", doubleClickEvent);
     canvas.on("object:modified", objectModifiedEvent);
+    canvas.on("mouse:wheel", zoomHandler);
     let initialImg = this.initialImage.bind(this);
     this.setState({ canvas }, initialImg);
   }
