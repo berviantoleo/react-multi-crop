@@ -1,14 +1,15 @@
 {
   "name": "@berviantoleo/react-multi-crop",
   "description": "Your crop result will easy!",
-  "main": "dist/index.js",
-  "module": "dist/index.js",
+  "main": "dist/index.cjs.js",
+  "module": "dist/index.esm.js",
+  "source": "src/index.js",
   "scripts": {
     "storybook": "start-storybook -p 5403",
     "build-storybook": "build-storybook -o ../../docs/website/static/components",
     "docs": "yarn build-storybook",
-    "start": " webpack-dev-server --open --mode development --hot",
-    "build": " webpack --mode production",
+    "start": "rollup -c -w",
+    "build": "rollup -c",
     "transpile": "babel src -d dist --ignore '**/*.spec.js,**/*.stories.js'"
   },
   "repository": {
@@ -51,15 +52,18 @@
     "@material-ui/core": ">=4.0",
     "fabric": ">=3",
     "react": ">=16.11.0",
-    "react-dom": ">=16.11.0"
+    "react-dom": ">=16.11.0",
+    "prop-types": ">=15"
   },
   "dependencies": {
+    "@rollup/plugin-babel": "",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-test-renderer": "^16.13.1",
-    "webpack": "^4.44.2",
-    "webpack-cli": "^3.3.12",
-    "webpack-dev-server": "^3.11.0"
+    "rollup": "^2.33.3",
+    "rollup-plugin-delete": "^2.0.0",
+    "rollup-plugin-node-resolve": "^5.2.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "license": "MIT",
   "version": "0.3.0",
