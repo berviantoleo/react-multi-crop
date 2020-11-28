@@ -416,9 +416,13 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
           x: x1Px,
           y: y1Px,
           x2: x2Px,
-          y2: y2Px
+          y2: y2Px,
+          w: x2Px - x1Px,
+          h: y2Px - y1Px,
+          boundX: imgWidth,
+          boundY: imgHeight
         };
-        coord.rectPx = JSON.stringify(rectanglePx);
+        coord.crop = JSON.stringify(rectanglePx);
       }
 
       coord.deletedAt = "-1";
