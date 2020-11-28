@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.9](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.8...@berviantoleo/react-multi-crop@0.5.9) (2020-11-28)
+
+
+### Bug Fixes
+
+* scroll to mouse ([3017d3e](https://github.com/berviantoleo/react-multi-crop/commit/3017d3eb069c218cc29e0b18134b2efc61cfc5b5))
+
+
+
+
+
 ## [0.5.8](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.7...@berviantoleo/react-multi-crop@0.5.8) (2020-11-28)
 
 
