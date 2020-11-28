@@ -244,8 +244,22 @@ class ReactMultiCrop extends Component {
       typeof canvas.backgroundImage === "object" &&
       canvas.backgroundImage
     ) {
-      let imgWidth = canvas.backgroundImage.width;
-      let imgHeight = canvas.backgroundImage.height;
+      let canvasBackground = canvas.backgroundImage;
+      if (!fabric.Canvas.supports("toDataURL")) {
+        console.log(
+          "This browser doesn't provide means to serialize canvas to an image"
+        );
+      } else {
+        let dataUrl = canvasBackground.toDataURL({
+          height: element.height,
+          width: element.width,
+          left: element.left,
+          top: element.top,
+        });
+        coord.dataUrl = dataUrl;
+      }
+      let imgWidth = canvasBackground.width;
+      let imgHeight = canvasBackground.height;
       let x1Px = x1 * imgWidth;
       let x2Px = x2 * imgWidth;
       let y1Px = y1 * imgHeight;
