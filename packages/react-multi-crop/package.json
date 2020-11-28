@@ -63,7 +63,7 @@
     "rollup-plugin-peer-deps-external": "^2.2.4"
   },
   "license": "MIT",
-  "version": "0.7.4",
+  "version": "0.7.5",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "public"
