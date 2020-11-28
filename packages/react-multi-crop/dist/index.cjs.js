@@ -437,7 +437,8 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
             height: element.height,
             width: element.width,
             left: element.left,
-            top: element.top
+            top: element.top,
+            format: "jpeg"
           });
         } catch (error) {
           console.log(error);
@@ -693,7 +694,7 @@ ReactMultiCrop.propTypes = {
   height: PropTypes__default['default'].number,
   source: PropTypes__default['default'].string,
   input: PropTypes__default['default'].shape({
-    value: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].string]),
+    value: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].string, PropTypes__default['default'].any]),
     name: PropTypes__default['default'].string,
     onChange: PropTypes__default['default'].func
   }),
