@@ -288,7 +288,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
       var record = this.props.record;
 
-      if (_typeof(record) === "object" && !record) {
+      if (_typeof(record) === "object" && record) {
         var setOutput = this.setOutput.bind(this);
         var setStateOf = this.setState.bind(this);
         var inputObject = record.clippings;
@@ -305,6 +305,8 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         setStateOf({
           canvas: canvas
         }, setOutput);
+      } else {
+        console.log("Not have any record. Skipped.");
       }
     }
   }, {
