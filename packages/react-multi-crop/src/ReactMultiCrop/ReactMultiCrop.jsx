@@ -248,7 +248,7 @@ class ReactMultiCrop extends Component {
           width: element.width,
           left: element.left,
           top: element.top,
-          format: 'jpeg'
+          format: "jpeg",
         });
       } catch (error) {
         console.log(error);
@@ -494,7 +494,11 @@ ReactMultiCrop.propTypes = {
   height: PropTypes.number,
   source: PropTypes.string,
   input: PropTypes.shape({
-    value: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
+    value: PropTypes.oneOfType([
+      PropTypes.object,
+      PropTypes.string,
+      PropTypes.any,
+    ]),
     name: PropTypes.string,
     onChange: PropTypes.func,
   }),
