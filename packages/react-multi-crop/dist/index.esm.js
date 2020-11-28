@@ -136,6 +136,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       canvas: null,
       initial: true
     };
+    _this.REGEXP_ORIGINS = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
     _this.color = props.cropBackgroundColor;
     _this.opacity = props.cropBackgroundOpacity;
     _this.strokeColor = props.cropOutlineColor;
@@ -200,6 +201,12 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       }
     }
   }, {
+    key: "isCrossOriginURL",
+    value: function isCrossOriginURL(url) {
+      var parts = url.match(this.REGEXP_ORIGINS);
+      return parts !== null && (parts[1] !== location.protocol || parts[2] !== location.hostname || parts[3] !== location.port);
+    }
+  }, {
     key: "initialImage",
     value: function initialImage() {
       var _this$props = this.props,
@@ -208,13 +215,24 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       var loadImageNow = this.loadImage.bind(this);
 
       if (_typeof(record) === "object" && record.image) {
-        fabric.Image.fromURL(record.image, loadImageNow, {
-          crossOrigin: "Anonymous"
-        });
+        var isCrossOrigin = this.isCrossOriginURL(record.image);
+        var options = {};
+
+        if (isCrossOrigin) {
+          options.crossOrigin = "Anonymous";
+        }
+
+        fabric.Image.fromURL(record.image, loadImageNow, options);
       } else if (typeof image === "string") {
-        fabric.Image.fromURL(image, loadImageNow, {
-          crossOrigin: "Anonymous"
-        });
+        var _isCrossOrigin = this.isCrossOriginURL(image);
+
+        var _options = {};
+
+        if (_isCrossOrigin) {
+          _options.crossOrigin = "Anonymous";
+        }
+
+        fabric.Image.fromURL(image, loadImageNow, _options);
       }
     }
   }, {
