@@ -34,7 +34,7 @@ class ReactMultiCrop extends Component {
   }
 
   componentDidUpdate() {
-    this.changeImage();
+    // this.changeImage();
   }
 
   changeImage() {
@@ -45,13 +45,7 @@ class ReactMultiCrop extends Component {
     if (canvas.backgroundImage) {
       return;
     }
-    const { record, image } = this.props;
-    let setImage = this.loadImage.bind(this);
-    if (typeof record === "object" && record.image) {
-      fabric.Image.fromURL(record.image, setImage);
-    } else if (typeof image === "string") {
-      fabric.Image.fromURL(image, setImage);
-    }
+    this.initialImage();
   }
 
   loadImage(img) {
@@ -72,9 +66,11 @@ class ReactMultiCrop extends Component {
     const { record, image } = this.props;
     let loadImageNow = this.loadImage.bind(this);
     if (typeof record === "object" && record.image) {
-      fabric.Image.fromURL(record.image, loadImageNow);
+      fabric.Image.fromURL(record.image, loadImageNow, {
+        crossOrigin: "Anonymous",
+      });
     } else if (typeof image === "string") {
-      fabric.Image.fromURL(image, loadImageNow);
+      fabric.Image.fromURL(image, loadImageNow, { crossOrigin: "Anonymous" });
     }
   }
 
@@ -245,19 +241,18 @@ class ReactMultiCrop extends Component {
       canvas.backgroundImage
     ) {
       let canvasBackground = canvas.backgroundImage;
-      if (!fabric.Canvas.supports("toDataURL")) {
-        console.log(
-          "This browser doesn't provide means to serialize canvas to an image"
-        );
-      } else {
-        let dataUrl = canvasBackground.toDataURL({
+      let dataUrl = null;
+      try {
+        dataUrl = canvasBackground.toDataURL({
           height: element.height,
           width: element.width,
           left: element.left,
           top: element.top,
         });
-        coord.dataUrl = dataUrl;
+      } catch (error) {
+        console.log(error);
       }
+      coord.dataUrl = dataUrl;
       let imgWidth = canvasBackground.width;
       let imgHeight = canvasBackground.height;
       let x1Px = x1 * imgWidth;
