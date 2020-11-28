@@ -297,6 +297,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         if (Array.isArray(inputObject) && inputObject.length > 0 && _typeof(inputObject[0]) === "object") {
           inputObject.forEach(function (coord) {
             var rect = createObject(canvas, coord);
+            rect.lockRotation = true;
             canvas.add(rect);
           });
         }
