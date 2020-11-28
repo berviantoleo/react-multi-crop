@@ -235,8 +235,17 @@ class ReactMultiCrop extends Component {
       let x2Px = x2 * imgWidth;
       let y1Px = y1 * imgHeight;
       let y2Px = y2 * imgHeight;
-      let rectanglePx = { x: x1Px, y: y1Px, x2: x2Px, y2: y2Px };
-      coord.rectPx = JSON.stringify(rectanglePx);
+      let rectanglePx = {
+        x: x1Px,
+        y: y1Px,
+        x2: x2Px,
+        y2: y2Px,
+        w: x2Px - x1Px,
+        h: y2Px - y1Px,
+        boundX: imgWidth,
+        boundY: imgHeight,
+      };
+      coord.crop = JSON.stringify(rectanglePx);
     }
     coord.deletedAt = "-1";
     return coord;
