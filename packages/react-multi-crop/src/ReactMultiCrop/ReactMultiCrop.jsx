@@ -116,10 +116,25 @@ class ReactMultiCrop extends Component {
     zoom *= 0.999 ** delta;
     if (zoom > 20) zoom = 20;
     if (zoom < 0.01) zoom = 0.01;
-    canvas.setZoom(zoom);
+    canvas.zoomToPoint({ x: options.e.offsetX, y: options.e.offsetY }, zoom);
     options.e.preventDefault();
     options.e.stopPropagation();
-    this.setState({ canvas });
+    var vpt = canvas.viewportTransform;
+    if (zoom < 400 / 1000) {
+      vpt[4] = 200 - (1000 * zoom) / 2;
+      vpt[5] = 200 - (1000 * zoom) / 2;
+    } else {
+      if (vpt[4] >= 0) {
+        vpt[4] = 0;
+      } else if (vpt[4] < canvas.getWidth() - 1000 * zoom) {
+        vpt[4] = canvas.getWidth() - 1000 * zoom;
+      }
+      if (vpt[5] >= 0) {
+        vpt[5] = 0;
+      } else if (vpt[5] < canvas.getHeight() - 1000 * zoom) {
+        vpt[5] = canvas.getHeight() - 1000 * zoom;
+      }
+    }
   }
 
   initialCanvas() {
