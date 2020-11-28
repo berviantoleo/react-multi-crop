@@ -1,53 +1,190 @@
-"use strict";
+'use strict';
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
+Object.defineProperty(exports, '__esModule', { value: true });
 
-var _react = _interopRequireWildcard(require("react"));
+var React = require('react');
+var fabric = require('fabric');
+var Button = require('@material-ui/core/Button');
+var Grid = require('@material-ui/core/Grid');
+var PropTypes = require('prop-types');
 
-var _fabric = require("fabric");
+function _interopDefaultLegacy (e) { return e && typeof e === 'object' && 'default' in e ? e : { 'default': e }; }
 
-var _Button = _interopRequireDefault(require("@material-ui/core/Button"));
+var React__default = /*#__PURE__*/_interopDefaultLegacy(React);
+var Button__default = /*#__PURE__*/_interopDefaultLegacy(Button);
+var Grid__default = /*#__PURE__*/_interopDefaultLegacy(Grid);
+var PropTypes__default = /*#__PURE__*/_interopDefaultLegacy(PropTypes);
 
-var _Grid = _interopRequireDefault(require("@material-ui/core/Grid"));
+function _typeof(obj) {
+  "@babel/helpers - typeof";
 
-var _propTypes = _interopRequireDefault(require("prop-types"));
+  if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") {
+    _typeof = function (obj) {
+      return typeof obj;
+    };
+  } else {
+    _typeof = function (obj) {
+      return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    };
+  }
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { "default": obj }; }
+  return _typeof(obj);
+}
 
-function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return null; var cache = new WeakMap(); _getRequireWildcardCache = function _getRequireWildcardCache() { return cache; }; return cache; }
+function _classCallCheck(instance, Constructor) {
+  if (!(instance instanceof Constructor)) {
+    throw new TypeError("Cannot call a class as a function");
+  }
+}
 
-function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") { return { "default": obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj["default"] = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
+function _defineProperties(target, props) {
+  for (var i = 0; i < props.length; i++) {
+    var descriptor = props[i];
+    descriptor.enumerable = descriptor.enumerable || false;
+    descriptor.configurable = true;
+    if ("value" in descriptor) descriptor.writable = true;
+    Object.defineProperty(target, descriptor.key, descriptor);
+  }
+}
 
-function _extends() { _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; }; return _extends.apply(this, arguments); }
+function _createClass(Constructor, protoProps, staticProps) {
+  if (protoProps) _defineProperties(Constructor.prototype, protoProps);
+  if (staticProps) _defineProperties(Constructor, staticProps);
+  return Constructor;
+}
 
-function _objectWithoutProperties(source, excluded) { if (source == null) return {}; var target = _objectWithoutPropertiesLoose(source, excluded); var key, i; if (Object.getOwnPropertySymbols) { var sourceSymbolKeys = Object.getOwnPropertySymbols(source); for (i = 0; i < sourceSymbolKeys.length; i++) { key = sourceSymbolKeys[i]; if (excluded.indexOf(key) >= 0) continue; if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue; target[key] = source[key]; } } return target; }
+function _extends() {
+  _extends = Object.assign || function (target) {
+    for (var i = 1; i < arguments.length; i++) {
+      var source = arguments[i];
 
-function _objectWithoutPropertiesLoose(source, excluded) { if (source == null) return {}; var target = {}; var sourceKeys = Object.keys(source); var key, i; for (i = 0; i < sourceKeys.length; i++) { key = sourceKeys[i]; if (excluded.indexOf(key) >= 0) continue; target[key] = source[key]; } return target; }
+      for (var key in source) {
+        if (Object.prototype.hasOwnProperty.call(source, key)) {
+          target[key] = source[key];
+        }
+      }
+    }
 
-function _typeof(obj) { "@babel/helpers - typeof"; if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof = function _typeof(obj) { return typeof obj; }; } else { _typeof = function _typeof(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof(obj); }
+    return target;
+  };
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+  return _extends.apply(this, arguments);
+}
 
-function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+function _inherits(subClass, superClass) {
+  if (typeof superClass !== "function" && superClass !== null) {
+    throw new TypeError("Super expression must either be null or a function");
+  }
 
-function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+  subClass.prototype = Object.create(superClass && superClass.prototype, {
+    constructor: {
+      value: subClass,
+      writable: true,
+      configurable: true
+    }
+  });
+  if (superClass) _setPrototypeOf(subClass, superClass);
+}
 
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function"); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, writable: true, configurable: true } }); if (superClass) _setPrototypeOf(subClass, superClass); }
+function _getPrototypeOf(o) {
+  _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) {
+    return o.__proto__ || Object.getPrototypeOf(o);
+  };
+  return _getPrototypeOf(o);
+}
 
-function _setPrototypeOf(o, p) { _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) { o.__proto__ = p; return o; }; return _setPrototypeOf(o, p); }
+function _setPrototypeOf(o, p) {
+  _setPrototypeOf = Object.setPrototypeOf || function _setPrototypeOf(o, p) {
+    o.__proto__ = p;
+    return o;
+  };
 
-function _createSuper(Derived) { var hasNativeReflectConstruct = _isNativeReflectConstruct(); return function _createSuperInternal() { var Super = _getPrototypeOf(Derived), result; if (hasNativeReflectConstruct) { var NewTarget = _getPrototypeOf(this).constructor; result = Reflect.construct(Super, arguments, NewTarget); } else { result = Super.apply(this, arguments); } return _possibleConstructorReturn(this, result); }; }
+  return _setPrototypeOf(o, p);
+}
 
-function _possibleConstructorReturn(self, call) { if (call && (_typeof(call) === "object" || typeof call === "function")) { return call; } return _assertThisInitialized(self); }
+function _isNativeReflectConstruct() {
+  if (typeof Reflect === "undefined" || !Reflect.construct) return false;
+  if (Reflect.construct.sham) return false;
+  if (typeof Proxy === "function") return true;
 
-function _assertThisInitialized(self) { if (self === void 0) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return self; }
+  try {
+    Date.prototype.toString.call(Reflect.construct(Date, [], function () {}));
+    return true;
+  } catch (e) {
+    return false;
+  }
+}
 
-function _isNativeReflectConstruct() { if (typeof Reflect === "undefined" || !Reflect.construct) return false; if (Reflect.construct.sham) return false; if (typeof Proxy === "function") return true; try { Date.prototype.toString.call(Reflect.construct(Date, [], function () {})); return true; } catch (e) { return false; } }
+function _objectWithoutPropertiesLoose(source, excluded) {
+  if (source == null) return {};
+  var target = {};
+  var sourceKeys = Object.keys(source);
+  var key, i;
 
-function _getPrototypeOf(o) { _getPrototypeOf = Object.setPrototypeOf ? Object.getPrototypeOf : function _getPrototypeOf(o) { return o.__proto__ || Object.getPrototypeOf(o); }; return _getPrototypeOf(o); }
+  for (i = 0; i < sourceKeys.length; i++) {
+    key = sourceKeys[i];
+    if (excluded.indexOf(key) >= 0) continue;
+    target[key] = source[key];
+  }
+
+  return target;
+}
+
+function _objectWithoutProperties(source, excluded) {
+  if (source == null) return {};
+
+  var target = _objectWithoutPropertiesLoose(source, excluded);
+
+  var key, i;
+
+  if (Object.getOwnPropertySymbols) {
+    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
+
+    for (i = 0; i < sourceSymbolKeys.length; i++) {
+      key = sourceSymbolKeys[i];
+      if (excluded.indexOf(key) >= 0) continue;
+      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
+      target[key] = source[key];
+    }
+  }
+
+  return target;
+}
+
+function _assertThisInitialized(self) {
+  if (self === void 0) {
+    throw new ReferenceError("this hasn't been initialised - super() hasn't been called");
+  }
+
+  return self;
+}
+
+function _possibleConstructorReturn(self, call) {
+  if (call && (typeof call === "object" || typeof call === "function")) {
+    return call;
+  }
+
+  return _assertThisInitialized(self);
+}
+
+function _createSuper(Derived) {
+  var hasNativeReflectConstruct = _isNativeReflectConstruct();
+
+  return function _createSuperInternal() {
+    var Super = _getPrototypeOf(Derived),
+        result;
+
+    if (hasNativeReflectConstruct) {
+      var NewTarget = _getPrototypeOf(this).constructor;
+
+      result = Reflect.construct(Super, arguments, NewTarget);
+    } else {
+      result = Super.apply(this, arguments);
+    }
+
+    return _possibleConstructorReturn(this, result);
+  };
+}
 
 var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   _inherits(ReactMultiCrop, _Component);
@@ -110,9 +247,9 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       var setImage = this.loadImage.bind(this);
 
       if (_typeof(record) === "object" && record.image) {
-        _fabric.fabric.Image.fromURL(record.image, setImage);
+        fabric.fabric.Image.fromURL(record.image, setImage);
       } else if (typeof image === "string") {
-        _fabric.fabric.Image.fromURL(image, setImage);
+        fabric.fabric.Image.fromURL(image, setImage);
       }
     }
   }, {
@@ -146,9 +283,9 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       var loadImageNow = this.loadImage.bind(this);
 
       if (_typeof(record) === "object" && record.image) {
-        _fabric.fabric.Image.fromURL(record.image, loadImageNow);
+        fabric.fabric.Image.fromURL(record.image, loadImageNow);
       } else if (typeof image === "string") {
-        _fabric.fabric.Image.fromURL(image, loadImageNow);
+        fabric.fabric.Image.fromURL(image, loadImageNow);
       }
     }
   }, {
@@ -182,14 +319,37 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       }
     }
   }, {
+    key: "zoom",
+    value: function zoom(options) {
+      var canvas = this.state.canvas;
+
+      if (!canvas) {
+        return;
+      }
+
+      var delta = options.e.deltaY;
+      var zoom = canvas.getZoom();
+      zoom *= Math.pow(0.999, delta);
+      if (zoom > 20) zoom = 20;
+      if (zoom < 0.01) zoom = 0.01;
+      canvas.setZoom(zoom);
+      options.e.preventDefault();
+      options.e.stopPropagation();
+      this.setState({
+        canvas: canvas
+      });
+    }
+  }, {
     key: "initialCanvas",
     value: function initialCanvas() {
-      var canvas = new _fabric.fabric.Canvas(this.props.id);
+      var canvas = new fabric.fabric.Canvas(this.props.id);
       canvas.uniScaleTransform = true;
       var doubleClickEvent = this.doubleClickEvent.bind(this);
       var objectModifiedEvent = this.setOutput.bind(this);
+      var zoomHandler = this.zoom.bind(this);
       canvas.on("mouse:dblclick", doubleClickEvent);
       canvas.on("object:modified", objectModifiedEvent);
+      canvas.on("mouse:wheel", zoomHandler);
       var initialImg = this.initialImage.bind(this);
       this.setState({
         canvas: canvas
@@ -253,7 +413,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "createObjectByAttribute",
     value: function createObjectByAttribute(attribute) {
-      return new _fabric.fabric.Rect({
+      return new fabric.fabric.Rect({
         left: attribute.left,
         top: attribute.top,
         width: attribute.width,
@@ -365,7 +525,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       var bottom = canvas.height * rectangle.y2;
       var width = right - left;
       var height = bottom - top;
-      return new _fabric.fabric.Rect({
+      return new fabric.fabric.Rect({
         left: left,
         top: top,
         width: width,
@@ -385,7 +545,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
       if (canvas) {
         canvas.discardActiveObject();
-        var sel = new _fabric.fabric.ActiveSelection(canvas.getObjects(), {
+        var sel = new fabric.fabric.ActiveSelection(canvas.getObjects(), {
           canvas: canvas
         });
         canvas.setActiveObject(sel);
@@ -437,66 +597,66 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         nameForm = name;
       }
 
-      return /*#__PURE__*/_react["default"].createElement("div", {
+      return /*#__PURE__*/React__default['default'].createElement("div", {
         id: "canvas-wrapper"
-      }, !hideLabel && /*#__PURE__*/_react["default"].createElement("div", {
+      }, !hideLabel && /*#__PURE__*/React__default['default'].createElement("div", {
         className: "label"
-      }, nameForm), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+      }, nameForm), /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         container: true,
         direction: "row",
         justify: "flex-start",
         alignItems: "flex-start"
-      }, /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+      }, /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         item: true,
         xs: true,
         onKeyDown: this.keyboardHandler,
         tabIndex: "0"
-      }, /*#__PURE__*/_react["default"].createElement("canvas", _extends({
+      }, /*#__PURE__*/React__default['default'].createElement("canvas", _extends({
         width: "800",
         height: "800",
         style: {
           border: "0px solid #aaa"
         }
-      }, otherProps))), !hideButton && /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+      }, otherProps))), !hideButton && /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         container: true,
         item: true,
         xs: true,
         direction: "column",
         justify: "flex-start",
         alignItems: "flex-start"
-      }, /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+      }, /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         item: true,
         xs: true
-      }, /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+      }, /*#__PURE__*/React__default['default'].createElement(Button__default['default'], {
         variant: "contained",
         id: "addmore",
         color: "primary",
         onClick: this.addNew
-      }, " ", "Add More Shapes")), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+      }, " ", "Add More Shapes")), /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         item: true,
         xs: true
-      }, /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+      }, /*#__PURE__*/React__default['default'].createElement(Button__default['default'], {
         variant: "contained",
         id: "deleteselected",
         color: "primary",
         onClick: this.deleteShapes
-      }, " ", "Delete Selected Object", " ")), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+      }, " ", "Delete Selected Object", " ")), /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         item: true,
         xs: true
-      }, /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+      }, /*#__PURE__*/React__default['default'].createElement(Button__default['default'], {
         variant: "contained",
         id: "multiselect",
         color: "primary",
         onClick: this.multiSelect
-      }, " ", "Select All", " ")), /*#__PURE__*/_react["default"].createElement(_Grid["default"], {
+      }, " ", "Select All", " ")), /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         item: true,
         xs: true
-      }, /*#__PURE__*/_react["default"].createElement(_Button["default"], {
+      }, /*#__PURE__*/React__default['default'].createElement(Button__default['default'], {
         variant: "contained",
         id: "discard",
         color: "primary",
         onClick: this.discardActiveObject
-      }, " ", "Discard Selection"))), renderInputRedux && /*#__PURE__*/_react["default"].createElement("input", {
+      }, " ", "Discard Selection"))), renderInputRedux && /*#__PURE__*/React__default['default'].createElement("input", {
         type: "hidden",
         value: valueForm
       })));
@@ -504,7 +664,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }]);
 
   return ReactMultiCrop;
-}(_react.Component);
+}(React.Component);
 
 ReactMultiCrop.defaultProps = {
   id: "canvas",
@@ -523,24 +683,24 @@ ReactMultiCrop.defaultProps = {
   cropOutlineWidth: 5
 };
 ReactMultiCrop.propTypes = {
-  id: _propTypes["default"].string,
-  source: _propTypes["default"].string,
-  input: _propTypes["default"].shape({
-    value: _propTypes["default"].oneOfType([_propTypes["default"].object, _propTypes["default"].string]),
-    name: _propTypes["default"].string,
-    onChange: _propTypes["default"].func
+  id: PropTypes__default['default'].string,
+  source: PropTypes__default['default'].string,
+  input: PropTypes__default['default'].shape({
+    value: PropTypes__default['default'].oneOfType([PropTypes__default['default'].object, PropTypes__default['default'].string]),
+    name: PropTypes__default['default'].string,
+    onChange: PropTypes__default['default'].func
   }),
-  hideLabel: _propTypes["default"].bool,
-  hideButton: _propTypes["default"].bool,
-  record: _propTypes["default"].shape({
-    image: _propTypes["default"].string,
-    clippings: _propTypes["default"].array
+  hideLabel: PropTypes__default['default'].bool,
+  hideButton: PropTypes__default['default'].bool,
+  record: PropTypes__default['default'].shape({
+    image: PropTypes__default['default'].string,
+    clippings: PropTypes__default['default'].array
   }),
-  image: _propTypes["default"].string,
-  cropBackgroundColor: _propTypes["default"].string,
-  cropBackgroundOpacity: _propTypes["default"].number,
-  cropOutlineColor: _propTypes["default"].string,
-  cropOutlineWidth: _propTypes["default"].number
+  image: PropTypes__default['default'].string,
+  cropBackgroundColor: PropTypes__default['default'].string,
+  cropBackgroundOpacity: PropTypes__default['default'].number,
+  cropOutlineColor: PropTypes__default['default'].string,
+  cropOutlineWidth: PropTypes__default['default'].number
 };
-var _default = ReactMultiCrop;
-exports["default"] = _default;
+
+exports.ReactMultiCrop = ReactMultiCrop;
