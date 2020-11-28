@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.7.3...@berviantoleo/react-multi-crop@0.7.4) (2020-11-28)
+
+
+### Bug Fixes
+
+* add compatibillity for non cors ([bf41c59](https://github.com/berviantoleo/react-multi-crop/commit/bf41c596bc851ef7b3792e8f41872e2637271a70))
+
+
+
+
+
 ## [0.7.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.7.2...@berviantoleo/react-multi-crop@0.7.3) (2020-11-28)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop
