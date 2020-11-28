@@ -43,6 +43,15 @@ jobs:
         run: |
           cd packages/react-multi-crop
           yarn transpile
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5
+        with:
+          author_name: Bervianto Leo Pratama
+          author_email: bervianto.leo@gmail.com
+          message: "Build Project"
+          add: "*.js"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
             contains(github.event.head_commit.message, '[cd skip]')) }}
