@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.6](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.5...@berviantoleo/react-multi-crop@0.5.6) (2020-11-28)
+
+
+### Bug Fixes
+
+* setLockRotation to prop when create ([9ae6c2c](https://github.com/berviantoleo/react-multi-crop/commit/9ae6c2cda4e75be31164af486f0f887264216d7b))
+
+
+
+
+
 ## [0.5.5](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.4...@berviantoleo/react-multi-crop@0.5.5) (2020-11-28)
 
 
