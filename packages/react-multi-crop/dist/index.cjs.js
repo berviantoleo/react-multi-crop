@@ -435,8 +435,22 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       coord.rect = JSON.stringify(rectangle);
 
       if (_typeof(canvas) === "object" && _typeof(canvas.backgroundImage) === "object" && canvas.backgroundImage) {
-        var imgWidth = canvas.backgroundImage.width;
-        var imgHeight = canvas.backgroundImage.height;
+        var canvasBackground = canvas.backgroundImage;
+
+        if (!fabric.fabric.Canvas.supports("toDataURL")) {
+          console.log("This browser doesn't provide means to serialize canvas to an image");
+        } else {
+          var dataUrl = canvasBackground.toDataURL({
+            height: element.height,
+            width: element.width,
+            left: element.left,
+            top: element.top
+          });
+          coord.dataUrl = dataUrl;
+        }
+
+        var imgWidth = canvasBackground.width;
+        var imgHeight = canvasBackground.height;
         var x1Px = x1 * imgWidth;
         var x2Px = x2 * imgWidth;
         var y1Px = y1 * imgHeight;
