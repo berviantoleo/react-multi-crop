@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.4.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.3.0...@berviantoleo/react-multi-crop@0.4.0) (2020-11-28)
+
+
+### Bug Fixes
+
+* Fix the entry ([7503e74](https://github.com/berviantoleo/react-multi-crop/commit/7503e749f74468ad41e800265574f8442b4a94bf))
+
+
+### Features
+
+* add zoom ([f9d232c](https://github.com/berviantoleo/react-multi-crop/commit/f9d232c081b121b893ab469c81bea8c724fc5f3b))
+
+
+
+
+
 # [0.3.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.2.2...@berviantoleo/react-multi-crop@0.3.0) (2020-11-28)
 
 
