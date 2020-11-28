@@ -13,6 +13,7 @@ class ReactMultiCrop extends Component {
       initial: true,
     };
 
+    this.REGEXP_ORIGINS = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
     this.color = props.cropBackgroundColor;
     this.opacity = props.cropBackgroundOpacity;
     this.strokeColor = props.cropOutlineColor;
@@ -62,20 +63,39 @@ class ReactMultiCrop extends Component {
     }
   }
 
+  isCrossOriginURL(url) {
+    var parts = url.match(this.REGEXP_ORIGINS);
+    return (
+      parts !== null &&
+      (parts[1] !== location.protocol ||
+        parts[2] !== location.hostname ||
+        parts[3] !== location.port)
+    );
+  }
+
   initialImage() {
     const { record, image } = this.props;
-    let loadImageNow = this.loadImage.bind(this);
+    const loadImageNow = this.loadImage.bind(this);
     if (typeof record === "object" && record.image) {
-      fabric.Image.fromURL(record.image, loadImageNow, {
-        crossOrigin: "Anonymous",
-      });
+      const isCrossOrigin = this.isCrossOriginURL(record.image);
+      const options = {};
+      if (isCrossOrigin)
+      {
+        options.crossOrigin = "Anonymous";
+      }
+      fabric.Image.fromURL(record.image, loadImageNow, options);
     } else if (typeof image === "string") {
-      fabric.Image.fromURL(image, loadImageNow, { crossOrigin: "Anonymous" });
+      const isCrossOrigin = this.isCrossOriginURL(image);
+      const options = {};
+      if (isCrossOrigin) {
+        options.crossOrigin = "Anonymous";
+      }
+      fabric.Image.fromURL(image, loadImageNow, options);
     }
   }
 
   initialObjects() {
-    let { canvas } = this.state;
+    const { canvas } = this.state;
     if (!canvas) {
       return;
     }
