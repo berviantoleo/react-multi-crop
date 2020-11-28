@@ -123,7 +123,11 @@ class ReactMultiCrop extends Component {
   }
 
   initialCanvas() {
-    let canvas = new fabric.Canvas(this.props.id);
+    const { width, height } = this.props;
+    let canvas = new fabric.Canvas(this.props.id, {
+      width: width,
+      height: height,
+    });
     canvas.uniScaleTransform = true;
     let doubleClickEvent = this.doubleClickEvent.bind(this);
     let objectModifiedEvent = this.setOutput.bind(this);
@@ -203,7 +207,7 @@ class ReactMultiCrop extends Component {
       strokeDashArray: this.strokeDashArray,
       stroke: this.strokeColor,
       strokeWidth: this.strokeWidth,
-      lockRotation: true
+      lockRotation: true,
     });
   }
 
@@ -293,7 +297,7 @@ class ReactMultiCrop extends Component {
       strokeDashArray: this.strokeDashArray,
       stroke: this.strokeColor,
       strokeWidth: this.strokeWidth,
-      lockRotation: true
+      lockRotation: true,
     });
   }
 
@@ -333,7 +337,15 @@ class ReactMultiCrop extends Component {
   }
 
   render() {
-    const { input, source, hideLabel, hideButton, ...otherProps } = this.props;
+    const {
+      input,
+      source,
+      hideLabel,
+      hideButton,
+      id,
+      width,
+      height,
+    } = this.props;
     const renderInputRedux = !!input;
     let valueForm;
     let nameForm = source;
@@ -355,10 +367,10 @@ class ReactMultiCrop extends Component {
         >
           <Grid item xs onKeyDown={this.keyboardHandler} tabIndex="0">
             <canvas
-              width="800"
-              height="800"
+              id={id}
+              width={width}
+              height={height}
               style={{ border: "0px solid #aaa" }}
-              {...otherProps}
             />
           </Grid>
           {!hideButton && (
@@ -425,6 +437,8 @@ class ReactMultiCrop extends Component {
 
 ReactMultiCrop.defaultProps = {
   id: "canvas",
+  width: 800,
+  height: 800,
   input: null,
   source: "react-crop-form",
   hideLabel: true,
@@ -442,6 +456,8 @@ ReactMultiCrop.defaultProps = {
 
 ReactMultiCrop.propTypes = {
   id: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
   source: PropTypes.string,
   input: PropTypes.shape({
     value: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
