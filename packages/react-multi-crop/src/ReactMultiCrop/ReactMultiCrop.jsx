@@ -96,6 +96,7 @@ class ReactMultiCrop extends Component {
       ) {
         inputObject.forEach(function (coord) {
           let rect = createObject(canvas, coord);
+          rect.lockRotation = true;
           canvas.add(rect);
         });
       }
