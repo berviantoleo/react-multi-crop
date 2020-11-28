@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.10](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.9...@berviantoleo/react-multi-crop@0.5.10) (2020-11-28)
+
+
+### Bug Fixes
+
+* setupToDataURL ([0fc614f](https://github.com/berviantoleo/react-multi-crop/commit/0fc614fac1b1a9dca465f5d7f6cdef7c54919e35))
+
+
+
+
+
 ## [0.5.9](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.8...@berviantoleo/react-multi-crop@0.5.9) (2020-11-28)
 
 
