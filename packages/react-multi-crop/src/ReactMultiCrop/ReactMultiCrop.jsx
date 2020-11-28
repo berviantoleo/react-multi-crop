@@ -244,8 +244,8 @@ class ReactMultiCrop extends Component {
       let dataUrl = null;
       try {
         dataUrl = canvasBackground.toDataURL({
-          height: element.height,
-          width: element.width,
+          height: element.getScaledHeight(),
+          width: element.getScaledWidth(),
           left: element.left,
           top: element.top,
           format: "jpeg",
