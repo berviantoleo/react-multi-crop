@@ -1,7 +1,7 @@
 {
   "name": "@berviantoleo/react-multi-crop",
   "description": "Your crop result will easy!",
-  "main": "src/index.js",
+  "main": "dist/index.js",
   "module": "dist/index.js",
   "scripts": {
     "storybook": "start-storybook -p 5403",
