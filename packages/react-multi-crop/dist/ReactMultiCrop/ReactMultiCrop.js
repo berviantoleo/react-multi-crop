@@ -182,14 +182,37 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       }
     }
   }, {
+    key: "zoom",
+    value: function zoom(options) {
+      var canvas = this.state.canvas;
+
+      if (!canvas) {
+        return;
+      }
+
+      var delta = options.e.deltaY;
+      var zoom = canvas.getZoom();
+      zoom *= Math.pow(0.999, delta);
+      if (zoom > 20) zoom = 20;
+      if (zoom < 0.01) zoom = 0.01;
+      canvas.setZoom(zoom);
+      options.e.preventDefault();
+      options.e.stopPropagation();
+      this.setState({
+        canvas: canvas
+      });
+    }
+  }, {
     key: "initialCanvas",
     value: function initialCanvas() {
       var canvas = new _fabric.fabric.Canvas(this.props.id);
       canvas.uniScaleTransform = true;
       var doubleClickEvent = this.doubleClickEvent.bind(this);
       var objectModifiedEvent = this.setOutput.bind(this);
+      var zoomHandler = this.zoom.bind(this);
       canvas.on("mouse:dblclick", doubleClickEvent);
       canvas.on("object:modified", objectModifiedEvent);
+      canvas.on("mouse:wheel", zoomHandler);
       var initialImg = this.initialImage.bind(this);
       this.setState({
         canvas: canvas
