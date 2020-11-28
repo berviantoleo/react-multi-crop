@@ -84,7 +84,7 @@ class ReactMultiCrop extends Component {
       return;
     }
     const { record } = this.props;
-    if (typeof record === "object" && !record) {
+    if (typeof record === "object" && record) {
       let setOutput = this.setOutput.bind(this);
       let setStateOf = this.setState.bind(this);
       let inputObject = record.clippings;
@@ -101,6 +101,8 @@ class ReactMultiCrop extends Component {
       }
       canvas.renderAll();
       setStateOf({ canvas }, setOutput);
+    } else {
+      console.log("Not have any record. Skipped.");
     }
   }
 
@@ -220,7 +222,6 @@ class ReactMultiCrop extends Component {
     let y2 = (element.top + element.height * element.scaleY) / canvas.height;
     let rectangle = { x1: x1, y1: y1, x2: x2, y2: y2 };
     coord.rect = JSON.stringify(rectangle);
-
     if (
       typeof canvas === "object" &&
       typeof canvas.backgroundImage === "object" &&
