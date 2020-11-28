@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.5.7](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.6...@berviantoleo/react-multi-crop@0.5.7) (2020-11-28)
+
+
+### Bug Fixes
+
+* update to use id and make custom width and height ([3cbfbb2](https://github.com/berviantoleo/react-multi-crop/commit/3cbfbb2dd5c17f57bfcf77a1598edaf462b12702))
+
+
+
+
+
 ## [0.5.6](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.5...@berviantoleo/react-multi-crop@0.5.6) (2020-11-28)
 
 
