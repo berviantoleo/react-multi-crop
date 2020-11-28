@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.5.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.4.0...@berviantoleo/react-multi-crop@0.5.0) (2020-11-28)
+
+
+### Features
+
+* use roll-up ([b624f29](https://github.com/berviantoleo/react-multi-crop/commit/b624f2991114d38d37970c6ad974f94b851617f5))
+
+
+
+
+
 # [0.4.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.3.0...@berviantoleo/react-multi-crop@0.4.0) (2020-11-28)
 
 
