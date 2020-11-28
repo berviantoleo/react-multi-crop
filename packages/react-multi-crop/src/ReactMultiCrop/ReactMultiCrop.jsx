@@ -308,8 +308,10 @@ class ReactMultiCrop extends Component {
   keyboardHandler(event) {
     if (event.keyCode === 46) {
       // Handle Delete
+      event.preventDefault();
       this.deleteShapes();
     } else if (event.ctrlKey && event.keyCode === 65) {
+      event.preventDefault();
       this.multiSelect();
     }
   }
