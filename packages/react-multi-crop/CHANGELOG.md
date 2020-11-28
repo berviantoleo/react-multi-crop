@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.7.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.7.0...@berviantoleo/react-multi-crop@0.7.1) (2020-11-28)
+
+
+### Bug Fixes
+
+* change to default jpeg ([249c623](https://github.com/berviantoleo/react-multi-crop/commit/249c623760926d17e06ccb95835fe8fd361a5b19))
+
+
+
+
+
 # [0.7.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.6.0...@berviantoleo/react-multi-crop@0.7.0) (2020-11-28)
 
 
