@@ -233,7 +233,7 @@ class ReactMultiCrop extends Component {
       let x2Px = x2 * imgWidth;
       let y1Px = y1 * imgHeight;
       let y2Px = y2 * imgHeight;
-      let rectanglePx = { x1: x1Px, y1: y1Px, x2: x2Px, y2: y2Px };
+      let rectanglePx = { x: x1Px, y: y1Px, x2: x2Px, y2: y2Px };
       coord.rectPx = JSON.stringify(rectanglePx);
     }
     coord.deletedAt = "-1";
