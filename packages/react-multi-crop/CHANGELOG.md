@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.7.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.6.0...@berviantoleo/react-multi-crop@0.7.0) (2020-11-28)
+
+
+### Features
+
+* add anonymous and toDataUrl ([946d7eb](https://github.com/berviantoleo/react-multi-crop/commit/946d7eb346b31fe1568c922b088fb84bef0db114))
+
+
+
+
+
 # [0.6.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.5.10...@berviantoleo/react-multi-crop@0.6.0) (2020-11-28)
 
 
