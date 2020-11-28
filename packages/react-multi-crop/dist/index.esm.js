@@ -297,7 +297,6 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         if (Array.isArray(inputObject) && inputObject.length > 0 && _typeof(inputObject[0]) === "object") {
           inputObject.forEach(function (coord) {
             var rect = createObject(canvas, coord);
-            rect.lockRotation = true;
             canvas.add(rect);
           });
         }
@@ -365,7 +364,6 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         y2: 0.2
       };
       var rect = this.createObject(canvas, coor);
-      rect.lockRotation = true;
       canvas.add(rect);
       canvas.renderAll();
       this.setState({
@@ -392,7 +390,6 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         attribute.width = width * options.target.scaleX;
         attribute.height = height * options.target.scaleY;
         var rect = this.createObjectByAttribute(attribute);
-        rect.lockRotation = true;
         canvas.add(rect);
         canvas.renderAll();
         this.setState({
@@ -409,7 +406,6 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
         var _rect = this.createObjectByAttribute(_attribute);
 
-        _rect.lockRotation = true;
         canvas.add(_rect);
         canvas.renderAll();
         this.setState({
@@ -430,7 +426,8 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         id: null,
         strokeDashArray: this.strokeDashArray,
         stroke: this.strokeColor,
-        strokeWidth: this.strokeWidth
+        strokeWidth: this.strokeWidth,
+        lockRotation: true
       });
     }
   }, {
@@ -542,7 +539,8 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         id: coor.id,
         strokeDashArray: this.strokeDashArray,
         stroke: this.strokeColor,
-        strokeWidth: this.strokeWidth
+        strokeWidth: this.strokeWidth,
+        lockRotation: true
       });
     }
   }, {
