@@ -96,7 +96,6 @@ class ReactMultiCrop extends Component {
       ) {
         inputObject.forEach(function (coord) {
           let rect = createObject(canvas, coord);
-          rect.lockRotation = true;
           canvas.add(rect);
         });
       }
@@ -145,7 +144,6 @@ class ReactMultiCrop extends Component {
     coor.id = null;
     coor.rect = { x1: 0, y1: 0, x2: 0.2, y2: 0.2 };
     let rect = this.createObject(canvas, coor);
-    rect.lockRotation = true;
     canvas.add(rect);
     canvas.renderAll();
     this.setState({ canvas }, this.setOutput);
@@ -171,7 +169,6 @@ class ReactMultiCrop extends Component {
       attribute.width = width * options.target.scaleX;
       attribute.height = height * options.target.scaleY;
       let rect = this.createObjectByAttribute(attribute);
-      rect.lockRotation = true;
       canvas.add(rect);
       canvas.renderAll();
       this.setState({ canvas }, this.setOutput);
@@ -188,7 +185,6 @@ class ReactMultiCrop extends Component {
       attribute.width = 100;
       attribute.height = 100;
       let rect = this.createObjectByAttribute(attribute);
-      rect.lockRotation = true;
       canvas.add(rect);
       canvas.renderAll();
       this.setState({ canvas }, this.setOutput);
@@ -207,6 +203,7 @@ class ReactMultiCrop extends Component {
       strokeDashArray: this.strokeDashArray,
       stroke: this.strokeColor,
       strokeWidth: this.strokeWidth,
+      lockRotation: true
     });
   }
 
@@ -296,6 +293,7 @@ class ReactMultiCrop extends Component {
       strokeDashArray: this.strokeDashArray,
       stroke: this.strokeColor,
       strokeWidth: this.strokeWidth,
+      lockRotation: true
     });
   }
 
