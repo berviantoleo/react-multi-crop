@@ -160,8 +160,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
     }
   }, {
     key: "componentDidUpdate",
-    value: function componentDidUpdate() {
-      this.changeImage();
+    value: function componentDidUpdate() {// this.changeImage();
     }
   }, {
     key: "changeImage",
@@ -176,16 +175,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         return;
       }
 
-      var _this$props = this.props,
-          record = _this$props.record,
-          image = _this$props.image;
-      var setImage = this.loadImage.bind(this);
-
-      if (_typeof(record) === "object" && record.image) {
-        fabric.Image.fromURL(record.image, setImage);
-      } else if (typeof image === "string") {
-        fabric.Image.fromURL(image, setImage);
-      }
+      this.initialImage();
     }
   }, {
     key: "loadImage",
@@ -212,15 +202,19 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "initialImage",
     value: function initialImage() {
-      var _this$props2 = this.props,
-          record = _this$props2.record,
-          image = _this$props2.image;
+      var _this$props = this.props,
+          record = _this$props.record,
+          image = _this$props.image;
       var loadImageNow = this.loadImage.bind(this);
 
       if (_typeof(record) === "object" && record.image) {
-        fabric.Image.fromURL(record.image, loadImageNow);
+        fabric.Image.fromURL(record.image, loadImageNow, {
+          crossOrigin: "Anonymous"
+        });
       } else if (typeof image === "string") {
-        fabric.Image.fromURL(image, loadImageNow);
+        fabric.Image.fromURL(image, loadImageNow, {
+          crossOrigin: "Anonymous"
+        });
       }
     }
   }, {
@@ -297,9 +291,9 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "initialCanvas",
     value: function initialCanvas() {
-      var _this$props3 = this.props,
-          width = _this$props3.width,
-          height = _this$props3.height;
+      var _this$props2 = this.props,
+          width = _this$props2.width,
+          height = _this$props2.height;
       var canvas = new fabric.Canvas(this.props.id, {
         width: width,
         height: height
@@ -425,19 +419,20 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
       if (_typeof(canvas) === "object" && _typeof(canvas.backgroundImage) === "object" && canvas.backgroundImage) {
         var canvasBackground = canvas.backgroundImage;
+        var dataUrl = null;
 
-        if (!fabric.Canvas.supports("toDataURL")) {
-          console.log("This browser doesn't provide means to serialize canvas to an image");
-        } else {
-          var dataUrl = canvasBackground.toDataURL({
+        try {
+          dataUrl = canvasBackground.toDataURL({
             height: element.height,
             width: element.width,
             left: element.left,
             top: element.top
           });
-          coord.dataUrl = dataUrl;
+        } catch (error) {
+          console.log(error);
         }
 
+        coord.dataUrl = dataUrl;
         var imgWidth = canvasBackground.width;
         var imgHeight = canvasBackground.height;
         var x1Px = x1 * imgWidth;
@@ -574,14 +569,14 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props4 = this.props,
-          input = _this$props4.input,
-          source = _this$props4.source,
-          hideLabel = _this$props4.hideLabel,
-          hideButton = _this$props4.hideButton,
-          id = _this$props4.id,
-          width = _this$props4.width,
-          height = _this$props4.height;
+      var _this$props3 = this.props,
+          input = _this$props3.input,
+          source = _this$props3.source,
+          hideLabel = _this$props3.hideLabel,
+          hideButton = _this$props3.hideButton,
+          id = _this$props3.id,
+          width = _this$props3.width,
+          height = _this$props3.height;
       var renderInputRedux = !!input;
       var valueForm;
       var nameForm = source;
