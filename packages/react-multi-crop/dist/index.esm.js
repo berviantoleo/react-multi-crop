@@ -42,24 +42,6 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
-function _extends() {
-  _extends = Object.assign || function (target) {
-    for (var i = 1; i < arguments.length; i++) {
-      var source = arguments[i];
-
-      for (var key in source) {
-        if (Object.prototype.hasOwnProperty.call(source, key)) {
-          target[key] = source[key];
-        }
-      }
-    }
-
-    return target;
-  };
-
-  return _extends.apply(this, arguments);
-}
-
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
@@ -102,42 +84,6 @@ function _isNativeReflectConstruct() {
   } catch (e) {
     return false;
   }
-}
-
-function _objectWithoutPropertiesLoose(source, excluded) {
-  if (source == null) return {};
-  var target = {};
-  var sourceKeys = Object.keys(source);
-  var key, i;
-
-  for (i = 0; i < sourceKeys.length; i++) {
-    key = sourceKeys[i];
-    if (excluded.indexOf(key) >= 0) continue;
-    target[key] = source[key];
-  }
-
-  return target;
-}
-
-function _objectWithoutProperties(source, excluded) {
-  if (source == null) return {};
-
-  var target = _objectWithoutPropertiesLoose(source, excluded);
-
-  var key, i;
-
-  if (Object.getOwnPropertySymbols) {
-    var sourceSymbolKeys = Object.getOwnPropertySymbols(source);
-
-    for (i = 0; i < sourceSymbolKeys.length; i++) {
-      key = sourceSymbolKeys[i];
-      if (excluded.indexOf(key) >= 0) continue;
-      if (!Object.prototype.propertyIsEnumerable.call(source, key)) continue;
-      target[key] = source[key];
-    }
-  }
-
-  return target;
 }
 
 function _assertThisInitialized(self) {
@@ -333,7 +279,13 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "initialCanvas",
     value: function initialCanvas() {
-      var canvas = new fabric.Canvas(this.props.id);
+      var _this$props3 = this.props,
+          width = _this$props3.width,
+          height = _this$props3.height;
+      var canvas = new fabric.Canvas(this.props.id, {
+        width: width,
+        height: height
+      });
       canvas.uniScaleTransform = true;
       var doubleClickEvent = this.doubleClickEvent.bind(this);
       var objectModifiedEvent = this.setOutput.bind(this);
@@ -586,13 +538,14 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props3 = this.props,
-          input = _this$props3.input,
-          source = _this$props3.source,
-          hideLabel = _this$props3.hideLabel,
-          hideButton = _this$props3.hideButton,
-          otherProps = _objectWithoutProperties(_this$props3, ["input", "source", "hideLabel", "hideButton"]);
-
+      var _this$props4 = this.props,
+          input = _this$props4.input,
+          source = _this$props4.source,
+          hideLabel = _this$props4.hideLabel,
+          hideButton = _this$props4.hideButton,
+          id = _this$props4.id,
+          width = _this$props4.width,
+          height = _this$props4.height;
       var renderInputRedux = !!input;
       var valueForm;
       var nameForm = source;
@@ -618,13 +571,14 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         xs: true,
         onKeyDown: this.keyboardHandler,
         tabIndex: "0"
-      }, /*#__PURE__*/React.createElement("canvas", _extends({
-        width: "800",
-        height: "800",
+      }, /*#__PURE__*/React.createElement("canvas", {
+        id: id,
+        width: width,
+        height: height,
         style: {
           border: "0px solid #aaa"
         }
-      }, otherProps))), !hideButton && /*#__PURE__*/React.createElement(Grid, {
+      })), !hideButton && /*#__PURE__*/React.createElement(Grid, {
         container: true,
         item: true,
         xs: true,
@@ -675,6 +629,8 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
 ReactMultiCrop.defaultProps = {
   id: "canvas",
+  width: 800,
+  height: 800,
   input: null,
   source: "react-crop-form",
   hideLabel: true,
@@ -691,6 +647,8 @@ ReactMultiCrop.defaultProps = {
 };
 ReactMultiCrop.propTypes = {
   id: PropTypes.string,
+  width: PropTypes.number,
+  height: PropTypes.number,
   source: PropTypes.string,
   input: PropTypes.shape({
     value: PropTypes.oneOfType([PropTypes.object, PropTypes.string]),
