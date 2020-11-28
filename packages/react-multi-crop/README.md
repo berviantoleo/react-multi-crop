@@ -30,6 +30,10 @@ import { Field, formValues } from 'redux-form';
 </SimpleForm>
 ```
 
+### another sample
+
+[Codesandbox.io](https://codesandbox.io/s/react-crop-demo-9hjxs)
+
 ## Feature
 
 1. Input, basically no need any input, but in `react-admin`, we provide to read `record.image` field, if you need another field, you should update the code, also in `redux-form`, we also provide to read `image` prop. That prop will show an image in a canvas that will be used for croping.
