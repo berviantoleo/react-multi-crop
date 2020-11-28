@@ -406,8 +406,23 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         this.setState({
           canvas: canvas
         }, this.setOutput);
-      } else {
-        this.addNew();
+      } else if (_typeof(options) === "object" && _typeof(options.pointer) === "object" && options.pointer) {
+        var _left = options.pointer.x;
+        var _top = options.pointer.y;
+        var _attribute = {};
+        _attribute.left = _left;
+        _attribute.top = _top;
+        _attribute.width = 100;
+        _attribute.height = 100;
+
+        var _rect = this.createObjectByAttribute(_attribute);
+
+        _rect.lockRotation = true;
+        canvas.add(_rect);
+        canvas.renderAll();
+        this.setState({
+          canvas: canvas
+        }, this.setOutput);
       }
     }
   }, {
