@@ -432,6 +432,9 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         return;
       }
 
+      var _this$props3 = this.props,
+          includeDataUrl = _this$props3.includeDataUrl,
+          includeHtmlCanvas = _this$props3.includeHtmlCanvas;
       var coord = {};
       coord.id = element.id;
       var x1 = element.left / canvas.width;
@@ -448,21 +451,42 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
       if (_typeof(canvas) === "object" && _typeof(canvas.backgroundImage) === "object" && canvas.backgroundImage) {
         var canvasBackground = canvas.backgroundImage;
-        var dataUrl = null;
 
-        try {
-          dataUrl = canvasBackground.toDataURL({
-            height: element.getScaledHeight(),
-            width: element.getScaledWidth(),
-            left: element.left,
-            top: element.top,
-            format: "jpeg"
-          });
-        } catch (error) {
-          console.log(error);
+        if (includeDataUrl) {
+          var dataUrl = null;
+
+          try {
+            dataUrl = canvasBackground.toDataURL({
+              height: element.getScaledHeight(),
+              width: element.getScaledWidth(),
+              left: element.left,
+              top: element.top,
+              format: "jpeg"
+            });
+          } catch (error) {
+            console.log(error);
+          }
+
+          coord.dataUrl = dataUrl;
         }
 
-        coord.dataUrl = dataUrl;
+        if (includeHtmlCanvas) {
+          var canvasElement = null;
+
+          try {
+            canvasElement = canvasBackground.toCanvasElement({
+              height: element.getScaledHeight(),
+              width: element.getScaledWidth(),
+              left: element.left,
+              top: element.top
+            });
+          } catch (error) {
+            console.log(error);
+          }
+
+          coord.canvasElement = canvasElement;
+        }
+
         var imgWidth = canvasBackground.width;
         var imgHeight = canvasBackground.height;
         var x1Px = x1 * imgWidth;
@@ -599,14 +623,14 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props3 = this.props,
-          input = _this$props3.input,
-          source = _this$props3.source,
-          hideLabel = _this$props3.hideLabel,
-          hideButton = _this$props3.hideButton,
-          id = _this$props3.id,
-          width = _this$props3.width,
-          height = _this$props3.height;
+      var _this$props4 = this.props,
+          input = _this$props4.input,
+          source = _this$props4.source,
+          showLabel = _this$props4.showLabel,
+          showButton = _this$props4.showButton,
+          id = _this$props4.id,
+          width = _this$props4.width,
+          height = _this$props4.height;
       var renderInputRedux = !!input;
       var valueForm;
       var nameForm = source;
@@ -620,7 +644,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
       return /*#__PURE__*/React__default['default'].createElement("div", {
         id: "canvas-wrapper"
-      }, !hideLabel && /*#__PURE__*/React__default['default'].createElement("div", {
+      }, showLabel && /*#__PURE__*/React__default['default'].createElement("div", {
         className: "label"
       }, nameForm), /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         container: true,
@@ -639,7 +663,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         style: {
           border: "0px solid #aaa"
         }
-      })), !hideButton && /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
+      })), showButton && /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         container: true,
         item: true,
         xs: true,
@@ -694,8 +718,6 @@ ReactMultiCrop.defaultProps = {
   height: 800,
   input: null,
   source: "react-crop-form",
-  hideLabel: true,
-  hideButton: true,
   record: {
     image: null,
     clippings: []
@@ -704,7 +726,11 @@ ReactMultiCrop.defaultProps = {
   cropBackgroundColor: "yellow",
   cropBackgroundOpacity: 0.5,
   cropOutlineColor: "yellow",
-  cropOutlineWidth: 5
+  cropOutlineWidth: 5,
+  showLabel: false,
+  showButton: false,
+  includeDataUrl: false,
+  includeHtmlCanvas: false
 };
 ReactMultiCrop.propTypes = {
   id: PropTypes__default['default'].string,
@@ -716,8 +742,6 @@ ReactMultiCrop.propTypes = {
     name: PropTypes__default['default'].string,
     onChange: PropTypes__default['default'].func
   }),
-  hideLabel: PropTypes__default['default'].bool,
-  hideButton: PropTypes__default['default'].bool,
   record: PropTypes__default['default'].shape({
     image: PropTypes__default['default'].string,
     clippings: PropTypes__default['default'].array
@@ -726,7 +750,11 @@ ReactMultiCrop.propTypes = {
   cropBackgroundColor: PropTypes__default['default'].string,
   cropBackgroundOpacity: PropTypes__default['default'].number,
   cropOutlineColor: PropTypes__default['default'].string,
-  cropOutlineWidth: PropTypes__default['default'].number
+  cropOutlineWidth: PropTypes__default['default'].number,
+  showLabel: PropTypes__default['default'].bool,
+  showButton: PropTypes__default['default'].bool,
+  includeDataUrl: PropTypes__default['default'].bool,
+  includeHtmlCanvas: PropTypes__default['default'].bool
 };
 
 exports.ReactMultiCrop = ReactMultiCrop;
