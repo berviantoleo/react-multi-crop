@@ -79,8 +79,7 @@ class ReactMultiCrop extends Component {
     if (typeof record === "object" && record.image) {
       const isCrossOrigin = this.isCrossOriginURL(record.image);
       const options = {};
-      if (isCrossOrigin)
-      {
+      if (isCrossOrigin) {
         options.crossOrigin = "Anonymous";
       }
       fabric.Image.fromURL(record.image, loadImageNow, options);
@@ -247,6 +246,7 @@ class ReactMultiCrop extends Component {
     if (!canvas) {
       return;
     }
+    const { includeDataUrl, includeHtmlCanvas } = this.props;
     let coord = {};
     coord.id = element.id;
     let x1 = element.left / canvas.width;
@@ -261,19 +261,35 @@ class ReactMultiCrop extends Component {
       canvas.backgroundImage
     ) {
       let canvasBackground = canvas.backgroundImage;
-      let dataUrl = null;
-      try {
-        dataUrl = canvasBackground.toDataURL({
-          height: element.getScaledHeight(),
-          width: element.getScaledWidth(),
-          left: element.left,
-          top: element.top,
-          format: "jpeg",
-        });
-      } catch (error) {
-        console.log(error);
+      if (includeDataUrl) {
+        let dataUrl = null;
+        try {
+          dataUrl = canvasBackground.toDataURL({
+            height: element.getScaledHeight(),
+            width: element.getScaledWidth(),
+            left: element.left,
+            top: element.top,
+            format: "jpeg",
+          });
+        } catch (error) {
+          console.log(error);
+        }
+        coord.dataUrl = dataUrl;
       }
-      coord.dataUrl = dataUrl;
+      if (includeHtmlCanvas) {
+        let canvasElement = null;
+        try {
+          canvasElement = canvasBackground.toCanvasElement({
+            height: element.getScaledHeight(),
+            width: element.getScaledWidth(),
+            left: element.left,
+            top: element.top,
+          });
+        } catch (error) {
+          console.log(error);
+        }
+        coord.canvasElement = canvasElement;
+      }
       let imgWidth = canvasBackground.width;
       let imgHeight = canvasBackground.height;
       let x1Px = x1 * imgWidth;
@@ -394,8 +410,8 @@ class ReactMultiCrop extends Component {
     const {
       input,
       source,
-      hideLabel,
-      hideButton,
+      showLabel,
+      showButton,
       id,
       width,
       height,
@@ -411,7 +427,7 @@ class ReactMultiCrop extends Component {
 
     return (
       <div id="canvas-wrapper">
-        {!hideLabel && <div className="label">{nameForm}</div>}
+        {showLabel && <div className="label">{nameForm}</div>}
 
         <Grid
           container
@@ -427,7 +443,7 @@ class ReactMultiCrop extends Component {
               style={{ border: "0px solid #aaa" }}
             />
           </Grid>
-          {!hideButton && (
+          {showButton && (
             <Grid
               container
               item
@@ -495,8 +511,6 @@ ReactMultiCrop.defaultProps = {
   height: 800,
   input: null,
   source: "react-crop-form",
-  hideLabel: true,
-  hideButton: true,
   record: {
     image: null,
     clippings: [],
@@ -506,6 +520,10 @@ ReactMultiCrop.defaultProps = {
   cropBackgroundOpacity: 0.5,
   cropOutlineColor: "yellow",
   cropOutlineWidth: 5,
+  showLabel: false,
+  showButton: false,
+  includeDataUrl: false,
+  includeHtmlCanvas: false,
 };
 
 ReactMultiCrop.propTypes = {
@@ -522,8 +540,6 @@ ReactMultiCrop.propTypes = {
     name: PropTypes.string,
     onChange: PropTypes.func,
   }),
-  hideLabel: PropTypes.bool,
-  hideButton: PropTypes.bool,
   record: PropTypes.shape({
     image: PropTypes.string,
     clippings: PropTypes.array,
@@ -533,6 +549,10 @@ ReactMultiCrop.propTypes = {
   cropBackgroundOpacity: PropTypes.number,
   cropOutlineColor: PropTypes.string,
   cropOutlineWidth: PropTypes.number,
+  showLabel: PropTypes.bool,
+  showButton: PropTypes.bool,
+  includeDataUrl: PropTypes.bool,
+  includeHtmlCanvas: PropTypes.bool,
 };
 
 export default ReactMultiCrop;
