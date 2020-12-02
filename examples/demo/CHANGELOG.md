@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.8](https://gitlab.com/edaun/multicropjs/compare/@berviantoleo/react-component-multi-crop-demo@0.4.7...@berviantoleo/react-component-multi-crop-demo@0.4.8) (2020-12-02)
+
+
+### Bug Fixes
+
+* Update storybook to latest ([4f83d05](https://gitlab.com/edaun/multicropjs/commit/4f83d05b14e583ea925645f28a75beb809443939))
+
+
+
+
+
 ## [0.4.7](https://gitlab.com/edaun/multicropjs/compare/@berviantoleo/react-component-multi-crop-demo@0.4.6...@berviantoleo/react-component-multi-crop-demo@0.4.7) (2020-11-30)
 
 **Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
