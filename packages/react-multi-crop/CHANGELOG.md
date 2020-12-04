@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.8.2...@berviantoleo/react-multi-crop@0.8.3) (2020-12-04)
+
+
+### Bug Fixes
+
+* change to absolute pointer ([b3bd4a7](https://github.com/berviantoleo/react-multi-crop/commit/b3bd4a79465709412a75c585cedd3b4f148d4d8d))
+
+
+
+
+
 ## [0.8.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.8.1...@berviantoleo/react-multi-crop@0.8.2) (2020-12-04)
 
 
