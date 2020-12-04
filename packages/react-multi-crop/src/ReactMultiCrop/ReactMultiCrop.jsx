@@ -223,8 +223,8 @@ class ReactMultiCrop extends Component {
       typeof options.pointer === "object" &&
       options.pointer
     ) {
-      const left = options.pointer.x;
-      const top = options.pointer.y;
+      const left = options.absolutePointer.x;
+      const top = options.absolutePointer.y;
       let attribute = {};
       attribute.left = left;
       attribute.top = top;
