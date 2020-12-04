@@ -386,8 +386,8 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
           canvas: canvas
         }, this.setOutput);
       } else if (_typeof(options) === "object" && _typeof(options.pointer) === "object" && options.pointer) {
-        var _left = options.pointer.x;
-        var _top = options.pointer.y;
+        var _left = options.absolutePointer.x;
+        var _top = options.absolutePointer.y;
         var _attribute = {};
         _attribute.left = _left;
         _attribute.top = _top;
