@@ -10,7 +10,7 @@ const Template = (args) => <ReactMultiCrop hideLabel {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   image: "https://picsum.photos/200",
-  hideLabel: true
+  hideLabel: true,
 };
 
 Default.parameters = {
@@ -29,6 +29,6 @@ Default.argTypes = {
     description: "image url",
   },
   hideLabel: {
-    description: "hide the default label"
-  }
+    description: "hide the default label",
+  },
 };
