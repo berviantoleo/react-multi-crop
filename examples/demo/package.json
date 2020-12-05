@@ -3,14 +3,14 @@
   "description": "Demo for Multicrop.js in React.js",
   "version": "0.4.10",
   "private": true,
-  "homepage": "https://gitlab.com/edaun/multicropjs/tree/master/react-component/demo",
+  "homepage": "https://github.com/berviantoleo/react-multi-crop",
   "repository": {
     "type": "git",
-    "url": "https://gitlab.com/edaun/multicropjs.git"
+    "url": "https://github.com/berviantoleo/react-multi-crop.git"
   },
   "bugs": {
     "email": "bervianto.leo@gmail.com",
-    "url": "https://gitlab.com/edaun/multicropjs/issues"
+    "url": "https://github.com/berviantoleo/react-multi-crop/issues"
   },
   "author": {
     "name": "Bervianto Leo Pratama",
