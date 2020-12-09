@@ -5,8 +5,10 @@
 Easy and extensible react component to crop as multiple image
 
 ::: tip
-Explore components [here](components/)
+Explore components <a href="components/">here</a>
 :::
+
+## Table of Content
 
 [[toc]]
 
