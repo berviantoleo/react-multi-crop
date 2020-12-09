@@ -10,7 +10,19 @@ const Template = (args) => <ReactMultiCrop hideLabel {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   image: "https://picsum.photos/200",
-  hideLabel: true
+  showLabel: false,
+  showButton: false,
+  includeDataUrl: false,
+  includeHtmlCanvas: false,
+  cropBackgroundColor: "yellow",
+  cropBackgroundOpacity: 0.3,
+  cropOutlineColor: "black",
+  cropOutlineWidth: 3,
+  input: {
+    onChange(value) {
+      console.log(value);
+    },
+  },
 };
 
 Default.parameters = {
@@ -29,6 +41,6 @@ Default.argTypes = {
     description: "image url",
   },
   hideLabel: {
-    description: "hide the default label"
-  }
+    description: "hide the default label",
+  },
 };
