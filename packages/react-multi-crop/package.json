@@ -6,11 +6,9 @@
   "source": "src/index.js",
   "scripts": {
     "storybook": "start-storybook -p 5403",
-    "build-storybook": "build-storybook -o ../../docs/website/static/components",
-    "docs": "yarn build-storybook",
+    "docs": "build-storybook -o ../../docs/components",
     "start": "rollup -c -w",
-    "build": "rollup -c",
-    "transpile": "babel src -d dist --ignore '**/*.spec.js,**/*.stories.js'"
+    "build": "rollup -c"
   },
   "repository": {
     "type": "git",
@@ -40,6 +38,7 @@
     "@storybook/react": "^6.1.9",
     "@storybook/source-loader": "^6.1.9",
     "clsx": "^1.1.1",
+    "cypress": "^6.1.0",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2"
   },
