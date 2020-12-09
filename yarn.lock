@@ -13296,10 +13296,15 @@ markdown-to-jsx@^6.11.4:
     prop-types "^15.6.2"
     unquote "^1.1.0"
 
-marked@^0.3.12, marked@^0.3.5:
+marked@^0.3.12:
   version "0.3.19"
   resolved "https://registry.npmjs.org/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
   integrity sha512-ea2eGWOqNxPcXv8dyERdSr/6FmzvWwzjMxpfGB/sbMccXoct+xY+YukPD+QTUZwyvK7BZwcr4m21WBOW41pAkg==
+
+marked@^0.7.0:
+  version "0.7.0"
+  resolved "https://registry.yarnpkg.com/marked/-/marked-0.7.0.tgz#b64201f051d271b1edc10a04d1ae9b74bb8e5c0e"
+  integrity sha512-c+yYdCZJQrsRjTPhUx7VKkApw9bwDkNbHUKo1ovgcfDjb2kc8rLuRbIFyXL5WOEUwzSSKo3IXpph2K6DqB/KZg==
 
 marksy@^8.0.0:
   version "8.0.0"
@@ -17170,23 +17175,23 @@ reduce@^1.0.1:
   dependencies:
     object-keys "^1.1.0"
 
-redux-form-website-template@1.0.1:
-  version "1.0.1"
-  resolved "https://registry.npmjs.org/redux-form-website-template/-/redux-form-website-template-1.0.1.tgz#7a274fa04a65d283ceb4f4287acaad7819587d94"
-  integrity sha512-7GyBmdhGRobl+/ufXYwqgiHubJ64guatouZf10eTt0W8Is1LEi+1v6Ea0eo1gXPRFO7ZwuqMZ28myms2dqo12g==
+redux-form-website-template@1.0.17:
+  version "1.0.17"
+  resolved "https://registry.yarnpkg.com/redux-form-website-template/-/redux-form-website-template-1.0.17.tgz#b12fffd1b9972a467406e3bb3e53778402b2aea1"
+  integrity sha512-MKHFS1HJuBHMRonbmbE5Xl0El/Q9qT91mGLpY42r1ZGHgP0/zqeSntXpcgin3mlgHrvGPFs8RWykcqZC2yKmmQ==
   dependencies:
     babel-polyfill "^6.26.0"
     classnames "^2.2.3"
     js-cookie "^2.2.0"
-    marked "^0.3.5"
+    marked "^0.7.0"
     prop-types "^15.6.0"
     react "^16.4.0"
     react-dom "^16.4.0"
     react-redux "^6.0.0"
     redux "^4.0.1"
-    redux-form "^8.0.1"
+    redux-form "^8.2.1"
 
-redux-form@^8.0.1, redux-form@^8.2.6:
+redux-form@^8.2.1, redux-form@^8.2.6:
   version "8.3.7"
   resolved "https://registry.npmjs.org/redux-form/-/redux-form-8.3.7.tgz#24eb6d8b8b37098b4702fc4c52b6596b01a71c82"
   integrity sha512-CUv6z5Gpog3shB3Ptsd+x6dmeQ1AzIlx1Tniri3j7Gf+oBBtLrD7dHMLOcTbJKsaEwG49SB/z1Pik3Hy04mNcQ==
