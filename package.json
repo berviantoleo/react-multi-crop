@@ -3,7 +3,7 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap:hoist": "lerna bootstrap --hoist",
-    "docs": "cross-env BASE_URL=/react-multi-crop vuepress build documentation -d docs",
+    "docs": "cross-env BASE_URL=/react-multi-crop/ vuepress build documentation -d docs",
     "docs:dev": "vuepress dev documentation",
     "docs:build": "vuepress build documentation -d docs"
   },
