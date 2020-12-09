@@ -56,7 +56,6 @@ jobs:
           author_name: Bervianto Leo Pratama
           author_email: bervianto.leo@gmail.com
           message: "chore: Build Project"
-          add: "*.js"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
