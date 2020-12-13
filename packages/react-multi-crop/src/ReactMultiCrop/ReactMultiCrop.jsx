@@ -223,7 +223,7 @@ class ReactMultiCrop extends Component {
     let coor = {};
     coor.id = null;
     coor.rect = { x1: 0, y1: 0, x2: 0.2, y2: 0.2 };
-    let rect = this.createObject(canvas, coor);
+    let rect = this.createObject(canvas, coor, false);
     canvas.add(rect);
     canvas.renderAll();
     this.setState({ canvas }, this.setOutput);
