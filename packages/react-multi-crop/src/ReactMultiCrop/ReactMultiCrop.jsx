@@ -152,7 +152,8 @@ class ReactMultiCrop extends Component {
   mouseOut(options)
   {
     const {onHover} = this.props;
-    if (onHover)
+    const target = options.target;
+    if (target && target.type === "rect" && onHover)
     {
       onHover(undefined);
     }
