@@ -141,21 +141,34 @@ class ReactMultiCrop extends Component {
     const { onHover } = this.props;
     const converter = this.shapetoStructureData.bind(this);
     const target = options.target;
-    if (target && target.type === "rect") {
+    if (target && target.type === "rect" && onHover) {
       const data = converter(target);
-      if (onHover) {
-        onHover(data);
-      }
+      onHover(data);
     }
   }
 
-  mouseOut(options)
-  {
-    const {onHover} = this.props;
+  mouseOut(options) {
+    const { onHover } = this.props;
     const target = options.target;
-    if (target && target.type === "rect" && onHover)
-    {
-      onHover(undefined);
+    if (target && target.type === "rect" && onHover) {
+      onHover(null);
+    }
+  }
+
+  selectionHandler(options) {
+    const { onSelect } = this.props;
+    const converter = this.shapetoStructureData.bind(this);
+    const target = options.target;
+    if (target && target.type === "rect" && onSelect) {
+      const data = converter(target);
+      onSelect(data);
+    }
+  }
+
+  selectionClearHandler(options) {
+    const { onSelect } = this.props;
+    if (onSelect) {
+      onSelect(null);
     }
   }
 
@@ -171,8 +184,13 @@ class ReactMultiCrop extends Component {
       // readonly mode
       const mouseHoverHandler = this.mouseHover.bind(this);
       const mouseHoverOutHandler = this.mouseOut.bind(this);
+      const selectionObjectHandler = this.selectionHandler.bind(this);
+      const selectionObjectClearHandler = this.selectionClearHandler.bind(this);
       canvas.on("mouse:over", mouseHoverHandler);
       canvas.on("mouse:out", mouseHoverOutHandler);
+      canvas.on("selection:created", selectionObjectHandler);
+      canvas.on("selection:updated", selectionObjectHandler);
+      canvas.on("selection:cleared", selectionObjectClearHandler);
     } else {
       // edit mode
       const doubleClickEvent = this.doubleClickEvent.bind(this);
@@ -577,6 +595,9 @@ ReactMultiCrop.defaultProps = {
   onHover: function (data) {
     console.log(data);
   },
+  onSelect: function (data) {
+    console.log(data);
+  },
   image: null,
   cropBackgroundColor: "yellow",
   cropBackgroundOpacity: 0.5,
@@ -608,6 +629,7 @@ ReactMultiCrop.propTypes = {
   }),
   readonly: PropTypes.bool,
   onHover: PropTypes.func,
+  onSelect: PropTypes.func,
   image: PropTypes.string,
   cropBackgroundColor: PropTypes.string,
   cropBackgroundOpacity: PropTypes.number,
