@@ -322,12 +322,9 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       var converter = this.shapetoStructureData.bind(this);
       var target = options.target;
 
-      if (target && target.type === "rect") {
+      if (target && target.type === "rect" && onHover) {
         var data = converter(target);
-
-        if (onHover) {
-          onHover(data);
-        }
+        onHover(data);
       }
     }
   }, {
@@ -337,7 +334,28 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       var target = options.target;
 
       if (target && target.type === "rect" && onHover) {
-        onHover(undefined);
+        onHover(null);
+      }
+    }
+  }, {
+    key: "selectionHandler",
+    value: function selectionHandler(options) {
+      var onSelect = this.props.onSelect;
+      var converter = this.shapetoStructureData.bind(this);
+      var target = options.target;
+
+      if (target && target.type === "rect" && onSelect) {
+        var data = converter(target);
+        onSelect(data);
+      }
+    }
+  }, {
+    key: "selectionClearHandler",
+    value: function selectionClearHandler(options) {
+      var onSelect = this.props.onSelect;
+
+      if (onSelect) {
+        onSelect(null);
       }
     }
   }, {
@@ -355,10 +373,17 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
       if (readonly) {
         // readonly mode
+        canvas.selectionKey = null; // disable multi select
+
         var mouseHoverHandler = this.mouseHover.bind(this);
         var mouseHoverOutHandler = this.mouseOut.bind(this);
+        var selectionObjectHandler = this.selectionHandler.bind(this);
+        var selectionObjectClearHandler = this.selectionClearHandler.bind(this);
         canvas.on("mouse:over", mouseHoverHandler);
         canvas.on("mouse:out", mouseHoverOutHandler);
+        canvas.on("selection:created", selectionObjectHandler);
+        canvas.on("selection:updated", selectionObjectHandler);
+        canvas.on("selection:cleared", selectionObjectClearHandler);
       } else {
         // edit mode
         var doubleClickEvent = this.doubleClickEvent.bind(this);
@@ -798,6 +823,9 @@ ReactMultiCrop.defaultProps = {
   onHover: function onHover(data) {
     console.log(data);
   },
+  onSelect: function onSelect(data) {
+    console.log(data);
+  },
   image: null,
   cropBackgroundColor: "yellow",
   cropBackgroundOpacity: 0.5,
@@ -824,6 +852,7 @@ ReactMultiCrop.propTypes = {
   }),
   readonly: PropTypes__default['default'].bool,
   onHover: PropTypes__default['default'].func,
+  onSelect: PropTypes__default['default'].func,
   image: PropTypes__default['default'].string,
   cropBackgroundColor: PropTypes__default['default'].string,
   cropBackgroundOpacity: PropTypes__default['default'].number,
