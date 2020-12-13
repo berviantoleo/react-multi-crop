@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.9.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.8.5...@berviantoleo/react-multi-crop@0.9.0) (2020-12-13)
+
+
+### Features
+
+* add readonly mode ([734eaae](https://github.com/berviantoleo/react-multi-crop/commit/734eaae0a6828ddd00eccb90ec5eb1893cbae67d))
+
+
+
+
+
 ## [0.8.5](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.8.4...@berviantoleo/react-multi-crop@0.8.5) (2020-12-09)
 
 
