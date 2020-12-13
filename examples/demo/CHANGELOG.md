@@ -3,6 +3,14 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.4.14](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.13...@berviantoleo/react-component-multi-crop-demo@0.4.14) (2020-12-13)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
 ## [0.4.13](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.12...@berviantoleo/react-component-multi-crop-demo@0.4.13) (2020-12-09)
 
 **Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
