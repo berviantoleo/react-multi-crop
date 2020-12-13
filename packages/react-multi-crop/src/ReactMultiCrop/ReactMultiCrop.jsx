@@ -182,6 +182,7 @@ class ReactMultiCrop extends Component {
     // handler setup
     if (readonly) {
       // readonly mode
+      canvas.selectionKey = null; // disable multi select
       const mouseHoverHandler = this.mouseHover.bind(this);
       const mouseHoverOutHandler = this.mouseOut.bind(this);
       const selectionObjectHandler = this.selectionHandler.bind(this);
