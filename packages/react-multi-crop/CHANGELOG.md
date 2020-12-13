@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.10.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.9.2...@berviantoleo/react-multi-crop@0.10.0) (2020-12-13)
+
+
+### Bug Fixes
+
+* readonly mode disable multiple select ([893882e](https://github.com/berviantoleo/react-multi-crop/commit/893882e323eb68ac65389ebbade06b803d4b70fd))
+
+
+### Features
+
+* add onSelect ([900e3e8](https://github.com/berviantoleo/react-multi-crop/commit/900e3e81301f904c88a9aac332c0f9931a8be402))
+
+
+
+
+
 ## [0.9.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.9.1...@berviantoleo/react-multi-crop@0.9.2) (2020-12-13)
 
 
