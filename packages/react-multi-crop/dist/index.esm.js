@@ -323,8 +323,9 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
     key: "mouseOut",
     value: function mouseOut(options) {
       var onHover = this.props.onHover;
+      var target = options.target;
 
-      if (onHover) {
+      if (target && target.type === "rect" && onHover) {
         onHover(undefined);
       }
     }
