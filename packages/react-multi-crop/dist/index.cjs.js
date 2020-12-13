@@ -421,7 +421,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         x2: 0.2,
         y2: 0.2
       };
-      var rect = this.createObject(canvas, coor);
+      var rect = this.createObject(canvas, coor, false);
       canvas.add(rect);
       canvas.renderAll();
       this.setState({
