@@ -5,6 +5,8 @@ import Grid from "@material-ui/core/Grid";
 import PropTypes from "prop-types";
 
 class ReactMultiCrop extends Component {
+  REGEXP_ORIGINS = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
+
   constructor(props) {
     super(props);
 
@@ -13,7 +15,6 @@ class ReactMultiCrop extends Component {
       initial: true,
     };
 
-    this.REGEXP_ORIGINS = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
     this.color = props.cropBackgroundColor;
     this.opacity = props.cropBackgroundOpacity;
     this.strokeColor = props.cropOutlineColor;
@@ -98,19 +99,19 @@ class ReactMultiCrop extends Component {
     if (!canvas) {
       return;
     }
-    const { record } = this.props;
+    const { record, readonly } = this.props;
     if (typeof record === "object" && record) {
-      let setOutput = this.setOutput.bind(this);
-      let setStateOf = this.setState.bind(this);
-      let inputObject = record.clippings;
-      let createObject = this.createObject.bind(this);
+      const setOutput = this.setOutput.bind(this);
+      const setStateOf = this.setState.bind(this);
+      const inputObject = record.clippings;
+      const createObject = this.createObject.bind(this);
       if (
         Array.isArray(inputObject) &&
         inputObject.length > 0 &&
         typeof inputObject[0] === "object"
       ) {
         inputObject.forEach(function (coord) {
-          let rect = createObject(canvas, coord);
+          let rect = createObject(canvas, coord, readonly);
           canvas.add(rect);
         });
       }
@@ -136,18 +137,50 @@ class ReactMultiCrop extends Component {
     options.e.stopPropagation();
   }
 
+  mouseHover(options) {
+    const { onHover } = this.props;
+    const converter = this.shapetoStructureData.bind(this);
+    const target = options.target;
+    if (target && target.type === "rect") {
+      const data = converter(target);
+      if (onHover) {
+        onHover(data);
+      }
+    }
+  }
+
+  mouseOut(options)
+  {
+    const {onHover} = this.props;
+    if (onHover)
+    {
+      onHover(undefined);
+    }
+  }
+
   initialCanvas() {
-    const { width, height } = this.props;
-    let canvas = new fabric.Canvas(this.props.id, {
+    const { width, height, readonly } = this.props;
+    const canvas = new fabric.Canvas(this.props.id, {
       width: width,
       height: height,
     });
     canvas.uniScaleTransform = true;
-    let doubleClickEvent = this.doubleClickEvent.bind(this);
-    let objectModifiedEvent = this.setOutput.bind(this);
-    let zoomHandler = this.zoom.bind(this);
-    canvas.on("mouse:dblclick", doubleClickEvent);
-    canvas.on("object:modified", objectModifiedEvent);
+    // handler setup
+    if (readonly) {
+      // readonly mode
+      const mouseHoverHandler = this.mouseHover.bind(this);
+      const mouseHoverOutHandler = this.mouseOut.bind(this);
+      canvas.on("mouse:over", mouseHoverHandler);
+      canvas.on("mouse:out", mouseHoverOutHandler);
+    } else {
+      // edit mode
+      const doubleClickEvent = this.doubleClickEvent.bind(this);
+      const objectModifiedEvent = this.setOutput.bind(this);
+      canvas.on("mouse:dblclick", doubleClickEvent);
+      canvas.on("object:modified", objectModifiedEvent);
+    }
+    // all mode handler
+    const zoomHandler = this.zoom.bind(this);
     canvas.on("mouse:wheel", zoomHandler);
     // setup move drag: alt + click
     canvas.on("mouse:down", function (opt) {
@@ -182,7 +215,7 @@ class ReactMultiCrop extends Component {
   }
 
   addNew() {
-    let { canvas } = this.state;
+    const { canvas } = this.state;
     if (!canvas) {
       return;
     }
@@ -325,8 +358,9 @@ class ReactMultiCrop extends Component {
   }
 
   deleteShapes() {
-    let { canvas } = this.state;
-    if (canvas) {
+    const { readonly } = this.props;
+    const { canvas } = this.state;
+    if (canvas && !readonly) {
       canvas.getActiveObjects().forEach(function (element) {
         canvas.remove(element);
       });
@@ -352,7 +386,7 @@ class ReactMultiCrop extends Component {
     }
   }
 
-  createObject(canvas, coor) {
+  createObject(canvas, coor, readonly) {
     if (!canvas) {
       return;
     }
@@ -380,12 +414,17 @@ class ReactMultiCrop extends Component {
       stroke: this.strokeColor,
       strokeWidth: this.strokeWidth,
       lockRotation: true,
+      lockMovementX: readonly,
+      lockMovementY: readonly,
+      lockScalingX: readonly,
+      lockScalingY: readonly,
     });
   }
 
   multiSelect() {
-    let { canvas } = this.state;
-    if (canvas) {
+    const { readonly } = this.props;
+    const { canvas } = this.state;
+    if (canvas && !readonly) {
       canvas.discardActiveObject();
       let sel = new fabric.ActiveSelection(canvas.getObjects(), {
         canvas: canvas,
@@ -393,12 +432,12 @@ class ReactMultiCrop extends Component {
       canvas.setActiveObject(sel);
       canvas.requestRenderAll();
     } else {
-      console.log("Canvas not defined");
+      console.log("Canvas not defined or read-only mode");
     }
   }
 
   discardActiveObject() {
-    let { canvas } = this.state;
+    const { canvas } = this.state;
     if (canvas) {
       canvas.discardActiveObject();
       canvas.requestRenderAll();
@@ -427,6 +466,7 @@ class ReactMultiCrop extends Component {
       id,
       width,
       height,
+      readonly,
     } = this.props;
     const renderInputRedux = !!input;
     let valueForm;
@@ -447,7 +487,12 @@ class ReactMultiCrop extends Component {
           justify="flex-start"
           alignItems="flex-start"
         >
-          <Grid item xs onKeyDown={this.keyboardHandler} tabIndex="0">
+          <Grid
+            item
+            xs
+            onKeyDown={!readonly ? this.keyboardHandler : undefined}
+            tabIndex="0"
+          >
             <canvas
               id={id}
               width={width}
@@ -455,7 +500,7 @@ class ReactMultiCrop extends Component {
               style={{ border: "0px solid #aaa" }}
             />
           </Grid>
-          {showButton && (
+          {showButton && !readonly && (
             <Grid
               container
               item
@@ -527,6 +572,10 @@ ReactMultiCrop.defaultProps = {
     image: null,
     clippings: [],
   },
+  readonly: false,
+  onHover: function (data) {
+    console.log(data);
+  },
   image: null,
   cropBackgroundColor: "yellow",
   cropBackgroundOpacity: 0.5,
@@ -556,6 +605,8 @@ ReactMultiCrop.propTypes = {
     image: PropTypes.string,
     clippings: PropTypes.array,
   }),
+  readonly: PropTypes.bool,
+  onHover: PropTypes.func,
   image: PropTypes.string,
   cropBackgroundColor: PropTypes.string,
   cropBackgroundOpacity: PropTypes.number,
