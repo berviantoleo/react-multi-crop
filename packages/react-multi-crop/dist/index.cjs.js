@@ -53,6 +53,21 @@ function _createClass(Constructor, protoProps, staticProps) {
   return Constructor;
 }
 
+function _defineProperty(obj, key, value) {
+  if (key in obj) {
+    Object.defineProperty(obj, key, {
+      value: value,
+      enumerable: true,
+      configurable: true,
+      writable: true
+    });
+  } else {
+    obj[key] = value;
+  }
+
+  return obj;
+}
+
 function _inherits(subClass, superClass) {
   if (typeof superClass !== "function" && superClass !== null) {
     throw new TypeError("Super expression must either be null or a function");
@@ -143,11 +158,13 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
     _classCallCheck(this, ReactMultiCrop);
 
     _this = _super.call(this, props);
+
+    _defineProperty(_assertThisInitialized(_this), "REGEXP_ORIGINS", /^(\w+:)\/\/([^:/?#]*):?(\d*)/i);
+
     _this.state = {
       canvas: null,
       initial: true
     };
-    _this.REGEXP_ORIGINS = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
     _this.color = props.cropBackgroundColor;
     _this.opacity = props.cropBackgroundOpacity;
     _this.strokeColor = props.cropOutlineColor;
@@ -255,7 +272,9 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         return;
       }
 
-      var record = this.props.record;
+      var _this$props2 = this.props,
+          record = _this$props2.record,
+          readonly = _this$props2.readonly;
 
       if (_typeof(record) === "object" && record) {
         var setOutput = this.setOutput.bind(this);
@@ -265,7 +284,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
 
         if (Array.isArray(inputObject) && inputObject.length > 0 && _typeof(inputObject[0]) === "object") {
           inputObject.forEach(function (coord) {
-            var rect = createObject(canvas, coord);
+            var rect = createObject(canvas, coord, readonly);
             canvas.add(rect);
           });
         }
@@ -297,21 +316,58 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       options.e.stopPropagation();
     }
   }, {
+    key: "mouseHover",
+    value: function mouseHover(options) {
+      var onHover = this.props.onHover;
+      var converter = this.shapetoStructureData.bind(this);
+      var target = options.target;
+
+      if (target && target.type === "rect") {
+        var data = converter(target);
+
+        if (onHover) {
+          onHover(data);
+        }
+      }
+    }
+  }, {
+    key: "mouseOut",
+    value: function mouseOut(options) {
+      var onHover = this.props.onHover;
+
+      if (onHover) {
+        onHover(undefined);
+      }
+    }
+  }, {
     key: "initialCanvas",
     value: function initialCanvas() {
-      var _this$props2 = this.props,
-          width = _this$props2.width,
-          height = _this$props2.height;
+      var _this$props3 = this.props,
+          width = _this$props3.width,
+          height = _this$props3.height,
+          readonly = _this$props3.readonly;
       var canvas = new fabric.fabric.Canvas(this.props.id, {
         width: width,
         height: height
       });
-      canvas.uniScaleTransform = true;
-      var doubleClickEvent = this.doubleClickEvent.bind(this);
-      var objectModifiedEvent = this.setOutput.bind(this);
+      canvas.uniScaleTransform = true; // handler setup
+
+      if (readonly) {
+        // readonly mode
+        var mouseHoverHandler = this.mouseHover.bind(this);
+        var mouseHoverOutHandler = this.mouseOut.bind(this);
+        canvas.on("mouse:over", mouseHoverHandler);
+        canvas.on("mouse:out", mouseHoverOutHandler);
+      } else {
+        // edit mode
+        var doubleClickEvent = this.doubleClickEvent.bind(this);
+        var objectModifiedEvent = this.setOutput.bind(this);
+        canvas.on("mouse:dblclick", doubleClickEvent);
+        canvas.on("object:modified", objectModifiedEvent);
+      } // all mode handler
+
+
       var zoomHandler = this.zoom.bind(this);
-      canvas.on("mouse:dblclick", doubleClickEvent);
-      canvas.on("object:modified", objectModifiedEvent);
       canvas.on("mouse:wheel", zoomHandler); // setup move drag: alt + click
 
       canvas.on("mouse:down", function (opt) {
@@ -440,9 +496,9 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         return;
       }
 
-      var _this$props3 = this.props,
-          includeDataUrl = _this$props3.includeDataUrl,
-          includeHtmlCanvas = _this$props3.includeHtmlCanvas;
+      var _this$props4 = this.props,
+          includeDataUrl = _this$props4.includeDataUrl,
+          includeHtmlCanvas = _this$props4.includeHtmlCanvas;
       var coord = {};
       coord.id = element.id;
       var x1 = element.left / canvas.width;
@@ -520,9 +576,10 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "deleteShapes",
     value: function deleteShapes() {
+      var readonly = this.props.readonly;
       var canvas = this.state.canvas;
 
-      if (canvas) {
+      if (canvas && !readonly) {
         canvas.getActiveObjects().forEach(function (element) {
           canvas.remove(element);
         });
@@ -555,7 +612,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
     }
   }, {
     key: "createObject",
-    value: function createObject(canvas, coor) {
+    value: function createObject(canvas, coor, readonly) {
       if (!canvas) {
         return;
       }
@@ -585,15 +642,20 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         strokeDashArray: this.strokeDashArray,
         stroke: this.strokeColor,
         strokeWidth: this.strokeWidth,
-        lockRotation: true
+        lockRotation: true,
+        lockMovementX: readonly,
+        lockMovementY: readonly,
+        lockScalingX: readonly,
+        lockScalingY: readonly
       });
     }
   }, {
     key: "multiSelect",
     value: function multiSelect() {
+      var readonly = this.props.readonly;
       var canvas = this.state.canvas;
 
-      if (canvas) {
+      if (canvas && !readonly) {
         canvas.discardActiveObject();
         var sel = new fabric.fabric.ActiveSelection(canvas.getObjects(), {
           canvas: canvas
@@ -601,7 +663,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         canvas.setActiveObject(sel);
         canvas.requestRenderAll();
       } else {
-        console.log("Canvas not defined");
+        console.log("Canvas not defined or read-only mode");
       }
     }
   }, {
@@ -631,14 +693,15 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
   }, {
     key: "render",
     value: function render() {
-      var _this$props4 = this.props,
-          input = _this$props4.input,
-          source = _this$props4.source,
-          showLabel = _this$props4.showLabel,
-          showButton = _this$props4.showButton,
-          id = _this$props4.id,
-          width = _this$props4.width,
-          height = _this$props4.height;
+      var _this$props5 = this.props,
+          input = _this$props5.input,
+          source = _this$props5.source,
+          showLabel = _this$props5.showLabel,
+          showButton = _this$props5.showButton,
+          id = _this$props5.id,
+          width = _this$props5.width,
+          height = _this$props5.height,
+          readonly = _this$props5.readonly;
       var renderInputRedux = !!input;
       var valueForm;
       var nameForm = source;
@@ -662,7 +725,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
       }, /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         item: true,
         xs: true,
-        onKeyDown: this.keyboardHandler,
+        onKeyDown: !readonly ? this.keyboardHandler : undefined,
         tabIndex: "0"
       }, /*#__PURE__*/React__default['default'].createElement("canvas", {
         id: id,
@@ -671,7 +734,7 @@ var ReactMultiCrop = /*#__PURE__*/function (_Component) {
         style: {
           border: "0px solid #aaa"
         }
-      })), showButton && /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
+      })), showButton && !readonly && /*#__PURE__*/React__default['default'].createElement(Grid__default['default'], {
         container: true,
         item: true,
         xs: true,
@@ -730,6 +793,10 @@ ReactMultiCrop.defaultProps = {
     image: null,
     clippings: []
   },
+  readonly: false,
+  onHover: function onHover(data) {
+    console.log(data);
+  },
   image: null,
   cropBackgroundColor: "yellow",
   cropBackgroundOpacity: 0.5,
@@ -754,6 +821,8 @@ ReactMultiCrop.propTypes = {
     image: PropTypes__default['default'].string,
     clippings: PropTypes__default['default'].array
   }),
+  readonly: PropTypes__default['default'].bool,
+  onHover: PropTypes__default['default'].func,
   image: PropTypes__default['default'].string,
   cropBackgroundColor: PropTypes__default['default'].string,
   cropBackgroundOpacity: PropTypes__default['default'].number,
