@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.9.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.9.1...@berviantoleo/react-multi-crop@0.9.2) (2020-12-13)
+
+
+### Bug Fixes
+
+* fix missing parameter ([d477ea0](https://github.com/berviantoleo/react-multi-crop/commit/d477ea035d6ca00adf2f9c449bdefcc5b2c1c95d))
+
+
+
+
+
 ## [0.9.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.9.0...@berviantoleo/react-multi-crop@0.9.1) (2020-12-13)
 
 
