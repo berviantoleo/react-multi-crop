@@ -1,6 +1,6 @@
-
-
 # ReactMultiCrop
+
+![Release](https://github.com/berviantoleo/react-multi-crop/workflows/Release/badge.svg)
 
 ## How to Use
 
