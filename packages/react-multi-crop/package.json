@@ -42,7 +42,7 @@
     "cypress": "^6.1.0",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",
-    "react-test-renderer": "^16.13.1",
+    "react-test-renderer": "^17.0.1",
     "rollup": "^2.35.1",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-node-resolve": "^5.2.0",
