@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.11.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.11.1...@berviantoleo/react-multi-crop@0.11.2) (2020-12-16)
+
+
+### Bug Fixes
+
+* update react-test-renderer ([e3d1e10](https://github.com/berviantoleo/react-multi-crop/commit/e3d1e10694c5c6d9cd0b47156107b3c05c1bdc77))
+
+
+
+
+
 ## [0.11.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.11.0...@berviantoleo/react-multi-crop@0.11.1) (2020-12-16)
 
 
