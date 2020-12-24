@@ -9267,9 +9267,9 @@ extsprintf@^1.2.0:
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
 fabric@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.npmjs.org/fabric/-/fabric-4.2.0.tgz#c16daf5559a9ed457d51eeb938099565ef1b44ba"
-  integrity sha512-wPC08+Uh+Z5U6BYSlzT7I+xxn7tkwYEKJ5EqDvQ2+a2hGSHuVJHm5DEUTnXkDrLrKamNthbPfCGNoOa1RoTVgg==
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/fabric/-/fabric-4.3.0.tgz#c421ca17fda7eb8006f58a401cde659fadfe1aa6"
+  integrity sha512-4d5GBDiNxfPQFPJ7RaBNu4896M9/QvG1BVWB8lQzgCDUFmyIfyctketq5qLrttW9WsKeA5qkL/v7z0KBBQMbig==
   optionalDependencies:
     canvas "^2.6.1"
     jsdom "^15.2.1"
