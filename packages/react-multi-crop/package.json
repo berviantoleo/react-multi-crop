@@ -39,7 +39,7 @@
     "@storybook/react": "^6.1.11",
     "@storybook/source-loader": "^6.1.11",
     "clsx": "^1.1.1",
-    "cypress": "^6.1.0",
+    "cypress": "^6.2.0",
     "node-sass": "^5.0.0",
     "prop-types": "^15.7.2",
     "react-test-renderer": "^17.0.1",
@@ -57,7 +57,7 @@
   },
   "dependencies": {
     "@material-ui/core": "^4.11.1",
-    "fabric": "^4.2.0",
+    "fabric": "^4.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   },

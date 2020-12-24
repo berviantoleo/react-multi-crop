@@ -7799,10 +7799,10 @@ cyclist@^1.0.1:
   resolved "https://registry.npmjs.org/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha1-WW6WmP0MgOEgOMK4LW6xs1tiJNk=
 
-cypress@^6.1.0:
-  version "6.1.0"
-  resolved "https://registry.npmjs.org/cypress/-/cypress-6.1.0.tgz#af2596cb110aa98eaf75fef3d8ab379ca0ff2413"
-  integrity sha512-uQnSxRcZ6hkf9R5cr8KpRBTzN88QZwLIImbf5DWa5RIxH6o5Gpff58EcjiYhAR8/8p9SGv7O6SRygq4H+k0Qpw==
+cypress@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.npmjs.org/cypress/-/cypress-6.2.0.tgz#1a8a7dd5bd08db3064551a9f12072963cc9337bf"
+  integrity sha512-m/rkcogYM9MTy8rbsZgyS5wT2L/J+B5V2bY2ztkDNMyqhk/oZgUF4KTWVLzkW2I+scg0iAddca95tLlt7XnAtw==
   dependencies:
     "@cypress/listr-verbose-renderer" "^0.4.1"
     "@cypress/request" "^2.88.5"
@@ -9266,10 +9266,10 @@ extsprintf@^1.2.0:
   resolved "https://registry.npmjs.org/extsprintf/-/extsprintf-1.4.0.tgz#e2689f8f356fad62cca65a3a91c5df5f9551692f"
   integrity sha1-4mifjzVvrWLMplo6kcXfX5VRaS8=
 
-fabric@^4.2.0:
-  version "4.2.0"
-  resolved "https://registry.npmjs.org/fabric/-/fabric-4.2.0.tgz#c16daf5559a9ed457d51eeb938099565ef1b44ba"
-  integrity sha512-wPC08+Uh+Z5U6BYSlzT7I+xxn7tkwYEKJ5EqDvQ2+a2hGSHuVJHm5DEUTnXkDrLrKamNthbPfCGNoOa1RoTVgg==
+fabric@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.npmjs.org/fabric/-/fabric-4.3.0.tgz#c421ca17fda7eb8006f58a401cde659fadfe1aa6"
+  integrity sha512-4d5GBDiNxfPQFPJ7RaBNu4896M9/QvG1BVWB8lQzgCDUFmyIfyctketq5qLrttW9WsKeA5qkL/v7z0KBBQMbig==
   optionalDependencies:
     canvas "^2.6.1"
     jsdom "^15.2.1"
