@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.12.1...@berviantoleo/react-multi-crop@0.12.2) (2021-01-08)
+
+
+### Bug Fixes
+
+* update husky,rollup and testing library ([7dfb991](https://github.com/berviantoleo/react-multi-crop/commit/7dfb9911b37853bf8f5d58b72a7c0a85f4aa399e))
+
+
+
+
+
 ## [0.12.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.12.0...@berviantoleo/react-multi-crop@0.12.1) (2021-01-06)
 
 
