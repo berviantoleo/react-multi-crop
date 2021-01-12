@@ -1,7 +1,7 @@
 {
   "name": "@berviantoleo/react-component-multi-crop-demo",
   "description": "Demo for Multicrop.js in React.js",
-  "version": "0.4.11",
+  "version": "0.6.7",
   "private": true,
   "homepage": "https://github.com/berviantoleo/react-multi-crop",
   "repository": {
@@ -15,28 +15,23 @@
   "author": {
     "name": "Bervianto Leo Pratama",
     "email": "bervianto.leo@gmail.com",
-    "url": "https://berviantoleo.github.io"
+    "url": "https://berviantoleo.my.id"
   },
   "contributors": [
     {
       "name": "Bervianto Leo Pratama",
       "email": "bervianto.leo@gmail.com",
-      "url": "https://berviantoleo.github.io"
+      "url": "https://berviantoleo.my.id"
     }
   ],
   "dependencies": {
-    "@berviantoleo/react-multi-crop": "^0.8.3",
-    "@material-ui/core": "^4.11.1",
-    "fabric": "^4.2.0",
+    "@berviantoleo/react-multi-crop": "^0.12.3",
+    "@material-ui/core": "^4.11.2",
+    "fabric": "^4.3.0",
     "prop-types": "^15.7.2",
-    "react": "^16.11.0",
-    "react-admin": "^2.9.8",
-    "react-dom": "^16.11.0",
-    "react-redux": "^7.1.1",
-    "react-scripts": "3.2.0",
-    "redux": "4.0.4",
-    "redux-form": "^8.2.6",
-    "redux-form-website-template": "1.0.1"
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-scripts": "4.0.1"
   },
   "license": "MIT",
   "scripts": {

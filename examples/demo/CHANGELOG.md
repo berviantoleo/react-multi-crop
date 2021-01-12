@@ -3,6 +3,132 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.6.7](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.6.6...@berviantoleo/react-component-multi-crop-demo@0.6.7) (2021-01-12)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.6.6](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.6.5...@berviantoleo/react-component-multi-crop-demo@0.6.6) (2021-01-08)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.6.5](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.6.4...@berviantoleo/react-component-multi-crop-demo@0.6.5) (2021-01-06)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.6.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.6.3...@berviantoleo/react-component-multi-crop-demo@0.6.4) (2021-01-03)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.6.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.6.2...@berviantoleo/react-component-multi-crop-demo@0.6.3) (2020-12-24)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.6.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.6.1...@berviantoleo/react-component-multi-crop-demo@0.6.2) (2020-12-16)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.6.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.6.0...@berviantoleo/react-component-multi-crop-demo@0.6.1) (2020-12-16)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+# [0.6.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.5.0...@berviantoleo/react-component-multi-crop-demo@0.6.0) (2020-12-16)
+
+
+### Features
+
+* upgrade react version for test ([dea3fa7](https://github.com/berviantoleo/react-multi-crop/commit/dea3fa731cb9923d392e64f4b3ade0b25b27e8a3))
+
+
+
+
+
+# [0.5.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.17...@berviantoleo/react-component-multi-crop-demo@0.5.0) (2020-12-16)
+
+
+### Features
+
+* remove unused/not required dependencies of demo ([6480a02](https://github.com/berviantoleo/react-multi-crop/commit/6480a021c39899cc77141087fe7c611328512a14))
+
+
+
+
+
+## [0.4.17](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.16...@berviantoleo/react-component-multi-crop-demo@0.4.17) (2020-12-13)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.4.16](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.15...@berviantoleo/react-component-multi-crop-demo@0.4.16) (2020-12-13)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.4.15](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.14...@berviantoleo/react-component-multi-crop-demo@0.4.15) (2020-12-13)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.4.14](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.13...@berviantoleo/react-component-multi-crop-demo@0.4.14) (2020-12-13)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.4.13](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.12...@berviantoleo/react-component-multi-crop-demo@0.4.13) (2020-12-09)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
+## [0.4.12](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.11...@berviantoleo/react-component-multi-crop-demo@0.4.12) (2020-12-09)
+
+**Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
+
+
+
+
+
 ## [0.4.11](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.4.10...@berviantoleo/react-component-multi-crop-demo@0.4.11) (2020-12-05)
 
 

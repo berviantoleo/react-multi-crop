@@ -1,1 +1,1 @@
-export { default as ReactMultiCrop } from "./ReactMultiCrop";
+export { default as ReactMultiCrop } from './ReactMultiCrop';

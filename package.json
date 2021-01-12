@@ -2,14 +2,19 @@
   "name": "root",
   "scripts": {
     "bootstrap": "lerna bootstrap",
-    "bootstrap:hoist": "lerna bootstrap --hoist"
+    "bootstrap:hoist": "lerna bootstrap --hoist",
+    "docs": "cross-env BASE_URL=/react-multi-crop/ vuepress build documentation -d docs",
+    "docs:dev": "vuepress dev documentation",
+    "docs:build": "vuepress build documentation -d docs"
   },
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^11.0.0",
     "@commitlint/config-lerna-scopes": "^11.0.0",
-    "husky": "^4.3.0",
-    "lerna": "^3.22.1"
+    "cross-env": "^7.0.3",
+    "husky": "^4.3.7",
+    "lerna": "^3.22.1",
+    "vuepress": "^1.8.0"
   },
   "husky": {
     "hooks": {
