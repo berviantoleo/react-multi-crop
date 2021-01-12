@@ -3,6 +3,173 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.12.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.12.2...@berviantoleo/react-multi-crop@0.12.3) (2021-01-12)
+
+
+### Bug Fixes
+
+* Update storybook ([6a272b0](https://github.com/berviantoleo/react-multi-crop/commit/6a272b03d3e7b912956b73bc0f56504a5e27e162))
+
+
+
+
+
+## [0.12.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.12.1...@berviantoleo/react-multi-crop@0.12.2) (2021-01-08)
+
+
+### Bug Fixes
+
+* update husky,rollup and testing library ([7dfb991](https://github.com/berviantoleo/react-multi-crop/commit/7dfb9911b37853bf8f5d58b72a7c0a85f4aa399e))
+
+
+
+
+
+## [0.12.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.12.0...@berviantoleo/react-multi-crop@0.12.1) (2021-01-06)
+
+
+### Bug Fixes
+
+* update dependencies ([4c89085](https://github.com/berviantoleo/react-multi-crop/commit/4c890851cdccb63f6e8d026cd6efed8b06c39a61))
+
+
+
+
+
+# [0.12.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.11.3...@berviantoleo/react-multi-crop@0.12.0) (2021-01-03)
+
+
+### Features
+
+* Add test suite ([ae8b119](https://github.com/berviantoleo/react-multi-crop/commit/ae8b11941ca5c5cddc6cbce311cf4080a5268dee))
+
+
+
+
+
+## [0.11.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.11.2...@berviantoleo/react-multi-crop@0.11.3) (2020-12-24)
+
+**Note:** Version bump only for package @berviantoleo/react-multi-crop
+
+
+
+
+
+## [0.11.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.11.1...@berviantoleo/react-multi-crop@0.11.2) (2020-12-16)
+
+
+### Bug Fixes
+
+* update react-test-renderer ([e3d1e10](https://github.com/berviantoleo/react-multi-crop/commit/e3d1e10694c5c6d9cd0b47156107b3c05c1bdc77))
+
+
+
+
+
+## [0.11.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.11.0...@berviantoleo/react-multi-crop@0.11.1) (2020-12-16)
+
+
+### Bug Fixes
+
+* add badge ([26b73be](https://github.com/berviantoleo/react-multi-crop/commit/26b73be436e63c6d00728078d8bf73d0fb3519d2))
+
+
+
+
+
+# [0.11.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.10.1...@berviantoleo/react-multi-crop@0.11.0) (2020-12-16)
+
+
+### Features
+
+* upgrade react version for test ([dea3fa7](https://github.com/berviantoleo/react-multi-crop/commit/dea3fa731cb9923d392e64f4b3ade0b25b27e8a3))
+
+
+
+
+
+## [0.10.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.10.0...@berviantoleo/react-multi-crop@0.10.1) (2020-12-16)
+
+
+### Bug Fixes
+
+* update dependencies and restructure ([bbae509](https://github.com/berviantoleo/react-multi-crop/commit/bbae509beaefbdb0a2592517db61e728c831c429))
+
+
+
+
+
+# [0.10.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.9.2...@berviantoleo/react-multi-crop@0.10.0) (2020-12-13)
+
+
+### Bug Fixes
+
+* readonly mode disable multiple select ([893882e](https://github.com/berviantoleo/react-multi-crop/commit/893882e323eb68ac65389ebbade06b803d4b70fd))
+
+
+### Features
+
+* add onSelect ([900e3e8](https://github.com/berviantoleo/react-multi-crop/commit/900e3e81301f904c88a9aac332c0f9931a8be402))
+
+
+
+
+
+## [0.9.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.9.1...@berviantoleo/react-multi-crop@0.9.2) (2020-12-13)
+
+
+### Bug Fixes
+
+* fix missing parameter ([d477ea0](https://github.com/berviantoleo/react-multi-crop/commit/d477ea035d6ca00adf2f9c449bdefcc5b2c1c95d))
+
+
+
+
+
+## [0.9.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.9.0...@berviantoleo/react-multi-crop@0.9.1) (2020-12-13)
+
+
+### Bug Fixes
+
+* fix move out when not have target ([00e1d44](https://github.com/berviantoleo/react-multi-crop/commit/00e1d44d625769f7c5810c14aefa2fa93fc4bd72))
+
+
+
+
+
+# [0.9.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.8.5...@berviantoleo/react-multi-crop@0.9.0) (2020-12-13)
+
+
+### Features
+
+* add readonly mode ([734eaae](https://github.com/berviantoleo/react-multi-crop/commit/734eaae0a6828ddd00eccb90ec5eb1893cbae67d))
+
+
+
+
+
+## [0.8.5](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.8.4...@berviantoleo/react-multi-crop@0.8.5) (2020-12-09)
+
+
+### Bug Fixes
+
+* change docs stories ([accb154](https://github.com/berviantoleo/react-multi-crop/commit/accb154a6f97d2372bc042f70bab7190fbf426cc))
+
+
+
+
+
+## [0.8.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.8.3...@berviantoleo/react-multi-crop@0.8.4) (2020-12-09)
+
+
+### Bug Fixes
+
+* add docs generated ([6e23392](https://github.com/berviantoleo/react-multi-crop/commit/6e23392783329cc7d162029e523109e6ca477f4d))
+
+
+
+
+
 ## [0.8.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.8.2...@berviantoleo/react-multi-crop@0.8.3) (2020-12-04)
 
 

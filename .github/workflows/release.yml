@@ -3,10 +3,46 @@ on:
   push:
     branches:
       - master
+  pull_request:
+    branches:
+      - master
 jobs:
+  test:
+    name: Test
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+          registry-url: https://npm.pkg.github.com/
+          always-auth: true
+      - name: Install dependencies
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
+        run: |
+          yarn
+      - name: Prepare package
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
+        run: |
+          yarn bootstrap
+      - name: Test Package
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
+        run: |
+          yarn lerna run test --scope @berviantoleo/react-multi-crop
   release:
     name: Release
     runs-on: ubuntu-18.04
+    if: ${{ github.event_name == 'push' }}
+    needs: test
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -41,15 +77,19 @@ jobs:
         if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
             contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
-          cd packages/react-multi-crop
-          yarn build
+          yarn lerna run build --scope @berviantoleo/react-multi-crop
+      - name: Build Documentation
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
+        run: |
+          yarn docs
+          yarn lerna run docs --scope @berviantoleo/react-multi-crop
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
           author_name: Bervianto Leo Pratama
           author_email: bervianto.leo@gmail.com
-          message: "chore: Build Project"
-          add: "*.js"
+          message: "chore(release): publish"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release

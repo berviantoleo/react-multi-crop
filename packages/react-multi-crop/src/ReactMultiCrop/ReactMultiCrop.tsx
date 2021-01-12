@@ -1,10 +1,11 @@
-import React, { Component } from "react";
-import { fabric } from "fabric";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
+import React, { Component } from 'react';
+import { fabric } from 'fabric';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
 
 export interface IRecordProps {
   image: string;
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   clippings: Array<any>;
 }
 
@@ -16,6 +17,7 @@ export interface IOutputData extends ICoord {
 }
 
 export interface IInputProps {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value: string | any;
   name: string;
   onChange(value: Array<IOutputData>): void;
@@ -37,6 +39,9 @@ export interface IReactMultiCropProps {
   showButton?: boolean;
   includeDataUrl?: boolean;
   includeHtmlCanvas?: boolean;
+  readonly?: boolean;
+  onHover?(value: IOutputData | null): void;
+  onSelect?(value: IOutputData | null): void;
 }
 
 export interface IReactMultiCropStates {
@@ -79,20 +84,21 @@ export class CustomFabricRect extends fabric.Rect {
 
 class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
   public static defaultProps = {
-    id: "canvas",
+    id: 'canvas',
     width: 800,
     height: 800,
     input: null,
-    source: "react-crop-form",
+    source: 'react-crop-form',
     record: {
       image: null,
       clippings: [],
     },
     image: null,
-    cropBackgroundColor: "yellow",
+    cropBackgroundColor: 'yellow',
     cropBackgroundOpacity: 0.5,
-    cropOutlineColor: "yellow",
+    cropOutlineColor: 'yellow',
     cropOutlineWidth: 5,
+    readonly: false,
     showLabel: false,
     showButton: false,
     includeDataUrl: false,
@@ -114,9 +120,9 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       initial: true,
     };
 
-    this.color = props.cropBackgroundColor || "yellow";
+    this.color = props.cropBackgroundColor || 'yellow';
     this.opacity = props.cropBackgroundOpacity || 0.5;
-    this.strokeColor = props.cropOutlineColor || "yellow";
+    this.strokeColor = props.cropOutlineColor || 'yellow';
     this.strokeWidth = props.cropOutlineWidth || 5;
     this.strokeDashArray = [5, 5];
 
@@ -161,7 +167,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       scaleX: canvas.width / img.width,
       scaleY: canvas.height / img.height,
     });
-    if (typeof initial === "boolean" && initial) {
+    if (typeof initial === 'boolean' && initial) {
       this.setState({ initial: false }, this.initialObjects.bind(this));
     }
   }
@@ -169,25 +175,30 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   isCrossOriginURL(url: string): boolean {
     const parts = url.match(this.REGEXP_ORIGINS);
     return (
-      parts !== null && (parts[1] !== location.protocol || parts[2] !== location.hostname || parts[3] !== location.port)
+      parts !== null &&
+      (parts[1] !== location.protocol ||
+        parts[2] !== location.hostname ||
+        parts[3] !== location.port)
     );
   }
 
   initialImage(): void {
     const { record, image } = this.props;
     const loadImageNow = this.loadImage.bind(this);
-    if (typeof record === "object" && record.image) {
+    if (typeof record === 'object' && record.image) {
       const isCrossOrigin = this.isCrossOriginURL(record.image);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const options: any = {};
       if (isCrossOrigin) {
-        options.crossOrigin = "Anonymous";
+        options.crossOrigin = 'Anonymous';
       }
       fabric.Image.fromURL(record.image, loadImageNow, options);
-    } else if (typeof image === "string") {
+    } else if (typeof image === 'string') {
       const isCrossOrigin = this.isCrossOriginURL(image);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const options: any = {};
       if (isCrossOrigin) {
-        options.crossOrigin = "Anonymous";
+        options.crossOrigin = 'Anonymous';
       }
       fabric.Image.fromURL(image, loadImageNow, options);
     }
@@ -198,15 +209,19 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    const { record } = this.props;
-    if (typeof record === "object" && record) {
+    const { record, readonly } = this.props;
+    if (typeof record === 'object' && record) {
       const setOutput = this.setOutput.bind(this);
       const setStateOf = this.setState.bind(this);
       const inputObject = record.clippings;
       const createObject = this.createObject.bind(this);
-      if (Array.isArray(inputObject) && inputObject.length > 0 && typeof inputObject[0] === "object") {
+      if (
+        Array.isArray(inputObject) &&
+        inputObject.length > 0 &&
+        typeof inputObject[0] === 'object'
+      ) {
         inputObject.forEach(function (coord) {
-          const rect = createObject(canvas, coord);
+          const rect = createObject(canvas, coord, readonly || false);
           if (rect) {
             canvas.add(rect);
           }
@@ -215,10 +230,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.renderAll();
       setStateOf({ canvas }, setOutput);
     } else {
-      console.log("Not have any record. Skipped.");
+      console.log('Not have any record. Skipped.');
     }
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
   zoom(options: any): void {
     const { canvas } = this.state;
     if (!canvas) {
@@ -234,21 +250,75 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     options.e.stopPropagation();
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  mouseHover(options: any): void {
+    const { onHover } = this.props;
+    const converter = this.shapetoStructureData.bind(this);
+    const target = options.target;
+    if (target && target.type === 'rect' && onHover) {
+      const data = converter(target);
+      onHover(data);
+    }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  mouseOut(options: any): void {
+    const { onHover } = this.props;
+    const target = options.target;
+    if (target && target.type === 'rect' && onHover) {
+      onHover(null);
+    }
+  }
+
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  selectionHandler(options: any): void {
+    const { onSelect } = this.props;
+    const converter = this.shapetoStructureData.bind(this);
+    const target = options.target;
+    if (target && target.type === 'rect' && onSelect) {
+      const data = converter(target);
+      onSelect(data);
+    }
+  }
+
+  selectionClearHandler(): void {
+    const { onSelect } = this.props;
+    if (onSelect) {
+      onSelect(null);
+    }
+  }
+
   initialCanvas(): void {
-    const { id, width, height } = this.props;
-    const canvas = new fabric.Canvas(id || "canvas", {
+    const { id, width, height, readonly } = this.props;
+    const canvas = new fabric.Canvas(id || 'canvas', {
       width: width,
       height: height,
     });
     canvas.uniScaleTransform = true;
-    const doubleClickEvent = this.doubleClickEvent.bind(this);
-    const objectModifiedEvent = this.setOutput.bind(this);
+    if (readonly) {
+      // readonly mode
+      canvas.selectionKey = undefined;
+      const mouseHoverHandler = this.mouseHover.bind(this);
+      const mouseHoverOutHandler = this.mouseOut.bind(this);
+      const selectionObjectHandler = this.selectionHandler.bind(this);
+      const selectionObjectClearHandler = this.selectionClearHandler.bind(this);
+      canvas.on('mouse:over', mouseHoverHandler);
+      canvas.on('mouse:out', mouseHoverOutHandler);
+      canvas.on('selection:created', selectionObjectHandler);
+      canvas.on('selection:updated', selectionObjectHandler);
+      canvas.on('selection:cleared', selectionObjectClearHandler);
+    } else {
+      // edit mode
+      const doubleClickEvent = this.doubleClickEvent.bind(this);
+      const objectModifiedEvent = this.setOutput.bind(this);
+      canvas.on('mouse:dblclick', doubleClickEvent);
+      canvas.on('object:modified', objectModifiedEvent);
+    }
     const zoomHandler = this.zoom.bind(this);
-    canvas.on("mouse:dblclick", doubleClickEvent);
-    canvas.on("object:modified", objectModifiedEvent);
-    canvas.on("mouse:wheel", zoomHandler);
+    canvas.on('mouse:wheel', zoomHandler);
     // setup move drag: alt + click
-    canvas.on("mouse:down", function (opt: any) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    canvas.on('mouse:down', function (opt: any) {
       const evt = opt.e;
       if (evt.altKey === true) {
         this.isDragging = true;
@@ -257,7 +327,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         this.lastPosY = evt.clientY;
       }
     });
-    canvas.on("mouse:move", function (opt: any) {
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    canvas.on('mouse:move', function (opt: any) {
       if (this.isDragging) {
         const e = opt.e;
         const vpt = this.viewportTransform;
@@ -268,7 +339,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         this.lastPosY = e.clientY;
       }
     });
-    canvas.on("mouse:up", function () {
+    canvas.on('mouse:up', function () {
       // on mouse up we want to recalculate new interaction
       // for all objects, so we call setViewportTransform
       this.setViewportTransform(this.viewportTransform);
@@ -288,7 +359,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       id: null,
       rect: { x1: 0, y1: 0, x2: 0.2, y2: 0.2 },
     };
-    const rect = this.createObject(canvas, coor);
+    const rect = this.createObject(canvas, coor, false);
     if (!rect) {
       return;
     }
@@ -297,12 +368,13 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     this.setState({ canvas }, this.setOutput);
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
   doubleClickEvent(options: any): void {
     const { canvas } = this.state;
     if (!canvas) {
       return;
     }
-    if (typeof options === "object" && typeof options.target === "object" && options.target) {
+    if (typeof options === 'object' && typeof options.target === 'object' && options.target) {
       const left = options.target.left;
       const top = options.target.top;
       const width = options.target.width;
@@ -317,7 +389,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.add(rect);
       canvas.renderAll();
       this.setState({ canvas }, this.setOutput);
-    } else if (typeof options === "object" && typeof options.pointer === "object" && options.pointer) {
+    } else if (
+      typeof options === 'object' &&
+      typeof options.pointer === 'object' &&
+      options.pointer
+    ) {
       const left = options.absolutePointer.x;
       const top = options.absolutePointer.y;
       const attribute: IAttribute = {
@@ -376,7 +452,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       id: element.id,
       rect: JSON.stringify(rectangle),
     };
-    if (typeof canvas === "object" && typeof canvas.backgroundImage === "object" && canvas.backgroundImage) {
+    if (
+      typeof canvas === 'object' &&
+      typeof canvas.backgroundImage === 'object' &&
+      canvas.backgroundImage
+    ) {
       const canvasBackground = canvas.backgroundImage;
       if (includeDataUrl) {
         let dataUrl: string | null = null;
@@ -386,7 +466,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
             width: element.getScaledWidth(),
             left: element.left,
             top: element.top,
-            format: "jpeg",
+            format: 'jpeg',
           });
         } catch (error) {
           console.log(error);
@@ -427,13 +507,14 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         coord.crop = JSON.stringify(rectanglePx);
       }
     }
-    coord.deletedAt = "-1";
+    coord.deletedAt = '-1';
     return coord;
   }
 
   deleteShapes(): void {
+    const { readonly } = this.props;
     const { canvas } = this.state;
-    if (canvas) {
+    if (canvas && !readonly) {
       canvas.getActiveObjects().forEach(function (element) {
         canvas.remove(element);
       });
@@ -448,8 +529,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
     const shapeToStructureData = this.shapetoStructureData.bind(this);
     const outputValue: Array<IOutputData> = [];
-    const cropcoords = canvas.getObjects("rect");
-    cropcoords.forEach(function (element: Object) {
+    const cropcoords = canvas.getObjects('rect');
+    cropcoords.forEach(function (element: fabric.Object) {
       const data = element as CustomFabricRect;
       const outputData = shapeToStructureData(data);
       if (outputData) {
@@ -463,16 +544,20 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  createObject(canvas: fabric.Canvas | null, coor: ICoord): CustomFabricRect | null {
+  createObject(
+    canvas: fabric.Canvas | null,
+    coor: ICoord,
+    readonly: boolean,
+  ): CustomFabricRect | null {
     if (!canvas) {
       return null;
     }
-    if (!canvas.width || !canvas.height)
-    {
+    if (!canvas.width || !canvas.height) {
       return null;
     }
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     let rectangle: any;
-    if (typeof coor.rect === "string") {
+    if (typeof coor.rect === 'string') {
       rectangle = JSON.parse(coor.rect);
     } else {
       rectangle = coor.rect;
@@ -495,12 +580,17 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       stroke: this.strokeColor,
       strokeWidth: this.strokeWidth,
       lockRotation: true,
+      lockMovementX: readonly,
+      lockMovementY: readonly,
+      lockScalingX: readonly,
+      lockScalingY: readonly,
     });
   }
 
   multiSelect(): void {
+    const { readonly } = this.props;
     const { canvas } = this.state;
-    if (canvas) {
+    if (canvas && !readonly) {
       canvas.discardActiveObject();
       const sel = new fabric.ActiveSelection(canvas.getObjects(), {
         canvas: canvas,
@@ -508,7 +598,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.setActiveObject(sel);
       canvas.requestRenderAll();
     } else {
-      console.log("Canvas not defined");
+      console.log('Canvas not defined');
     }
   }
 
@@ -518,7 +608,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.discardActiveObject();
       canvas.requestRenderAll();
     } else {
-      console.log("Canvas not defined");
+      console.log('Canvas not defined');
     }
   }
 
@@ -528,11 +618,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
     let handled = false;
     const key = event.key || event.keyCode;
-    if (key === "Delete" || key === 46) {
+    if (key === 'Delete' || key === 46) {
       // Handle Delete
       this.deleteShapes();
       handled = true;
-    } else if (event.ctrlKey && (key === 65 || key === "a")) {
+    } else if (event.ctrlKey && (key === 65 || key === 'a')) {
       this.multiSelect();
       handled = true;
     }
@@ -543,8 +633,9 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   }
 
   render(): JSX.Element {
-    const { input, source, showLabel, showButton, id, width, height } = this.props;
+    const { input, source, showLabel, showButton, id, width, height, readonly } = this.props;
     const renderInputRedux = !!input;
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
     let valueForm: any;
     let nameForm = source;
     if (input) {
@@ -558,32 +649,47 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         {showLabel && <div className="label">{nameForm}</div>}
 
         <Grid container direction="row" justify="flex-start" alignItems="flex-start">
-          <Grid item xs onKeyDown={this.keyboardHandler} tabIndex={0}>
-            <canvas id={id} width={width} height={height} style={{ border: "0px solid #aaa" }} />
+          <Grid item xs onKeyDown={!readonly ? this.keyboardHandler : undefined} tabIndex={0}>
+            <canvas id={id} width={width} height={height} style={{ border: '0px solid #aaa' }} />
           </Grid>
-          {showButton && (
+          {showButton && !readonly && (
             <Grid container item xs direction="column" justify="flex-start" alignItems="flex-start">
               <Grid item xs>
                 <Button variant="contained" id="addmore" color="primary" onClick={this.addNew}>
-                  {" "}
+                  {' '}
                   Add More Shapes
                 </Button>
               </Grid>
               <Grid item xs>
-                <Button variant="contained" id="deleteselected" color="primary" onClick={this.deleteShapes}>
-                  {" "}
-                  Delete Selected Object{" "}
+                <Button
+                  variant="contained"
+                  id="deleteselected"
+                  color="primary"
+                  onClick={this.deleteShapes}
+                >
+                  {' '}
+                  Delete Selected Object{' '}
                 </Button>
               </Grid>
               <Grid item xs>
-                <Button variant="contained" id="multiselect" color="primary" onClick={this.multiSelect}>
-                  {" "}
-                  Select All{" "}
+                <Button
+                  variant="contained"
+                  id="multiselect"
+                  color="primary"
+                  onClick={this.multiSelect}
+                >
+                  {' '}
+                  Select All{' '}
                 </Button>
               </Grid>
               <Grid item xs>
-                <Button variant="contained" id="discard" color="primary" onClick={this.discardActiveObject}>
-                  {" "}
+                <Button
+                  variant="contained"
+                  id="discard"
+                  color="primary"
+                  onClick={this.discardActiveObject}
+                >
+                  {' '}
                   Discard Selection
                 </Button>
               </Grid>
