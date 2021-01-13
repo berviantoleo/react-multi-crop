@@ -4,7 +4,7 @@ import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 
 export interface IRecordProps {
-  image: string;
+  image?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   clippings: Array<any>;
 }
