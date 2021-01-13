@@ -33,6 +33,11 @@ jobs:
             contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn bootstrap
+      - name: Lint Test Package
+        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
+        run: |
+          yarn lerna run lint --scope @berviantoleo/react-multi-crop
       - name: Test Package
         if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
             contains(github.event.head_commit.message, '[cd skip]')) }}
