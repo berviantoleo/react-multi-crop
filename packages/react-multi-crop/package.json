@@ -3,13 +3,13 @@
   "description": "Your crop result will easy!",
   "main": "dist/index.cjs.js",
   "module": "dist/index.esm.js",
-  "source": "src/index.js",
+  "source": "src/index.ts",
   "scripts": {
     "storybook": "start-storybook -p 5403",
     "docs": "build-storybook -o ../../docs/components",
+    "lint": "eslint src/**/*.{js,ts,tsx}",
+    "fix-lint": "eslint src/**/*.{js,ts,tsx} --quiet --fix",
     "start": "rollup -c -w",
-    "lint": "eslint --fix .",
-    "lint-check": "eslint .",
     "build": "rollup -c",
     "test": "jest --coverage"
   },
@@ -30,7 +30,9 @@
     "@babel/plugin-transform-runtime": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
+    "@babel/preset-typescript": "^7.12.7",
     "@rollup/plugin-babel": "^5.2.2",
+    "@rollup/plugin-node-resolve": "^11.0.1",
     "@storybook/addon-actions": "^6.1.14",
     "@storybook/addon-docs": "^6.1.14",
     "@storybook/addon-essentials": "^6.1.14",
@@ -43,6 +45,10 @@
     "@storybook/source-loader": "^6.1.14",
     "@testing-library/jest-dom": "^5.11.9",
     "@testing-library/react": "^11.2.3",
+    "@types/fabric": "^4.2.0",
+    "@types/jest": "^26.0.20",
+    "@typescript-eslint/eslint-plugin": "^4.9.0",
+    "@typescript-eslint/parser": "^4.9.0",
     "babel-jest": "^26.6.3",
     "clsx": "^1.1.1",
     "cypress": "^6.2.1",
@@ -57,7 +63,12 @@
     "react-test-renderer": "^17.0.1",
     "rollup": "^2.36.1",
     "rollup-plugin-delete": "^2.0.0",
-    "rollup-plugin-peer-deps-external": "^2.2.4"
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-sizes": "^1.0.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.29.0",
+    "ts-jest": "^26.4.4",
+    "typescript": "^4.1.2"
   },
   "peerDependencies": {
     "@material-ui/core": ">= 4.0",
@@ -69,7 +80,6 @@
   "dependencies": {
     "@babel/runtime": "^7.12.5",
     "@material-ui/core": "^4.11.1",
-    "@rollup/plugin-node-resolve": "^11.0.1",
     "fabric": "^4.3.0",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
