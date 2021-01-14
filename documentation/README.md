@@ -42,7 +42,8 @@ import { Field, formValues } from 'redux-form';
 
 ### another sample
 
-[Codesandbox.io](https://codesandbox.io/s/react-crop-demo-9hjxs)
+[Codesandbox.io - Ts](https://codesandbox.io/s/react-crop-typescript-5jmo0)
+[Codesandbox.io - Js (Legacy)](https://codesandbox.io/s/react-crop-demo-9hjxs)
 
 ## Feature
 
