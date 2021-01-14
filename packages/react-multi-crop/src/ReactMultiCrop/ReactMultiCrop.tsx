@@ -210,7 +210,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       return;
     }
     const { record, readonly } = this.props;
-    if (typeof record === 'object' && record) {
+    if (record) {
       const setOutput = this.setOutput.bind(this);
       const setStateOf = this.setState.bind(this);
       const inputObject = record.clippings;
@@ -374,7 +374,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    if (typeof options === 'object' && typeof options.target === 'object' && options.target) {
+    if (options && options.target) {
       const left = options.target.left;
       const top = options.target.top;
       const width = options.target.width;
@@ -389,11 +389,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.add(rect);
       canvas.renderAll();
       this.setState({ canvas }, this.setOutput);
-    } else if (
-      typeof options === 'object' &&
-      typeof options.pointer === 'object' &&
-      options.pointer
-    ) {
+    } else if (options && options.pointer) {
       const left = options.absolutePointer.x;
       const top = options.absolutePointer.y;
       const attribute: IAttribute = {
@@ -431,14 +427,14 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       return null;
     }
     if (
-      !element.left ||
-      !element.top ||
-      !element.width ||
-      !element.height ||
-      !element.scaleX ||
-      !element.scaleY ||
-      !canvas.width ||
-      !canvas.height
+      element.left === undefined ||
+      element.top === undefined ||
+      element.width === undefined ||
+      element.height === undefined ||
+      element.scaleX === undefined ||
+      element.scaleY === undefined ||
+      canvas.width === undefined ||
+      canvas.height === undefined
     ) {
       return null;
     }
@@ -452,11 +448,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       id: element.id,
       rect: JSON.stringify(rectangle),
     };
-    if (
-      typeof canvas === 'object' &&
-      typeof canvas.backgroundImage === 'object' &&
-      canvas.backgroundImage
-    ) {
+    if (canvas.backgroundImage && canvas.backgroundImage instanceof fabric.Image) {
       const canvasBackground = canvas.backgroundImage;
       if (includeDataUrl) {
         let dataUrl: string | null = null;
