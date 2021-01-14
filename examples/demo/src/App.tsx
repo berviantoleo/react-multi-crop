@@ -13,7 +13,7 @@ export default function App() {
           input={{
             value: cropValue,
             name: "multicrop",
-            onChange: function (value) {
+            onChange: function (value: any) {
               console.log(value);
               let newObject = value[0];
               if (newObject) {
@@ -35,14 +35,13 @@ export default function App() {
               },
             ],
           }}
-          //image="https://ucarecdn.com/ca8d2fdd-33ef-440f-b46b-f08c100693b7/"
-          image="https://catalog-import-dev.nos.jkt-1.neo.id/webcSuperindoSuperHemat/1157khboqy7x"
+          image="https://picsum.photos/800"
         />
       </Grid>
       <Grid item xs>
         <h2>Crop Result</h2>
         {cropValue &&
-          cropValue.map((objectData, i) => {
+          cropValue.map((objectData: any, i) => {
             let canvasElement = objectData.canvasElement.toDataURL();
             return (
               <div>
