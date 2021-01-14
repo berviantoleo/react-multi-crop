@@ -3,6 +3,27 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.13.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.12.5...@berviantoleo/react-multi-crop@0.13.0) (2021-01-14)
+
+
+### Bug Fixes
+
+* add linting CI ([763914a](https://github.com/berviantoleo/react-multi-crop/commit/763914aba0bfb1a692a66ed3c25e5cd039e39001))
+* merge with master ([b890e57](https://github.com/berviantoleo/react-multi-crop/commit/b890e57e643773bec361b4d10544ec905d34c703))
+* merge with master ([67c92a2](https://github.com/berviantoleo/react-multi-crop/commit/67c92a2f297b2c12277b91130144f8b8373266e4))
+* Update year ([74584a5](https://github.com/berviantoleo/react-multi-crop/commit/74584a5eb0ef56499b316f3643e155d090af889e))
+
+
+### Features
+
+* add new docs ([ec1723d](https://github.com/berviantoleo/react-multi-crop/commit/ec1723d0931a5901cb5b41ff4f6e1ad5934e2acc))
+* Initial Typescript ([a77a7b5](https://github.com/berviantoleo/react-multi-crop/commit/a77a7b5c039619efa9d7ecee4c18fa3157799183))
+* Update to last features ([5bed6e9](https://github.com/berviantoleo/react-multi-crop/commit/5bed6e9bd0c53aa57b0964bc06fa56b9b097b72c))
+
+
+
+
+
 ## [0.12.5](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.12.4...@berviantoleo/react-multi-crop@0.12.5) (2021-01-14)
 
 
