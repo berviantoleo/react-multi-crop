@@ -2936,7 +2936,7 @@
   dependencies:
     "@sinonjs/commons" "^1.7.0"
 
-"@storybook/addon-actions@6.1.14", "@storybook/addon-actions@^6.1.12":
+"@storybook/addon-actions@6.1.14", "@storybook/addon-actions@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/addon-actions/-/addon-actions-6.1.14.tgz#20a173d781d99368a1af769ed75551a3784f3135"
   integrity sha512-mXvrL8B34Rtq1WPxbQ1eUip8spqQP43HWGRH0ZmCO3Iwwcmxd6250LY3q+95QqJYsli0XJoOnS97VOLXABpaPg==
@@ -2991,7 +2991,7 @@
     core-js "^3.0.1"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-docs@6.1.14", "@storybook/addon-docs@^6.1.12":
+"@storybook/addon-docs@6.1.14", "@storybook/addon-docs@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/addon-docs/-/addon-docs-6.1.14.tgz#fc1feac0e7e8b9c46efcd0b9c1f8ba2d306a9b3b"
   integrity sha512-Skj9crqaEEISghobjtu3EKbSTwGVK2e0gTu94WqPL3GOugvGgk7b1VrCgf5fXKcdwbtZktm48CtdmeP5R5U9NQ==
@@ -3037,7 +3037,7 @@
     ts-dedent "^2.0.0"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-essentials@^6.1.12":
+"@storybook/addon-essentials@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/addon-essentials/-/addon-essentials-6.1.14.tgz#5dbd90417fe0bebded547cc9131072acef4aef84"
   integrity sha512-JcBq6wqO5C0JM/8GPBTiqBqbh5yYZzJJyRAwH8uZ44aaX94kTIuCF3wgNRCfA0Ed2ub+aMjd+ZFjpRD7dhkRSA==
@@ -3076,7 +3076,7 @@
     react-lifecycles-compat "^3.0.4"
     util-deprecate "^1.0.2"
 
-"@storybook/addon-knobs@^6.1.12":
+"@storybook/addon-knobs@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/addon-knobs/-/addon-knobs-6.1.14.tgz#748a66eff822189c016e7024129637932020bf81"
   integrity sha512-Zyd4hWbV8OpsC3Cllmz4kxrGgoSGR6fDjaN1rYTZplUDf0h3dVWPEd/RhI3iU7umE5FqrFuQyadunHwuGXh3OA==
@@ -3101,7 +3101,7 @@
     react-select "^3.0.8"
     regenerator-runtime "^0.13.7"
 
-"@storybook/addon-links@^6.1.12":
+"@storybook/addon-links@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/addon-links/-/addon-links-6.1.14.tgz#c30cd46fe3d982fe04f22a8c1f034c70829f413b"
   integrity sha512-hyecksxJpdNumRFCss8YFD6q2+9yoQ3SYO++Fg69IFA5DpatKugmtQRvibR4WDT1a0NYjW9cej3YcyWcOmifhQ==
@@ -3119,7 +3119,7 @@
     regenerator-runtime "^0.13.7"
     ts-dedent "^2.0.0"
 
-"@storybook/addon-storysource@^6.1.12":
+"@storybook/addon-storysource@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/addon-storysource/-/addon-storysource-6.1.14.tgz#694e0f0f5f9cd643cd98820aaba309464adfaffe"
   integrity sha512-eexiZiMLHHlRj6/U5KPHttXgtrXoD5QdIDrWGksztymlK1xfPi31VCmYKx+ieEfeDJo35fy5zNqqSJeSCfKuVQ==
@@ -3180,7 +3180,7 @@
     global "^4.3.2"
     util-deprecate "^1.0.2"
 
-"@storybook/addons@6.1.14", "@storybook/addons@^6.1.12":
+"@storybook/addons@6.1.14", "@storybook/addons@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/addons/-/addons-6.1.14.tgz#2b81304bbe696923df95cdcf85cfc592d10f4065"
   integrity sha512-HlpmV7aejp/MeW8bo/WKME3i71gi0men9qcwoovjDjnSF6jXoNLT336a5udKXdHqYSZgzdyURlgLtilCWkWaJQ==
@@ -3513,7 +3513,7 @@
   dependencies:
     core-js "^3.0.1"
 
-"@storybook/react@^6.1.12":
+"@storybook/react@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/react/-/react-6.1.14.tgz#436e9b90096b1d7c83f7f073b5baf47212b2e425"
   integrity sha512-M99wHjc/5z+Wz1FdFaScVs6dyAi/6PdcIx5Fyip6Qd8aKwm1XyYoOMql5Vu3Cf560feDYCKS4phzyEZ7EJy+EQ==
@@ -3575,7 +3575,7 @@
     core-js "^3.6.5"
     find-up "^4.1.0"
 
-"@storybook/source-loader@6.1.14", "@storybook/source-loader@^6.1.12":
+"@storybook/source-loader@6.1.14", "@storybook/source-loader@^6.1.14":
   version "6.1.14"
   resolved "https://registry.npmjs.org/@storybook/source-loader/-/source-loader-6.1.14.tgz#507ff52cc6627e4d996020de05bf023004230953"
   integrity sha512-JY3hJGTJSNmohmDDE3BLE3vPW1rSAIRToq0vpo9ZhFTFUWHm3RlhcS8+5z8Mvn9+TLDuf5WnSib5lfGmCtLmJQ==
@@ -3796,10 +3796,10 @@
     lz-string "^1.4.4"
     pretty-format "^26.6.2"
 
-"@testing-library/jest-dom@^5.11.8":
-  version "5.11.8"
-  resolved "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-5.11.8.tgz#433a84d6f9a089485101b9e112ef03e5c30bcbfc"
-  integrity sha512-ScyKrWQM5xNcr79PkSewnA79CLaoxVskE+f7knTOhDD9ftZSA1Jw8mj+pneqhEu3x37ncNfW84NUr7lqK+mXjA==
+"@testing-library/jest-dom@^5.11.9":
+  version "5.11.9"
+  resolved "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-5.11.9.tgz#e6b3cd687021f89f261bd53cbe367041fbd3e975"
+  integrity sha512-Mn2gnA9d1wStlAIT2NU8J15LNob0YFBVjs2aEQ3j8rsfRQo+lAs7/ui1i2TGaJjapLmuNPLTsrm+nPjmZDwpcQ==
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@types/testing-library__jest-dom" "^5.9.1"
