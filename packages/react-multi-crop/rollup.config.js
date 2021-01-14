@@ -13,8 +13,8 @@ const extensions = ['.js', '.jsx', '.ts', '.tsx'];
 export default {
   input: pkg.source,
   output: [
-    { file: pkg.main, format: "cjs", sourcemap: true },
-    { file: pkg.module, format: "esm", sourcemap: true },
+    { file: pkg.main, format: "cjs" },
+    { file: pkg.module, format: "esm" },
   ],
   plugins: [
     typescript(),
