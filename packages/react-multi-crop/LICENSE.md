@@ -1,6 +1,6 @@
 MIT License
 
-Copyright (c) 2020 Bervianto Leo Pratama
+Copyright (c) 2020-2021 Bervianto Leo Pratama
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
