@@ -17,7 +17,9 @@ export default {
     { file: pkg.module, format: "esm" },
   ],
   plugins: [
-    typescript(),
+    typescript({
+      useTsconfigDeclarationDir: true
+    }),
     external(),
     resolve({
       mainFields: ['module', 'main', 'jsnext:main', 'browser'],
