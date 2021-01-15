@@ -9,7 +9,6 @@ export default function App() {
       <Grid item xs>
         <ReactMultiCrop
           id="canvas"
-          hideLabel
           input={{
             value: cropValue,
             name: "multicrop",
