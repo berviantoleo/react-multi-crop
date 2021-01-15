@@ -2,6 +2,7 @@
   "name": "@berviantoleo/react-multi-crop",
   "description": "Your crop result will easy!",
   "main": "dist/index.cjs.js",
+  "types": "dist/types/index.d.ts",
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
   "scripts": {
