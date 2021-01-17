@@ -1,6 +1,12 @@
 # ReactMultiCrop
 
-![Release](https://github.com/berviantoleo/react-multi-crop/workflows/Release/badge.svg)
+Easy and extensible react component to crop as multiple image
+
+## Build Status
+
+| Github Action | Codecov |
+|:-------------:|:-------:|
+| ![Release](https://github.com/berviantoleo/react-multi-crop/workflows/Release/badge.svg) | [![codecov](https://codecov.io/gh/berviantoleo/react-multi-crop/branch/master/graph/badge.svg?token=sGqoJBg260)](https://codecov.io/gh/berviantoleo/react-multi-crop) |
 
 ## How to Use
 
