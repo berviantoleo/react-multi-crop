@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.14.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.13.11...@berviantoleo/react-multi-crop@0.14.0) (2021-01-29)
+
+
+### Features
+
+* update fabric and rollup ([a36c4de](https://github.com/berviantoleo/react-multi-crop/commit/a36c4de6bc2d5036114bf918bdf4b0bcb7a66772))
+
+
+
+
+
 ## [0.13.11](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.13.10...@berviantoleo/react-multi-crop@0.13.11) (2021-01-27)
 
 
