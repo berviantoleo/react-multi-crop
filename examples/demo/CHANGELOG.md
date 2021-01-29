@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.8.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.7.10...@berviantoleo/react-component-multi-crop-demo@0.8.0) (2021-01-29)
+
+
+### Features
+
+* update fabric and rollup ([a36c4de](https://github.com/berviantoleo/react-multi-crop/commit/a36c4de6bc2d5036114bf918bdf4b0bcb7a66772))
+
+
+
+
+
 ## [0.7.10](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.7.9...@berviantoleo/react-component-multi-crop-demo@0.7.10) (2021-01-27)
 
 **Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
