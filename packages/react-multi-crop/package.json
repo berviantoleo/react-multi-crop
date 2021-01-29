@@ -85,7 +85,7 @@
     "react-dom": "^17.0.1"
   },
   "license": "MIT",
-  "version": "0.14.0",
+  "version": "0.14.1",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "public"
