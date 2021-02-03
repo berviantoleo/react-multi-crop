@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.14.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.14.3...@berviantoleo/react-multi-crop@0.14.4) (2021-02-03)
+
+
+### Bug Fixes
+
+* update dependencies ([79aa831](https://github.com/berviantoleo/react-multi-crop/commit/79aa831d1ceeb0bb5792bf45403679d9b180d38e))
+
+
+
+
+
 ## [0.14.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.14.2...@berviantoleo/react-multi-crop@0.14.3) (2021-02-02)
 
 
