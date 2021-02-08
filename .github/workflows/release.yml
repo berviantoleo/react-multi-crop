@@ -8,6 +8,8 @@ on:
       - master
 jobs:
   test:
+    if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) }}
     name: Test
     runs-on: ubuntu-18.04
     steps:
@@ -16,42 +18,31 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         uses: actions/setup-node@v1
         with:
           node-version: 12
           registry-url: https://npm.pkg.github.com/
           always-auth: true
       - name: Install dependencies
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn
       - name: Prepare package
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn bootstrap
       - name: Lint Test Package
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn lerna run lint --scope @berviantoleo/react-multi-crop
       - name: Test Package
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn lerna run test --scope @berviantoleo/react-multi-crop
       - name: Upload to Codecov
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
            bash <(curl -s https://codecov.io/bash)
   release:
     name: Release
+    if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
+            contains(github.event.head_commit.message, '[cd skip]')) && github.event_name == 'push' }}
     runs-on: ubuntu-18.04
-    if: ${{ github.event_name == 'push' }}
     needs: test
     steps:
       - name: Checkout
@@ -59,8 +50,6 @@ jobs:
         with:
           fetch-depth: 0
       - name: Setup Node.js
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         uses: actions/setup-node@v1
         with:
           node-version: 12
@@ -74,23 +63,15 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Install dependencies
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn
       - name: Prepare package
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn bootstrap
       - name: Build Package
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Build Documentation
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         run: |
           yarn docs
           yarn lerna run docs --scope @berviantoleo/react-multi-crop
@@ -103,8 +84,6 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
-        if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
