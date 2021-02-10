@@ -1,5 +1,5 @@
 import React from 'react';
-import { render, fireEvent, waitFor, screen } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import ReactMultiCrop from '../src/ReactMultiCrop/ReactMultiCrop';
 import '@testing-library/jest-dom/extend-expect';
 
@@ -67,7 +67,7 @@ test('Output Handler', async () => {
               console.log(newObject.canvasElement.toDataURL());
             }
           }
-          setCropValue(value);
+          // setCropValue(value);
         },
       }}
       record={{

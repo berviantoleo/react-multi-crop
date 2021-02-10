@@ -8,8 +8,8 @@
   "scripts": {
     "storybook": "start-storybook -p 5403",
     "docs": "build-storybook -o ../../docs/components",
-    "lint": "eslint src/**/*.{js,ts,tsx}",
-    "fix-lint": "eslint src/**/*.{js,ts,tsx} --quiet --fix",
+    "lint": "eslint \"src/**/*.{js,ts,tsx}\" \"test/**/*.{js,ts,tsx}\"",
+    "fix-lint": "eslint \"src/**/*.{js,ts,tsx}\" \"test/**/*.{js,ts,tsx}\" --quiet --fix",
     "start": "rollup -c -w",
     "build": "rollup -c",
     "test": "jest --coverage"

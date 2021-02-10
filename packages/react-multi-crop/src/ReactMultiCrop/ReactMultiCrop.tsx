@@ -18,8 +18,8 @@ export interface IOutputData extends ICoord {
 
 export interface IInputProps {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  value: string | any;
-  name: string;
+  value?: string | any;
+  name?: string;
   onChange(value: Array<IOutputData>): void;
 }
 
@@ -163,10 +163,12 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas.width || !canvas.height || !img.height || !img.width) {
       return;
     }
-    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas), {
-      scaleX: canvas.width / img.width,
-      scaleY: canvas.height / img.height,
-    });
+    // detect ratio
+    const ratio = img.height / img.width;
+    const newHeight = canvas.width * ratio;
+    canvas.setHeight(newHeight);
+    canvas.setZoom(canvas.width / img.width);
+    canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
     if (typeof initial === 'boolean' && initial) {
       this.setState({ initial: false }, this.initialObjects.bind(this));
     }
@@ -423,7 +425,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
 
   shapetoStructureData(element: CustomFabricRect): IOutputData | null {
     const { canvas } = this.state;
-    if (!canvas) {
+    if (!canvas || !canvas.backgroundImage) {
+      return null;
+    }
+    const background = canvas.backgroundImage;
+    if (!(background instanceof fabric.Image)) {
       return null;
     }
     if (
@@ -433,72 +439,70 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       element.height === undefined ||
       element.scaleX === undefined ||
       element.scaleY === undefined ||
-      canvas.width === undefined ||
-      canvas.height === undefined
+      background.width === undefined ||
+      background.height === undefined
     ) {
       return null;
     }
     const { includeDataUrl, includeHtmlCanvas } = this.props;
-    const x1 = element.left / canvas.width;
-    const y1 = element.top / canvas.height;
-    const x2 = (element.left + element.width * element.scaleX) / canvas.width;
-    const y2 = (element.top + element.height * element.scaleY) / canvas.height;
+    const x1 = element.left / background.width;
+    const y1 = element.top / background.height;
+    const x2 = (element.left + element.width * element.scaleX) / background.width;
+    const y2 = (element.top + element.height * element.scaleY) / background.height;
     const rectangle = { x1: x1, y1: y1, x2: x2, y2: y2 };
     const coord: IOutputData = {
       id: element.id,
       rect: JSON.stringify(rectangle),
     };
-    if (canvas.backgroundImage && canvas.backgroundImage instanceof fabric.Image) {
-      const canvasBackground = canvas.backgroundImage;
-      if (includeDataUrl) {
-        let dataUrl: string | null = null;
-        try {
-          dataUrl = canvasBackground.toDataURL({
-            height: element.getScaledHeight(),
-            width: element.getScaledWidth(),
-            left: element.left,
-            top: element.top,
-            format: 'jpeg',
-          });
-        } catch (error) {
-          console.log(error);
-        }
-        coord.dataUrl = dataUrl;
+    // dataUrl
+    if (includeDataUrl) {
+      let dataUrl: string | null = null;
+      try {
+        dataUrl = background.toDataURL({
+          height: element.getScaledHeight(),
+          width: element.getScaledWidth(),
+          left: element.left,
+          top: element.top,
+          format: 'jpeg',
+        });
+      } catch (error) {
+        console.log(error);
       }
-      if (includeHtmlCanvas) {
-        let canvasElement = null;
-        try {
-          canvasElement = canvasBackground.toCanvasElement({
-            height: element.getScaledHeight(),
-            width: element.getScaledWidth(),
-            left: element.left,
-            top: element.top,
-          });
-        } catch (error) {
-          console.log(error);
-        }
-        coord.canvasElement = canvasElement;
-      }
-      if (canvasBackground.width && canvasBackground.height) {
-        const imgWidth = canvasBackground.width;
-        const imgHeight = canvasBackground.height;
-        const x1Px = x1 * imgWidth;
-        const x2Px = x2 * imgWidth;
-        const y1Px = y1 * imgHeight;
-        const y2Px = y2 * imgHeight;
-        const rectanglePx = {
-          x: x1Px,
-          y: y1Px,
-          x2: x2Px,
-          y2: y2Px,
-          w: x2Px - x1Px,
-          h: y2Px - y1Px,
-          boundX: imgWidth,
-          boundY: imgHeight,
-        };
-        coord.crop = JSON.stringify(rectanglePx);
-      }
+      coord.dataUrl = dataUrl;
     }
+    // html canvas
+    if (includeHtmlCanvas) {
+      let canvasElement = null;
+      try {
+        canvasElement = background.toCanvasElement({
+          height: element.getScaledHeight(),
+          width: element.getScaledWidth(),
+          left: element.left,
+          top: element.top,
+        });
+      } catch (error) {
+        console.log(error);
+      }
+      coord.canvasElement = canvasElement;
+    }
+    // crop item
+    const imgWidth = background.width;
+    const imgHeight = background.height;
+    const x1Px = x1 * imgWidth;
+    const x2Px = x2 * imgWidth;
+    const y1Px = y1 * imgHeight;
+    const y2Px = y2 * imgHeight;
+    const rectanglePx = {
+      x: x1Px,
+      y: y1Px,
+      x2: x2Px,
+      y2: y2Px,
+      w: x2Px - x1Px,
+      h: y2Px - y1Px,
+      boundX: imgWidth,
+      boundY: imgHeight,
+    };
+    coord.crop = JSON.stringify(rectanglePx);
     coord.deletedAt = '-1';
     return coord;
   }
@@ -541,10 +545,14 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     coor: ICoord,
     readonly: boolean,
   ): CustomFabricRect | null {
-    if (!canvas) {
+    if (!canvas || !canvas.backgroundImage) {
       return null;
     }
-    if (!canvas.width || !canvas.height) {
+    const background = canvas.backgroundImage;
+    if (!(background instanceof fabric.Image)) {
+      return null;
+    }
+    if (!background.width || !background.height) {
       return null;
     }
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -554,10 +562,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     } else {
       rectangle = coor.rect;
     }
-    const left = canvas.width * rectangle.x1;
-    const top = canvas.height * rectangle.y1;
-    const right = canvas.width * rectangle.x2;
-    const bottom = canvas.height * rectangle.y2;
+    const left = background.width * rectangle.x1;
+    const top = background.height * rectangle.y1;
+    const right = background.width * rectangle.x2;
+    const bottom = background.height * rectangle.y2;
     const width = right - left;
     const height = bottom - top;
     return new CustomFabricRect({
@@ -648,7 +656,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
             <Grid container item xs direction="column" justify="flex-start" alignItems="flex-start">
               <Grid item xs>
                 <Button variant="contained" id="addmore" color="primary" onClick={this.addNew}>
-                  {' '}
                   Add More Shapes
                 </Button>
               </Grid>
@@ -659,8 +666,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
                   color="primary"
                   onClick={this.deleteShapes}
                 >
-                  {' '}
-                  Delete Selected Object{' '}
+                  Delete Selected Object
                 </Button>
               </Grid>
               <Grid item xs>
@@ -670,8 +676,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
                   color="primary"
                   onClick={this.multiSelect}
                 >
-                  {' '}
-                  Select All{' '}
+                  Select All
                 </Button>
               </Grid>
               <Grid item xs>
@@ -681,7 +686,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
                   color="primary"
                   onClick={this.discardActiveObject}
                 >
-                  {' '}
                   Discard Selection
                 </Button>
               </Grid>
