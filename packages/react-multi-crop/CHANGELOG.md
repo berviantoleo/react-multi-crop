@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.15.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.14.6...@berviantoleo/react-multi-crop@0.15.0) (2021-02-10)
+
+
+### Features
+
+* update to 1:1 image instead scaling ([6f6a293](https://github.com/berviantoleo/react-multi-crop/commit/6f6a293d80027e852bbd2d93588d4c1f59d78e0e)), closes [#194](https://github.com/berviantoleo/react-multi-crop/issues/194)
+
+
+
+
+
 ## [0.14.6](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.14.5...@berviantoleo/react-multi-crop@0.14.6) (2021-02-09)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop
