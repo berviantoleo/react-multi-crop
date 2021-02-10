@@ -11,8 +11,8 @@ export interface IOutputData extends ICoord {
     canvasElement?: HTMLCanvasElement | null;
 }
 export interface IInputProps {
-    value: string | any;
-    name: string;
+    value?: string | any;
+    name?: string;
     onChange(value: Array<IOutputData>): void;
 }
 export interface IReactMultiCropProps {
