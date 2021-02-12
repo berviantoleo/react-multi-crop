@@ -15,7 +15,7 @@
     "cross-env": "^7.0.3",
     "husky": "^5.0.9",
     "lerna": "^3.22.1",
-    "vuepress": "^1.8.0"
+    "vuepress": "^1.8.1"
   },
   "husky": {
     "hooks": {
