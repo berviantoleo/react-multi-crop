@@ -28,15 +28,18 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
-      - name: Prepare package
-        run: |
           yarn bootstrap
-      - name: Lint Test Package
+      - name: Lint & Test Package
         run: |
           yarn lerna run lint --scope @berviantoleo/react-multi-crop
-      - name: Test Package
-        run: |
           yarn lerna run test --scope @berviantoleo/react-multi-crop
+      - name: E2E demo
+        run: |
+          yarn lerna run dev:ci --scope=@berviantoleo/react-component-multi-crop-demo
+        env:
+          SKIP_PREFLIGHT_CHECK: true
+          BROWSER: "none"
+          PUBLIC_URL: "/"
       - name: Upload to Codecov
         run: |
            bash <(curl -s https://codecov.io/bash)
@@ -67,8 +70,6 @@ jobs:
       - name: Install dependencies
         run: |
           yarn
-      - name: Prepare package
-        run: |
           yarn bootstrap
       - name: Build Package
         run: |
