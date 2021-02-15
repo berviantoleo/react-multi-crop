@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.10](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.8.9...@berviantoleo/react-component-multi-crop-demo@0.8.10) (2021-02-12)
+
+
+### Bug Fixes
+
+* add e2e test at demo ([cb2ebbd](https://github.com/berviantoleo/react-multi-crop/commit/cb2ebbdf49e15083acec56f3689c14a81a7c39f8))
+
+
+
+
+
 ## [0.8.9](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.8.8...@berviantoleo/react-component-multi-crop-demo@0.8.9) (2021-02-12)
 
 
