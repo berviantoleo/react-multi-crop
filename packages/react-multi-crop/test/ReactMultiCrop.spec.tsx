@@ -58,6 +58,7 @@ test('Output Handler', async () => {
       height={800}
       input={{
         name: 'multicrop',
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onChange: function (value: any) {
           console.log(value);
           const newObject = value[0];
