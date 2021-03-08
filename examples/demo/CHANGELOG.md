@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.19](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.8.18...@berviantoleo/react-component-multi-crop-demo@0.8.19) (2021-03-08)
+
+
+### Bug Fixes
+
+* upgrade lerna and remove prop-types from peer and dev-deps ([96c85ac](https://github.com/berviantoleo/react-multi-crop/commit/96c85acdbd51bd82cf60110c84626672372b1c7b))
+
+
+
+
+
 ## [0.8.18](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.8.17...@berviantoleo/react-component-multi-crop-demo@0.8.18) (2021-03-06)
 
 
