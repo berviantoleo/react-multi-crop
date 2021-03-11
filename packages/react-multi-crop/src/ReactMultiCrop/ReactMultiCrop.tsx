@@ -35,11 +35,13 @@ export interface IReactMultiCropProps {
   cropBackgroundOpacity?: number;
   showLabel?: boolean;
   showButton?: boolean;
+  zoomLevel?: number;
   includeDataUrl?: boolean;
   includeHtmlCanvas?: boolean;
   readonly?: boolean;
   onHover?(value: IOutputData | null): void;
   onSelect?(value: IOutputData | null): void;
+  zoomChanged?(value: number): void;
 }
 
 export interface IReactMultiCropStates {
@@ -99,6 +101,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     showButton: false,
     includeDataUrl: false,
     includeHtmlCanvas: false,
+    zoomChanged: null,
   };
 
   private color: string;
@@ -132,6 +135,14 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
 
   componentDidUpdate(): void {
     // this.changeImage();
+    const { canvas } = this.state;
+    if (canvas) {
+      const { zoomLevel } = this.props;
+      if (zoomLevel) {
+        canvas.setZoom(zoomLevel);
+        canvas.renderAll();
+      }
+    }
   }
 
   changeImage(): void {
@@ -153,11 +164,16 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas.width || !canvas.height || !img.height || !img.width) {
       return;
     }
+    const { zoomLevel } = this.props;
     // detect ratio
     const ratio = img.height / img.width;
     const newHeight = canvas.width * ratio;
     canvas.setHeight(newHeight);
-    canvas.setZoom(canvas.width / img.width);
+    if (zoomLevel) {
+      canvas.setZoom(zoomLevel);
+    } else {
+      canvas.setZoom(canvas.width / img.width);
+    }
     canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
     if (typeof initial === 'boolean' && initial) {
       this.setState({ initial: false }, this.initialObjects.bind(this));
@@ -168,9 +184,9 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     const parts = url.match(this.REGEXP_ORIGINS);
     return (
       parts !== null &&
-      (parts[1] !== location.protocol ||
-        parts[2] !== location.hostname ||
-        parts[3] !== location.port)
+      (parts[1] !== window.location.protocol ||
+        parts[2] !== window.location.hostname ||
+        parts[3] !== window.location.port)
     );
   }
 
@@ -240,6 +256,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     canvas.setZoom(zoom);
     options.e.preventDefault();
     options.e.stopPropagation();
+    const { zoomChanged } = this.props;
+    if (zoomChanged) {
+      zoomChanged(zoom);
+    }
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
@@ -463,7 +483,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           format: 'jpeg',
         });
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
       coord.dataUrl = dataUrl;
     }
@@ -478,7 +498,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           top: element.top,
         });
       } catch (error) {
-        console.log(error);
+        console.error(error);
       }
       coord.canvasElement = canvasElement;
     }
