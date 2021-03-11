@@ -16,8 +16,6 @@ Default.args = {
   includeHtmlCanvas: false,
   cropBackgroundColor: 'yellow',
   cropBackgroundOpacity: 0.3,
-  cropOutlineColor: 'black',
-  cropOutlineWidth: 3,
   input: {
     onChange(value) {
       console.log(value);

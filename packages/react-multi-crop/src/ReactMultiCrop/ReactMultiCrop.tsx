@@ -33,8 +33,6 @@ export interface IReactMultiCropProps {
   image?: string;
   cropBackgroundColor?: string;
   cropBackgroundOpacity?: number;
-  cropOutlineColor?: string;
-  cropOutlineWidth?: number;
   showLabel?: boolean;
   showButton?: boolean;
   includeDataUrl?: boolean;
@@ -96,8 +94,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     image: null,
     cropBackgroundColor: 'yellow',
     cropBackgroundOpacity: 0.5,
-    cropOutlineColor: 'yellow',
-    cropOutlineWidth: 5,
     readonly: false,
     showLabel: false,
     showButton: false,
@@ -107,9 +103,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
 
   private color: string;
   private opacity: number;
-  private strokeColor: string;
-  private strokeWidth: number;
-  private strokeDashArray: Array<number>;
   private REGEXP_ORIGINS = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
 
   constructor(props: IReactMultiCropProps) {
@@ -122,9 +115,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
 
     this.color = props.cropBackgroundColor || 'yellow';
     this.opacity = props.cropBackgroundOpacity || 0.5;
-    this.strokeColor = props.cropOutlineColor || 'yellow';
-    this.strokeWidth = props.cropOutlineWidth || 5;
-    this.strokeDashArray = [5, 5];
 
     this.keyboardHandler = this.keyboardHandler.bind(this);
     this.addNew = this.addNew.bind(this);
@@ -296,7 +286,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       width: width,
       height: height,
     });
-    canvas.uniScaleTransform = true;
     if (readonly) {
       // readonly mode
       canvas.selectionKey = undefined;
@@ -376,6 +365,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
+    const { readonly } = this.props;
     if (options && options.target) {
       const left = options.target.left;
       const top = options.target.top;
@@ -387,8 +377,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         width: width * options.target.scaleX,
         height: height * options.target.scaleY,
       };
-      const rect = this.createObjectByAttribute(attribute);
+      const rect = this.createObjectByAttribute(attribute, readonly || false);
       canvas.add(rect);
+      canvas.discardActiveObject();
+      canvas.setActiveObject(rect);
       canvas.renderAll();
       this.setState({ canvas }, this.setOutput);
     } else if (options && options.pointer) {
@@ -400,14 +392,16 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         width: 100,
         height: 100,
       };
-      const rect = this.createObjectByAttribute(attribute);
+      const rect = this.createObjectByAttribute(attribute, readonly || false);
       canvas.add(rect);
+      canvas.discardActiveObject();
+      canvas.setActiveObject(rect);
       canvas.renderAll();
       this.setState({ canvas }, this.setOutput);
     }
   }
 
-  createObjectByAttribute(attribute: IAttribute): CustomFabricRect {
+  createObjectByAttribute(attribute: IAttribute, readonly: boolean): CustomFabricRect {
     return new CustomFabricRect({
       left: attribute.left,
       top: attribute.top,
@@ -416,10 +410,13 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       fill: this.color,
       opacity: this.opacity,
       id: null,
-      strokeDashArray: this.strokeDashArray,
-      stroke: this.strokeColor,
-      strokeWidth: this.strokeWidth,
+      strokeWidth: 0,
+      strokeUniform: true,
       lockRotation: true,
+      lockMovementX: readonly,
+      lockMovementY: readonly,
+      lockScalingX: readonly,
+      lockScalingY: readonly,
     });
   }
 
@@ -576,10 +573,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       fill: this.color,
       opacity: this.opacity,
       id: coor.id,
-      strokeDashArray: this.strokeDashArray,
-      stroke: this.strokeColor,
-      strokeWidth: this.strokeWidth,
+      strokeWidth: 0,
+      strokeUniform: true,
       lockRotation: true,
+      hasBorders: false,
       lockMovementX: readonly,
       lockMovementY: readonly,
       lockScalingX: readonly,
