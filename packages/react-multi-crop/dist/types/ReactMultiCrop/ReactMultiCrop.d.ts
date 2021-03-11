@@ -25,8 +25,6 @@ export interface IReactMultiCropProps {
     image?: string;
     cropBackgroundColor?: string;
     cropBackgroundOpacity?: number;
-    cropOutlineColor?: string;
-    cropOutlineWidth?: number;
     showLabel?: boolean;
     showButton?: boolean;
     includeDataUrl?: boolean;
@@ -76,8 +74,6 @@ declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMulti
         image: null;
         cropBackgroundColor: string;
         cropBackgroundOpacity: number;
-        cropOutlineColor: string;
-        cropOutlineWidth: number;
         readonly: boolean;
         showLabel: boolean;
         showButton: boolean;
@@ -86,9 +82,6 @@ declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMulti
     };
     private color;
     private opacity;
-    private strokeColor;
-    private strokeWidth;
-    private strokeDashArray;
     private REGEXP_ORIGINS;
     constructor(props: IReactMultiCropProps);
     componentDidMount(): void;
@@ -106,7 +99,7 @@ declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMulti
     initialCanvas(): void;
     addNew(): void;
     doubleClickEvent(options: any): void;
-    createObjectByAttribute(attribute: IAttribute): CustomFabricRect;
+    createObjectByAttribute(attribute: IAttribute, readonly: boolean): CustomFabricRect;
     shapetoStructureData(element: CustomFabricRect): IOutputData | null;
     deleteShapes(): void;
     setOutput(): void;
