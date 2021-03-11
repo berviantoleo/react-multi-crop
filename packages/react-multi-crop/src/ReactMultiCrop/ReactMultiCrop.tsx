@@ -219,8 +219,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
     const { record, readonly } = this.props;
     if (record) {
-      const setOutput = this.setOutput.bind(this);
-      const setStateOf = this.setState.bind(this);
       const inputObject = record.clippings;
       const createObject = this.createObject.bind(this);
       if (
@@ -236,7 +234,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         });
       }
       canvas.renderAll();
-      setStateOf({ canvas }, setOutput);
+      this.setOutput();
     } else {
       console.log('Not have any record. Skipped.');
     }
@@ -357,8 +355,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       this.isDragging = false;
       this.selection = true;
     });
-    const initialImg = this.initialImage.bind(this);
-    this.setState({ canvas }, initialImg);
+    this.setState({ canvas }, this.initialImage.bind(this));
   }
 
   addNew(): void {
@@ -376,7 +373,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
     canvas.add(rect);
     canvas.renderAll();
-    this.setState({ canvas }, this.setOutput);
+    this.setOutput();
   }
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
@@ -402,7 +399,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.discardActiveObject();
       canvas.setActiveObject(rect);
       canvas.renderAll();
-      this.setState({ canvas }, this.setOutput);
+      this.setOutput();
     } else if (options && options.pointer) {
       const left = options.absolutePointer.x;
       const top = options.absolutePointer.y;
@@ -417,7 +414,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.discardActiveObject();
       canvas.setActiveObject(rect);
       canvas.renderAll();
-      this.setState({ canvas }, this.setOutput);
+      this.setOutput();
     }
   }
 
@@ -531,7 +528,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.getActiveObjects().forEach(function (element) {
         canvas.remove(element);
       });
-      this.setState({ canvas }, this.setOutput);
+      this.setOutput();
     }
   }
 
