@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.8.21](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.8.20...@berviantoleo/react-component-multi-crop-demo@0.8.21) (2021-03-11)
+
+
+### Bug Fixes
+
+* Add Auto Active when Create/Duplicate ([10d85c4](https://github.com/berviantoleo/react-multi-crop/commit/10d85c4ec1e4f098555e07bc9c9b2bba4a09aafe))
+
+
+
+
+
 ## [0.8.20](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.8.19...@berviantoleo/react-component-multi-crop-demo@0.8.20) (2021-03-09)
 
 
