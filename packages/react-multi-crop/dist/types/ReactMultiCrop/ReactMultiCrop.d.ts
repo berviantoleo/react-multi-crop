@@ -27,11 +27,13 @@ export interface IReactMultiCropProps {
     cropBackgroundOpacity?: number;
     showLabel?: boolean;
     showButton?: boolean;
+    zoomLevel?: number;
     includeDataUrl?: boolean;
     includeHtmlCanvas?: boolean;
     readonly?: boolean;
     onHover?(value: IOutputData | null): void;
     onSelect?(value: IOutputData | null): void;
+    zoomChanged?(value: number): void;
 }
 export interface IReactMultiCropStates {
     canvas: fabric.Canvas | null;
@@ -79,6 +81,7 @@ declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMulti
         showButton: boolean;
         includeDataUrl: boolean;
         includeHtmlCanvas: boolean;
+        zoomChanged: null;
     };
     private color;
     private opacity;
