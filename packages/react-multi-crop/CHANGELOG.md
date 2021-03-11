@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.16.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.15.13...@berviantoleo/react-multi-crop@0.16.0) (2021-03-11)
+
+
+### Features
+
+* add zoom controlled by parent ([b444cc8](https://github.com/berviantoleo/react-multi-crop/commit/b444cc8553354982b2f3140cf4c48493aa891c3a))
+
+
+
+
+
 ## [0.15.13](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.15.12...@berviantoleo/react-multi-crop@0.15.13) (2021-03-11)
 
 
