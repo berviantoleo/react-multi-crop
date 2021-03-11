@@ -1,4 +1,4 @@
-# ReactMultiCrop
+# React Multi Crop (ReactMultiCrop)
 
 Easy and extensible react component to crop as multiple image
 
@@ -9,8 +9,12 @@ Easy and extensible react component to crop as multiple image
 | ![Release](https://github.com/berviantoleo/react-multi-crop/workflows/Release/badge.svg) | [![codecov](https://codecov.io/gh/berviantoleo/react-multi-crop/branch/master/graph/badge.svg?token=sGqoJBg260)](https://codecov.io/gh/berviantoleo/react-multi-crop) |
 
 ## How to Use
+### Sample (Recommended) - Codesandbox.io
 
-### in react-admin
+* [Codesandbox.io - Typescript](https://codesandbox.io/s/react-crop-typescript-5jmo0)
+* ~~[Codesandbox.io - Js (Legacy)](https://codesandbox.io/s/react-crop-demo-9hjxs)~~ : __Discontinued__
+
+### in `react-admin`
 
 ```jsx
 import { ReactMultiCrop } from '@berviantoleo/react-multi-crop';
@@ -23,7 +27,7 @@ import { Field } from 'redux-form';
 </SimpleForm>
 ```
 
-### in react-admin depend on another field for image showing
+### in `react-admin` & `redux-form` depend on another field for image showing
 
 ```jsx
 import { ReactMultiCrop } from '@berviantoleo/react-multi-crop';
@@ -36,11 +40,6 @@ import { Field, formValues } from 'redux-form';
 </SimpleForm>
 ```
 
-### another sample
-
-[Codesandbox.io - Ts](https://codesandbox.io/s/react-crop-typescript-5jmo0)
-[Codesandbox.io - Js (Legacy)](https://codesandbox.io/s/react-crop-demo-9hjxs)
-
 ## Feature
 
 1. Input, basically no need any input, but in `react-admin`, we provide to read `record.image` field, if you need another field, you should update the code, also in `redux-form`, we also provide to read `image` prop. That prop will show an image in a canvas that will be used for croping.
@@ -48,10 +47,6 @@ import { Field, formValues } from 'redux-form';
 3. Keyboard event, `delete` will delete your current pointing (active) of box-crop.
 4. Mouse event, `double click` into box-crop will duplicate your box-crop.
 5. Also there are some action in button that can be used, add shape (box-crop), delete selected object (box-crop), select all (box-crop), and discard current active selection (box-crop).
-
-## NOTICE
-
-ReactMultiCrop component may very spesific to build and support react-admin. But also compatible with redux-form.
 
 ## LICENSE
 
@@ -83,4 +78,3 @@ SOFTWARE.
 ## Contact Person
 
 Email: bervianto.leo@gmail.com
-
