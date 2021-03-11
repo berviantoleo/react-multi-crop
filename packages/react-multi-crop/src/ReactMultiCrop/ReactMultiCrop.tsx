@@ -372,7 +372,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       return;
     }
     canvas.add(rect);
-    canvas.renderAll();
     this.setOutput();
   }
 
@@ -398,7 +397,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.add(rect);
       canvas.discardActiveObject();
       canvas.setActiveObject(rect);
-      canvas.renderAll();
+      canvas.requestRenderAll();
       this.setOutput();
     } else if (options && options.pointer) {
       const left = options.absolutePointer.x;
@@ -413,7 +412,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.add(rect);
       canvas.discardActiveObject();
       canvas.setActiveObject(rect);
-      canvas.renderAll();
+      canvas.requestRenderAll();
       this.setOutput();
     }
   }
