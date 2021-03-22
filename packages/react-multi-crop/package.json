@@ -60,7 +60,7 @@
     "node-sass": "^5.0.0",
     "prettier": "^2.2.1",
     "react-test-renderer": "^17.0.1",
-    "rollup": "^2.41.4",
+    "rollup": "^2.42.1",
     "rollup-plugin-delete": "^2.0.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-sizes": "^1.0.4",
