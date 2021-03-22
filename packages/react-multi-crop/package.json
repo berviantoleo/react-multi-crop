@@ -48,6 +48,7 @@
     "@testing-library/react": "^11.2.3",
     "@types/fabric": "^4.2.3",
     "@types/jest": "^26.0.21",
+    "@types/uuid": "^8.3.0",
     "@typescript-eslint/eslint-plugin": "^4.18.0",
     "@typescript-eslint/parser": "^4.18.0",
     "babel-jest": "^26.6.3",
@@ -79,7 +80,8 @@
     "@material-ui/core": "^4.11.3",
     "fabric": "^4.3.1",
     "react": "^17.0.1",
-    "react-dom": "^17.0.1"
+    "react-dom": "^17.0.1",
+    "uuid": "^8.3.2"
   },
   "license": "MIT",
   "version": "0.17.1",
