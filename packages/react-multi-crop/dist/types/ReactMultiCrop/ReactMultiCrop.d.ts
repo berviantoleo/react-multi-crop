@@ -71,30 +71,7 @@ export declare class CustomFabricRect extends fabric.Rect {
     constructor(options?: ICustomFabricRect);
 }
 declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
-    static defaultProps: {
-        id: string;
-        width: number;
-        height: number;
-        input: null;
-        source: string;
-        record: {
-            image: null;
-            clippings: never[];
-        };
-        image: null;
-        cropBackgroundColor: string;
-        cropBackgroundOpacity: number;
-        readonly: boolean;
-        borderColor: string;
-        cornerColor: string;
-        cornerSize: number;
-        transparentCorners: boolean;
-        showLabel: boolean;
-        showButton: boolean;
-        includeDataUrl: boolean;
-        includeHtmlCanvas: boolean;
-        zoomChanged: null;
-    };
+    static defaultProps: IReactMultiCropProps;
     private color;
     private opacity;
     private REGEXP_ORIGINS;
