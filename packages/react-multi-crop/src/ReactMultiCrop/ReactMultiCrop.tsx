@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { fabric } from 'fabric';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface IRecordProps {
   image?: string;
@@ -14,6 +15,7 @@ export interface IOutputData extends ICoord {
   deletedAt?: string;
   dataUrl?: string | null;
   canvasElement?: HTMLCanvasElement | null;
+  objectId: string;
 }
 
 export interface IInputProps {
@@ -43,6 +45,7 @@ export interface IReactMultiCropProps {
   cornerColor?: string;
   cornerSize?: number;
   transparentCorners?: boolean;
+  activeObject?: string;
   onHover?(value: IOutputData | null): void;
   onSelect?(value: IOutputData | null): void;
   zoomChanged?(value: number): void;
@@ -78,14 +81,17 @@ export interface IAttribute {
 
 export interface ICustomFabricRect extends fabric.IRectOptions {
   id: string | null;
+  objectId: string;
 }
 
 export class CustomFabricRect extends fabric.Rect {
   public id: string | null = null;
+  public objectId = '';
   constructor(options?: ICustomFabricRect) {
     super(options);
     if (options) {
       this.id = options.id;
+      this.objectId = options.objectId;
     }
   }
 }
@@ -150,11 +156,26 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     // this.changeImage();
     const { canvas } = this.state;
     if (canvas) {
+      const { zoomLevel, activeObject } = this.props;
       const prevZoomLevel = prevProps.zoomLevel;
-      const { zoomLevel } = this.props;
       if (prevZoomLevel !== zoomLevel && zoomLevel && zoomLevel > 0) {
         canvas.setZoom(zoomLevel);
         canvas.renderAll();
+      }
+
+      // prev active object
+      const prevActive = prevProps.activeObject;
+      if (prevActive !== activeObject && activeObject) {
+        console.log(activeObject);
+        const dataObjects = canvas.getObjects();
+        const allSelected = dataObjects.filter(
+          (obj: fabric.Object) => (obj as CustomFabricRect).objectId === activeObject,
+        );
+        canvas.discardActiveObject();
+        for (const objectSelect of allSelected) {
+          canvas.setActiveObject(objectSelect);
+        }
+        canvas.requestRenderAll();
       }
     }
   }
@@ -261,7 +282,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           }
         }
         if (totalRendered > 0) {
-          // canvas.requestRenderAll();
+          // canvas.renderAll();
           this.setOutput();
         }
       }
@@ -482,6 +503,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       lockMovementY: readonly,
       lockScalingX: readonly,
       lockScalingY: readonly,
+      objectId: uuidv4(),
     });
   }
 
@@ -514,6 +536,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     const rectangle = { x1: x1, y1: y1, x2: x2, y2: y2 };
     const coord: IOutputData = {
       id: element.id,
+      objectId: element.objectId,
       rect: JSON.stringify(rectangle),
     };
     // dataUrl
@@ -651,6 +674,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       cornerColor: attribute.cornerColor,
       cornerSize: attribute.cornerSize,
       transparentCorners: attribute.transparentCorners,
+      objectId: uuidv4(),
     });
     return newObject;
   }
