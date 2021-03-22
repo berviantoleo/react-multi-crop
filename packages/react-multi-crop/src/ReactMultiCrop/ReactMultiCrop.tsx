@@ -145,13 +145,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  componentDidUpdate(
-    prevProps: IReactMultiCropProps,
-    // eslint-disable-next-line @typescript-eslint/no-unused-vars
-    prevState: IReactMultiCropStates,
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unused-vars
-    snapshot: any,
-  ): void {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  componentDidUpdate(prevProps: any): void {
     // this.changeImage();
     const { canvas } = this.state;
     if (canvas) {
