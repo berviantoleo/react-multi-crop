@@ -9,6 +9,7 @@ export interface IOutputData extends ICoord {
     deletedAt?: string;
     dataUrl?: string | null;
     canvasElement?: HTMLCanvasElement | null;
+    objectId: string;
 }
 export interface IInputProps {
     value?: string | any;
@@ -35,6 +36,7 @@ export interface IReactMultiCropProps {
     cornerColor?: string;
     cornerSize?: number;
     transparentCorners?: boolean;
+    activeObject?: string;
     onHover?(value: IOutputData | null): void;
     onSelect?(value: IOutputData | null): void;
     zoomChanged?(value: number): void;
@@ -65,9 +67,11 @@ export interface IAttribute {
 }
 export interface ICustomFabricRect extends fabric.IRectOptions {
     id: string | null;
+    objectId: string;
 }
 export declare class CustomFabricRect extends fabric.Rect {
     id: string | null;
+    objectId: string;
     constructor(options?: ICustomFabricRect);
 }
 declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
