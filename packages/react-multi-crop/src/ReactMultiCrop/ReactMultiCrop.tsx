@@ -91,29 +91,29 @@ export class CustomFabricRect extends fabric.Rect {
 }
 
 class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
-  public static defaultProps = {
+  public static defaultProps: IReactMultiCropProps = {
     id: 'canvas',
     width: 800,
     height: 800,
-    input: null,
+    input: undefined,
     source: 'react-crop-form',
     record: {
-      image: null,
+      image: undefined,
       clippings: [],
     },
-    image: null,
+    image: undefined,
     cropBackgroundColor: 'yellow',
     cropBackgroundOpacity: 0.5,
     readonly: false,
     borderColor: 'black',
-    cornerColor: 'gray',
+    cornerColor: 'black',
     cornerSize: 13,
     transparentCorners: true,
     showLabel: false,
     showButton: false,
     includeDataUrl: false,
     includeHtmlCanvas: false,
-    zoomChanged: null,
+    zoomChanged: undefined,
   };
 
   private color: string;
