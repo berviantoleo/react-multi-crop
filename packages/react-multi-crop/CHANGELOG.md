@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.17.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.16.6...@berviantoleo/react-multi-crop@0.17.0) (2021-03-22)
+
+
+### Bug Fixes
+
+* Fix canvas not rendered ([f459296](https://github.com/berviantoleo/react-multi-crop/commit/f459296886ef2bb05f78e24f4958af6bf604f54e))
+
+
+### Features
+
+* add custom attr ([6bd05dd](https://github.com/berviantoleo/react-multi-crop/commit/6bd05dda7134a408b30a74cfd393576db97f94dc))
+
+
+
+
+
 ## [0.16.6](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.16.5...@berviantoleo/react-multi-crop@0.16.6) (2021-03-22)
 
 
