@@ -3,6 +3,22 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.18.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.17.1...@berviantoleo/react-multi-crop@0.18.0) (2021-03-22)
+
+
+### Bug Fixes
+
+* add deps ([bae1822](https://github.com/berviantoleo/react-multi-crop/commit/bae18228a65f19a086d8d8fcdb44ae194b85f962))
+
+
+### Features
+
+* add active click by props ([3b414af](https://github.com/berviantoleo/react-multi-crop/commit/3b414af78d817ef8d28ac702f56f77153591167b))
+
+
+
+
+
 ## [0.17.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.17.0...@berviantoleo/react-multi-crop@0.17.1) (2021-03-22)
 
 
