@@ -39,6 +39,10 @@ export interface IReactMultiCropProps {
   includeDataUrl?: boolean;
   includeHtmlCanvas?: boolean;
   readonly?: boolean;
+  borderColor?: string;
+  cornerColor?: string;
+  cornerSize?: number;
+  transparentCorners?: boolean;
   onHover?(value: IOutputData | null): void;
   onSelect?(value: IOutputData | null): void;
   zoomChanged?(value: number): void;
@@ -62,10 +66,14 @@ export interface ICoord {
 }
 
 export interface IAttribute {
-  left: number;
-  top: number;
-  height: number;
-  width: number;
+  left?: number;
+  top?: number;
+  height?: number;
+  width?: number;
+  borderColor?: string;
+  cornerColor?: string;
+  cornerSize?: number;
+  transparentCorners?: boolean;
 }
 
 export interface ICustomFabricRect extends fabric.IRectOptions {
@@ -97,6 +105,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     cropBackgroundColor: 'yellow',
     cropBackgroundOpacity: 0.5,
     readonly: false,
+    borderColor: 'black',
+    cornerColor: 'gray',
+    cornerSize: 13,
+    transparentCorners: true,
     showLabel: false,
     showButton: false,
     includeDataUrl: false,
@@ -133,12 +145,19 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  componentDidUpdate(): void {
+  componentDidUpdate(
+    prevProps: IReactMultiCropProps,
+    // eslint-disable-next-line @typescript-eslint/no-unused-vars
+    prevState: IReactMultiCropStates,
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/no-unused-vars
+    snapshot: any,
+  ): void {
     // this.changeImage();
     const { canvas } = this.state;
     if (canvas) {
+      const prevZoomLevel = prevProps.zoomLevel;
       const { zoomLevel } = this.props;
-      if (zoomLevel) {
+      if (prevZoomLevel !== zoomLevel && zoomLevel && zoomLevel > 0) {
         canvas.setZoom(zoomLevel);
         canvas.renderAll();
       }
@@ -217,24 +236,40 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    const { record, readonly } = this.props;
+    const {
+      record,
+      readonly,
+      borderColor,
+      cornerColor,
+      cornerSize,
+      transparentCorners,
+    } = this.props;
     if (record) {
       const inputObject = record.clippings;
-      const createObject = this.createObject.bind(this);
       if (
         Array.isArray(inputObject) &&
         inputObject.length > 0 &&
         typeof inputObject[0] === 'object'
       ) {
-        inputObject.forEach(function (coord) {
-          const rect = createObject(canvas, coord, readonly || false);
+        const attribute: IAttribute = {
+          borderColor: borderColor,
+          cornerColor: cornerColor,
+          cornerSize: cornerSize,
+          transparentCorners: transparentCorners,
+        };
+        let totalRendered = 0;
+        for (const coord of inputObject) {
+          const rect = this.createObject(canvas, coord, attribute, readonly || false);
           if (rect) {
             canvas.add(rect);
+            totalRendered += 1;
           }
-        });
+        }
+        if (totalRendered > 0) {
+          // canvas.requestRenderAll();
+          this.setOutput();
+        }
       }
-      canvas.renderAll();
-      this.setOutput();
     } else {
       console.log('Not have any record. Skipped.');
     }
@@ -363,11 +398,18 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
+    const { borderColor, cornerColor, cornerSize, transparentCorners } = this.props;
     const coor: ICoord = {
       id: null,
       rect: { x1: 0, y1: 0, x2: 0.2, y2: 0.2 },
     };
-    const rect = this.createObject(canvas, coor, false);
+    const attribute: IAttribute = {
+      borderColor: borderColor,
+      cornerColor: cornerColor,
+      cornerSize: cornerSize,
+      transparentCorners: transparentCorners,
+    };
+    const rect = this.createObject(canvas, coor, attribute, false);
     if (!rect) {
       return;
     }
@@ -381,7 +423,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    const { readonly } = this.props;
+    const { readonly, borderColor, cornerColor, cornerSize, transparentCorners } = this.props;
     if (options && options.target) {
       const left = options.target.left;
       const top = options.target.top;
@@ -392,6 +434,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         top: top + 50,
         width: width * options.target.scaleX,
         height: height * options.target.scaleY,
+        borderColor: borderColor,
+        cornerColor: cornerColor,
+        cornerSize: cornerSize,
+        transparentCorners: transparentCorners,
       };
       const rect = this.createObjectByAttribute(attribute, readonly || false);
       canvas.add(rect);
@@ -407,6 +453,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         top: top,
         width: 100,
         height: 100,
+        borderColor: borderColor,
+        cornerColor: cornerColor,
+        cornerSize: cornerSize,
+        transparentCorners: transparentCorners,
       };
       const rect = this.createObjectByAttribute(attribute, readonly || false);
       canvas.add(rect);
@@ -423,6 +473,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       top: attribute.top,
       width: attribute.width,
       height: attribute.height,
+      borderColor: attribute.borderColor,
+      cornerColor: attribute.cornerColor,
+      cornerSize: attribute.cornerSize,
+      transparentCorners: attribute.transparentCorners,
       fill: this.color,
       opacity: this.opacity,
       id: null,
@@ -556,6 +610,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   createObject(
     canvas: fabric.Canvas | null,
     coor: ICoord,
+    attribute: IAttribute,
     readonly: boolean,
   ): CustomFabricRect | null {
     if (!canvas || !canvas.backgroundImage) {
@@ -581,7 +636,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     const bottom = background.height * rectangle.y2;
     const width = right - left;
     const height = bottom - top;
-    return new CustomFabricRect({
+    const newObject = new CustomFabricRect({
       left: left,
       top: top,
       width: width,
@@ -597,7 +652,12 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       lockMovementY: readonly,
       lockScalingX: readonly,
       lockScalingY: readonly,
+      borderColor: attribute.borderColor,
+      cornerColor: attribute.cornerColor,
+      cornerSize: attribute.cornerSize,
+      transparentCorners: attribute.transparentCorners,
     });
+    return newObject;
   }
 
   multiSelect(): void {
