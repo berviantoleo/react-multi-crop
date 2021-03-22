@@ -31,6 +31,10 @@ export interface IReactMultiCropProps {
     includeDataUrl?: boolean;
     includeHtmlCanvas?: boolean;
     readonly?: boolean;
+    borderColor?: string;
+    cornerColor?: string;
+    cornerSize?: number;
+    transparentCorners?: boolean;
     onHover?(value: IOutputData | null): void;
     onSelect?(value: IOutputData | null): void;
     zoomChanged?(value: number): void;
@@ -50,10 +54,14 @@ export interface ICoord {
     rect: IRectCoord | string;
 }
 export interface IAttribute {
-    left: number;
-    top: number;
-    height: number;
-    width: number;
+    left?: number;
+    top?: number;
+    height?: number;
+    width?: number;
+    borderColor?: string;
+    cornerColor?: string;
+    cornerSize?: number;
+    transparentCorners?: boolean;
 }
 export interface ICustomFabricRect extends fabric.IRectOptions {
     id: string | null;
@@ -77,6 +85,10 @@ declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMulti
         cropBackgroundColor: string;
         cropBackgroundOpacity: number;
         readonly: boolean;
+        borderColor: string;
+        cornerColor: string;
+        cornerSize: number;
+        transparentCorners: boolean;
         showLabel: boolean;
         showButton: boolean;
         includeDataUrl: boolean;
@@ -88,7 +100,7 @@ declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMulti
     private REGEXP_ORIGINS;
     constructor(props: IReactMultiCropProps);
     componentDidMount(): void;
-    componentDidUpdate(): void;
+    componentDidUpdate(prevProps: any): void;
     changeImage(): void;
     loadImage(img: fabric.Image): void;
     isCrossOriginURL(url: string): boolean;
@@ -106,7 +118,7 @@ declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMulti
     shapetoStructureData(element: CustomFabricRect): IOutputData | null;
     deleteShapes(): void;
     setOutput(): void;
-    createObject(canvas: fabric.Canvas | null, coor: ICoord, readonly: boolean): CustomFabricRect | null;
+    createObject(canvas: fabric.Canvas | null, coor: ICoord, attribute: IAttribute, readonly: boolean): CustomFabricRect | null;
     multiSelect(): void;
     discardActiveObject(): void;
     keyboardHandler(event: React.KeyboardEvent<HTMLDivElement>): void;
