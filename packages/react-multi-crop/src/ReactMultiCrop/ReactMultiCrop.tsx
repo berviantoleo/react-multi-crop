@@ -166,7 +166,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       // prev active object
       const prevActive = prevProps.activeObject;
       if (prevActive !== activeObject && activeObject) {
-        console.log(activeObject);
         const dataObjects = canvas.getObjects();
         const allSelected = dataObjects.filter(
           (obj: fabric.Object) => (obj as CustomFabricRect).objectId === activeObject,
@@ -360,13 +359,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.selectionKey = undefined;
       const mouseHoverHandler = this.mouseHover.bind(this);
       const mouseHoverOutHandler = this.mouseOut.bind(this);
-      const selectionObjectHandler = this.selectionHandler.bind(this);
-      const selectionObjectClearHandler = this.selectionClearHandler.bind(this);
       canvas.on('mouse:over', mouseHoverHandler);
       canvas.on('mouse:out', mouseHoverOutHandler);
-      canvas.on('selection:created', selectionObjectHandler);
-      canvas.on('selection:updated', selectionObjectHandler);
-      canvas.on('selection:cleared', selectionObjectClearHandler);
     } else {
       // edit mode
       const doubleClickEvent = this.doubleClickEvent.bind(this);
@@ -375,6 +369,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.on('object:modified', objectModifiedEvent);
     }
     const zoomHandler = this.zoom.bind(this);
+    const selectionObjectHandler = this.selectionHandler.bind(this);
+    const selectionObjectClearHandler = this.selectionClearHandler.bind(this);
+    canvas.on('selection:created', selectionObjectHandler);
+    canvas.on('selection:updated', selectionObjectHandler);
+    canvas.on('selection:cleared', selectionObjectClearHandler);
     canvas.on('mouse:wheel', zoomHandler);
     // setup move drag: alt + click
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
