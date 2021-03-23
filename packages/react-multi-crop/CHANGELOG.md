@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.2](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.18.1...@berviantoleo/react-multi-crop@0.18.2) (2021-03-23)
+
+
+### Bug Fixes
+
+* move selection to all mode ([6352386](https://github.com/berviantoleo/react-multi-crop/commit/6352386af93c2df6ab31773580d407559a6b191e))
+
+
+
+
+
 ## [0.18.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.18.0...@berviantoleo/react-multi-crop@0.18.1) (2021-03-22)
 
 
