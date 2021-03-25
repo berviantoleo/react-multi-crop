@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.18.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.18.3...@berviantoleo/react-multi-crop@0.18.4) (2021-03-25)
+
+
+### Bug Fixes
+
+* fix the init object can't created ([5a5e265](https://github.com/berviantoleo/react-multi-crop/commit/5a5e2655ed6bc82b16c0faf66f296da8bedad307))
+
+
+
+
+
 ## [0.18.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.18.2...@berviantoleo/react-multi-crop@0.18.3) (2021-03-23)
 
 
