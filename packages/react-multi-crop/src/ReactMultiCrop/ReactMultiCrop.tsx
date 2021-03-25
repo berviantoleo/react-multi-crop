@@ -653,28 +653,17 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     const bottom = background.height * rectangle.y2;
     const width = right - left;
     const height = bottom - top;
-    const newObject = new CustomFabricRect({
+    const newAttribute: IAttribute = {
       left: left,
       top: top,
       width: width,
       height: height,
-      fill: this.color,
-      opacity: this.opacity,
-      id: coor.id,
-      strokeWidth: 0,
-      strokeUniform: true,
-      lockRotation: true,
-      hasBorders: false,
-      lockMovementX: readonly,
-      lockMovementY: readonly,
-      lockScalingX: readonly,
-      lockScalingY: readonly,
       borderColor: attribute.borderColor,
       cornerColor: attribute.cornerColor,
       cornerSize: attribute.cornerSize,
       transparentCorners: attribute.transparentCorners,
-      objectId: uuidv4(),
-    });
+    };
+    const newObject = this.createObjectByAttribute(newAttribute, readonly);
     return newObject;
   }
 
