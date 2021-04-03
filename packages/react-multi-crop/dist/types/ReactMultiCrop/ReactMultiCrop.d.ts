@@ -95,7 +95,7 @@ declare class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMulti
     initialCanvas(): void;
     addNew(): void;
     doubleClickEvent(options: any): void;
-    createObjectByAttribute(attribute: IAttribute, readonly: boolean): CustomFabricRect;
+    createObjectByAttribute(existingId: string | null, attribute: IAttribute, readonly: boolean): CustomFabricRect;
     shapetoStructureData(element: CustomFabricRect): IOutputData | null;
     deleteShapes(): void;
     setOutput(): void;
