@@ -454,7 +454,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         cornerSize: cornerSize,
         transparentCorners: transparentCorners,
       };
-      const rect = this.createObjectByAttribute(attribute, readonly || false);
+      const rect = this.createObjectByAttribute(null, attribute, readonly || false);
       canvas.add(rect);
       canvas.discardActiveObject();
       canvas.setActiveObject(rect);
@@ -473,7 +473,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         cornerSize: cornerSize,
         transparentCorners: transparentCorners,
       };
-      const rect = this.createObjectByAttribute(attribute, readonly || false);
+      const rect = this.createObjectByAttribute(null, attribute, readonly || false);
       canvas.add(rect);
       canvas.discardActiveObject();
       canvas.setActiveObject(rect);
@@ -482,7 +482,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  createObjectByAttribute(attribute: IAttribute, readonly: boolean): CustomFabricRect {
+  createObjectByAttribute(
+    existingId: string | null,
+    attribute: IAttribute,
+    readonly: boolean,
+  ): CustomFabricRect {
     return new CustomFabricRect({
       left: attribute.left,
       top: attribute.top,
@@ -494,7 +498,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       transparentCorners: attribute.transparentCorners,
       fill: this.color,
       opacity: this.opacity,
-      id: null,
+      id: existingId,
       strokeWidth: 0,
       strokeUniform: true,
       lockRotation: true,
@@ -663,7 +667,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       cornerSize: attribute.cornerSize,
       transparentCorners: attribute.transparentCorners,
     };
-    const newObject = this.createObjectByAttribute(newAttribute, readonly);
+    const newObject = this.createObjectByAttribute(coor.id, newAttribute, readonly);
     return newObject;
   }
 
