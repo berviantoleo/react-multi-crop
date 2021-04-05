@@ -6,14 +6,15 @@ Easy and extensible react component to crop as multiple image
 
 ## Build Status
 
-| Github Action | Codecov |
-|:-------------:|:-------:|
-| ![Release](https://github.com/berviantoleo/react-multi-crop/workflows/Release/badge.svg) | [![codecov](https://codecov.io/gh/berviantoleo/react-multi-crop/branch/master/graph/badge.svg?token=sGqoJBg260)](https://codecov.io/gh/berviantoleo/react-multi-crop) |
+| Github Action | Codecov | Netlify Status |
+|:-------------:|:-------:|:--------------:|
+| ![Release](https://github.com/berviantoleo/react-multi-crop/workflows/Release/badge.svg) | [![codecov](https://codecov.io/gh/berviantoleo/react-multi-crop/branch/master/graph/badge.svg?token=sGqoJBg260)](https://codecov.io/gh/berviantoleo/react-multi-crop) | [![Netlify Status](https://api.netlify.com/api/v1/badges/3e3a1664-31be-4997-9e91-b78bcf33a580/deploy-status)](https://app.netlify.com/sites/react-multi-crop/deploys) |
 
 ## How to Use
 ### Sample (Recommended) - Codesandbox.io
 
 * [Codesandbox.io - Typescript](https://codesandbox.io/s/react-crop-typescript-5jmo0)
+* [Demo](https://react-multi-crop.netlify.app/)
 * ~~[Codesandbox.io - Js (Legacy)](https://codesandbox.io/s/react-crop-demo-9hjxs)~~ : __Discontinued__
 
 ### in `react-admin`
