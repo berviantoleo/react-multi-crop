@@ -74,18 +74,6 @@ jobs:
       - name: Build Package
         run: |
           yarn lerna run build --scope @berviantoleo/react-multi-crop
-      - name: Build Documentation
-        run: |
-          yarn docs
-          yarn lerna run docs --scope @berviantoleo/react-multi-crop
-      - name: Commit changes
-        uses: EndBug/add-and-commit@v5
-        with:
-          author_name: Bervianto Leo Pratama
-          author_email: bervianto.leo@gmail.com
-          message: "chore(release): publish"
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -93,3 +81,12 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           yarn lerna publish --yes
+      - name: Build Documentation
+        run: |
+          yarn docs
+          yarn lerna run docs --scope @berviantoleo/react-multi-crop
+      - name: Deploy Docs 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.0
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.

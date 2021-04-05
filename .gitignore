@@ -3,3 +3,4 @@ lerna-debug.log
 coverage/
 .env
 *.ignore
+docs/
