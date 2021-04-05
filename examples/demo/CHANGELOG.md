@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.10.0...@berviantoleo/react-component-multi-crop-demo@0.10.1) (2021-04-05)
+
+
+### Bug Fixes
+
+* remove import because react 17 ([98c6aeb](https://github.com/berviantoleo/react-multi-crop/commit/98c6aeb998ef6152b3b758bba7bb16d37688ec79))
+
+
+
+
+
 # 0.10.0 (2021-04-05)
 
 
