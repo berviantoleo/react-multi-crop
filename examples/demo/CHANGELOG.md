@@ -3,6 +3,55 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# 0.10.0 (2021-04-05)
+
+
+### Bug Fixes
+
+* Add Auto Active when Create/Duplicate ([89e5d0d](https://github.com/berviantoleo/react-multi-crop/commit/89e5d0d2bd71673a999da75b6141cc6e3b3a3d68))
+* add e2e test at demo ([270116e](https://github.com/berviantoleo/react-multi-crop/commit/270116ee519c187bbfa1218dab035883136331f2))
+* change url ([ef4e1fe](https://github.com/berviantoleo/react-multi-crop/commit/ef4e1fe57a203df817f7d0797c83ae8826e45326))
+* manual sync version ([3995825](https://github.com/berviantoleo/react-multi-crop/commit/39958259f701543f4b665533e77ca040624193db))
+* move cypress to demo ([287861b](https://github.com/berviantoleo/react-multi-crop/commit/287861b4a1843c56c7417648dc2ffca2343d09dd))
+* resync ([85238a5](https://github.com/berviantoleo/react-multi-crop/commit/85238a578d6ae6c942496d8c8d210cf0ea1044fc))
+* update demo to latest react-component ([e5d732e](https://github.com/berviantoleo/react-multi-crop/commit/e5d732e18b442e6422ad983efd95596cb94d659c))
+* update dependencies ([6b0aa30](https://github.com/berviantoleo/react-multi-crop/commit/6b0aa3057249c9f6aa3b500648c61d3105b1652d))
+* update dependencies ([b4caae1](https://github.com/berviantoleo/react-multi-crop/commit/b4caae14b2b128d5de3e2f2ed4393a7c60ceef99))
+* update dependencies ([2458cef](https://github.com/berviantoleo/react-multi-crop/commit/2458cef41dbbfc97529729513214daa31ce4658b))
+* update dependencies ([e7d90df](https://github.com/berviantoleo/react-multi-crop/commit/e7d90df88271bb13fc7ce9d9e6e0aa9af5d1d5ee))
+* update dependencies ([e0f6ab1](https://github.com/berviantoleo/react-multi-crop/commit/e0f6ab128fe1e648dac8000b2ac7adfde2f7579b))
+* update dependencies ([bbe3f2d](https://github.com/berviantoleo/react-multi-crop/commit/bbe3f2de4ee462fb905d51811a03f216dd4e1cbe))
+* update dependencies ([d66b626](https://github.com/berviantoleo/react-multi-crop/commit/d66b6261818aa304431230d1612f5ec248dd0333))
+* update dependencies ([3135fd7](https://github.com/berviantoleo/react-multi-crop/commit/3135fd7249a21178386d071f887ec320be16316c))
+* update deps ([7f431bd](https://github.com/berviantoleo/react-multi-crop/commit/7f431bdf9dad4318e03897505866a41498ce23a4))
+* update deps ([8463789](https://github.com/berviantoleo/react-multi-crop/commit/8463789d3c166c06aa5d3c6cbe2b531b741d538b))
+* update deps ([f94cf08](https://github.com/berviantoleo/react-multi-crop/commit/f94cf08fdd9a04fa9125c83af44586b252467c80))
+* update deps ([83e4740](https://github.com/berviantoleo/react-multi-crop/commit/83e47402a1d11e11e0448e2174df18fd96455e4a))
+* update deps ([4002e31](https://github.com/berviantoleo/react-multi-crop/commit/4002e31ecde71d4bfbde779b7dd86590af91098f))
+* update deps ([765aa03](https://github.com/berviantoleo/react-multi-crop/commit/765aa037f5c31bdad0507d52a5c65faf9460a421))
+* update deps ([ccab3e6](https://github.com/berviantoleo/react-multi-crop/commit/ccab3e6d6519fb53c156cd9f5ef2d6701242448d))
+* update dev dependencies ([2b6cc4f](https://github.com/berviantoleo/react-multi-crop/commit/2b6cc4f78c7d03d3cb9b42e7feb4861a7c613a72))
+* update dev dependencies ([faf3d86](https://github.com/berviantoleo/react-multi-crop/commit/faf3d867b108a0106d84ac68833a51e3c649c26e))
+* update dev deps ([6edcb5f](https://github.com/berviantoleo/react-multi-crop/commit/6edcb5f786635eba0bee52f8f748584c29c6ebb5))
+* Update storybook to latest ([0d2ca0e](https://github.com/berviantoleo/react-multi-crop/commit/0d2ca0ec2249843fc7906ea10ddc9049fc5d16ea))
+* Update year ([f3676a0](https://github.com/berviantoleo/react-multi-crop/commit/f3676a07b3514ae93f6b042c8a3708dba8777f70))
+* upgrade lerna and remove prop-types from peer and dev-deps ([0183145](https://github.com/berviantoleo/react-multi-crop/commit/01831455b066a2a3d0d8bfd2a0dfcc384a4185ad))
+
+
+### Features
+
+* add examples ([852b357](https://github.com/berviantoleo/react-multi-crop/commit/852b357cdd1b0bb81b9b7439a3433b01acb1b047))
+* Change demo use ts ([70318dc](https://github.com/berviantoleo/react-multi-crop/commit/70318dcbcd8818f9716638f85e1c96fc40e316da))
+* new arch ([2465a03](https://github.com/berviantoleo/react-multi-crop/commit/2465a03f95a7deb5f58fd4d6ec0cb2219c0d3bf3))
+* remove unused/not required dependencies of demo ([623ef2f](https://github.com/berviantoleo/react-multi-crop/commit/623ef2f084460044ebc2db29fb90078b2b38a284))
+* update dependencies ([198bbad](https://github.com/berviantoleo/react-multi-crop/commit/198bbad58fb863efe0d3686ff6a216b4091cfcc5))
+* update fabric and rollup ([45970b6](https://github.com/berviantoleo/react-multi-crop/commit/45970b652a2532cc3f04425234aadcae58b75ea7))
+* upgrade react version for test ([a52ab6a](https://github.com/berviantoleo/react-multi-crop/commit/a52ab6a9aa91be3703fb6e2582dab0b7d1fa152e))
+
+
+
+
+
 ## [0.8.42](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.8.41...@berviantoleo/react-component-multi-crop-demo@0.8.42) (2021-04-05)
 
 **Note:** Version bump only for package @berviantoleo/react-component-multi-crop-demo
