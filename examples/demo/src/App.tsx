@@ -38,7 +38,9 @@ export default function App() {
         />
       </Grid>
       <Grid item xs>
-        <h2>Crop Result</h2>
+        <h3>React Multi Crop</h3>
+        <h4>By Bervianto Leo P - 2021</h4>
+        <h5>Crop Result</h5>
         {cropValue &&
           cropValue.map((objectData: any, i) => {
             let canvasElement = objectData.canvasElement.toDataURL();
