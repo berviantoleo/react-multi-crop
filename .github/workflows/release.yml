@@ -9,10 +9,10 @@ on:
 env:
   CI: true
 jobs:
-  test:
+  test-and-build:
     if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
             contains(github.event.head_commit.message, '[cd skip]')) }}
-    name: Test
+    name: Test and Build
     runs-on: ubuntu-18.04
     steps:
       - name: Checkout
@@ -43,38 +43,19 @@ jobs:
       - name: Upload to Codecov
         run: |
            bash <(curl -s https://codecov.io/bash)
-  release:
-    name: Release
-    if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) && github.event_name == 'push' }}
-    runs-on: ubuntu-18.04
-    needs: test
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: 12
-          registry-url: https://npm.pkg.github.com/
-          always-auth: true
+      - name: Build Package
+        run: |
+          yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Git Identity
+        if: ${{ github.event_name == 'push' }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Install dependencies
-        run: |
-          yarn
-          yarn bootstrap
-      - name: Build Package
-        run: |
-          yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Release
+        if: ${{ github.event_name == 'push' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -82,11 +63,14 @@ jobs:
         run: |
           yarn lerna publish --yes
       - name: Build Documentation
+        if: ${{ github.event_name == 'push' }}
         run: |
           yarn docs
           yarn lerna run docs --scope @berviantoleo/react-multi-crop
       - name: Deploy Docs 🚀
+        if: ${{ github.event_name == 'push' }}
         uses: JamesIves/github-pages-deploy-action@4.1.0
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: docs # The folder the action should deploy.
+
