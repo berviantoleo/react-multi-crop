@@ -29,7 +29,7 @@ Default.parameters = {
       component: 'Example load an image to cropper',
     },
     source: {
-      code: `<ReactMultiCrop image="https://picsum.photos/200" hideLabel />`,
+      code: `<ReactMultiCrop image="https://picsum.photos/800" hideLabel />`,
     },
   },
 };
