@@ -1,0 +1,394 @@
+version: 2
+updates:
+- package-ecosystem: npm
+  directory: "/"
+  schedule:
+    interval: daily
+    time: "08:00"
+    timezone: Asia/Jakarta
+  open-pull-requests-limit: 100
+  ignore:
+  - dependency-name: "@types/node"
+    versions:
+    - 14.14.24
+    - 14.14.25
+    - 14.14.26
+    - 14.14.28
+    - 14.14.30
+    - 14.14.31
+    - 14.14.32
+    - 14.14.33
+    - 14.14.34
+    - 14.14.35
+    - 14.14.36
+    - 14.14.37
+    - 14.14.39
+    - 15.0.0
+  - dependency-name: eslint-config-prettier
+    versions:
+    - 8.0.0
+    - 8.1.0
+    - 8.2.0
+    - 8.3.0
+  - dependency-name: "@storybook/addons"
+    versions:
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+    - 6.2.9
+  - dependency-name: eslint
+    versions:
+    - 7.19.0
+    - 7.20.0
+    - 7.21.0
+    - 7.22.0
+    - 7.23.0
+    - 7.24.0
+    - 7.25.0
+  - dependency-name: "@storybook/addon-essentials"
+    versions:
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+    - 6.2.9
+  - dependency-name: "@storybook/addon-storysource"
+    versions:
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+    - 6.2.9
+  - dependency-name: "@storybook/addon-links"
+    versions:
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+    - 6.2.9
+  - dependency-name: "@storybook/addon-knobs"
+    versions:
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+    - 6.2.9
+  - dependency-name: "@storybook/source-loader"
+    versions:
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+    - 6.2.9
+  - dependency-name: "@storybook/react"
+    versions:
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+    - 6.2.2
+    - 6.2.3
+    - 6.2.5
+    - 6.2.7
+    - 6.2.8
+    - 6.2.9
+  - dependency-name: "@testing-library/jest-dom"
+    versions:
+    - 5.11.10
+    - 5.12.0
+  - dependency-name: "@babel/core"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.1
+    - 7.13.10
+    - 7.13.13
+    - 7.13.14
+    - 7.13.15
+    - 7.13.16
+    - 7.13.8
+  - dependency-name: "@babel/runtime"
+    versions:
+    - 7.12.13
+    - 7.12.18
+    - 7.13.1
+    - 7.13.10
+    - 7.13.17
+    - 7.13.6
+    - 7.13.7
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: "@babel/cli"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+    - 7.13.10
+    - 7.13.14
+    - 7.13.16
+  - dependency-name: eslint-plugin-prettier
+    versions:
+    - 3.4.0
+  - dependency-name: rollup
+    versions:
+    - 2.38.1
+    - 2.38.2
+    - 2.38.3
+    - 2.38.5
+    - 2.39.0
+    - 2.39.1
+    - 2.40.0
+    - 2.41.2
+    - 2.41.4
+    - 2.42.1
+    - 2.42.3
+    - 2.42.4
+    - 2.43.1
+    - 2.44.0
+    - 2.45.1
+    - 2.45.2
+  - dependency-name: "@typescript-eslint/eslint-plugin"
+    versions:
+    - 4.14.2
+    - 4.15.0
+    - 4.15.1
+    - 4.15.2
+    - 4.16.1
+    - 4.17.0
+    - 4.18.0
+    - 4.19.0
+    - 4.20.0
+    - 4.21.0
+    - 4.22.0
+  - dependency-name: "@typescript-eslint/parser"
+    versions:
+    - 4.14.2
+    - 4.15.0
+    - 4.15.1
+    - 4.15.2
+    - 4.16.1
+    - 4.17.0
+    - 4.18.0
+    - 4.19.0
+    - 4.20.0
+    - 4.21.0
+    - 4.22.0
+  - dependency-name: cypress
+    versions:
+    - 6.4.0
+    - 6.5.0
+    - 6.6.0
+    - 6.7.1
+    - 6.8.0
+    - 7.0.0
+    - 7.0.1
+    - 7.1.0
+  - dependency-name: "@babel/preset-env"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+    - 7.13.10
+    - 7.13.12
+    - 7.13.15
+    - 7.13.5
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: eslint-plugin-react
+    versions:
+    - 7.23.1
+    - 7.23.2
+  - dependency-name: "@babel/plugin-transform-runtime"
+    versions:
+    - 7.12.13
+    - 7.12.15
+    - 7.12.17
+    - 7.13.1
+    - 7.13.10
+    - 7.13.15
+    - 7.13.6
+    - 7.13.7
+    - 7.13.8
+    - 7.13.9
+  - dependency-name: typescript
+    versions:
+    - 4.1.4
+    - 4.1.5
+    - 4.2.2
+    - 4.2.3
+    - 4.2.4
+  - dependency-name: fabric
+    versions:
+    - 4.3.1
+    - 4.4.0
+  - dependency-name: "@commitlint/cli"
+    versions:
+    - 12.0.0
+    - 12.0.1
+    - 12.1.1
+  - dependency-name: "@commitlint/config-lerna-scopes"
+    versions:
+    - 12.0.0
+    - 12.0.1
+    - 12.1.1
+  - dependency-name: "@types/fabric"
+    versions:
+    - 4.2.2
+    - 4.2.3
+    - 4.2.4
+    - 4.2.5
+  - dependency-name: "@storybook/addon-actions"
+    versions:
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+  - dependency-name: "@storybook/addon-docs"
+    versions:
+    - 6.1.16
+    - 6.1.17
+    - 6.1.18
+    - 6.1.20
+    - 6.1.21
+    - 6.2.0
+    - 6.2.1
+  - dependency-name: "@testing-library/react"
+    versions:
+    - 11.2.6
+  - dependency-name: husky
+    versions:
+    - 5.0.9
+    - 5.1.0
+    - 5.1.1
+    - 5.2.0
+    - 6.0.0
+  - dependency-name: "@rollup/plugin-node-resolve"
+    versions:
+    - 11.1.1
+    - 11.2.0
+    - 11.2.1
+  - dependency-name: "@types/jest"
+    versions:
+    - 26.0.21
+    - 26.0.22
+  - dependency-name: react
+    versions:
+    - 17.0.2
+  - dependency-name: react-dom
+    versions:
+    - 17.0.2
+  - dependency-name: react-test-renderer
+    versions:
+    - 17.0.2
+  - dependency-name: "@types/react-dom"
+    versions:
+    - 17.0.1
+    - 17.0.2
+    - 17.0.3
+  - dependency-name: start-server-and-test
+    versions:
+    - 1.12.1
+  - dependency-name: ts-jest
+    versions:
+    - 26.5.0
+    - 26.5.1
+    - 26.5.2
+    - 26.5.3
+    - 26.5.4
+  - dependency-name: "@types/react"
+    versions:
+    - 17.0.2
+    - 17.0.3
+  - dependency-name: lerna
+    versions:
+    - 4.0.0
+  - dependency-name: rollup-plugin-sizes
+    versions:
+    - 1.0.4
+  - dependency-name: react-scripts
+    versions:
+    - 4.0.2
+    - 4.0.3
+  - dependency-name: "@babel/preset-typescript"
+    versions:
+    - 7.12.13
+    - 7.12.16
+    - 7.12.17
+    - 7.13.0
+  - dependency-name: "@babel/plugin-proposal-class-properties"
+    versions:
+    - 7.13.0
+  - dependency-name: rollup-plugin-typescript2
+    versions:
+    - 0.30.0
+  - dependency-name: vuepress
+    versions:
+    - 1.8.1
+    - 1.8.2
+  - dependency-name: "@rollup/plugin-babel"
+    versions:
+    - 5.2.3
+    - 5.3.0
+  - dependency-name: "@babel/preset-react"
+    versions:
+    - 7.12.13
+    - 7.13.13
+  - dependency-name: nested-object-assign
+    versions:
+    - 1.0.4
