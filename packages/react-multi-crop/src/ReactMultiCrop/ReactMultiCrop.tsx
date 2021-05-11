@@ -251,14 +251,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    const {
-      record,
-      readonly,
-      borderColor,
-      cornerColor,
-      cornerSize,
-      transparentCorners,
-    } = this.props;
+    const { record, readonly, borderColor, cornerColor, cornerSize, transparentCorners } =
+      this.props;
     if (record) {
       const inputObject = record.clippings;
       if (
