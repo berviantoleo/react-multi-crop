@@ -1375,9 +1375,9 @@
     yargs "^16.2.0"
 
 "@commitlint/config-lerna-scopes@^12.1.2":
-  version "12.1.2"
-  resolved "https://registry.npmjs.org/@commitlint/config-lerna-scopes/-/config-lerna-scopes-12.1.2.tgz#d5a7f3a602ed586100f6d0f016056dfa2513c1b8"
-  integrity sha512-erDQpRtXYYVKjZl60UlZy04xON8AvR5zrifcvKJa7uKORey5PGJd58oadvw+i5EDbm4EvTU79GDDYQ0Ay+V9DA==
+  version "12.1.4"
+  resolved "https://registry.yarnpkg.com/@commitlint/config-lerna-scopes/-/config-lerna-scopes-12.1.4.tgz#af6786d2a479eb4c90838782368bb3958547327a"
+  integrity sha512-D/VqvATs8fYi2CFpFdjLYeOHGm/KkxUSehGqwIPJfYXHHua19V5UqmUOeXTNAJaD+bTpiHvoBTK75NcmWpBQSg==
   dependencies:
     globby "^11.0.1"
     import-from "3.0.0"
