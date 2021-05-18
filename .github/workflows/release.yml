@@ -27,7 +27,7 @@ jobs:
           always-auth: true
       - name: Install dependencies
         run: |
-          yarn
+          yarn --frozen-lockfile
           yarn bootstrap
       - name: Lint & Test Package
         run: |
