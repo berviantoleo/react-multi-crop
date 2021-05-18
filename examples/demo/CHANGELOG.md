@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.10](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.10.9...@berviantoleo/react-component-multi-crop-demo@0.10.10) (2021-05-18)
+
+
+### Bug Fixes
+
+* update deps ([d59f9dd](https://github.com/berviantoleo/react-multi-crop/commit/d59f9ddbffd9f2ff56ce8b0d5dc36189ba6cec24))
+* update deps and lint ([5a46fa5](https://github.com/berviantoleo/react-multi-crop/commit/5a46fa5e6f52c15783d3227cf8f90e11eeb04cb3))
+
+
+
+
+
 ## [0.10.9](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.10.8...@berviantoleo/react-component-multi-crop-demo@0.10.9) (2021-05-06)
 
 
