@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.10](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.20.9...@berviantoleo/react-multi-crop@0.20.10) (2021-05-19)
+
+
+### Bug Fixes
+
+* ignore eslint to pack, change workflows ([c7a4e56](https://github.com/berviantoleo/react-multi-crop/commit/c7a4e56e9fafd78bb5b00a19351de4738db0c207))
+
+
+
+
+
 ## [0.20.9](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.20.8...@berviantoleo/react-multi-crop@0.20.9) (2021-05-19)
 
 
