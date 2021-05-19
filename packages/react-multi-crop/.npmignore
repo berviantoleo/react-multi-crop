@@ -1,5 +1,5 @@
 test/
-.eslintrc
+.eslintrc.js
 .prettierrc
 babel.config.js
 babel.config.prod.js

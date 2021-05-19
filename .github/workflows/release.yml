@@ -33,9 +33,6 @@ jobs:
         run: |
           yarn lerna run lint --scope @berviantoleo/react-multi-crop
           yarn lerna run test --scope @berviantoleo/react-multi-crop
-      - name: Upload to Codecov
-        run: |
-           bash <(curl -s https://codecov.io/bash)
       - name: Build Package
         run: |
           yarn lerna run build --scope @berviantoleo/react-multi-crop
@@ -46,6 +43,9 @@ jobs:
           SKIP_PREFLIGHT_CHECK: true
           BROWSER: "none"
           PUBLIC_URL: "/"
+      - name: Upload to Codecov
+        run: |
+           bash <(curl -s https://codecov.io/bash)
       - name: Git Identity
         if: ${{ github.event_name == 'push' }}
         run: |
