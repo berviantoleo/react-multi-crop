@@ -1,5 +1,10 @@
 test/
-.babelrc
+.eslintrc
+.prettierrc
+babel.config.js
+babel.config.prod.js
 rollup.config.js
 .storybook/
 src/
+tsconfig.json
+coverage/
