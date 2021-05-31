@@ -82,7 +82,7 @@
     "uuid": "^8.3.2"
   },
   "license": "MIT",
-  "version": "0.20.11",
+  "version": "0.20.12",
   "publishConfig": {
     "registry": "https://npm.pkg.github.com",
     "access": "public"

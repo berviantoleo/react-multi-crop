@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.10.14](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.10.13...@berviantoleo/react-component-multi-crop-demo@0.10.14) (2021-05-31)
+
+
+### Bug Fixes
+
+* update deps & move typescript deps as global ([193c9d6](https://github.com/berviantoleo/react-multi-crop/commit/193c9d61a0feb1b14ef49bd87a25b32566c2b90a))
+
+
+
+
+
 ## [0.10.13](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-component-multi-crop-demo@0.10.12...@berviantoleo/react-component-multi-crop-demo@0.10.13) (2021-05-26)
 
 
