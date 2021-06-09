@@ -28,15 +28,15 @@
     "@berviantoleo/react-multi-crop": "^0.20.13",
     "@material-ui/core": "^4.11.4",
     "@types/jest": "^26.0.23",
-    "@types/node": "^15.9.0",
+    "@types/node": "^15.12.2",
     "@types/react": "^17.0.9",
     "@types/react-dom": "^17.0.6",
-    "cypress": "^7.4.0",
+    "cypress": "^7.5.0",
     "fabric": "^4.5.0",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-scripts": "4.0.3",
-    "start-server-and-test": "^1.12.3"
+    "start-server-and-test": "^1.12.5"
   },
   "license": "MIT",
   "scripts": {
