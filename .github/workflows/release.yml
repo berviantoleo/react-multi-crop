@@ -73,7 +73,7 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: docs # The folder the action should deploy.
-      - name: Use Node.js ${{ matrix.node-version }}
+      - name: Use Node.js
         if: ${{ github.event_name == 'push' }}
         uses: actions/setup-node@v1
         with:
@@ -83,7 +83,7 @@ jobs:
           always-auth: true
       - name: Publish to NPM
         if: ${{ github.event_name == 'push' }}
-        run: yarn publish --access public
+        run: yarn publish packages/react-multi-crop --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
