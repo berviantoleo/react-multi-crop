@@ -22,7 +22,7 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 12
+          node-version: 14
           registry-url: https://npm.pkg.github.com/
           always-auth: true
       - name: Install dependencies
@@ -73,4 +73,18 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: docs # The folder the action should deploy.
+      - name: Use Node.js ${{ matrix.node-version }}
+        if: ${{ github.event_name == 'push' }}
+        uses: actions/setup-node@v1
+        with:
+          node-version: 14
+          registry-url: 'https://registry.npmjs.org'
+          scope: '@berviantoleo'
+          always-auth: true
+      - name: Publish to NPM
+        if: ${{ github.event_name == 'push' }}
+        run: yarn publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
 
