@@ -3,6 +3,17 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.20.18](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.20.17...@berviantoleo/react-multi-crop@0.20.18) (2021-06-21)
+
+
+### Bug Fixes
+
+* Remove .npmrc and remove publishConfig ([a0d3066](https://github.com/berviantoleo/react-multi-crop/commit/a0d30661e1fbe6ceb30a0128a7d3ddbf34b77bbb))
+
+
+
+
+
 ## [0.20.17](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.20.16...@berviantoleo/react-multi-crop@0.20.17) (2021-06-21)
 
 
