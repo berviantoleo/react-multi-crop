@@ -43,7 +43,7 @@
     "@storybook/react": "^6.2.9",
     "@storybook/source-loader": "^6.2.9",
     "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/react": "^11.2.7",
+    "@testing-library/react": "^12.0.0",
     "@types/fabric": "^4.5.0",
     "@types/jest": "^26.0.23",
     "@types/uuid": "^8.3.0",
