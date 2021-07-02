@@ -13,7 +13,7 @@
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-lerna-scopes": "^12.1.4",
     "cross-env": "^7.0.3",
-    "husky": "^6.0.0",
+    "husky": "^7.0.0",
     "lerna": "^4.0.0",
     "typescript": "^4.3.5",
     "vuepress": "^1.8.2"
