@@ -10,7 +10,7 @@
   },
   "private": true,
   "devDependencies": {
-    "@commitlint/cli": "^12.1.4",
+    "@commitlint/cli": "^13.1.0",
     "@commitlint/config-lerna-scopes": "^12.1.4",
     "cross-env": "^7.0.3",
     "husky": "^7.0.1",
