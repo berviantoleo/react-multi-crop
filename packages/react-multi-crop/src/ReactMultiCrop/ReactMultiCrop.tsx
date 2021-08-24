@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { fabric } from "fabric";
-import Button from "@material-ui/core/Button";
-import Grid from "@material-ui/core/Grid";
-import { v4 as uuidv4 } from "uuid";
+import React, { Component } from 'react';
+import { fabric } from 'fabric';
+import Button from '@material-ui/core/Button';
+import Grid from '@material-ui/core/Grid';
+import { v4 as uuidv4 } from 'uuid';
 
 export interface IRecordProps {
   image?: string;
@@ -607,8 +607,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
     const shapeToStructureData = this.shapetoStructureData.bind(this);
     const outputValue: Array<IOutputData> = [];
-    const cropcoords = canvas.getObjects('rect');
-    cropcoords.forEach(function (element: fabric.Object) {
+    const cropCoords = canvas.getObjects('rect');
+    cropCoords.forEach(function (element: fabric.Object) {
       const data = element as CustomFabricRect;
       const outputData = shapeToStructureData(data);
       if (outputData) {
