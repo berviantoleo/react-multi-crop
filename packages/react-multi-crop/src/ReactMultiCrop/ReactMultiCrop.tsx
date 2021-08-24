@@ -1,8 +1,8 @@
-import React, { Component } from 'react';
-import { fabric } from 'fabric';
-import Button from '@material-ui/core/Button';
-import Grid from '@material-ui/core/Grid';
-import { v4 as uuidv4 } from 'uuid';
+import React, { Component } from "react";
+import { fabric } from "fabric";
+import Button from "@material-ui/core/Button";
+import Grid from "@material-ui/core/Grid";
+import { v4 as uuidv4 } from "uuid";
 
 export interface IRecordProps {
   image?: string;
@@ -122,8 +122,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     zoomChanged: undefined,
   };
 
-  private color: string;
-  private opacity: number;
+  private readonly color: string;
+  private readonly opacity: number;
   private REGEXP_ORIGINS = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
 
   constructor(props: IReactMultiCropProps) {
@@ -209,7 +209,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.setZoom(canvas.width / img.width);
     }
     canvas.setBackgroundImage(img, canvas.renderAll.bind(canvas));
-    if (typeof initial === 'boolean' && initial) {
+    if (initial) {
       this.setState({ initial: false }, this.initialObjects.bind(this));
     }
   }
@@ -615,7 +615,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         outputValue.push(outputData);
       }
     });
-    // let stringOut = JSON.stringify(outputValue)
     const { input } = this.props;
     if (input) {
       input.onChange(outputValue);
@@ -661,8 +660,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       cornerSize: attribute.cornerSize,
       transparentCorners: attribute.transparentCorners,
     };
-    const newObject = this.createObjectByAttribute(coor.id, newAttribute, readonly);
-    return newObject;
+    return this.createObjectByAttribute(coor.id, newAttribute, readonly);
   }
 
   multiSelect(): void {
