@@ -10,4 +10,4 @@ addParameters({
     page: DocsPage,
   },
 });
-configure(require.context("../src", true, /\.stories\.js(x?)$/), module);
+configure(require.context("../src", true, /\.stories\.(js|ts|jsx|tsx)$/), module);
