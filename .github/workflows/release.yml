@@ -12,13 +12,12 @@ env:
   GITHUB_NPM: https://npm.pkg.github.com/
   NPM_SITE: https://registry.npmjs.org
   SCOPE: '@berviantoleo'
-  USED_OS: ubuntu-20.04
 jobs:
   test:
     if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
       contains(github.event.head_commit.message, '[cd skip]')) }}
     name: Test and Build
-    runs-on: ${{ env.USED_OS }}
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -65,7 +64,7 @@ jobs:
     name: Release
     needs:
       - test
-    runs-on: ${{ env.USED_OS }}
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -126,7 +125,7 @@ jobs:
     name: Docs
     needs:
       - test
-    runs-on: ${{ env.USED_OS }}
+    runs-on: ubuntu-20.04
     steps:
       - name: Checkout
         uses: actions/checkout@v2
