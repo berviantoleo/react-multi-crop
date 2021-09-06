@@ -1,4 +1,4 @@
-name: Release
+name: Test, Build & Release
 on:
   push:
     branches:
@@ -8,12 +8,17 @@ on:
       - master
 env:
   CI: true
+  NODE_VERSION: 14.x
+  GITHUB_NPM: https://npm.pkg.github.com/
+  NPM_SITE: https://registry.npmjs.org
+  SCOPE: '@berviantoleo'
+  USED_OS: ubuntu-20.04
 jobs:
-  test-and-build:
+  test:
     if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-            contains(github.event.head_commit.message, '[cd skip]')) }}
+      contains(github.event.head_commit.message, '[cd skip]')) }}
     name: Test and Build
-    runs-on: ubuntu-18.04
+    runs-on: ${{ env.USED_OS }}
     steps:
       - name: Checkout
         uses: actions/checkout@v2
@@ -22,10 +27,17 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v2
         with:
-          node-version: 14
-          registry-url: https://npm.pkg.github.com/
-          scope: '@berviantoleo'
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.GITHUB_NPM }}
+          scope: ${{ env.SCOPE }}
           always-auth: true
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
@@ -46,9 +58,41 @@ jobs:
           PUBLIC_URL: "/"
       - name: Upload to Codecov
         run: |
-           bash <(curl -s https://codecov.io/bash)
+          bash <(curl -s https://codecov.io/bash)
+  release:
+    if: ${{ ( !( contains(github.event.head_commit.message, '[skip cd]') ||
+      contains(github.event.head_commit.message, '[cd skip]') )) && github.event_name == 'push' }}
+    name: Release
+    needs:
+      - test
+    runs-on: ${{ env.USED_OS }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.GITHUB_NPM }}
+          scope: ${{ env.SCOPE }}
+          always-auth: true
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: |
+          yarn --frozen-lockfile
+          yarn bootstrap
+      - name: Build Package
+        run: |
+          yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Git Identity
-        if: ${{ github.event_name == 'push' }}
         run: |
           git config --global user.name 'github-actions[bot]'
           git config --global user.email 'github-actions[bot]@users.noreply.github.com'
@@ -56,36 +100,63 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Release
-        if: ${{ github.event_name == 'push' }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           yarn lerna publish --yes
-      - name: Build Documentation
-        if: ${{ github.event_name == 'push' }}
-        run: |
-          yarn docs
-          yarn lerna run docs --scope @berviantoleo/react-multi-crop
-      - name: Deploy Docs 🚀
-        if: ${{ github.event_name == 'push' }}
-        uses: JamesIves/github-pages-deploy-action@4.1.0
-        with:
-          branch: gh-pages # The branch the action should deploy to.
-          folder: docs # The folder the action should deploy.
       - name: Use Node.js
-        if: ${{ github.event_name == 'push' }}
-        uses: actions/setup-node@v1
+        if: ${{ contains(github.event.head_commit.message, '[package]') }}
+        uses: actions/setup-node@v2
         with:
-          node-version: 14
-          registry-url: 'https://registry.npmjs.org'
-          scope: '@berviantoleo'
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.NPM_SITE }}
+          scope: ${{ env.SCOPE }}
           always-auth: true
       - name: Publish to NPM
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ contains(github.event.head_commit.message, '[package]') }}
         run: yarn publish packages/react-multi-crop --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+  docs:
+    if: ${{ ( !( contains(github.event.head_commit.message, '[skip cd]') ||
+      contains(github.event.head_commit.message, '[cd skip]') )) && github.event_name == 'push' }}
+    name: Docs
+    needs:
+      - test
+    runs-on: ${{ env.USED_OS }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.GITHUB_NPM }}
+          scope: ${{ env.SCOPE }}
+          always-auth: true
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: |
+          yarn --frozen-lockfile
+          yarn bootstrap
+      - name: Build Documentation
+        run: |
+          yarn docs
+          yarn lerna run docs --scope @berviantoleo/react-multi-crop
+      - name: Deploy Docs 🚀
+        uses: JamesIves/github-pages-deploy-action@4.1.5
+        with:
+          branch: gh-pages # The branch the action should deploy to.
+          folder: docs # The folder the action should deploy.
 
