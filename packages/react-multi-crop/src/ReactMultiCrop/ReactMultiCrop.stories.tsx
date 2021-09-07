@@ -1,6 +1,7 @@
 import React from 'react';
 import { Meta, Story } from '@storybook/react';
-import ReactMultiCrop, { IOutputData, IReactMultiCropProps } from './ReactMultiCrop';
+import ReactMultiCrop from './ReactMultiCrop';
+import { IOutputData, IReactMultiCropProps } from './interfaces';
 
 export default {
   title: 'React Multi Crop',

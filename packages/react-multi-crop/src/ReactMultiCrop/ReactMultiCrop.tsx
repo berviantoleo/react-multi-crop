@@ -3,98 +3,14 @@ import { fabric } from 'fabric';
 import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { v4 as uuidv4 } from 'uuid';
-
-export interface IRecordProps {
-  image?: string;
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  clippings: Array<any>;
-}
-
-export interface IOutputData extends ICoord {
-  crop?: string;
-  deletedAt?: string;
-  dataUrl?: string | null;
-  canvasElement?: HTMLCanvasElement | null;
-  objectId: string;
-}
-
-export interface IInputProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  value?: string | any;
-  name?: string;
-  onChange(value: Array<IOutputData>): void;
-}
-
-export interface IReactMultiCropProps {
-  id?: string;
-  width?: number;
-  height?: number;
-  source?: string;
-  input?: IInputProps;
-  record?: IRecordProps;
-  image?: string;
-  cropBackgroundColor?: string;
-  cropBackgroundOpacity?: number;
-  showLabel?: boolean;
-  showButton?: boolean;
-  zoomLevel?: number;
-  includeDataUrl?: boolean;
-  includeHtmlCanvas?: boolean;
-  readonly?: boolean;
-  borderColor?: string;
-  cornerColor?: string;
-  cornerSize?: number;
-  transparentCorners?: boolean;
-  activeObject?: string;
-  onHover?(value: IOutputData | null): void;
-  onSelect?(value: IOutputData | null): void;
-  zoomChanged?(value: number): void;
-}
-
-export interface IReactMultiCropStates {
-  canvas: fabric.Canvas | null;
-  initial: boolean;
-}
-
-export interface IRectCoord {
-  x1: number;
-  x2: number;
-  y1: number;
-  y2: number;
-}
-
-export interface ICoord {
-  id: string | null;
-  rect: IRectCoord | string;
-}
-
-export interface IAttribute {
-  left?: number;
-  top?: number;
-  height?: number;
-  width?: number;
-  borderColor?: string;
-  cornerColor?: string;
-  cornerSize?: number;
-  transparentCorners?: boolean;
-}
-
-export interface ICustomFabricRect extends fabric.IRectOptions {
-  id: string | null;
-  objectId: string;
-}
-
-export class CustomFabricRect extends fabric.Rect {
-  public id: string | null = null;
-  public objectId = '';
-  constructor(options?: ICustomFabricRect) {
-    super(options);
-    if (options) {
-      this.id = options.id;
-      this.objectId = options.objectId;
-    }
-  }
-}
+import {
+  CustomFabricRect,
+  IAttribute,
+  ICoord,
+  IOutputData,
+  IReactMultiCropProps,
+  IReactMultiCropStates,
+} from './interfaces';
 
 class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
   public static defaultProps: IReactMultiCropProps = {
@@ -724,12 +640,19 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       <div id="canvas-wrapper">
         {showLabel && <div className="label">{nameForm}</div>}
 
-        <Grid container direction="row" justify="flex-start" alignItems="flex-start">
+        <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start">
           <Grid item xs onKeyDown={!readonly ? this.keyboardHandler : undefined} tabIndex={0}>
             <canvas id={id} width={width} height={height} style={{ border: '0px solid #aaa' }} />
           </Grid>
           {showButton && !readonly && (
-            <Grid container item xs direction="column" justify="flex-start" alignItems="flex-start">
+            <Grid
+              container
+              item
+              xs
+              direction="column"
+              justifyContent="flex-start"
+              alignItems="flex-start"
+            >
               <Grid item xs>
                 <Button variant="contained" id="addmore" color="primary" onClick={this.addNew}>
                   Add More Shapes
