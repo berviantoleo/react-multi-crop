@@ -42,17 +42,17 @@ jobs:
         run: |
           yarn --frozen-lockfile
           yarn bootstrap
-      - name: Lint & Test Package
+      - name: Lint, Test & Build Package
         run: |
           yarn lerna run lint --scope @berviantoleo/react-multi-crop
           yarn lerna run test --scope @berviantoleo/react-multi-crop
+          yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: yarn lerna run build --scope @berviantoleo/react-multi-crop
-          start: yarn lerna run start --scope=@berviantoleo/react-component-multi-crop-demo
-          config-file: examples/demo/cypress.json
+          start: yarn start
           wait-on: 'http://localhost:3000'
+          working-directory: examples/demo
         env:
           SKIP_PREFLIGHT_CHECK: true
       - name: Upload to Codecov
