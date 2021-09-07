@@ -53,6 +53,8 @@ jobs:
           start: yarn lerna run start --scope=@berviantoleo/react-component-multi-crop-demo
           config-file: examples/demo/cypress.json
           wait-on: 'http://localhost:3000'
+        env:
+          SKIP_PREFLIGHT_CHECK: true
       - name: Upload to Codecov
         run: |
           bash <(curl -s https://codecov.io/bash)
