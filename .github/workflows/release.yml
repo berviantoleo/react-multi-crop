@@ -45,17 +45,11 @@ jobs:
         run: |
           yarn lerna run lint --scope @berviantoleo/react-multi-crop
           yarn lerna run test --scope @berviantoleo/react-multi-crop
-      - name: Build Package
-        run: |
-          yarn lerna run build --scope @berviantoleo/react-multi-crop
-      - name: E2E demo
-        run: |
-          yarn lerna run dev:ci --scope=@berviantoleo/react-component-multi-crop-demo
-        env:
-          SKIP_PREFLIGHT_CHECK: true
-          BROWSER: "none"
-          PUBLIC_URL: "/"
-          CHOKIDAR_USEPOLLING: 1
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          build: yarn lerna run build --scope @berviantoleo/react-multi-crop
+          start: yarn lerna run start --scope=@berviantoleo/react-component-multi-crop-demo
       - name: Upload to Codecov
         run: |
           bash <(curl -s https://codecov.io/bash)
