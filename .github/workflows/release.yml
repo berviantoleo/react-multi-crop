@@ -55,6 +55,7 @@ jobs:
           SKIP_PREFLIGHT_CHECK: true
           BROWSER: "none"
           PUBLIC_URL: "/"
+          CHOKIDAR_USEPOLLING: 1
       - name: Upload to Codecov
         run: |
           bash <(curl -s https://codecov.io/bash)
