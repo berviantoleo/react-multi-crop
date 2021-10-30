@@ -4277,9 +4277,9 @@
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
 "@types/fabric@^4.5.3":
-  version "4.5.3"
-  resolved "https://registry.npmjs.org/@types/fabric/-/fabric-4.5.3.tgz#f4f2e1168d086a7ffe12e5cea4193d0cd6a526f7"
-  integrity sha512-DCneYSkuVdGYpFbDQ2j5zT7DDdAiOlAPfSjS3PsVWHFt6f/DapCdV0ansPq3Ai5oe+j6BgFhdkh+DWne1yQMdw==
+  version "4.5.4"
+  resolved "https://registry.yarnpkg.com/@types/fabric/-/fabric-4.5.4.tgz#2da26e492c5a369383c920224d66646433a6ea63"
+  integrity sha512-hu+VbP50FAtxy9e+ZBx+xwKclREtxg1hlFV3ID+YArLA9sfUG3QOGXT/862z0cq/DRWfyWOj8nPh5wRspaQUkg==
 
 "@types/glob-base@^0.3.0":
   version "0.3.0"
