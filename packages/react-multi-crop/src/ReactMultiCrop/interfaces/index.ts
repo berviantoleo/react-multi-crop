@@ -91,3 +91,10 @@ export class CustomFabricRect extends fabric.Rect {
     }
   }
 }
+
+export interface IActionComponentProps {
+  addNew(): void;
+  deleteShapes(): void;
+  discardActiveObject(): void;
+  multiSelect(): void;
+}

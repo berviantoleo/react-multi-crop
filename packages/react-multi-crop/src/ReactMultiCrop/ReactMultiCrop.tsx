@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { fabric } from 'fabric';
-import Button from '@material-ui/core/Button';
 import Grid from '@material-ui/core/Grid';
 import { v4 as uuidv4 } from 'uuid';
 import {
@@ -11,6 +10,7 @@ import {
   IReactMultiCropProps,
   IReactMultiCropStates,
 } from './interfaces';
+import { ActionsComponent } from './components/ActionsComponent';
 
 class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
   public static defaultProps: IReactMultiCropProps = {
@@ -639,56 +639,23 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     return (
       <div id="canvas-wrapper">
         {showLabel && <div className="label">{nameForm}</div>}
-
-        <Grid container direction="row" justifyContent="flex-start" alignItems="flex-start">
-          <Grid item xs onKeyDown={!readonly ? this.keyboardHandler : undefined} tabIndex={0}>
-            <canvas id={id} width={width} height={height} style={{ border: '0px solid #aaa' }} />
+        <Grid
+          alignItems="flex-start"
+          container
+          direction="row"
+          justifyContent="flex-start"
+          {...(showButton ? { spacing: 2 } : {})}
+        >
+          <Grid item onKeyDown={!readonly ? this.keyboardHandler : undefined} tabIndex={0} xs>
+            <canvas id={id} height={height} style={{ border: '0px solid #aaa' }} width={width} />
           </Grid>
           {showButton && !readonly && (
-            <Grid
-              container
-              item
-              xs
-              direction="column"
-              justifyContent="flex-start"
-              alignItems="flex-start"
-            >
-              <Grid item xs>
-                <Button variant="contained" id="addmore" color="primary" onClick={this.addNew}>
-                  Add More Shapes
-                </Button>
-              </Grid>
-              <Grid item xs>
-                <Button
-                  variant="contained"
-                  id="deleteselected"
-                  color="primary"
-                  onClick={this.deleteShapes}
-                >
-                  Delete Selected Object
-                </Button>
-              </Grid>
-              <Grid item xs>
-                <Button
-                  variant="contained"
-                  id="multiselect"
-                  color="primary"
-                  onClick={this.multiSelect}
-                >
-                  Select All
-                </Button>
-              </Grid>
-              <Grid item xs>
-                <Button
-                  variant="contained"
-                  id="discard"
-                  color="primary"
-                  onClick={this.discardActiveObject}
-                >
-                  Discard Selection
-                </Button>
-              </Grid>
-            </Grid>
+            <ActionsComponent
+              addNew={this.addNew}
+              deleteShapes={this.deleteShapes}
+              discardActiveObject={this.discardActiveObject}
+              multiSelect={this.multiSelect}
+            />
           )}
           {renderInputRedux && <input type="hidden" value={valueForm} />}
         </Grid>
