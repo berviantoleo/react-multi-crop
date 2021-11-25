@@ -98,6 +98,12 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Verify Changed files
+        uses: tj-actions/verify-changed-files@v8.7
+        id: verify-changed-files
+        with:
+          files: |
+             packages/react-multi-crop
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -106,7 +112,7 @@ jobs:
         run: |
           yarn lerna publish --yes
       - name: Use Node.js
-        if: ${{ contains(github.event.head_commit.message, '[package]') }}
+        if: ${{ contains(steps.verify-changed-files.outputs.changed_files, 'packages/react-multi-crop') }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
@@ -114,7 +120,7 @@ jobs:
           scope: ${{ env.SCOPE }}
           always-auth: true
       - name: Publish to NPM
-        if: ${{ contains(github.event.head_commit.message, '[package]') }}
+        if: ${{ contains(steps.verify-changed-files.outputs.changed_files, 'packages/react-multi-crop') }}
         run: yarn publish packages/react-multi-crop --access public
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
