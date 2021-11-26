@@ -23,41 +23,12 @@ Explore components <a href="components/">here</a>
 
 * [Codesandbox.io - Typescript](https://codesandbox.io/s/react-crop-typescript-5jmo0)
 * [Demo](https://react-multi-crop.netlify.app/)
-* ~~[Codesandbox.io - Js (Legacy)](https://codesandbox.io/s/react-crop-demo-9hjxs)~~ : __Discontinued__
-
-### in `react-admin`
-
-```jsx
-import { ReactMultiCrop } from '@berviantoleo/react-multi-crop';
-import { Field } from 'redux-form';
-
-<SimpleForm>
-...
-<Field name="my_field" component={ReactMultiCrop} />
-...
-</SimpleForm>
-```
-
-### in `react-admin` & `redux-form` depend on another field for image showing
-
-```jsx
-import { ReactMultiCrop } from '@berviantoleo/react-multi-crop';
-import { Field, formValues } from 'redux-form';
-<SimpleForm>
-...
-<Field name="image" component={ImageField} />
-<Field name="my_field" component={formValues('image')(ReactMultiCrop)} />
-...
-</SimpleForm>
-```
 
 ## Feature
 
-1. Input, basically no need any input, but in `react-admin`, we provide to read `record.image` field, if you need another field, you should update the code, also in `redux-form`, we also provide to read `image` prop. That prop will show an image in a canvas that will be used for croping.
-2. Output, basically this output will stored in redux-form and can be sent into your API.
-3. Keyboard event, `delete` will delete your current pointing (active) of box-crop.
-4. Mouse event, `double click` into box-crop will duplicate your box-crop.
-5. Also there are some action in button that can be used, add shape (box-crop), delete selected object (box-crop), select all (box-crop), and discard current active selection (box-crop).
+1. Keyboard event, `delete` will delete your current pointing (active) of box-crop.
+2. Mouse event, `double click` into box-crop will duplicate your box-crop.
+3. Also there are some action in button that can be used, add shape (box-crop), delete selected object (box-crop), select all (box-crop), and discard current active selection (box-crop).
 
 ## LICENSE
 
