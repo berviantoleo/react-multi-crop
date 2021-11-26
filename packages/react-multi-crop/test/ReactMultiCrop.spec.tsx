@@ -10,9 +10,17 @@ test('test render', async () => {
 });
 
 test('show button', async () => {
-  render(<ReactMultiCrop addButton={<button>Add</button>} showButton />);
+  render(
+    <ReactMultiCrop
+      addButton={<button>Add</button>}
+      deleteButton={<button>Delete</button>}
+      discardButton={<button>Discard</button>}
+      multiSelectButton={<button>Multi Select</button>}
+      showButton
+    />,
+  );
   const buttons = screen.getAllByRole('button');
-  expect(buttons).toHaveLength(1);
+  expect(buttons).toHaveLength(4);
 });
 
 test('readonly mode', async () => {
