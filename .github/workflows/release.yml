@@ -42,9 +42,10 @@ jobs:
         run: |
           yarn --frozen-lockfile
           yarn bootstrap
-      - name: Lint, Test & Build Package
+      - name: Lint
+        run: yarn lint
+      - name: Test & Build Package
         run: |
-          yarn lerna run lint --scope @berviantoleo/react-multi-crop
           yarn lerna run test --scope @berviantoleo/react-multi-crop
           yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Cypress run

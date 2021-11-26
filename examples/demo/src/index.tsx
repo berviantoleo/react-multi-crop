@@ -3,7 +3,8 @@ import "./index.css";
 import App from "./App";
 import * as serviceWorker from "./serviceWorker";
 
-let rootElement = document.getElementById("root");
+const rootElement = document.getElementById("root");
+// eslint-disable-next-line
 ReactDOM.render(<App />, rootElement);
 
 // If you want your app to work offline and load faster, you can change

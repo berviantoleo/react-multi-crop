@@ -2,16 +2,18 @@ import React from "react";
 import { createStyles, makeStyles } from "@material-ui/core/styles";
 import {
   AppBar,
-  Tabs,
+  Link,
   Tab,
+  Tabs,
   Toolbar,
   Typography,
-  Link,
 } from "@material-ui/core";
 import Default from "./components/Default";
 import Readonly from "./components/Readonly";
+import ActionButton from "./components/ActionButton";
 
-function a11yProps(index: any) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+function a11yProps(index: any): Record<string, string> {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
@@ -29,13 +31,25 @@ const useStyles = makeStyles(() =>
   })
 );
 
-export default function App() {
+export default function App(): JSX.Element {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
-  const handleChange = (_event: React.ChangeEvent<{}>, newValue: number) => {
+  const handleChange = (
+    _event: React.ChangeEvent<Record<string, unknown>>,
+    newValue: number
+  ) => {
     setValue(newValue);
   };
+
+  let componentReact: JSX.Element;
+  if (value === 0) {
+    componentReact = <Default />;
+  } else if (value === 1) {
+    componentReact = <Readonly />;
+  } else {
+    componentReact = <ActionButton />;
+  }
 
   return (
     <div className={classes.root}>
@@ -59,9 +73,10 @@ export default function App() {
         >
           <Tab label="Default" {...a11yProps(0)} />
           <Tab label="Readonly" {...a11yProps(1)} />
+          <Tab label="With Action Button" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
-      {value === 0 ? <Default></Default> : <Readonly></Readonly>}
+      {componentReact}
     </div>
   );
 }
