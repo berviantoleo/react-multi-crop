@@ -1,9 +1,6 @@
-name: Test, Build & Release
+name: Release
 on:
   push:
-    branches:
-      - master
-  pull_request:
     branches:
       - master
 env:
@@ -13,58 +10,8 @@ env:
   NPM_SITE: https://registry.npmjs.org
   SCOPE: '@berviantoleo'
 jobs:
-  test:
-    if: ${{ !(contains(github.event.head_commit.message, '[skip cd]') ||
-      contains(github.event.head_commit.message, '[cd skip]')) }}
-    name: Test and Build
-    runs-on: ubuntu-20.04
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
-      - name: Setup Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: ${{ env.GITHUB_NPM }}
-          scope: ${{ env.SCOPE }}
-          always-auth: true
-      - name: Restore lerna
-        uses: actions/cache@v2
-        with:
-          path: |
-            node_modules
-            */*/node_modules
-            ~/.cache/Cypress
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Install dependencies
-        run: |
-          yarn --frozen-lockfile
-          yarn bootstrap
-      - name: Lint
-        run: yarn lint
-      - name: Test & Build Package
-        run: |
-          yarn lerna run test --scope @berviantoleo/react-multi-crop
-          yarn lerna run build --scope @berviantoleo/react-multi-crop
-      - name: Cypress run
-        uses: cypress-io/github-action@v2
-        with:
-          start: yarn start
-          wait-on: 'http://localhost:3000'
-          working-directory: examples/demo
-        env:
-          SKIP_PREFLIGHT_CHECK: true
-      - name: Upload to Codecov
-        run: |
-          bash <(curl -s https://codecov.io/bash)
   release:
-    if: ${{ ( !( contains(github.event.head_commit.message, '[skip cd]') ||
-      contains(github.event.head_commit.message, '[cd skip]') )) && github.event_name == 'push' }}
     name: Release
-    needs:
-      - test
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
@@ -99,12 +46,6 @@ jobs:
           git remote set-url origin https://x-access-token:${GITHUB_TOKEN}@github.com/$GITHUB_REPOSITORY
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      - name: Verify Changed files
-        uses: tj-actions/verify-changed-files@v8.7
-        id: verify-changed-files
-        with:
-          files: |
-             packages/react-multi-crop
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
@@ -112,26 +53,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: |
           yarn lerna publish --yes
-      - name: Use Node.js
-        if: ${{ contains(steps.verify-changed-files.outputs.changed_files, 'packages/react-multi-crop') }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: ${{ env.NPM_SITE }}
-          scope: ${{ env.SCOPE }}
-          always-auth: true
-      - name: Publish to NPM
-        if: ${{ contains(steps.verify-changed-files.outputs.changed_files, 'packages/react-multi-crop') }}
-        run: yarn publish packages/react-multi-crop --access public
-        env:
-          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-          NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
   docs:
-    if: ${{ ( !( contains(github.event.head_commit.message, '[skip cd]') ||
-      contains(github.event.head_commit.message, '[cd skip]') )) && github.event_name == 'push' }}
-    name: Docs
-    needs:
-      - test
+    name: Publish Docs
     runs-on: ubuntu-20.04
     steps:
       - name: Checkout
