@@ -89,6 +89,8 @@ ShowButton.args = {
   readonly: false,
   showLabel: false,
   showButton: true,
+  addButton: <button>Add</button>,
+  deleteButton: <button>Delete</button>,
   includeDataUrl: false,
   includeHtmlCanvas: false,
   cropBackgroundColor: 'yellow',
