@@ -51,6 +51,9 @@ export interface IReactMultiCropProps {
   includeDataUrl?: boolean;
   includeHtmlCanvas?: boolean;
   input?: IInputProps;
+  /**
+   * @deprecated Will be removed when next major version
+   */
   multiSelectButton?: JSX.Element;
   onHover?(value: IOutputData | null): void;
   onSelect?(value: IOutputData | null): void;
@@ -124,6 +127,12 @@ export interface IActionComponentProps {
   deleteShapes(): void;
   discardActiveObject(): void;
   discardButton?: JSX.Element;
+  /**
+   * @deprecated Will be removed when next major version
+   */
   multiSelect(): void;
+  /**
+   * @deprecated Will be removed when next major version
+   */
   multiSelectButton?: JSX.Element;
 }
