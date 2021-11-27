@@ -1,7 +1,8 @@
 on:
   push:
     tags:
-      - '@berviantoleo/react-multi-crop@*'
+      - '*react-multi-crop*'
+      - '!*demo*'
 env:
   CI: true
   NODE_VERSION: 14.x
