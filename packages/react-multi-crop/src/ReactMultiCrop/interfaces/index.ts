@@ -1,6 +1,10 @@
 import { fabric } from 'fabric';
+import CSS from 'csstype';
 
 export interface IRecordProps {
+  /**
+   * @deprecated Will use image prop at root instead.
+   */
   image?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   clippings: Array<any>;
@@ -15,36 +19,57 @@ export interface IOutputData extends ICoord {
 }
 
 export interface IInputProps {
+  /**
+   * @deprecated will not support this again to remove input. Will seperate "form/input" if needed.
+   */
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   value?: string | any;
+  /**
+   * @deprecated will not support this again to remove input. Will seperate "form/input" if needed.
+   */
   name?: string;
+  /**
+   * Give output each changes in the canvas, might be moved to root props.
+   * @param value Output value
+   */
   onChange(value: Array<IOutputData>): void;
 }
 
 export interface IReactMultiCropProps {
-  id?: string;
-  width?: number;
-  height?: number;
-  source?: string;
-  input?: IInputProps;
-  record?: IRecordProps;
-  image?: string;
-  cropBackgroundColor?: string;
-  cropBackgroundOpacity?: number;
-  showLabel?: boolean;
-  showButton?: boolean;
-  zoomLevel?: number;
-  includeDataUrl?: boolean;
-  includeHtmlCanvas?: boolean;
-  readonly?: boolean;
+  addButton?: JSX.Element;
+  activeObject?: string;
   borderColor?: string;
   cornerColor?: string;
   cornerSize?: number;
-  transparentCorners?: boolean;
-  activeObject?: string;
+  cropBackgroundColor?: string;
+  cropBackgroundOpacity?: number;
+  deleteButton?: JSX.Element;
+  discardButton?: JSX.Element;
+  height?: number;
+  id?: string;
+  image?: string;
+  includeDataUrl?: boolean;
+  includeHtmlCanvas?: boolean;
+  input?: IInputProps;
+  multiSelectButton?: JSX.Element;
   onHover?(value: IOutputData | null): void;
   onSelect?(value: IOutputData | null): void;
+  readonly?: boolean;
+  record?: IRecordProps;
+  /**
+   * @deprecated Not used anymore, please not use this.
+   */
+  showLabel?: boolean;
+  showButton?: boolean;
+  style?: CSS.Properties;
+  /**
+   * @deprecated Not used anymore, please not use this.
+   */
+  source?: string;
+  transparentCorners?: boolean;
+  width?: number;
   zoomChanged?(value: number): void;
+  zoomLevel?: number;
 }
 
 export interface IReactMultiCropStates {
@@ -93,8 +118,12 @@ export class CustomFabricRect extends fabric.Rect {
 }
 
 export interface IActionComponentProps {
+  addButton?: JSX.Element;
   addNew(): void;
+  deleteButton?: JSX.Element;
   deleteShapes(): void;
   discardActiveObject(): void;
+  discardButton?: JSX.Element;
   multiSelect(): void;
+  multiSelectButton?: JSX.Element;
 }

@@ -1,9 +1,12 @@
 import React from "react";
-import Grid from "@material-ui/core/Grid";
+import Grid from "@mui/material/Grid";
 import { ReactMultiCrop, IOutputData } from "@berviantoleo/react-multi-crop";
 
-function convertToImage(name: string, output: IOutputData) {
-  let canvasElement = output.canvasElement?.toDataURL();
+function convertToImage(
+  name: string,
+  output: IOutputData
+): JSX.Element | undefined {
+  const canvasElement = output.canvasElement?.toDataURL();
 
   return canvasElement ? (
     <div>
@@ -13,7 +16,7 @@ function convertToImage(name: string, output: IOutputData) {
   ) : undefined;
 }
 
-export default function Readonly() {
+export default function Readonly(): JSX.Element {
   const [selectedValue, setSelectedValue] = React.useState<IOutputData | null>(
     null
   );
@@ -24,7 +27,7 @@ export default function Readonly() {
       <Grid item xs>
         <ReactMultiCrop
           id="canvasReadonly"
-          readonly={true}
+          image="https://picsum.photos/800"
           includeHtmlCanvas
           onSelect={(value: IOutputData) => {
             setSelectedValue(value);
@@ -32,6 +35,7 @@ export default function Readonly() {
           onHover={(value: IOutputData) => {
             setHoverValue(value);
           }}
+          readonly={true}
           record={{
             clippings: [
               {
@@ -61,7 +65,9 @@ export default function Readonly() {
               },
             ],
           }}
-          image="https://picsum.photos/800"
+          style={{
+            margin: "10px",
+          }}
         />
       </Grid>
       <Grid item xs>

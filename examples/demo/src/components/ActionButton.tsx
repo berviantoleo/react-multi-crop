@@ -1,14 +1,20 @@
 import React from "react";
+import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
+
 import { ReactMultiCrop, IOutputData } from "@berviantoleo/react-multi-crop";
 
-export default function Default(): JSX.Element {
+export default function ActionButton(): JSX.Element {
   const [cropValue, setCropValue] = React.useState<Array<IOutputData>>([]);
   return (
     <Grid container>
       <Grid item xs>
         <ReactMultiCrop
+          addButton={<Button variant="outlined">Add</Button>}
+          deleteButton={<Button variant="outlined">Delete</Button>}
+          discardButton={<Button variant="outlined">Discard</Button>}
           id="canvas"
+          image="https://picsum.photos/800"
           input={{
             value: cropValue,
             name: "multicrop",
@@ -16,8 +22,8 @@ export default function Default(): JSX.Element {
               setCropValue(value);
             },
           }}
-          image="https://picsum.photos/800"
           includeHtmlCanvas
+          multiSelectButton={<Button variant="outlined">Multi Select</Button>}
           record={{
             clippings: [
               {
@@ -27,6 +33,7 @@ export default function Default(): JSX.Element {
               },
             ],
           }}
+          showButton
           style={{
             margin: "10px",
           }}

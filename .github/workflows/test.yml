@@ -1,0 +1,55 @@
+name: Test & Build
+on:
+  pull_request:
+    branches:
+      - master
+env:
+  CI: true
+  NODE_VERSION: 14.x
+  GITHUB_NPM: https://npm.pkg.github.com/
+  NPM_SITE: https://registry.npmjs.org
+  SCOPE: '@berviantoleo'
+jobs:
+  test:
+    name: Test and Build
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          registry-url: ${{ env.GITHUB_NPM }}
+          scope: ${{ env.SCOPE }}
+          always-auth: true
+      - name: Restore lerna
+        uses: actions/cache@v2
+        with:
+          path: |
+            node_modules
+            */*/node_modules
+            ~/.cache/Cypress
+          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install dependencies
+        run: |
+          yarn --frozen-lockfile
+          yarn bootstrap
+      - name: Lint
+        run: yarn lint
+      - name: Test & Build Package
+        run: |
+          yarn lerna run test --scope @berviantoleo/react-multi-crop
+          yarn lerna run build --scope @berviantoleo/react-multi-crop
+      - name: Cypress run
+        uses: cypress-io/github-action@v2
+        with:
+          start: yarn start
+          wait-on: 'http://localhost:3000'
+          working-directory: examples/demo
+        env:
+          SKIP_PREFLIGHT_CHECK: true
+      - name: Upload to Codecov
+        uses: codecov/codecov-action@v2

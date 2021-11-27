@@ -10,15 +10,17 @@ test('test render', async () => {
 });
 
 test('show button', async () => {
-  render(<ReactMultiCrop showButton />);
+  render(
+    <ReactMultiCrop
+      addButton={<button>Add</button>}
+      deleteButton={<button>Delete</button>}
+      discardButton={<button>Discard</button>}
+      multiSelectButton={<button>Multi Select</button>}
+      showButton
+    />,
+  );
   const buttons = screen.getAllByRole('button');
   expect(buttons).toHaveLength(4);
-});
-
-test('show label', async () => {
-  render(<ReactMultiCrop showLabel source="React Multi Crop" />);
-  const textLabel = screen.getByText('React Multi Crop');
-  expect(textLabel).toBeTruthy();
 });
 
 test('readonly mode', async () => {

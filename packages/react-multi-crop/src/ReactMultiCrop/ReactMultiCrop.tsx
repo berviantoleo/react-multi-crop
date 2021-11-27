@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import { fabric } from 'fabric';
-import Grid from '@material-ui/core/Grid';
 import { v4 as uuidv4 } from 'uuid';
 import {
   CustomFabricRect,
@@ -11,6 +10,7 @@ import {
   IReactMultiCropStates,
 } from './interfaces';
 import { ActionsComponent } from './components/ActionsComponent';
+import Container from './components/Container';
 
 class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
   public static defaultProps: IReactMultiCropProps = {
@@ -143,15 +143,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   initialImage(): void {
     const { record, image } = this.props;
     const loadImageNow = this.loadImage.bind(this);
-    if (typeof record === 'object' && record.image) {
-      const isCrossOrigin = this.isCrossOriginURL(record.image);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const options: any = {};
-      if (isCrossOrigin) {
-        options.crossOrigin = 'Anonymous';
-      }
-      fabric.Image.fromURL(record.image, loadImageNow, options);
-    } else if (typeof image === 'string') {
+    if (typeof image === 'string') {
       const isCrossOrigin = this.isCrossOriginURL(image);
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       const options: any = {};
@@ -159,6 +151,14 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         options.crossOrigin = 'Anonymous';
       }
       fabric.Image.fromURL(image, loadImageNow, options);
+    } else if (typeof record === 'object' && record.image) {
+      const isCrossOrigin = this.isCrossOriginURL(record.image);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      const options: any = {};
+      if (isCrossOrigin) {
+        options.crossOrigin = 'Anonymous';
+      }
+      fabric.Image.fromURL(record.image, loadImageNow, options);
     }
   }
 
@@ -579,6 +579,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     return this.createObjectByAttribute(coor.id, newAttribute, readonly);
   }
 
+  /**
+   * @deprecated Will be removed from next major/breaking version.
+   * No need this.
+   */
   multiSelect(): void {
     const { readonly } = this.props;
     const { canvas } = this.state;
@@ -625,40 +629,38 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   }
 
   render(): JSX.Element {
-    const { input, source, showLabel, showButton, id, width, height, readonly } = this.props;
-    const renderInputRedux = !!input;
-    // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
-    let valueForm: any;
-    let nameForm = source;
-    if (input) {
-      const { value, name } = input;
-      valueForm = value;
-      nameForm = name;
-    }
+    const {
+      addButton,
+      deleteButton,
+      discardButton,
+      height,
+      id,
+      multiSelectButton,
+      readonly,
+      showButton,
+      style,
+      width,
+    } = this.props;
 
     return (
-      <div id="canvas-wrapper">
-        {showLabel && <div className="label">{nameForm}</div>}
-        <Grid
-          alignItems="flex-start"
-          container
-          direction="row"
-          justifyContent="flex-start"
-          {...(showButton ? { spacing: 2 } : {})}
-        >
-          <Grid item onKeyDown={!readonly ? this.keyboardHandler : undefined} tabIndex={0} xs>
+      <div id="canvas-wrapper" style={style}>
+        <Container row>
+          <div onKeyDown={!readonly ? this.keyboardHandler : undefined} tabIndex={0}>
             <canvas id={id} height={height} style={{ border: '0px solid #aaa' }} width={width} />
-          </Grid>
+          </div>
           {showButton && !readonly && (
             <ActionsComponent
+              addButton={addButton}
               addNew={this.addNew}
+              deleteButton={deleteButton}
               deleteShapes={this.deleteShapes}
               discardActiveObject={this.discardActiveObject}
+              discardButton={discardButton}
               multiSelect={this.multiSelect}
+              multiSelectButton={multiSelectButton}
             />
           )}
-          {renderInputRedux && <input type="hidden" value={valueForm} />}
-        </Grid>
+        </Container>
       </div>
     );
   }
