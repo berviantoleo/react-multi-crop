@@ -36,7 +36,7 @@ jobs:
         id: changes-checker
         run: |
           chmod +x get-changed.sh
-          sh get-changed.sh
+          ./get-changed.sh
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
