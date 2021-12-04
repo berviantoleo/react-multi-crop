@@ -35,11 +35,6 @@ jobs:
       - name: Build Package
         run: |
           yarn lerna run build --scope @berviantoleo/react-multi-crop
-      - name: Check changes
-        id: changes-checker
-        run: |
-          chmod +x get-changed.sh
-          ./get-changed.sh
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
