@@ -2,10 +2,6 @@ import { fabric } from 'fabric';
 import CSS from 'csstype';
 
 export interface IRecordProps {
-  /**
-   * @deprecated Will use image prop at root instead.
-   */
-  image?: string;
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   clippings: Array<any>;
 }
@@ -19,15 +15,6 @@ export interface IOutputData extends ICoord {
 }
 
 export interface IInputProps {
-  /**
-   * @deprecated will not support this again to remove input. Will seperate "form/input" if needed.
-   */
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  value?: string | any;
-  /**
-   * @deprecated will not support this again to remove input. Will seperate "form/input" if needed.
-   */
-  name?: string;
   /**
    * Give output each changes in the canvas, might be moved to root props.
    * @param value Output value
@@ -51,24 +38,12 @@ export interface IReactMultiCropProps {
   includeDataUrl?: boolean;
   includeHtmlCanvas?: boolean;
   input?: IInputProps;
-  /**
-   * @deprecated Will be removed when next major version
-   */
-  multiSelectButton?: JSX.Element;
   onHover?(value: IOutputData | null): void;
   onSelect?(value: IOutputData | null): void;
   readonly?: boolean;
   record?: IRecordProps;
-  /**
-   * @deprecated Not used anymore, please not use this.
-   */
-  showLabel?: boolean;
   showButton?: boolean;
   style?: CSS.Properties;
-  /**
-   * @deprecated Not used anymore, please not use this.
-   */
-  source?: string;
   transparentCorners?: boolean;
   width?: number;
   zoomChanged?(value: number): void;
@@ -127,12 +102,4 @@ export interface IActionComponentProps {
   deleteShapes(): void;
   discardActiveObject(): void;
   discardButton?: JSX.Element;
-  /**
-   * @deprecated Will be removed when next major version
-   */
-  multiSelect(): void;
-  /**
-   * @deprecated Will be removed when next major version
-   */
-  multiSelectButton?: JSX.Element;
 }

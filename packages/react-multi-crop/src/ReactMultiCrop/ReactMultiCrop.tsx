@@ -579,25 +579,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     return this.createObjectByAttribute(coor.id, newAttribute, readonly);
   }
 
-  /**
-   * @deprecated Will be removed from next major/breaking version.
-   * No need this.
-   */
-  multiSelect(): void {
-    const { readonly } = this.props;
-    const { canvas } = this.state;
-    if (canvas && !readonly) {
-      canvas.discardActiveObject();
-      const sel = new fabric.ActiveSelection(canvas.getObjects(), {
-        canvas: canvas,
-      });
-      canvas.setActiveObject(sel);
-      canvas.requestRenderAll();
-    } else {
-      console.log('Canvas not defined');
-    }
-  }
-
   discardActiveObject(): void {
     const { canvas } = this.state;
     if (canvas) {

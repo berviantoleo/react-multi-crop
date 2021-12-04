@@ -23,7 +23,6 @@ export default function ActionButton(): JSX.Element {
             },
           }}
           includeHtmlCanvas
-          multiSelectButton={<Button variant="outlined">Multi Select</Button>}
           record={{
             clippings: [
               {
