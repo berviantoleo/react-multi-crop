@@ -5,8 +5,6 @@ on:
       - master
 env:
   CI: true
-  NODE_VERSION: 14.x
-  SCOPE: '@berviantoleo'
 jobs:
   test:
     name: Test and Build (${{ matrix.node_version }})
