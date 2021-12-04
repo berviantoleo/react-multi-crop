@@ -33,7 +33,7 @@ jobs:
             node_modules
             */*/node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ matrix.node_version }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
