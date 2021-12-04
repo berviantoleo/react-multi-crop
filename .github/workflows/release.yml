@@ -28,7 +28,7 @@ jobs:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
@@ -75,7 +75,7 @@ jobs:
           path: |
             node_modules
             */*/node_modules
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
@@ -109,7 +109,7 @@ jobs:
             node_modules
             */*/node_modules
             ~/.cache/Cypress
-          key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
