@@ -21,6 +21,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
           always-auth: true
+          registry-url: 'https://registry.npmjs.org'
           scope: "@berviantoleo"
       - name: Restore lerna
         uses: actions/cache@v2
