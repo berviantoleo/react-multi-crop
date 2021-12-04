@@ -3,6 +3,18 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.21.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.21.3...@berviantoleo/react-multi-crop@0.21.4) (2021-12-04)
+
+
+### Reverts
+
+* Revert "chore(release): publish" ([c79846d](https://github.com/berviantoleo/react-multi-crop/commit/c79846df09054fcee3f56dd19d6c103c7512b03d))
+* Revert "chore(release): publish" ([5951c62](https://github.com/berviantoleo/react-multi-crop/commit/5951c62834ceac0a6b8df78256d3f21427970417))
+
+
+
+
+
 ## [0.21.3](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.21.2...@berviantoleo/react-multi-crop@0.21.3) (2021-12-04)
 
 
