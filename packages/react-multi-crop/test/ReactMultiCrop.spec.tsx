@@ -15,12 +15,11 @@ test('show button', async () => {
       addButton={<button>Add</button>}
       deleteButton={<button>Delete</button>}
       discardButton={<button>Discard</button>}
-      multiSelectButton={<button>Multi Select</button>}
       showButton
     />,
   );
   const buttons = screen.getAllByRole('button');
-  expect(buttons).toHaveLength(4);
+  expect(buttons).toHaveLength(3);
 });
 
 test('readonly mode', async () => {
@@ -59,7 +58,6 @@ test('Output Handler', async () => {
       width={800}
       height={800}
       input={{
-        name: 'multicrop',
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         onChange: function (value: any) {
           console.log(value);
@@ -70,7 +68,6 @@ test('Output Handler', async () => {
               console.log(newObject.canvasElement.toDataURL());
             }
           }
-          // setCropValue(value);
         },
       }}
       record={{

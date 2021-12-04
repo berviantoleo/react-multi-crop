@@ -2,7 +2,11 @@
 
 # React Multi Crop (ReactMultiCrop)
 
-Easy and extensible react component to crop as multiple image
+Easy and extensible react component to crop as multiple image.
+
+## Announcement
+
+Version `0.22` and newer will be hosted at [npmjs](https://www.npmjs.com/package/@berviantoleo/react-multi-crop) only.
 
 ::: tip
 Explore components <a href="components/">here</a>
