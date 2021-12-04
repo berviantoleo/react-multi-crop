@@ -56,7 +56,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     this.keyboardHandler = this.keyboardHandler.bind(this);
     this.addNew = this.addNew.bind(this);
     this.deleteShapes = this.deleteShapes.bind(this);
-    this.multiSelect = this.multiSelect.bind(this);
     this.discardActiveObject = this.discardActiveObject.bind(this);
   }
 
@@ -599,9 +598,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       // Handle Delete
       this.deleteShapes();
       handled = true;
-    } else if (event.ctrlKey && (key === 65 || key === 'a')) {
-      this.multiSelect();
-      handled = true;
     }
     if (handled) {
       // Suppress "double action" if event handled
@@ -616,7 +612,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       discardButton,
       height,
       id,
-      multiSelectButton,
       readonly,
       showButton,
       style,
@@ -637,8 +632,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
               deleteShapes={this.deleteShapes}
               discardActiveObject={this.discardActiveObject}
               discardButton={discardButton}
-              multiSelect={this.multiSelect}
-              multiSelectButton={multiSelectButton}
             />
           )}
         </Container>
