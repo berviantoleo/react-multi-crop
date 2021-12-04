@@ -4367,9 +4367,9 @@
   integrity sha512-EYNwp3bU+98cpU4lAWYYL7Zz+2gryWH1qbdDTidVd6hkiR6weksdbMadyXKXNPEkQFhXM+hVO9ZygomHXp+AIw==
 
 "@types/fabric@^4.5.5":
-  version "4.5.5"
-  resolved "https://registry.yarnpkg.com/@types/fabric/-/fabric-4.5.5.tgz#0ee4254fae40edc9fe90271111d2d26ff715fac8"
-  integrity sha512-+bYGKrqsQuKVby2v84x4OMavY28Ur9DgrsqSXtyAgvd1c8oKLkMku4KVESDQoGmRiDwpjlPOwG3B8qM6IVeJ3w==
+  version "4.5.6"
+  resolved "https://registry.yarnpkg.com/@types/fabric/-/fabric-4.5.6.tgz#cf685c1c422072d15d1f46d9e25d8535697fd249"
+  integrity sha512-YV2wL7Bvv8xyO1cpkkDedZPu7TPXiM0kfDZDFo0DT1VEdAm4yRo6UxPEFBm+iFwbjvbodXkw0bUgP+iPdL2xxw==
 
 "@types/glob@*", "@types/glob@^7.1.1":
   version "7.2.0"
