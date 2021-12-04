@@ -10,8 +10,6 @@ export default function Default(): JSX.Element {
         <ReactMultiCrop
           id="canvas"
           input={{
-            value: cropValue,
-            name: "multicrop",
             onChange: function (value: Array<IOutputData>) {
               setCropValue(value);
             },

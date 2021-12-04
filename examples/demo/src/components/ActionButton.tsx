@@ -16,8 +16,6 @@ export default function ActionButton(): JSX.Element {
           id="canvas"
           image="https://picsum.photos/800"
           input={{
-            value: cropValue,
-            name: "multicrop",
             onChange: function (value: Array<IOutputData>) {
               setCropValue(value);
             },
