@@ -32,11 +32,6 @@ jobs:
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ hashFiles('**/yarn.lock') }}
-      - name: Check changes
-        id: changes-checker
-        run: |
-          chmod +x get-changed.sh
-          ./get-changed.sh
       - name: Install dependencies
         run: |
           yarn --frozen-lockfile
@@ -44,6 +39,11 @@ jobs:
       - name: Build Package
         run: |
           yarn lerna run build --scope @berviantoleo/react-multi-crop
+      - name: Check changes
+        id: changes-checker
+        run: |
+          chmod +x get-changed.sh
+          ./get-changed.sh
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
