@@ -9,16 +9,11 @@ export function ActionsComponent({
   deleteShapes,
   discardActiveObject,
   discardButton,
-  multiSelect,
-  multiSelectButton,
 }: IActionComponentProps): JSX.Element {
   return (
     <Container>
       <div>{addButton && React.cloneElement(addButton, { onClick: addNew })}</div>
       <div>{deleteButton && React.cloneElement(deleteButton, { onClick: deleteShapes })}</div>
-      <div>
-        {multiSelectButton && React.cloneElement(multiSelectButton, { onClick: multiSelect })}
-      </div>
       <div>
         {discardButton && React.cloneElement(discardButton, { onClick: discardActiveObject })}
       </div>

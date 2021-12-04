@@ -14,27 +14,24 @@ import Container from './components/Container';
 
 class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
   public static defaultProps: IReactMultiCropProps = {
-    id: 'canvas',
-    width: 800,
-    height: 800,
-    input: undefined,
-    source: 'react-crop-form',
-    record: {
-      image: undefined,
-      clippings: [],
-    },
-    image: undefined,
-    cropBackgroundColor: 'yellow',
-    cropBackgroundOpacity: 0.5,
-    readonly: false,
     borderColor: 'black',
     cornerColor: 'black',
     cornerSize: 13,
-    transparentCorners: true,
-    showLabel: false,
-    showButton: false,
+    cropBackgroundColor: 'yellow',
+    cropBackgroundOpacity: 0.5,
+    height: 800,
+    id: 'canvas',
+    image: undefined,
     includeDataUrl: false,
     includeHtmlCanvas: false,
+    input: undefined,
+    readonly: false,
+    record: {
+      clippings: [],
+    },
+    showButton: false,
+    transparentCorners: true,
+    width: 800,
     zoomChanged: undefined,
   };
 
@@ -140,7 +137,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   }
 
   initialImage(): void {
-    const { record, image } = this.props;
+    const { image } = this.props;
     const loadImageNow = this.loadImage.bind(this);
     if (typeof image === 'string') {
       const isCrossOrigin = this.isCrossOriginURL(image);
@@ -150,14 +147,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         options.crossOrigin = 'Anonymous';
       }
       fabric.Image.fromURL(image, loadImageNow, options);
-    } else if (typeof record === 'object' && record.image) {
-      const isCrossOrigin = this.isCrossOriginURL(record.image);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      const options: any = {};
-      if (isCrossOrigin) {
-        options.crossOrigin = 'Anonymous';
-      }
-      fabric.Image.fromURL(record.image, loadImageNow, options);
     }
   }
 
