@@ -6,7 +6,6 @@ on:
 env:
   CI: true
   NODE_VERSION: 14.x
-  GITHUB_NPM: https://npm.pkg.github.com/
   NPM_SITE: https://registry.npmjs.org
   SCOPE: '@berviantoleo'
 jobs:
@@ -22,8 +21,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
-          registry-url: ${{ env.GITHUB_NPM }}
-          scope: ${{ env.SCOPE }}
           always-auth: true
       - name: Restore lerna
         uses: actions/cache@v2
@@ -55,23 +52,10 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          yarn lerna publish --yes
-      - name: Use Node.js
-        if: ${{ steps.changes-checker.outputs.is_changed == 'true' }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ env.NODE_VERSION }}
-          registry-url: ${{ env.NPM_SITE }}
-          scope: ${{ env.SCOPE }}
-          always-auth: true
-      - name: Publish to NPM
-        if: ${{ steps.changes-checker.outputs.is_changed == 'true' }}
-        run: yarn publish packages/react-multi-crop --access public
-        env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          yarn lerna publish --yes
   docs:
     name: Publish Docs
     runs-on: ubuntu-20.04
@@ -84,8 +68,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
-          registry-url: ${{ env.GITHUB_NPM }}
-          scope: ${{ env.SCOPE }}
           always-auth: true
       - name: Restore lerna
         uses: actions/cache@v2
@@ -119,8 +101,6 @@ jobs:
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
-          registry-url: ${{ env.GITHUB_NPM }}
-          scope: ${{ env.SCOPE }}
           always-auth: true
       - name: Restore lerna
         uses: actions/cache@v2
