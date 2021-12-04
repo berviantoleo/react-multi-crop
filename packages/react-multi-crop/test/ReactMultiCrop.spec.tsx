@@ -19,7 +19,7 @@ test('show button', async () => {
     />,
   );
   const buttons = screen.getAllByRole('button');
-  expect(buttons).toHaveLength(4);
+  expect(buttons).toHaveLength(3);
 });
 
 test('readonly mode', async () => {
