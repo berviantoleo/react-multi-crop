@@ -4476,20 +4476,15 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*":
-  version "16.11.10"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-16.11.10.tgz#2e3ad0a680d96367103d3e670d41c2fed3da61ae"
-  integrity sha512-3aRnHa1KlOEEhJ6+CvyHKK5vE9BcLGjtUpwvqYLRvYNQKMfabu3BwfJaA/SLW8dxe28LsNDjtHwePTuzn3gmOA==
+"@types/node@*", "@types/node@^16.11.11":
+  version "16.11.11"
+  resolved "https://registry.npmjs.org/@types/node/-/node-16.11.11.tgz#6ea7342dfb379ea1210835bada87b3c512120234"
+  integrity sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==
 
 "@types/node@^14.0.10", "@types/node@^14.14.31":
   version "14.17.34"
   resolved "https://registry.yarnpkg.com/@types/node/-/node-14.17.34.tgz#fe4b38b3f07617c0fa31ae923fca9249641038f0"
   integrity sha512-USUftMYpmuMzeWobskoPfzDi+vkpe0dvcOBRNOscFrGxVp4jomnRxWuVohgqBow2xyIPC0S3gjxV/5079jhmDg==
-
-"@types/node@^16.11.11":
-  version "16.11.11"
-  resolved "https://registry.npmjs.org/@types/node/-/node-16.11.11.tgz#6ea7342dfb379ea1210835bada87b3c512120234"
-  integrity sha512-KB0sixD67CeecHC33MYn+eYARkqTheIRNuu97y2XMjR7Wu3XibO1vaY6VBV6O/a89SPI81cEUIYT87UqUWlZNw==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -17387,9 +17382,9 @@ rollup@^1.31.1:
     acorn "^7.1.0"
 
 rollup@^2.60.2:
-  version "2.60.2"
-  resolved "https://registry.npmjs.org/rollup/-/rollup-2.60.2.tgz#3f45ace36a9b10b4297181831ea0719922513463"
-  integrity sha512-1Bgjpq61sPjgoZzuiDSGvbI1tD91giZABgjCQBKM5aYLnzjq52GoDuWVwT/cm/MCxCMPU8gqQvkj8doQ5C8Oqw==
+  version "2.61.0"
+  resolved "https://registry.yarnpkg.com/rollup/-/rollup-2.61.0.tgz#ccd927bcd6cc0c78a4689c918627a717977208f4"
+  integrity sha512-teQ+T1mUYbyvGyUavCodiyA9hD4DxwYZJwr/qehZGhs1Z49vsmzelMVYMxGU4ZhGRKxYPupHuz5yzm/wj7VpWA==
   optionalDependencies:
     fsevents "~2.3.2"
 
