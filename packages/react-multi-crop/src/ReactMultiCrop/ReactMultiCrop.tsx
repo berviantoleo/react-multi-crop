@@ -470,8 +470,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         dataUrl = background.toDataURL({
           height: element.getScaledHeight(),
           width: element.getScaledWidth(),
-          left: element.left,
-          top: element.top,
+          left: dataLeftTop.left,
+          top: dataLeftTop.top,
           format: 'jpeg',
         });
       } catch (error) {
@@ -486,8 +486,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         canvasElement = background.toCanvasElement({
           height: element.getScaledHeight(),
           width: element.getScaledWidth(),
-          left: element.left,
-          top: element.top,
+          left: dataLeftTop.left,
+          top: dataLeftTop.top,
         });
       } catch (error) {
         console.error(error);
