@@ -408,6 +408,26 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     });
   }
 
+  private convertLeftTop(element: CustomFabricRect): { left: number; top: number } {
+    if (
+      element.left === undefined ||
+      element.top === undefined ||
+      element.group?.left === undefined ||
+      element.group?.top === undefined ||
+      element.group?.width === undefined ||
+      element.group?.height === undefined
+    ) {
+      return {
+        left: 0,
+        top: 0,
+      };
+    }
+    return {
+      left: element.left + element.group.left + element.group.width / 2,
+      top: element.top + element.group.top + element.group.height / 2,
+    };
+  }
+
   shapetoStructureData(element: CustomFabricRect): IOutputData | null {
     const { canvas } = this.state;
     if (!canvas || !canvas.backgroundImage) {
@@ -430,10 +450,13 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       return null;
     }
     const { includeDataUrl, includeHtmlCanvas } = this.props;
-    const x1 = element.left / background.width;
-    const y1 = element.top / background.height;
-    const x2 = (element.left + element.width * element.scaleX) / background.width;
-    const y2 = (element.top + element.height * element.scaleY) / background.height;
+    const dataLeftTop = element.group
+      ? this.convertLeftTop(element)
+      : { left: element.left, top: element.top };
+    const x1 = dataLeftTop.left / background.width;
+    const y1 = dataLeftTop.top / background.height;
+    const x2 = (dataLeftTop.left + element.width * element.scaleX) / background.width;
+    const y2 = (dataLeftTop.top + element.height * element.scaleY) / background.height;
     const rectangle = { x1: x1, y1: y1, x2: x2, y2: y2 };
     const coord: IOutputData = {
       id: element.id,
