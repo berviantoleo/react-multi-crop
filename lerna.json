@@ -9,7 +9,7 @@
       "message": "chore(release): publish",
       "registry": "https://registry.npmjs.org",
       "createRelease": "github",
-      "allowBranch": "master"
+      "allowBranch": "main"
     }
   },
   "publishConfig": {
