@@ -12,7 +12,7 @@ Version `0.22` and newer will be hosted at [npmjs](https://www.npmjs.com/package
 
 | Github Action | Codecov | Netlify Status |
 |:-------------:|:-------:|:--------------:|
-| ![Release](https://github.com/berviantoleo/react-multi-crop/workflows/Release/badge.svg) | [![codecov](https://codecov.io/gh/berviantoleo/react-multi-crop/branch/master/graph/badge.svg?token=sGqoJBg260)](https://codecov.io/gh/berviantoleo/react-multi-crop) | [![Netlify Status](https://api.netlify.com/api/v1/badges/3e3a1664-31be-4997-9e91-b78bcf33a580/deploy-status)](https://app.netlify.com/sites/react-multi-crop/deploys) |
+| ![Release](https://github.com/berviantoleo/react-multi-crop/workflows/Release/badge.svg) | [![codecov](https://codecov.io/gh/berviantoleo/react-multi-crop/branch/master/graph/badge.svg?token=sGqoJBg260)](https://codecov.io/gh/berviantoleo/react-multi-crop) | [![Netlify Status](https://api.netlify.com/api/v1/badges/924d5d95-c3d2-4437-9f6e-2dd2069d9371/deploy-status)](https://app.netlify.com/sites/react-multi-crop/deploys) |
 
 ## How to Use
 ### Sample (Recommended) - Codesandbox.io
