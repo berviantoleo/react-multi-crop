@@ -59,6 +59,7 @@ jobs:
         with:
           branch: demo # The branch the action should deploy to.
           folder: examples/demo/build # The folder the action should deploy.
+          single-commit: true
   docs:
     name: Publish Docs
     runs-on: ubuntu-20.04
@@ -92,6 +93,8 @@ jobs:
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: docs # The folder the action should deploy.
+          single-commit: true
+
   coverage:
     name: Coverage Upload
     runs-on: ubuntu-20.04
