@@ -52,6 +52,8 @@ jobs:
         run: yarn lerna publish --yes
       - name: Build Demo
         run: yarn lerna run build --scope @berviantoleo/react-multi-crop-demo
+        env:
+          SKIP_PREFLIGHT_CHECK: true
       - name: Publish Demo
         uses: JamesIves/github-pages-deploy-action@v4.2.3
         with:
