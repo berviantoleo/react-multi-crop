@@ -35,8 +35,7 @@ jobs:
           yarn --frozen-lockfile
           yarn bootstrap
       - name: Build Package
-        run: |
-          yarn lerna run build --scope @berviantoleo/react-multi-crop
+        run: yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Git Identity
         run: |
           git config --global user.name 'github-actions[bot]'
@@ -50,8 +49,14 @@ jobs:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
           NPM_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          yarn lerna publish --yes
+        run: yarn lerna publish --yes
+      - name: Build Demo
+        run: yarn lerna run build --scope @berviantoleo/react-multi-crop-demo
+      - name: Publish Demo
+        uses: JamesIves/github-pages-deploy-action@v4.2.3
+        with:
+          branch: demo # The branch the action should deploy to.
+          folder: examples/demo/build # The folder the action should deploy.
   docs:
     name: Publish Docs
     runs-on: ubuntu-20.04
