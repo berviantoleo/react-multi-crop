@@ -33,7 +33,7 @@
     "@mui/styles": "^5.5.3",
     "@types/jest": "^27.4.1",
     "@types/node": "^17.0.23",
-    "@types/react": "^17.0.43",
+    "@types/react": "^18.0.0",
     "@types/react-dom": "^17.0.14",
     "cypress": "~9.5.2",
     "fabric": "^5.2.1",
