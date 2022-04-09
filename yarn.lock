@@ -3844,23 +3844,6 @@
 
 "@storybook/router@6.4.20":
   version "6.4.20"
-  resolved "https://registry.npmjs.org/@storybook/router/-/router-6.4.20.tgz#4344e699332837fe51142b215e315b0a9e6a6e44"
-  integrity sha512-lwTBtuq9gNywkVs1rye50dPF6pJEGHhZ+2MOTMtASjuM8KIL/wI3OYwRDnDf/98FcinFAeBcEPrEHmV5sAW73w==
-  dependencies:
-    "@storybook/client-logger" "6.4.20"
-    core-js "^3.8.2"
-    fast-deep-equal "^3.1.3"
-    global "^4.4.0"
-    history "5.0.0"
-    lodash "^4.17.21"
-    memoizerific "^1.11.3"
-    qs "^6.10.0"
-    react-router "^6.0.0"
-    react-router-dom "^6.0.0"
-    ts-dedent "^2.0.0"
-
-"@storybook/router@6.4.20":
-  version "6.4.20"
   resolved "https://registry.yarnpkg.com/@storybook/router/-/router-6.4.20.tgz#4344e699332837fe51142b215e315b0a9e6a6e44"
   integrity sha512-lwTBtuq9gNywkVs1rye50dPF6pJEGHhZ+2MOTMtASjuM8KIL/wI3OYwRDnDf/98FcinFAeBcEPrEHmV5sAW73w==
   dependencies:
@@ -4108,9 +4091,9 @@
     pretty-format "^27.0.2"
 
 "@testing-library/jest-dom@^5.16.3":
-  version "5.16.3"
-  resolved "https://registry.npmjs.org/@testing-library/jest-dom/-/jest-dom-5.16.3.tgz#b76851a909586113c20486f1679ffb4d8ec27bfa"
-  integrity sha512-u5DfKj4wfSt6akfndfu1eG06jsdyA/IUrlX2n3pyq5UXgXMhXY+NJb8eNK/7pqPWAhCKsCGWDdDO0zKMKAYkEA==
+  version "5.16.4"
+  resolved "https://registry.yarnpkg.com/@testing-library/jest-dom/-/jest-dom-5.16.4.tgz#938302d7b8b483963a3ae821f1c0808f872245cd"
+  integrity sha512-Gy+IoFutbMQcky0k+bqqumXZ1cTGswLsFqmNLzNdSKkU9KGV2u9oXhukCbbJ9/LRPKiqwxEE8VpV/+YZlfkPUA==
   dependencies:
     "@babel/runtime" "^7.9.2"
     "@types/testing-library__jest-dom" "^5.9.1"
