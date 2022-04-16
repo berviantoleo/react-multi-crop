@@ -68,8 +68,8 @@
   },
   "dependencies": {
     "fabric": "^5.2.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
     "uuid": "^8.3.2"
   },
   "license": "MIT",
