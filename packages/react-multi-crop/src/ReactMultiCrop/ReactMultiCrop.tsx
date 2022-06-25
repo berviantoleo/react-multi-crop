@@ -232,7 +232,15 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   selectionHandler(options: any): void {
     const { onSelect } = this.props;
     const converter = this.shapetoStructureData.bind(this);
-    const target = options.target;
+    const selectedList = options.selected;
+    if (!Array.isArray(selectedList)) {
+      // can't be processed
+      return;
+    } else if (selectedList.length == 0) {
+      return;
+    }
+    // get first element only
+    const target = selectedList[0];
     if (target && target.type === 'rect' && onSelect) {
       const data = converter(target);
       onSelect(data);
