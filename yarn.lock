@@ -4542,9 +4542,9 @@
     "@types/serve-static" "*"
 
 "@types/fabric@^4.5.8":
-  version "4.5.8"
-  resolved "https://registry.npmjs.org/@types/fabric/-/fabric-4.5.8.tgz#f0e172a56cfb6ed0ee676ad6b159476a1fb45f33"
-  integrity sha512-SUpIoygMSBmEXEftEGPuFE1qIa79C1oqi9R68JpvXzKyuGhyejARAScSEEYKjtuxejj9lUICD5AAqzgt8FGcNw==
+  version "4.5.9"
+  resolved "https://registry.yarnpkg.com/@types/fabric/-/fabric-4.5.9.tgz#25c34dbc2da243cd7fb56142952e256fa2464302"
+  integrity sha512-z7RvtGb93l8tCcaWyJK3fYrshqcBqAqdMlIHhwkK4efZ1wBktFHx+XiGXr8o6bvIZhvsHeXHK39S6M9gutL3dg==
 
 "@types/glob@*", "@types/glob@^7.1.1":
   version "7.2.0"
