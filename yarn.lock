@@ -5330,10 +5330,10 @@
     "@types/node" "*"
     form-data "^3.0.0"
 
-"@types/node@*", "@types/node@>=12":
-  version "18.0.3"
-  resolved "https://registry.npmjs.org/@types/node/-/node-18.0.3.tgz#463fc47f13ec0688a33aec75d078a0541a447199"
-  integrity sha512-HzNRZtp4eepNitP+BD6k2L6DROIDG4Q0fm4x+dwfsr6LGmROENnok75VGw40628xf+iR24WeMFcHuuBDUAzzsQ==
+"@types/node@*", "@types/node@>=12", "@types/node@^18.7.2":
+  version "18.7.6"
+  resolved "https://registry.npmjs.org/@types/node/-/node-18.7.6.tgz#31743bc5772b6ac223845e18c3fc26f042713c83"
+  integrity sha512-EdxgKRXgYsNITy5mjjXjVE/CS8YENSdhiagGrLqjG0pvA2owgJ6i4l7wy/PFZGC0B1/H20lWKN7ONVDNYDZm7A==
 
 "@types/node@^14.0.10 || ^16.0.0", "@types/node@^14.14.20 || ^16.0.0":
   version "16.11.43"
@@ -5344,11 +5344,6 @@
   version "14.18.21"
   resolved "https://registry.npmjs.org/@types/node/-/node-14.18.21.tgz#0155ee46f6be28b2ff0342ca1a9b9fd4468bef41"
   integrity sha512-x5W9s+8P4XteaxT/jKF0PSb7XEvo5VmqEWgsMlyeY4ZlLK8I6aH6g5TPPyDlLAep+GYf4kefb7HFyc7PAO3m+Q==
-
-"@types/node@^18.7.2":
-  version "18.7.6"
-  resolved "https://registry.npmjs.org/@types/node/-/node-18.7.6.tgz#31743bc5772b6ac223845e18c3fc26f042713c83"
-  integrity sha512-EdxgKRXgYsNITy5mjjXjVE/CS8YENSdhiagGrLqjG0pvA2owgJ6i4l7wy/PFZGC0B1/H20lWKN7ONVDNYDZm7A==
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -9230,10 +9225,10 @@ cyclist@^1.0.1:
   resolved "https://registry.npmjs.org/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
   integrity sha512-NJGVKPS81XejHcLhaLJS7plab0fK3slPh11mESeeDq2W4ZI5kUKK/LRRdVDvjJseojbPB7ZwjnyOybg3Igea/A==
 
-cypress@~10.4.0:
-  version "10.4.0"
-  resolved "https://registry.npmjs.org/cypress/-/cypress-10.4.0.tgz#bb5b3b6588ad49eff172fecf5778cc0da2980e4e"
-  integrity sha512-OM7F8MRE01SHQRVVzunid1ZK1m90XTxYnl+7uZfIrB4CYqUDCrZEeSyCXzIbsS6qcaijVCAhqDL60SxG8N6hew==
+cypress@~10.6.0:
+  version "10.6.0"
+  resolved "https://registry.yarnpkg.com/cypress/-/cypress-10.6.0.tgz#13f46867febf2c3715874ed5dce9c2e946b175fe"
+  integrity sha512-6sOpHjostp8gcLO34p6r/Ci342lBs8S5z9/eb3ZCQ22w2cIhMWGUoGKkosabPBfKcvRS9BE4UxybBtlIs8gTQA==
   dependencies:
     "@cypress/request" "^2.88.10"
     "@cypress/xvfb" "^1.2.4"
