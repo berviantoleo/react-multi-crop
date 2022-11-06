@@ -6,7 +6,7 @@
   "module": "dist/index.esm.js",
   "source": "src/index.ts",
   "scripts": {
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "docs": "build-storybook -o ../../docs/components",
     "fix-lint": "eslint \"src/**/*.{js,ts,tsx}\" \"test/**/*.{js,ts,tsx}\" --quiet --fix",
     "lint": "eslint \"src/**/*.{js,ts,tsx}\" \"test/**/*.{js,ts,tsx}\"",
