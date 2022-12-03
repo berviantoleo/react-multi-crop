@@ -43,7 +43,7 @@ jobs:
           yarn lerna run test --scope @berviantoleo/react-multi-crop
           yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Cypress run
-        uses: cypress-io/github-action@v4
+        uses: cypress-io/github-action@v5
         with:
           start: yarn start
           wait-on: 'http://localhost:3000'
