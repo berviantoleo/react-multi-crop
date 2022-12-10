@@ -4687,9 +4687,9 @@
     "@types/serve-static" "*"
 
 "@types/fabric@^4.5.13":
-  version "4.5.13"
-  resolved "https://registry.npmjs.org/@types/fabric/-/fabric-4.5.13.tgz#f780722b5975dcc911594ba8ea3eca72057f7f1f"
-  integrity sha512-+K2ce3hH1QfRlp5y8AialFl/rc7fkwzPQ9fK+fswPWTn3djkstCpm8Iou05NTZy3SxRA9dS7puSF+tjpo6ny7Q==
+  version "4.5.14"
+  resolved "https://registry.yarnpkg.com/@types/fabric/-/fabric-4.5.14.tgz#869c2238e8a80c9e066f3fa9b17477b44529c670"
+  integrity sha512-Hdi/HlG9+7a6eOCGQ0ViwBRxbgSK2Na8SE2oNMdhbn+dRkrH0jrjZVNnSspQzyxqA4OL6A3DotfavTwj7qEz/A==
 
 "@types/glob@*":
   version "8.0.0"
