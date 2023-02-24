@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.28.5](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.28.4...@berviantoleo/react-multi-crop@0.28.5) (2023-02-24)
+
+### Bug Fixes
+
+- **docs:** Migrate to vitepress ([#1707](https://github.com/berviantoleo/react-multi-crop/issues/1707)) ([fb643cb](https://github.com/berviantoleo/react-multi-crop/commit/fb643cb19e8e8b48995e25d677ffac6421a4c432))
+
 ## [0.28.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.28.3...@berviantoleo/react-multi-crop@0.28.4) (2023-02-17)
 
 ### Bug Fixes
