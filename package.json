@@ -3,9 +3,10 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap:hoist": "lerna bootstrap --hoist",
-    "docs": "cross-env BASE_URL=/react-multi-crop/ vuepress build documentation -d docs",
-    "docs:dev": "vuepress dev documentation",
-    "docs:build": "vuepress build documentation -d docs",
+    "docs": "cross-env BASE_URL=/react-multi-crop/ viteoress build documentation -d docs",
+    "docs:dev": "vitepress dev documentation",
+    "docs:build": "vitepress build documentation -d docs",
+    "docs:preview": "vitepress preview documentation",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "postinstall": "husky install"
   },
@@ -26,7 +27,8 @@
     "lerna": "^6.5.1",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
-    "vuepress": "^1.9.8"
+    "vitepress": "^1.0.0-alpha.47",
+    "vue": "^3.2.47"
   },
   "husky": {
     "hooks": {
