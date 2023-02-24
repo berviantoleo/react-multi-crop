@@ -42,6 +42,11 @@ jobs:
         run: |
           yarn lerna run test --scope @berviantoleo/react-multi-crop
           yarn lerna run build --scope @berviantoleo/react-multi-crop
+      - name: Try Build Docs
+        run: |
+          yarn docs
+          yarn lerna run docs --scope @berviantoleo/react-multi-crop
+      # TODO; will give the docs to artifacts
       - name: Cypress run
         uses: cypress-io/github-action@v5
         with:
