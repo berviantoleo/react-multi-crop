@@ -5,5 +5,6 @@ export default defineConfig({
     description: "React Multi Crop for easy crop",
     lang: "en-US",
     base: process.env.BASE_URL || "/",
-    lastUpdated: true
+    lastUpdated: true,
+    outDir: "../docs"
 });

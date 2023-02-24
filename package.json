@@ -3,9 +3,9 @@
   "scripts": {
     "bootstrap": "lerna bootstrap",
     "bootstrap:hoist": "lerna bootstrap --hoist",
-    "docs": "cross-env BASE_URL=/react-multi-crop/ viteoress build documentation -d docs",
+    "docs": "cross-env BASE_URL=/react-multi-crop/ vitepress build documentation",
     "docs:dev": "vitepress dev documentation",
-    "docs:build": "vitepress build documentation -d docs",
+    "docs:build": "vitepress build documentation",
     "docs:preview": "vitepress preview documentation",
     "lint": "eslint --ext .js,.jsx,.ts,.tsx .",
     "postinstall": "husky install"
