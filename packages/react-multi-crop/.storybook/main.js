@@ -5,4 +5,7 @@ module.exports = {
     "@storybook/addon-storysource/register",
     "@storybook/addon-essentials",
   ],
+  core: {
+    builder: 'webpack5',
+  },
 };
