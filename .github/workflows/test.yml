@@ -43,6 +43,7 @@ jobs:
           yarn lerna run test --scope @berviantoleo/react-multi-crop
           yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Try Build Docs
+        if: ${{ matrix.node_version == "18" }}
         run: |
           yarn docs
           yarn lerna run docs --scope @berviantoleo/react-multi-crop
