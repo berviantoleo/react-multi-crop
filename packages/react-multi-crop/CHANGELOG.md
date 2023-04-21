@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.29.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.28.6...@berviantoleo/react-multi-crop@0.29.0) (2023-04-21)
+
+### Features
+
+- add disableZoom ([#1757](https://github.com/berviantoleo/react-multi-crop/issues/1757)) ([67bc0c7](https://github.com/berviantoleo/react-multi-crop/commit/67bc0c7aedb497b201ae68b2bee8e5d689c1aee4))
+
 ## [0.28.6](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.28.5...@berviantoleo/react-multi-crop@0.28.6) (2023-04-08)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop
