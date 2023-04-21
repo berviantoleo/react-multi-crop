@@ -69,7 +69,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     // this.changeImage();
     const { canvas } = this.state;
     if (canvas) {
-      const { zoomLevel, activeObject } = this.props;
+      const { zoomLevel, activeObject, disableZoom = false } = this.props;
       const prevZoomLevel = prevProps.zoomLevel;
       if (prevZoomLevel !== zoomLevel && zoomLevel && zoomLevel > 0) {
         canvas.setZoom(zoomLevel);
@@ -88,6 +88,14 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           canvas.setActiveObject(objectSelect);
         }
         canvas.requestRenderAll();
+      }
+
+      // ensuring the previous handler is off
+      canvas.off('mouse:wheel');
+      if (!disableZoom)
+      {
+        const zoomHandler = this.zoom.bind(this);
+        canvas.on('mouse:wheel', zoomHandler);
       }
     }
   }
@@ -275,15 +283,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas.on('mouse:dblclick', doubleClickEvent);
       canvas.on('object:modified', objectModifiedEvent);
     }
-    const zoomHandler = this.zoom.bind(this);
     const selectionObjectHandler = this.selectionHandler.bind(this);
     const selectionObjectClearHandler = this.selectionClearHandler.bind(this);
     canvas.on('selection:created', selectionObjectHandler);
     canvas.on('selection:updated', selectionObjectHandler);
     canvas.on('selection:cleared', selectionObjectClearHandler);
-    if (!disableZoom) {
-      canvas.on('mouse:wheel', zoomHandler);
-    }
     // setup move drag: alt + click
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     canvas.on('mouse:down', function (opt: any) {
