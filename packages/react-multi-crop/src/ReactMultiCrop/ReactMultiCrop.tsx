@@ -92,8 +92,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
 
       // ensuring the previous handler is off
       canvas.off('mouse:wheel');
-      if (!disableZoom)
-      {
+      if (!disableZoom) {
         const zoomHandler = this.zoom.bind(this);
         canvas.on('mouse:wheel', zoomHandler);
       }
@@ -264,7 +263,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   }
 
   initialCanvas(): void {
-    const { id, width, height, disableZoom = false, readonly } = this.props;
+    const { id, width, height, readonly } = this.props;
     const canvas = new fabric.Canvas(id || 'canvas', {
       width: width,
       height: height,
