@@ -19,6 +19,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     cornerSize: 13,
     cropBackgroundColor: 'yellow',
     cropBackgroundOpacity: 0.5,
+    disableZoom: false,
     height: 800,
     id: 'canvas',
     image: undefined,
@@ -255,7 +256,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   }
 
   initialCanvas(): void {
-    const { id, width, height, readonly } = this.props;
+    const { id, width, height, disableZoom = false, readonly } = this.props;
     const canvas = new fabric.Canvas(id || 'canvas', {
       width: width,
       height: height,
@@ -280,7 +281,9 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     canvas.on('selection:created', selectionObjectHandler);
     canvas.on('selection:updated', selectionObjectHandler);
     canvas.on('selection:cleared', selectionObjectClearHandler);
-    canvas.on('mouse:wheel', zoomHandler);
+    if (!disableZoom) {
+      canvas.on('mouse:wheel', zoomHandler);
+    }
     // setup move drag: alt + click
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
     canvas.on('mouse:down', function (opt: any) {
