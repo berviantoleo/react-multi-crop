@@ -31,6 +31,7 @@ export interface IReactMultiCropProps {
   cropBackgroundColor?: string;
   cropBackgroundOpacity?: number;
   deleteButton?: JSX.Element;
+  disableZoom?: boolean;
   discardButton?: JSX.Element;
   height?: number;
   id?: string;
