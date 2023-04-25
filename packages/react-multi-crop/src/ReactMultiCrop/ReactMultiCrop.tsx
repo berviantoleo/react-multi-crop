@@ -69,15 +69,20 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     // this.changeImage();
     const { canvas } = this.state;
     if (canvas) {
-      const { zoomLevel, activeObject, disableZoom = false } = this.props;
-      const prevZoomLevel = prevProps.zoomLevel;
+      const { zoomLevel, activeObject, height, width, disableZoom = false } = this.props;
+      const {
+        zoomLevel: prevZoomLevel,
+        activeObject: prevActive,
+        height: prevHeight,
+        width: prevWidth,
+      } = prevProps;
+      let shouldRender = false;
       if (prevZoomLevel !== zoomLevel && zoomLevel && zoomLevel > 0) {
         canvas.setZoom(zoomLevel);
-        canvas.renderAll();
+        shouldRender = true;
       }
 
       // prev active object
-      const prevActive = prevProps.activeObject;
       if (prevActive !== activeObject && activeObject) {
         const dataObjects = canvas.getObjects();
         const allSelected = dataObjects.filter(
@@ -87,14 +92,29 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         for (const objectSelect of allSelected) {
           canvas.setActiveObject(objectSelect);
         }
-        canvas.requestRenderAll();
+        shouldRender = true;
       }
 
       // ensuring the previous handler is off
+      // TODO: need to be optimized
       canvas.off('mouse:wheel');
       if (!disableZoom) {
         const zoomHandler = this.zoom.bind(this);
         canvas.on('mouse:wheel', zoomHandler);
+      }
+
+      if (height && height !== prevHeight) {
+        canvas.setHeight(height);
+        shouldRender = true;
+      }
+
+      if (width && width !== prevWidth) {
+        canvas.setWidth(width);
+        shouldRender = true;
+      }
+
+      if (shouldRender) {
+        canvas.requestRenderAll();
       }
     }
   }
@@ -646,7 +666,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
 
     return (
       <div id="canvas-wrapper" style={style}>
-        <Container row>
+        <Container row width={width} height={height}>
           <div onKeyDown={!readonly ? this.keyboardHandler : undefined} tabIndex={0}>
             <canvas id={id} height={height} style={{ border: '0px solid #aaa' }} width={width} />
           </div>
