@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.30.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.29.0...@berviantoleo/react-multi-crop@0.30.0) (2023-04-25)
+
+### Features
+
+- update width & height for canvas & wrapper ([#1778](https://github.com/berviantoleo/react-multi-crop/issues/1778)) ([8d165e1](https://github.com/berviantoleo/react-multi-crop/commit/8d165e18d85b393f77d0735674d1edf3ef24670a))
+
 # [0.29.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.28.6...@berviantoleo/react-multi-crop@0.29.0) (2023-04-21)
 
 ### Features
