@@ -665,14 +665,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     } = this.props;
 
     return (
-      <div
-        id="canvas-wrapper"
-        style={{
-          width: width,
-          height: height,
-          ...style,
-        }}
-      >
+      <div id="canvas-wrapper" style={style}>
         <Container row width={width} height={height}>
           <div onKeyDown={!readonly ? this.keyboardHandler : undefined} tabIndex={0}>
             <canvas id={id} height={height} style={{ border: '0px solid #aaa' }} width={width} />
