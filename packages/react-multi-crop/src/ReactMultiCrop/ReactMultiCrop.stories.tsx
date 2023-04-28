@@ -6,6 +6,14 @@ import { IOutputData, IReactMultiCropProps } from './interfaces';
 export default {
   title: 'React Multi Crop',
   component: ReactMultiCrop,
+  argTypes: {
+    cropBackgroundColor: {
+      options: ['yellow', 'blue', 'red'],
+      control: {
+        type: 'select',
+      },
+    },
+  },
 } as Meta;
 
 const Template: Story<IReactMultiCropProps> = (args: IReactMultiCropProps) => (

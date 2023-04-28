@@ -36,8 +36,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     zoomChanged: undefined,
   };
 
-  private readonly color: string;
-  private readonly opacity: number;
   private REGEXP_ORIGINS = /^(\w+:)\/\/([^:/?#]*):?(\d*)/i;
 
   constructor(props: IReactMultiCropProps) {
@@ -47,9 +45,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       canvas: null,
       initial: true,
     };
-
-    this.color = props.cropBackgroundColor || 'yellow';
-    this.opacity = props.cropBackgroundOpacity || 0.5;
 
     this.keyboardHandler = this.keyboardHandler.bind(this);
     this.addNew = this.addNew.bind(this);
@@ -69,12 +64,30 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     // this.changeImage();
     const { canvas } = this.state;
     if (canvas) {
-      const { zoomLevel, activeObject, height, width, disableZoom = false } = this.props;
+      const {
+        zoomLevel,
+        activeObject,
+        height,
+        width,
+        borderColor,
+        cornerColor,
+        cornerSize,
+        transparentCorners,
+        cropBackgroundColor,
+        cropBackgroundOpacity,
+        disableZoom = false,
+      } = this.props;
       const {
         zoomLevel: prevZoomLevel,
         activeObject: prevActive,
         height: prevHeight,
         width: prevWidth,
+        borderColor: prevBorderColor,
+        cornerColor: prevCornerColor,
+        cornerSize: prevCornerSize,
+        transparentCorners: prevTransparentCorners,
+        cropBackgroundColor: prevCropBackgroundColor,
+        cropBackgroundOpacity: prevCropBackgroundOpacity,
       } = prevProps;
       let shouldRender = false;
       if (prevZoomLevel !== zoomLevel && zoomLevel && zoomLevel > 0) {
@@ -113,9 +126,44 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         shouldRender = true;
       }
 
+      // handle crop elements
+      if (
+        borderColor !== prevBorderColor ||
+        cornerColor !== prevCornerColor ||
+        cornerSize !== prevCornerSize ||
+        transparentCorners !== prevTransparentCorners ||
+        cropBackgroundColor !== prevCropBackgroundColor ||
+        cropBackgroundOpacity !== prevCropBackgroundOpacity
+      ) {
+        const attribute: IAttribute = {
+          borderColor,
+          cornerColor,
+          cornerSize,
+          transparentCorners,
+          cropBackgroundColor,
+          cropBackgroundOpacity,
+        };
+        this.updateCropAttributes(canvas, attribute);
+        shouldRender = true;
+      }
+
       if (shouldRender) {
         canvas.requestRenderAll();
       }
+    }
+  }
+
+  updateCropAttributes(canvas: fabric.Canvas, attribute: IAttribute) {
+    const objects = canvas.getObjects('rect');
+    if (Array.isArray(objects) && objects.length > 0) {
+      objects.forEach((object) => {
+        object.borderColor = attribute.borderColor;
+        object.cornerColor = attribute.cornerColor;
+        object.cornerSize = attribute.cornerSize;
+        object.transparentCorners = attribute.transparentCorners;
+        object.opacity = attribute.cropBackgroundOpacity;
+        object.set('fill', attribute.cropBackgroundColor);
+      });
     }
   }
 
@@ -345,16 +393,25 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    const { borderColor, cornerColor, cornerSize, transparentCorners } = this.props;
+    const {
+      borderColor,
+      cornerColor,
+      cornerSize,
+      transparentCorners,
+      cropBackgroundColor,
+      cropBackgroundOpacity,
+    } = this.props;
     const coor: ICoord = {
       id: null,
       rect: { x1: 0, y1: 0, x2: 0.2, y2: 0.2 },
     };
     const attribute: IAttribute = {
-      borderColor: borderColor,
-      cornerColor: cornerColor,
-      cornerSize: cornerSize,
-      transparentCorners: transparentCorners,
+      borderColor,
+      cornerColor,
+      cornerSize,
+      transparentCorners,
+      cropBackgroundColor,
+      cropBackgroundOpacity,
     };
     const rect = this.createObject(canvas, coor, attribute, false);
     if (!rect) {
@@ -370,7 +427,15 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    const { readonly, borderColor, cornerColor, cornerSize, transparentCorners } = this.props;
+    const {
+      readonly,
+      borderColor,
+      cornerColor,
+      cornerSize,
+      transparentCorners,
+      cropBackgroundColor,
+      cropBackgroundOpacity,
+    } = this.props;
     if (options && options.target) {
       const left = options.target.left;
       const top = options.target.top;
@@ -381,10 +446,12 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         top: top + 50,
         width: width * options.target.scaleX,
         height: height * options.target.scaleY,
-        borderColor: borderColor,
-        cornerColor: cornerColor,
-        cornerSize: cornerSize,
-        transparentCorners: transparentCorners,
+        borderColor,
+        cornerColor,
+        cornerSize,
+        transparentCorners,
+        cropBackgroundColor,
+        cropBackgroundOpacity,
       };
       const rect = this.createObjectByAttribute(null, attribute, readonly || false);
       canvas.add(rect);
@@ -400,10 +467,12 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         top: top,
         width: 100,
         height: 100,
-        borderColor: borderColor,
-        cornerColor: cornerColor,
-        cornerSize: cornerSize,
-        transparentCorners: transparentCorners,
+        borderColor,
+        cornerColor,
+        cornerSize,
+        transparentCorners,
+        cropBackgroundColor,
+        cropBackgroundOpacity,
       };
       const rect = this.createObjectByAttribute(null, attribute, readonly || false);
       canvas.add(rect);
@@ -428,8 +497,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       cornerColor: attribute.cornerColor,
       cornerSize: attribute.cornerSize,
       transparentCorners: attribute.transparentCorners,
-      fill: this.color,
-      opacity: this.opacity,
+      fill: attribute.cropBackgroundColor,
+      opacity: attribute.cropBackgroundOpacity,
       id: existingId,
       strokeWidth: 0,
       strokeUniform: true,
@@ -620,6 +689,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       cornerColor: attribute.cornerColor,
       cornerSize: attribute.cornerSize,
       transparentCorners: attribute.transparentCorners,
+      cropBackgroundColor: attribute.cropBackgroundColor,
+      cropBackgroundOpacity: attribute.cropBackgroundOpacity,
     };
     return this.createObjectByAttribute(coor.id, newAttribute, readonly);
   }

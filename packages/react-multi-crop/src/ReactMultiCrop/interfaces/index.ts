@@ -77,6 +77,8 @@ export interface IAttribute {
   cornerColor?: string;
   cornerSize?: number;
   transparentCorners?: boolean;
+  cropBackgroundColor?: string;
+  cropBackgroundOpacity?: number;
 }
 
 export interface ICustomFabricRect extends fabric.IRectOptions {
