@@ -161,8 +161,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         object.cornerColor = attribute.cornerColor;
         object.cornerSize = attribute.cornerSize;
         object.transparentCorners = attribute.transparentCorners;
-        object.fill = attribute.cropBackgroundColor;
         object.opacity = attribute.cropBackgroundOpacity;
+        object.set('fill', attribute.cropBackgroundColor);
       });
     }
   }
