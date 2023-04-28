@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.31.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.30.0...@berviantoleo/react-multi-crop@0.31.0) (2023-04-28)
+
+### Features
+
+- add reactive props for color and other crop attributes ([#1786](https://github.com/berviantoleo/react-multi-crop/issues/1786)) ([c9c4726](https://github.com/berviantoleo/react-multi-crop/commit/c9c4726dd215992702a8ce09de88fc234e4a03f7))
+
 # [0.30.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.29.0...@berviantoleo/react-multi-crop@0.30.0) (2023-04-25)
 
 ### Features
