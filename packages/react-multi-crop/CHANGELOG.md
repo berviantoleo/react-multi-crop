@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.31.1](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.31.0...@berviantoleo/react-multi-crop@0.31.1) (2023-05-04)
+
+### Bug Fixes
+
+- color not applied for initial object ([#1803](https://github.com/berviantoleo/react-multi-crop/issues/1803)) ([8a0041d](https://github.com/berviantoleo/react-multi-crop/commit/8a0041dd3d2500c65b99d60db21429ea33590b70))
+
 # [0.31.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.30.0...@berviantoleo/react-multi-crop@0.31.0) (2023-04-28)
 
 ### Features
