@@ -127,6 +127,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       }
 
       // handle crop elements
+      // TODO: remove this later
       if (
         borderColor !== prevBorderColor ||
         cornerColor !== prevCornerColor ||
@@ -146,6 +147,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         this.updateCropAttributes(canvas, attribute);
         shouldRender = true;
       }
+
+      // handle check each crops
 
       if (shouldRender) {
         canvas.requestRenderAll();
@@ -231,8 +234,16 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    const { record, readonly, borderColor, cornerColor, cornerSize, transparentCorners } =
-      this.props;
+    const {
+      record,
+      readonly,
+      borderColor,
+      cornerColor,
+      cornerSize,
+      cropBackgroundColor,
+      cropBackgroundOpacity,
+      transparentCorners,
+    } = this.props;
     if (record) {
       const inputObject = record.clippings;
       if (
@@ -241,10 +252,12 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         typeof inputObject[0] === 'object'
       ) {
         const attribute: IAttribute = {
-          borderColor: borderColor,
-          cornerColor: cornerColor,
-          cornerSize: cornerSize,
-          transparentCorners: transparentCorners,
+          borderColor,
+          cornerColor,
+          cornerSize,
+          transparentCorners,
+          cropBackgroundColor,
+          cropBackgroundOpacity,
         };
         let totalRendered = 0;
         for (const coord of inputObject) {
@@ -255,7 +268,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           }
         }
         if (totalRendered > 0) {
-          // canvas.renderAll();
           this.setOutput();
         }
       }

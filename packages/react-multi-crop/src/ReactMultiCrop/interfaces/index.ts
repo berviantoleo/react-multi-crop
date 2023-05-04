@@ -1,9 +1,34 @@
 import { fabric } from 'fabric';
 import CSS from 'csstype';
 
+export interface ICropStyle {
+  borderColor?: string;
+  cornerColor?: string;
+  cornerSize?: number;
+  cropBackgroundColor?: string;
+  cropBackgroundOpacity?: number;
+  transparentCorners?: boolean;
+}
+
+export interface IRectCoord {
+  x1: number;
+  x2: number;
+  y1: number;
+  y2: number;
+}
+
+export interface ICoord {
+  id: string | null;
+  rect: IRectCoord | string;
+}
+
+export interface ICropProps extends ICoord {
+  rectPx?: IRectCoord | string;
+  style?: ICropStyle;
+}
+
 export interface IRecordProps {
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any
-  clippings: Array<any>;
+  clippings: Array<ICropProps>;
 }
 
 export interface IOutputData extends ICoord {
@@ -23,17 +48,8 @@ export interface IInputProps {
 }
 
 export interface IReactMultiCropProps {
-  addButton?: JSX.Element;
   activeObject?: string;
-  borderColor?: string;
-  cornerColor?: string;
-  cornerSize?: number;
-  cropBackgroundColor?: string;
-  cropBackgroundOpacity?: number;
-  deleteButton?: JSX.Element;
   disableZoom?: boolean;
-  discardButton?: JSX.Element;
-  height?: number;
   id?: string;
   image?: string;
   includeDataUrl?: boolean;
@@ -43,29 +59,37 @@ export interface IReactMultiCropProps {
   onSelect?(value: IOutputData | null): void;
   readonly?: boolean;
   record?: IRecordProps;
-  showButton?: boolean;
-  style?: CSS.Properties;
-  transparentCorners?: boolean;
+  height?: number;
   width?: number;
   zoomChanged?(value: number): void;
   zoomLevel?: number;
+  /** @deprecated use borderColor in record */
+  borderColor?: string;
+  /** @deprecated use cornerColor in record */
+  cornerColor?: string;
+  /** @deprecated use cornerSize in record */
+  cornerSize?: number;
+  /** @deprecated use cropBackgroundColor in record */
+  cropBackgroundColor?: string;
+  /** @deprecated use cropBackgroundOpacity in record */
+  cropBackgroundOpacity?: number;
+  /** @deprecated use transparentCorners in record */
+  transparentCorners?: boolean;
+  /** @deprecated will completely remove the buttons */
+  addButton?: JSX.Element;
+  /** @deprecated will completely remove the buttons */
+  deleteButton?: JSX.Element;
+  /** @deprecated will completely remove the buttons */
+  discardButton?: JSX.Element;
+  /** @deprecated will completely remove the buttons */
+  showButton?: boolean;
+  /** @deprecated avoid to use this props */
+  style?: CSS.Properties;
 }
 
 export interface IReactMultiCropStates {
   canvas: fabric.Canvas | null;
   initial: boolean;
-}
-
-export interface IRectCoord {
-  x1: number;
-  x2: number;
-  y1: number;
-  y2: number;
-}
-
-export interface ICoord {
-  id: string | null;
-  rect: IRectCoord | string;
 }
 
 export interface IAttribute {
@@ -98,6 +122,7 @@ export class CustomFabricRect extends fabric.Rect {
   }
 }
 
+/** @deprecated will completely remove the buttons */
 export interface IActionComponentProps {
   addButton?: JSX.Element;
   addNew(): void;
