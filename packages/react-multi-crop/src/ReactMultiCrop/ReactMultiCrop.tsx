@@ -231,8 +231,16 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     if (!canvas) {
       return;
     }
-    const { record, readonly, borderColor, cornerColor, cornerSize, transparentCorners } =
-      this.props;
+    const {
+      record,
+      readonly,
+      borderColor,
+      cornerColor,
+      cornerSize,
+      transparentCorners,
+      cropBackgroundColor,
+      cropBackgroundOpacity,
+    } = this.props;
     if (record) {
       const inputObject = record.clippings;
       if (
@@ -241,10 +249,12 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         typeof inputObject[0] === 'object'
       ) {
         const attribute: IAttribute = {
-          borderColor: borderColor,
-          cornerColor: cornerColor,
-          cornerSize: cornerSize,
-          transparentCorners: transparentCorners,
+          borderColor,
+          cornerColor,
+          cornerSize,
+          transparentCorners,
+          cropBackgroundColor,
+          cropBackgroundOpacity,
         };
         let totalRendered = 0;
         for (const coord of inputObject) {
