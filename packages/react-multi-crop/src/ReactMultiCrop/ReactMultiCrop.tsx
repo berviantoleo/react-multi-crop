@@ -112,6 +112,47 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         shouldRender = true;
       }
 
+      // ensuring the previous handler is off
+      // TODO: need to be optimized
+      canvas.off('mouse:wheel');
+      if (!disableZoom) {
+        const zoomHandler = this.zoom.bind(this);
+        canvas.on('mouse:wheel', zoomHandler);
+      }
+
+      if (height && height !== prevHeight) {
+        canvas.setHeight(height);
+        shouldRender = true;
+      }
+
+      if (width && width !== prevWidth) {
+        canvas.setWidth(width);
+        shouldRender = true;
+      }
+
+      // handle crop elements
+      // TODO: remove this later
+      if (
+        borderColor !== prevBorderColor ||
+        cornerColor !== prevCornerColor ||
+        cornerSize !== prevCornerSize ||
+        transparentCorners !== prevTransparentCorners ||
+        cropBackgroundColor !== prevCropBackgroundColor ||
+        cropBackgroundOpacity !== prevCropBackgroundOpacity
+      ) {
+        const attribute: IAttribute = {
+          borderColor,
+          cornerColor,
+          cornerSize,
+          transparentCorners,
+          cropBackgroundColor,
+          cropBackgroundOpacity,
+        };
+        this.updateCropAttributes(canvas, attribute);
+        shouldRender = true;
+      }
+
+      // handle check each crops
       // Experimental to check each clips
       const previousRecord = prevRecord as IRecordProps;
       if (Array.isArray(previousRecord.clippings) && record && Array.isArray(record?.clippings)) {
@@ -159,48 +200,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           }
         }
       }
-
-      // ensuring the previous handler is off
-      // TODO: need to be optimized
-      canvas.off('mouse:wheel');
-      if (!disableZoom) {
-        const zoomHandler = this.zoom.bind(this);
-        canvas.on('mouse:wheel', zoomHandler);
-      }
-
-      if (height && height !== prevHeight) {
-        canvas.setHeight(height);
-        shouldRender = true;
-      }
-
-      if (width && width !== prevWidth) {
-        canvas.setWidth(width);
-        shouldRender = true;
-      }
-
-      // handle crop elements
-      // TODO: remove this later
-      if (
-        borderColor !== prevBorderColor ||
-        cornerColor !== prevCornerColor ||
-        cornerSize !== prevCornerSize ||
-        transparentCorners !== prevTransparentCorners ||
-        cropBackgroundColor !== prevCropBackgroundColor ||
-        cropBackgroundOpacity !== prevCropBackgroundOpacity
-      ) {
-        const attribute: IAttribute = {
-          borderColor,
-          cornerColor,
-          cornerSize,
-          transparentCorners,
-          cropBackgroundColor,
-          cropBackgroundOpacity,
-        };
-        this.updateCropAttributes(canvas, attribute);
-        shouldRender = true;
-      }
-
-      // handle check each crops
 
       if (shouldRender) {
         canvas.requestRenderAll();
