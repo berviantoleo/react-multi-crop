@@ -5,12 +5,14 @@ import {
   CustomFabricRect,
   IAttribute,
   ICoord,
+  ICustomFabricRect,
   IOutputData,
   IReactMultiCropProps,
   IReactMultiCropStates,
 } from './interfaces';
 import { ActionsComponent } from './components/ActionsComponent';
 import Container from './components/Container';
+import { IRecordProps } from '..';
 
 class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
   public static defaultProps: IReactMultiCropProps = {
@@ -75,6 +77,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         transparentCorners,
         cropBackgroundColor,
         cropBackgroundOpacity,
+        record,
         disableZoom = false,
       } = this.props;
       const {
@@ -88,6 +91,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         transparentCorners: prevTransparentCorners,
         cropBackgroundColor: prevCropBackgroundColor,
         cropBackgroundOpacity: prevCropBackgroundOpacity,
+        record: prevRecord,
       } = prevProps;
       let shouldRender = false;
       if (prevZoomLevel !== zoomLevel && zoomLevel && zoomLevel > 0) {
@@ -127,6 +131,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       }
 
       // handle crop elements
+      // TODO: remove this later
       if (
         borderColor !== prevBorderColor ||
         cornerColor !== prevCornerColor ||
@@ -145,6 +150,55 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         };
         this.updateCropAttributes(canvas, attribute);
         shouldRender = true;
+      }
+
+      // handle check each crops
+      // Experimental to check each clips
+      const previousRecord = prevRecord as IRecordProps;
+      if (Array.isArray(previousRecord.clippings) && record && Array.isArray(record?.clippings)) {
+        // populate different props
+        const differentObjects = record.clippings.filter((clip) => {
+          const prevClip = previousRecord.clippings.find(
+            (prev) => prev.id === clip.id || (prev.objectId && prev.objectId === clip.objectId),
+          );
+          if (!prevClip) {
+            return false;
+          }
+          return (
+            clip.style?.borderColor !== prevClip.style?.borderColor ||
+            clip.style?.cornerColor !== prevClip.style?.cornerColor ||
+            clip.style?.cornerSize !== prevClip.style?.cornerSize ||
+            clip.style?.transparentCorners !== prevClip.style?.transparentCorners ||
+            clip.style?.cropBackgroundColor !== prevClip.style?.cropBackgroundColor ||
+            clip.style?.cropBackgroundOpacity !== prevClip.style?.cropBackgroundOpacity
+          );
+        });
+        // take canvas objects
+        const canvasObjects = canvas.getObjects('rect');
+        if (Array.isArray(canvasObjects) && canvasObjects.length > 0) {
+          let affectedObj = 0;
+          // iterate each diff props
+          differentObjects.forEach((difObj) => {
+            const affectedObject = canvasObjects.find((x: unknown) => {
+              const obj = x as ICustomFabricRect;
+              return obj.id === difObj.id || obj.objectId === difObj.objectId;
+            });
+            if (!affectedObject) {
+              return;
+            }
+            affectedObject.borderColor = difObj.style?.borderColor;
+            affectedObject.cornerColor = difObj.style?.cornerColor;
+            affectedObject.cornerSize = difObj.style?.cornerSize;
+            affectedObject.transparentCorners = difObj.style?.transparentCorners;
+            affectedObject.opacity = difObj.style?.cropBackgroundOpacity;
+            affectedObject.set('fill', difObj.style?.cropBackgroundColor);
+            affectedObj += 1;
+          });
+          // check actual difference
+          if (affectedObj > 0) {
+            shouldRender = true;
+          }
+        }
       }
 
       if (shouldRender) {
@@ -265,7 +319,6 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           }
         }
         if (totalRendered > 0) {
-          // canvas.renderAll();
           this.setOutput();
         }
       }
