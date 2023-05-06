@@ -240,9 +240,9 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       borderColor,
       cornerColor,
       cornerSize,
+      transparentCorners,
       cropBackgroundColor,
       cropBackgroundOpacity,
-      transparentCorners,
     } = this.props;
     if (record) {
       const inputObject = record.clippings;

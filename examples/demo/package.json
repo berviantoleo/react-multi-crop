@@ -1,7 +1,7 @@
 {
   "name": "@berviantoleo/react-multi-crop-demo",
   "description": "Demo for Multicrop.js in React.js",
-  "version": "0.19.2",
+  "version": "0.19.4",
   "private": true,
   "homepage": "https://github.com/berviantoleo/react-multi-crop",
   "repository": {
@@ -25,11 +25,11 @@
     }
   ],
   "dependencies": {
-    "@berviantoleo/react-multi-crop": "^0.31.0",
-    "@emotion/react": "^11.10.6",
-    "@emotion/styled": "^11.10.6",
+    "@berviantoleo/react-multi-crop": "^0.31.2",
+    "@emotion/react": "^11.10.8",
+    "@emotion/styled": "^11.10.8",
     "@mui/icons-material": "^5.11.16",
-    "@mui/material": "^5.12.1",
+    "@mui/material": "^5.12.3",
     "@mui/styles": "^5.12.0",
     "fabric": "^5.3.0",
     "react": "^18.2.0",
@@ -37,9 +37,9 @@
   },
   "devDependencies": {
     "@types/jest": "^29.5.1",
-    "@types/node": "^18.16.0",
-    "@types/react": "^18.0.38",
-    "@types/react-dom": "^18.0.11",
+    "@types/node": "^18.16.3",
+    "@types/react": "^18.2.5",
+    "@types/react-dom": "^18.2.3",
     "cypress": "~12.11.0",
     "react-scripts": "5.0.1",
     "start-server-and-test": "^2.0.0"
