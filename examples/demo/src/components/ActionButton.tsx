@@ -24,7 +24,7 @@ export default function ActionButton(): JSX.Element {
           record={{
             clippings: [
               {
-                id: 1,
+                id: '1',
                 rect: { x1: 0.0, y1: 0.0, x2: 0.2, y2: 0.2 },
                 rectPx: {},
               },
