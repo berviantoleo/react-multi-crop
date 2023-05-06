@@ -115,12 +115,11 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       // Experimental to check each clips
       const previousRecord = prevRecord as IRecordProps;
       if (Array.isArray(previousRecord.clippings) && record && Array.isArray(record?.clippings)) {
+        // populate different props
         const differentObjects = record.clippings.filter((clip) => {
-          if (!clip.id) {
-            // won't track the new object created by multi crop, which have objectId but id == null
-            return false;
-          }
-          const prevClip = previousRecord.clippings.find((prev) => prev.id === clip.id);
+          const prevClip = previousRecord.clippings.find(
+            (prev) => prev.id === clip.id || (prev.objectId && prev.objectId === clip.objectId),
+          );
           if (!prevClip) {
             return false;
           }
@@ -133,12 +132,15 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
             clip.style?.cropBackgroundOpacity !== prevClip.style?.cropBackgroundOpacity
           );
         });
+        // take canvas objects
         const canvasObjects = canvas.getObjects('rect');
         if (Array.isArray(canvasObjects) && canvasObjects.length > 0) {
+          let affectedObj = 0;
+          // iterate each diff props
           differentObjects.forEach((difObj) => {
             const affectedObject = canvasObjects.find((x: unknown) => {
               const obj = x as ICustomFabricRect;
-              return obj.id === difObj.id;
+              return obj.id === difObj.id || obj.objectId === difObj.objectId;
             });
             if (!affectedObject) {
               return;
@@ -149,7 +151,12 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
             affectedObject.transparentCorners = difObj.style?.transparentCorners;
             affectedObject.opacity = difObj.style?.cropBackgroundOpacity;
             affectedObject.set('fill', difObj.style?.cropBackgroundColor);
+            affectedObj += 1;
           });
+          // check actual difference
+          if (affectedObj > 0) {
+            shouldRender = true;
+          }
         }
       }
 

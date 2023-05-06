@@ -20,10 +20,11 @@ export interface IRectCoord {
 export interface ICoord {
   id: string | null;
   rect: IRectCoord | string;
+  objectId?: string;
 }
 
 export interface ICropProps extends ICoord {
-  rectPx?: IRectCoord | string;
+  rectPx?: IRectCoord | string | object;
   style?: ICropStyle;
 }
 
