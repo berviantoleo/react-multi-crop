@@ -46,6 +46,11 @@ jobs:
         run: |
           yarn docs
           yarn lerna run docs --scope @berviantoleo/react-multi-crop
+      - name: Try Build Demo
+        run: yarn lerna run build --scope @berviantoleo/react-multi-crop-demo
+        env:
+          SKIP_PREFLIGHT_CHECK: true
+          PUBLIC_URL: /
       # TODO; will give the docs to artifacts
       - name: Cypress run
         uses: cypress-io/github-action@v5

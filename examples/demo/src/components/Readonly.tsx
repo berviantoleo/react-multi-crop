@@ -39,27 +39,27 @@ export default function Readonly(): JSX.Element {
           record={{
             clippings: [
               {
-                id: 1,
+                id: "1",
                 rect: { x1: 0.0, y1: 0.0, x2: 0.2, y2: 0.2 },
                 rectPx: {},
               },
               {
-                id: 2,
+                id: "2",
                 rect: { x1: 0.5, y1: 0.5, x2: 0.7, y2: 0.7 },
                 rectPx: {},
               },
               {
-                id: 3,
+                id: "3",
                 rect: { x1: 0.3, y1: 0.3, x2: 0.5, y2: 0.5 },
                 rectPx: {},
               },
               {
-                id: 4,
+                id: "4",
                 rect: { x1: 0.7, y1: 0.7, x2: 1.0, y2: 1.0 },
                 rectPx: {},
               },
               {
-                id: 5,
+                id: "5",
                 rect: { x1: 0.2, y1: 0.2, x2: 0.3, y2: 0.3 },
                 rectPx: {},
               },
