@@ -5,12 +5,14 @@ import {
   CustomFabricRect,
   IAttribute,
   ICoord,
+  ICustomFabricRect,
   IOutputData,
   IReactMultiCropProps,
   IReactMultiCropStates,
 } from './interfaces';
 import { ActionsComponent } from './components/ActionsComponent';
 import Container from './components/Container';
+import { IRecordProps } from '..';
 
 class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStates> {
   public static defaultProps: IReactMultiCropProps = {
@@ -75,6 +77,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         transparentCorners,
         cropBackgroundColor,
         cropBackgroundOpacity,
+        record,
         disableZoom = false,
       } = this.props;
       const {
@@ -88,6 +91,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         transparentCorners: prevTransparentCorners,
         cropBackgroundColor: prevCropBackgroundColor,
         cropBackgroundOpacity: prevCropBackgroundOpacity,
+        record: prevRecord,
       } = prevProps;
       let shouldRender = false;
       if (prevZoomLevel !== zoomLevel && zoomLevel && zoomLevel > 0) {
@@ -106,6 +110,47 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           canvas.setActiveObject(objectSelect);
         }
         shouldRender = true;
+      }
+
+      // Experimental to check each clips
+      const previousRecord = prevRecord as IRecordProps;
+      if (Array.isArray(previousRecord.clippings) && record && Array.isArray(record?.clippings)) {
+        const differentObjects = record.clippings.filter((clip) => {
+          if (!clip.id) {
+            // won't track the new object created by multi crop, which have objectId but id == null
+            return false;
+          }
+          const prevClip = previousRecord.clippings.find((prev) => prev.id === clip.id);
+          if (!prevClip) {
+            return false;
+          }
+          return (
+            clip.style?.borderColor !== prevClip.style?.borderColor ||
+            clip.style?.cornerColor !== prevClip.style?.cornerColor ||
+            clip.style?.cornerSize !== prevClip.style?.cornerSize ||
+            clip.style?.transparentCorners !== prevClip.style?.transparentCorners ||
+            clip.style?.cropBackgroundColor !== prevClip.style?.cropBackgroundColor ||
+            clip.style?.cropBackgroundOpacity !== prevClip.style?.cropBackgroundOpacity
+          );
+        });
+        const canvasObjects = canvas.getObjects('rect');
+        if (Array.isArray(canvasObjects) && canvasObjects.length > 0) {
+          differentObjects.forEach((difObj) => {
+            const affectedObject = canvasObjects.find((x: unknown) => {
+              const obj = x as ICustomFabricRect;
+              return obj.id === difObj.id;
+            });
+            if (!affectedObject) {
+              return;
+            }
+            affectedObject.borderColor = difObj.style?.borderColor;
+            affectedObject.cornerColor = difObj.style?.cornerColor;
+            affectedObject.cornerSize = difObj.style?.cornerSize;
+            affectedObject.transparentCorners = difObj.style?.transparentCorners;
+            affectedObject.opacity = difObj.style?.cropBackgroundOpacity;
+            affectedObject.set('fill', difObj.style?.cropBackgroundColor);
+          });
+        }
       }
 
       // ensuring the previous handler is off

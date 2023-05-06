@@ -52,7 +52,7 @@ DefaultReadOnly.args = {
   record: {
     clippings: [
       {
-        id: 1,
+        id: '1',
         rect: {
           x1: 0.1,
           x2: 0.2,
@@ -61,7 +61,7 @@ DefaultReadOnly.args = {
         },
       },
       {
-        id: 2,
+        id: '2',
         rect: {
           x1: 0.3,
           x2: 0.4,
@@ -70,7 +70,7 @@ DefaultReadOnly.args = {
         },
       },
       {
-        id: 3,
+        id: '3',
         rect: {
           x1: 0.8,
           x2: 1.0,
@@ -103,7 +103,7 @@ ShowButton.args = {
   record: {
     clippings: [
       {
-        id: 1,
+        id: '1',
         rect: {
           x1: 0.1,
           x2: 0.2,
@@ -112,7 +112,7 @@ ShowButton.args = {
         },
       },
       {
-        id: 2,
+        id: '2',
         rect: {
           x1: 0.3,
           x2: 0.4,
@@ -121,7 +121,7 @@ ShowButton.args = {
         },
       },
       {
-        id: 3,
+        id: '3',
         rect: {
           x1: 0.8,
           x2: 1.0,
