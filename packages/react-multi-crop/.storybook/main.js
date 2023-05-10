@@ -1,11 +1,8 @@
 module.exports = {
-  stories: ["../src/**/*.stories.mdx", "../src/**/*.stories.@(js|jsx|ts|tsx)"],
-  addons: [
-    "@storybook/addon-links/register",
-    "@storybook/addon-storysource/register",
-    "@storybook/addon-essentials",
-  ],
-  core: {
-    builder: 'webpack5',
-  },
+  stories: ["../src/**/*.stories.@(js|jsx|ts|tsx)"],
+  addons: ["@storybook/addon-links", "@storybook/addon-storysource", "@storybook/addon-essentials"],
+  framework: "@storybook/react-webpack5",
+  docs: {
+    autodocs: true
+  }
 };
