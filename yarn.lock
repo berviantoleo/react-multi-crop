@@ -3608,6 +3608,11 @@
   resolved "https://registry.npmjs.org/@storybook/channels/-/channels-7.0.10.tgz#e89c651f2a89db961dc047e6e4c72201c41f1b25"
   integrity sha512-hdPaGV3W7s6MkVcg33S5hmkVgqXC16AA7H0ID9MROiU1lQzolKhSqCs2iVfGPQfmWzEJeqWQoEXU7dmCclRM0w==
 
+"@storybook/channels@7.0.11":
+  version "7.0.11"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-7.0.11.tgz#c753d37ade4b85bf5cb5a8ebaf81d535f21ee547"
+  integrity sha512-1cVgju7ViN7GDeUNUS5hp3GZLT2EgxgXj7zuGbCZwsF8lFsM0IWeXma8TV0UfcBiyQjP4edYRmUn0vy6CMc/WA==
+
 "@storybook/cli@7.0.10":
   version "7.0.10"
   resolved "https://registry.npmjs.org/@storybook/cli/-/cli-7.0.10.tgz#115754f7910223630cefcef59050f99ad685e702"
@@ -4008,13 +4013,24 @@
     memoizerific "^1.11.3"
     qs "^6.10.0"
 
-"@storybook/source-loader@7.0.10", "@storybook/source-loader@^7.0.10":
+"@storybook/source-loader@7.0.10":
   version "7.0.10"
   resolved "https://registry.npmjs.org/@storybook/source-loader/-/source-loader-7.0.10.tgz#8ae51d3f327092edee8b682be033702f91e7b7c2"
   integrity sha512-DtdYllq0piU6vgoVjsuPsWaGlhSOJgJr/kRovu5zltaZzdEOyQZ7e0zQmA4Py0h9jnGbg2fQG9zccofY3jUdJw==
   dependencies:
     "@storybook/csf" "^0.1.0"
     "@storybook/types" "7.0.10"
+    estraverse "^5.2.0"
+    lodash "^4.17.21"
+    prettier "^2.8.0"
+
+"@storybook/source-loader@^7.0.10":
+  version "7.0.11"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-7.0.11.tgz#e4687c70b6e66e7ef8f375cbe8e6cf23653159d7"
+  integrity sha512-0RgYwi06K52PDyO5zMTrdLwY+hcb1MbaxbAgONL36Gx3zOnd3UpfysxsJjSsA6zbL7lFFeZ/f8MO7LDxquPLEA==
+  dependencies:
+    "@storybook/csf" "^0.1.0"
+    "@storybook/types" "7.0.11"
     estraverse "^5.2.0"
     lodash "^4.17.21"
     prettier "^2.8.0"
@@ -4058,6 +4074,16 @@
   integrity sha512-mFktvN8PjjDFJSjck4spikmjtr0AwfOhcEtIf4UCmUD5JHgGppkQmvO6483nGcprSFcWOvD2uYGs8Wp32wG/MQ==
   dependencies:
     "@storybook/channels" "7.0.10"
+    "@types/babel__core" "^7.0.0"
+    "@types/express" "^4.7.0"
+    file-system-cache "^2.0.0"
+
+"@storybook/types@7.0.11":
+  version "7.0.11"
+  resolved "https://registry.yarnpkg.com/@storybook/types/-/types-7.0.11.tgz#b4b0dfd68cf1558f10b30616997c55f37aff8c41"
+  integrity sha512-VOnef/u/HvYbk6LxWkwMlu31VD1ly6BTyHDOMUfYas03uNflX1KldGooWphmXVFrkkoLJoF5V4wsTShHSizi2A==
+  dependencies:
+    "@storybook/channels" "7.0.11"
     "@types/babel__core" "^7.0.0"
     "@types/express" "^4.7.0"
     file-system-cache "^2.0.0"
