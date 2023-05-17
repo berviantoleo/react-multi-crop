@@ -51,6 +51,8 @@ export interface IInputProps {
 export interface IReactMultiCropProps {
   activeObject?: string;
   disableZoom?: boolean;
+  disableRotation?: boolean;
+  disableMultiSelect?: boolean;
   id?: string;
   image?: string;
   includeDataUrl?: boolean;
@@ -104,6 +106,7 @@ export interface IAttribute {
   transparentCorners?: boolean;
   cropBackgroundColor?: string;
   cropBackgroundOpacity?: number;
+  disableRotation?: boolean;
 }
 
 export interface ICustomFabricRect extends fabric.IRectOptions {

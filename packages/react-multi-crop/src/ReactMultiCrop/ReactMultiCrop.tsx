@@ -22,6 +22,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     cropBackgroundColor: 'yellow',
     cropBackgroundOpacity: 0.5,
     disableZoom: false,
+    disableRotation: true,
+    disableMultiSelect: true,
     height: 800,
     id: 'canvas',
     image: undefined,
@@ -79,6 +81,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         cropBackgroundOpacity,
         record,
         disableZoom = false,
+        disableRotation = true,
+        disableMultiSelect = true,
       } = this.props;
       const {
         zoomLevel: prevZoomLevel,
@@ -91,6 +95,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         transparentCorners: prevTransparentCorners,
         cropBackgroundColor: prevCropBackgroundColor,
         cropBackgroundOpacity: prevCropBackgroundOpacity,
+        disableRotation: prevDisableRotation,
+        disableMultiSelect: prevDisableMultiSelect,
         record: prevRecord,
       } = prevProps;
       let shouldRender = false;
@@ -130,6 +136,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         shouldRender = true;
       }
 
+      if (disableMultiSelect !== prevDisableMultiSelect) {
+        canvas.selection = !disableMultiSelect;
+      }
+
       // handle crop elements
       // TODO: remove this later
       if (
@@ -138,7 +148,8 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         cornerSize !== prevCornerSize ||
         transparentCorners !== prevTransparentCorners ||
         cropBackgroundColor !== prevCropBackgroundColor ||
-        cropBackgroundOpacity !== prevCropBackgroundOpacity
+        cropBackgroundOpacity !== prevCropBackgroundOpacity ||
+        disableRotation !== prevDisableRotation
       ) {
         const attribute: IAttribute = {
           borderColor,
@@ -147,6 +158,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
           transparentCorners,
           cropBackgroundColor,
           cropBackgroundOpacity,
+          disableRotation,
         };
         this.updateCropAttributes(canvas, attribute);
         shouldRender = true;
@@ -216,6 +228,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         object.cornerSize = attribute.cornerSize;
         object.transparentCorners = attribute.transparentCorners;
         object.opacity = attribute.cropBackgroundOpacity;
+        object.lockRotation = attribute.disableRotation;
+        object.setControlsVisibility({
+          mtr: !attribute.disableRotation,
+        });
         object.set('fill', attribute.cropBackgroundColor);
       });
     }
@@ -394,11 +410,13 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   }
 
   initialCanvas(): void {
-    const { id, width, height, readonly } = this.props;
+    const { id, width, height, readonly, disableMultiSelect = true } = this.props;
     const canvas = new fabric.Canvas(id || 'canvas', {
       width: width,
       height: height,
+      selection: !disableMultiSelect,
     });
+    console.log(canvas.selection);
     if (readonly) {
       // readonly mode
       canvas.selectionKey = undefined;
@@ -498,6 +516,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       transparentCorners,
       cropBackgroundColor,
       cropBackgroundOpacity,
+      disableRotation = true,
     } = this.props;
     if (options && options.target) {
       const left = options.target.left;
@@ -515,6 +534,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         transparentCorners,
         cropBackgroundColor,
         cropBackgroundOpacity,
+        disableRotation,
       };
       const rect = this.createObjectByAttribute(null, attribute, readonly || false);
       canvas.add(rect);
@@ -536,6 +556,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         transparentCorners,
         cropBackgroundColor,
         cropBackgroundOpacity,
+        disableRotation,
       };
       const rect = this.createObjectByAttribute(null, attribute, readonly || false);
       canvas.add(rect);
@@ -551,7 +572,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     attribute: IAttribute,
     readonly: boolean,
   ): CustomFabricRect {
-    return new CustomFabricRect({
+    const customFabric = new CustomFabricRect({
       left: attribute.left,
       top: attribute.top,
       width: attribute.width,
@@ -565,13 +586,17 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       id: existingId,
       strokeWidth: 0,
       strokeUniform: true,
-      lockRotation: true,
+      lockRotation: attribute.disableRotation,
       lockMovementX: readonly,
       lockMovementY: readonly,
       lockScalingX: readonly,
       lockScalingY: readonly,
       objectId: uuidv4(),
     });
+    customFabric.setControlsVisibility({
+      mtr: !attribute.disableRotation,
+    });
+    return customFabric;
   }
 
   private convertLeftTop(element: CustomFabricRect): { left: number; top: number } {
@@ -754,6 +779,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       transparentCorners: attribute.transparentCorners,
       cropBackgroundColor: attribute.cropBackgroundColor,
       cropBackgroundOpacity: attribute.cropBackgroundOpacity,
+      disableRotation: attribute.disableRotation,
     };
     return this.createObjectByAttribute(coor.id, newAttribute, readonly);
   }
