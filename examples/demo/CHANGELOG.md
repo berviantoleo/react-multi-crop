@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.19.11](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.19.10...@berviantoleo/react-multi-crop-demo@0.19.11) (2023-05-24)
+
+### Bug Fixes
+
+- hide rotate control ([#1854](https://github.com/berviantoleo/react-multi-crop/issues/1854)) ([d76388d](https://github.com/berviantoleo/react-multi-crop/commit/d76388db3f4da506b4e5e9613b525eb68e8efc65))
+
 ## [0.19.10](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.19.9...@berviantoleo/react-multi-crop-demo@0.19.10) (2023-05-16)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop-demo
