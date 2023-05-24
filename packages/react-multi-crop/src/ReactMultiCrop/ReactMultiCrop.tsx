@@ -551,7 +551,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     attribute: IAttribute,
     readonly: boolean,
   ): CustomFabricRect {
-    return new CustomFabricRect({
+    const rect = new CustomFabricRect({
       left: attribute.left,
       top: attribute.top,
       width: attribute.width,
@@ -572,6 +572,10 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       lockScalingY: readonly,
       objectId: uuidv4(),
     });
+    rect.setControlsVisibility({
+      mtr: false,
+    });
+    return rect;
   }
 
   private convertLeftTop(element: CustomFabricRect): { left: number; top: number } {
