@@ -4630,9 +4630,9 @@
     "@types/serve-static" "*"
 
 "@types/fabric@^5.3.1":
-  version "5.3.2"
-  resolved "https://registry.npmjs.org/@types/fabric/-/fabric-5.3.2.tgz#9132050fe8cc533dde29c5724a41cfd7b562e1a6"
-  integrity sha512-BYliDypi9KIlVRGWXdVU9a1cr8m7aiUCPcOoQRJJiVOHam5vnM4r3dYqYDUcXpCfQoSCn55gskSmLtsxZAir1Q==
+  version "5.3.3"
+  resolved "https://registry.yarnpkg.com/@types/fabric/-/fabric-5.3.3.tgz#35f66da60bf53f40b9d7ef6d6afa770409e7308f"
+  integrity sha512-O+lGsf5MXhkr4CZhZBE2foxIU1yZklTwhmZxFbTeBNWEqrvwGeq4c8TWJBKAqiISYRu7bDIMLZUPacFodbVD0g==
 
 "@types/find-cache-dir@^3.2.1":
   version "3.2.1"
