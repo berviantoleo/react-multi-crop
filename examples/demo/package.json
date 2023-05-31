@@ -24,23 +24,21 @@
       "url": "https://berviantoleo.my.id"
     }
   ],
-  "dependencies": {
+  "devDependencies": {
     "@berviantoleo/react-multi-crop": "^0.31.9",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.2",
     "@mui/styles": "^5.13.2",
+    "@types/jest": "^29.5.1",
+    "@types/node": "^20.2.5",
+    "@types/react": "^18.2.7",
+    "@types/react-dom": "^18.2.4",
+    "cypress": "~12.13.0",
     "fabric": "^5.3.0",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
-  },
-  "devDependencies": {
-    "@types/jest": "^29.5.1",
-    "@types/node": "^20.2.3",
-    "@types/react": "^18.2.6",
-    "@types/react-dom": "^18.2.4",
-    "cypress": "~12.12.0",
+    "react-dom": "^18.2.0",
     "react-scripts": "5.0.1",
     "start-server-and-test": "^2.0.0"
   },
