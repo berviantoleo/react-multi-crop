@@ -1,8 +1,6 @@
 {
   "name": "root",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "bootstrap:hoist": "lerna bootstrap --hoist",
     "docs": "cross-env BASE_URL=/react-multi-crop/ vitepress build documentation",
     "docs:dev": "vitepress dev documentation",
     "docs:build": "vitepress build documentation",
@@ -24,7 +22,7 @@
     "eslint-plugin-react": "^7.32.2",
     "eslint-plugin-react-hooks": "^4.6.0",
     "husky": "^8.0.3",
-    "lerna": "^6.6.2",
+    "lerna": "^7.0.0",
     "prettier": "^2.8.8",
     "typescript": "^5.0.4",
     "vitepress": "^1.0.0-beta.1",
