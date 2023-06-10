@@ -1,8 +1,6 @@
 {
   "name": "root",
   "scripts": {
-    "bootstrap": "lerna bootstrap",
-    "bootstrap:hoist": "lerna bootstrap --hoist",
     "docs": "cross-env BASE_URL=/react-multi-crop/ vitepress build documentation",
     "docs:dev": "vitepress dev documentation",
     "docs:build": "vitepress build documentation",
