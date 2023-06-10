@@ -31,9 +31,7 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: |
-          yarn --frozen-lockfile
-          yarn bootstrap
+        run: yarn --frozen-lockfile
       - name: Build Package
         run: yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Git Identity
