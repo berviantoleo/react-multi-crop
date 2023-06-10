@@ -80,9 +80,7 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: |
-          yarn --frozen-lockfile
-          yarn bootstrap
+        run: yarn --frozen-lockfile
       - name: Build Documentation
         run: |
           yarn docs
@@ -116,9 +114,7 @@ jobs:
             ~/.cache/Cypress
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: |
-          yarn --frozen-lockfile
-          yarn bootstrap
+        run: yarn --frozen-lockfile
       - name: Lint
         run: yarn lint
       - name: Test & Build Package
