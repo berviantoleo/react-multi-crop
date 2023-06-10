@@ -16,7 +16,6 @@
     "access": "public"
   },
   "npmClient": "yarn",
-  "useWorkspaces": true,
   "version": "independent",
   "ignoreChanges": [
     "**/changelog.md",
