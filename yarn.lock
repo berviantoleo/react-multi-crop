@@ -3759,6 +3759,11 @@
   resolved "https://registry.npmjs.org/@storybook/channels/-/channels-7.0.22.tgz#f2fde192af803d05eaef90f3b713a16e58a173fe"
   integrity sha512-8mR30xBotnhc24GQpBp14bflvagkOnBXUhCTyiljULvkyo/bK0NE8IeSSto1FAIzPl6+s5/A0sePvLNRuj3gqw==
 
+"@storybook/channels@7.0.26":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/channels/-/channels-7.0.26.tgz#cc247bc4b61f271abb84e59020307a789f7b4f53"
+  integrity sha512-Br3XILhrtuL5Sdp91I04kKjJzSqU/N8gGL6B6nIfnuaHUvGMDuMCHAB+g7aoiyH5dnpDZ6yBVGNwtYAyJA+0Og==
+
 "@storybook/cli@7.0.22":
   version "7.0.22"
   resolved "https://registry.npmjs.org/@storybook/cli/-/cli-7.0.22.tgz#89cb9782dc27528dae8cc83e3d2aa1e43cf50b06"
@@ -4160,13 +4165,24 @@
     memoizerific "^1.11.3"
     qs "^6.10.0"
 
-"@storybook/source-loader@7.0.22", "@storybook/source-loader@^7.0.22":
+"@storybook/source-loader@7.0.22":
   version "7.0.22"
   resolved "https://registry.npmjs.org/@storybook/source-loader/-/source-loader-7.0.22.tgz#46da91e8804302e767136f616eb4ebe0effc8208"
   integrity sha512-BIA0QWRJnLTfnbsfimJE+Yash8WpvthG1D03WsVm3koIsjQ3HnDlYMdR5rpbPR9ddcLrOpWdskK1iMfrxSt89g==
   dependencies:
     "@storybook/csf" "^0.1.0"
     "@storybook/types" "7.0.22"
+    estraverse "^5.2.0"
+    lodash "^4.17.21"
+    prettier "^2.8.0"
+
+"@storybook/source-loader@^7.0.22":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/source-loader/-/source-loader-7.0.26.tgz#cac38b22019bf7f10e8c6958c718be16e9e58aae"
+  integrity sha512-kAUpXUfcenINGRxvi+2jFR2VVspqaLItk7HjKmFz5IEimuka6oc6Vjc3goziDv916ZnJddc/9+b835WmM1KJGA==
+  dependencies:
+    "@storybook/csf" "^0.1.0"
+    "@storybook/types" "7.0.26"
     estraverse "^5.2.0"
     lodash "^4.17.21"
     prettier "^2.8.0"
@@ -4213,6 +4229,16 @@
     "@types/babel__core" "^7.0.0"
     "@types/express" "^4.7.0"
     file-system-cache "^2.0.0"
+
+"@storybook/types@7.0.26":
+  version "7.0.26"
+  resolved "https://registry.yarnpkg.com/@storybook/types/-/types-7.0.26.tgz#83be03bcd5ab4cfdac154a25731058466d055ff3"
+  integrity sha512-5RBi6agtDglNXdffmw4+Fyv2dUdlIdeOdUj0O5+JRYajTxfHdurZd9r/42z4OstN+ORDkLA/svt8Q9JyRpIb6Q==
+  dependencies:
+    "@storybook/channels" "7.0.26"
+    "@types/babel__core" "^7.0.0"
+    "@types/express" "^4.7.0"
+    file-system-cache "2.3.0"
 
 "@surma/rollup-plugin-off-main-thread@^2.2.3":
   version "2.2.3"
@@ -8749,7 +8775,7 @@ file-loader@^6.2.0:
     loader-utils "^2.0.0"
     schema-utils "^3.0.0"
 
-file-system-cache@^2.0.0:
+file-system-cache@2.3.0, file-system-cache@^2.0.0:
   version "2.3.0"
   resolved "https://registry.npmjs.org/file-system-cache/-/file-system-cache-2.3.0.tgz#201feaf4c8cd97b9d0d608e96861bb6005f46fe6"
   integrity sha512-l4DMNdsIPsVnKrgEXbJwDJsA5mB8rGwHYERMgqQx/xAUtChPJMre1bXBzDEqqVbWv9AIbFezXMxeEkZDSrXUOQ==
