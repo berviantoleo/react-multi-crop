@@ -33,7 +33,7 @@ const useStyles = makeStyles(() =>
     title: {
       flexGrow: 1,
     },
-  })
+  }),
 );
 
 export default function MainPage(): JSX.Element {

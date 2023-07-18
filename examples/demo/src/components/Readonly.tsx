@@ -4,7 +4,7 @@ import { ReactMultiCrop, IOutputData } from "@berviantoleo/react-multi-crop";
 
 function convertToImage(
   name: string,
-  output: IOutputData
+  output: IOutputData,
 ): JSX.Element | undefined {
   const canvasElement = output.canvasElement?.toDataURL();
 
@@ -18,7 +18,7 @@ function convertToImage(
 
 export default function Readonly(): JSX.Element {
   const [selectedValue, setSelectedValue] = React.useState<IOutputData | null>(
-    null
+    null,
   );
   const [hoverValue, setHoverValue] = React.useState<IOutputData | null>(null);
 

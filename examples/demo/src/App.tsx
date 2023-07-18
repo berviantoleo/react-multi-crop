@@ -12,7 +12,7 @@ export default function App(): JSX.Element {
         setMode((prevMode) => (prevMode === "light" ? "dark" : "light"));
       },
     }),
-    []
+    [],
   );
 
   const theme = React.useMemo(
@@ -22,7 +22,7 @@ export default function App(): JSX.Element {
           mode,
         },
       }),
-    [mode]
+    [mode],
   );
   return (
     <ColorModeContext.Provider value={colorMode}>
