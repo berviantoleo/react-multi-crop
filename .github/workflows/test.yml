@@ -33,7 +33,7 @@ jobs:
             ~/.cache/Cypress
           key: ${{ runner.os }}-${{ matrix.node_version }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: corepack enable && corepack prepare yarn@stable --activate && yarn --immutable
       - name: Lint
         run: yarn lint
       - name: Test & Build Package
@@ -49,6 +49,7 @@ jobs:
         env:
           SKIP_PREFLIGHT_CHECK: true
           PUBLIC_URL: /
+          DISABLE_ESLINT_PLUGIN: true
       # TODO; will give the docs to artifacts
       - name: Cypress run
         uses: cypress-io/github-action@v5
