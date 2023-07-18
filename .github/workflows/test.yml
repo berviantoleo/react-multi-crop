@@ -49,6 +49,7 @@ jobs:
         env:
           SKIP_PREFLIGHT_CHECK: true
           PUBLIC_URL: /
+          DISABLE_ESLINT_PLUGIN: true
       # TODO; will give the docs to artifacts
       - name: Cypress run
         uses: cypress-io/github-action@v5

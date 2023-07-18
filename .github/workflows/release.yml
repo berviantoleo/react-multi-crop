@@ -53,6 +53,7 @@ jobs:
         env:
           SKIP_PREFLIGHT_CHECK: true
           PUBLIC_URL: /
+          DISABLE_ESLINT_PLUGIN: true
       - name: Publish Demo
         uses: JamesIves/github-pages-deploy-action@v4.4.2
         with:
