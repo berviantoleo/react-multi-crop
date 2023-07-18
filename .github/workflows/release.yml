@@ -31,7 +31,7 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: corepack enable && corepack prepare yarn@stable --activate && yarn --immutable
       - name: Build Package
         run: yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Git Identity
@@ -80,7 +80,7 @@ jobs:
             */*/node_modules
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: corepack enable && corepack prepare yarn@stable --activate && yarn --immutable
       - name: Build Documentation
         run: |
           yarn docs
@@ -114,7 +114,7 @@ jobs:
             ~/.cache/Cypress
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
       - name: Install dependencies
-        run: yarn --frozen-lockfile
+        run: corepack enable && corepack prepare yarn@stable --activate && yarn --immutable
       - name: Lint
         run: yarn lint
       - name: Test & Build Package
