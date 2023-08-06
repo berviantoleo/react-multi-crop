@@ -63,7 +63,6 @@ export default function MainPage(): JSX.Element {
           </Typography>
           <Link
             href="https://github.com/berviantoleo/react-multi-crop"
-            component="button"
             color="inherit"
           >
             Github
