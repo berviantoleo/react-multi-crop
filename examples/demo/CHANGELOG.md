@@ -3,24 +3,21 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
-# [0.20.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.19.16...@berviantoleo/react-multi-crop-demo@0.20.0) (2023-08-06)
-
+# [0.21.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.20.0...@berviantoleo/react-multi-crop-demo@0.21.0) (2023-08-12)
 
 ### Features
 
-* update deps ([#2065](https://github.com/berviantoleo/react-multi-crop/issues/2065)) ([8347e08](https://github.com/berviantoleo/react-multi-crop/commit/8347e080842888f98d088814dc544c1483c376d7))
+- Initial Vagrant - Ready to dev ([#2092](https://github.com/berviantoleo/react-multi-crop/issues/2092)) ([0ff7c6c](https://github.com/berviantoleo/react-multi-crop/commit/0ff7c6c6c0907fd941db8b802dce5b42e0bcaf88))
 
+# [0.20.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.19.16...@berviantoleo/react-multi-crop-demo@0.20.0) (2023-08-06)
 
+### Features
 
-
+- update deps ([#2065](https://github.com/berviantoleo/react-multi-crop/issues/2065)) ([8347e08](https://github.com/berviantoleo/react-multi-crop/commit/8347e080842888f98d088814dc544c1483c376d7))
 
 ## [0.19.16](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.19.15...@berviantoleo/react-multi-crop-demo@0.19.16) (2023-07-18)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop-demo
-
-
-
-
 
 ## [0.19.15](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.19.14...@berviantoleo/react-multi-crop-demo@0.19.15) (2023-06-21)
 
