@@ -2007,19 +2007,19 @@ __metadata:
   linkType: hard
 
 "@commitlint/config-lerna-scopes@npm:^17.6.6":
-  version: 17.6.6
-  resolution: "@commitlint/config-lerna-scopes@npm:17.6.6"
+  version: 17.7.0
+  resolution: "@commitlint/config-lerna-scopes@npm:17.7.0"
   dependencies:
     "@lerna/project": ^6.0.0
     glob: ^8.0.3
     import-from: 4.0.0
-    semver: 7.5.2
+    semver: 7.5.4
   peerDependencies:
     lerna: ^5.0.0 || ^6
   peerDependenciesMeta:
     lerna:
       optional: true
-  checksum: 5e46846968b185cd43c03c97acf53885184d0c4023f2918c54f246fae23ff13b104c0c8f5cf50400dd05a33e1e3c498a94d0a06585a3a124dbd3f406729f2557
+  checksum: ff6f07da5e14c685de2281169488bdc46488843bd3f2fb8737c0b02155593526111e86cd25e661e9c98c26d86596553fd47dda1e39b81c2f63f142dcb1d9b3bf
   languageName: node
   linkType: hard
 
@@ -21451,16 +21451,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"semver@npm:^6.0.0, semver@npm:^6.3.0, semver@npm:^6.3.1":
-  version: 6.3.1
-  resolution: "semver@npm:6.3.1"
-  bin:
-    semver: bin/semver.js
-  checksum: ae47d06de28836adb9d3e25f22a92943477371292d9b665fb023fae278d345d508ca1958232af086d85e0155aee22e313e100971898bbb8d5d89b8b1d4054ca2
-  languageName: node
-  linkType: hard
-
-"semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3, semver@npm:^7.5.4":
+"semver@npm:7.5.4, semver@npm:^7.0.0, semver@npm:^7.1.1, semver@npm:^7.3.2, semver@npm:^7.3.4, semver@npm:^7.3.5, semver@npm:^7.3.7, semver@npm:^7.3.8, semver@npm:^7.5.3, semver@npm:^7.5.4":
   version: 7.5.4
   resolution: "semver@npm:7.5.4"
   dependencies:
@@ -21468,6 +21459,15 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: 12d8ad952fa353b0995bf180cdac205a4068b759a140e5d3c608317098b3575ac2f1e09182206bf2eb26120e1c0ed8fb92c48c592f6099680de56bb071423ca3
+  languageName: node
+  linkType: hard
+
+"semver@npm:^6.0.0, semver@npm:^6.3.0, semver@npm:^6.3.1":
+  version: 6.3.1
+  resolution: "semver@npm:6.3.1"
+  bin:
+    semver: bin/semver.js
+  checksum: ae47d06de28836adb9d3e25f22a92943477371292d9b665fb023fae278d345d508ca1958232af086d85e0155aee22e313e100971898bbb8d5d89b8b1d4054ca2
   languageName: node
   linkType: hard
 
