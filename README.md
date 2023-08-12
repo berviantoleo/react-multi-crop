@@ -26,6 +26,21 @@ Version `0.22` and newer will be hosted at [npmjs](https://www.npmjs.com/package
 2. Mouse event, `double click` into box-crop will duplicate your box-crop.
 3. Also there are some action in button that can be used, add shape (box-crop), delete selected object (box-crop), select all (box-crop), and discard current active selection (box-crop).
 
+## Running the Example use Docker and Vagrant
+
+### Initialization
+
+`vagrant up --provider=docker`
+
+### Refresh Image
+
+`vagrant reload`
+
+### Ports
+
+* Container Port Demo: 8080
+* Container Port Examples: 80
+
 ## LICENSE
 
 MIT
