@@ -2120,21 +2120,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.6, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.3, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
-  version: 7.22.6
-  resolution: "@babel/runtime@npm:7.22.6"
-  dependencies:
-    regenerator-runtime: ^0.13.11
-  checksum: e585338287c4514a713babf4fdb8fc2a67adcebab3e7723a739fc62c79cfda875b314c90fd25f827afb150d781af97bc16c85bfdbfa2889f06053879a1ddb597
-  languageName: node
-  linkType: hard
-
-"@babel/runtime@npm:^7.22.10":
-  version: 7.22.10
-  resolution: "@babel/runtime@npm:7.22.10"
+"@babel/runtime@npm:^7.11.2, @babel/runtime@npm:^7.12.5, @babel/runtime@npm:^7.13.10, @babel/runtime@npm:^7.16.3, @babel/runtime@npm:^7.17.8, @babel/runtime@npm:^7.18.3, @babel/runtime@npm:^7.20.7, @babel/runtime@npm:^7.21.0, @babel/runtime@npm:^7.22.10, @babel/runtime@npm:^7.22.6, @babel/runtime@npm:^7.3.1, @babel/runtime@npm:^7.5.5, @babel/runtime@npm:^7.7.6, @babel/runtime@npm:^7.8.3, @babel/runtime@npm:^7.8.4, @babel/runtime@npm:^7.8.7, @babel/runtime@npm:^7.9.2":
+  version: 7.22.15
+  resolution: "@babel/runtime@npm:7.22.15"
   dependencies:
     regenerator-runtime: ^0.14.0
-  checksum: 524d41517e68953dbc73a4f3616b8475e5813f64e28ba89ff5fca2c044d535c2ea1a3f310df1e5bb06162e1f0b401b5c4af73fe6e2519ca2450d9d8c44cf268d
+  checksum: 793296df1e41599a935a3d77ec01eb6088410d3fd4dbe4e92f06c6b7bb2f8355024e6d78621a3a35f44e0e23b0b59107f23d585384df4f3123256a1e1492040e
   languageName: node
   linkType: hard
 
@@ -21193,7 +21184,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"regenerator-runtime@npm:^0.13.11, regenerator-runtime@npm:^0.13.9":
+"regenerator-runtime@npm:^0.13.9":
   version: 0.13.11
   resolution: "regenerator-runtime@npm:0.13.11"
   checksum: 27481628d22a1c4e3ff551096a683b424242a216fee44685467307f14d58020af1e19660bf2e26064de946bad7eff28950eae9f8209d55723e2d9351e632bbb4
