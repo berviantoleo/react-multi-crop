@@ -25274,8 +25274,8 @@ __metadata:
   linkType: hard
 
 "vitepress@npm:^1.0.0-rc.13":
-  version: 1.0.0-rc.13
-  resolution: "vitepress@npm:1.0.0-rc.13"
+  version: 1.0.0-rc.15
+  resolution: "vitepress@npm:1.0.0-rc.15"
   dependencies:
     "@docsearch/css": ^3.5.2
     "@docsearch/js": ^3.5.2
@@ -25288,9 +25288,14 @@ __metadata:
     shiki: ^0.14.4
     vite: ^4.4.9
     vue: ^3.3.4
+  peerDependencies:
+    markdown-it-mathjax3: ^4.3.2
+  peerDependenciesMeta:
+    markdown-it-mathjax3:
+      optional: true
   bin:
     vitepress: bin/vitepress.js
-  checksum: e0f3c34bb4a0d7325df9e0a441031276b1dd44f3032bb3c17a7132e5d35f3b1135b9fb64ca0b633f518956326f216e15e1656cfd121330e66c709f0d13568c22
+  checksum: afa2d2d699585de44a487990b93e535e5626d59121fee2008eff4a6424e1e5ec3181983700e895a399393682b9ee51d1a53000d8c6cccd4b288739c2516b2fb2
   languageName: node
   linkType: hard
 
