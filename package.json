@@ -12,12 +12,12 @@
   "devDependencies": {
     "@commitlint/cli": "^17.7.1",
     "@commitlint/config-lerna-scopes": "^17.7.0",
-    "@typescript-eslint/eslint-plugin": "^6.7.0",
-    "@typescript-eslint/parser": "^6.7.0",
+    "@typescript-eslint/eslint-plugin": "^6.7.3",
+    "@typescript-eslint/parser": "^6.7.3",
     "cross-env": "^7.0.3",
-    "eslint": "^8.49.0",
+    "eslint": "^8.50.0",
     "eslint-config-prettier": "^9.0.0",
-    "eslint-plugin-cypress": "^2.14.0",
+    "eslint-plugin-cypress": "^2.15.1",
     "eslint-plugin-prettier": "^5.0.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
@@ -25,7 +25,7 @@
     "lerna": "^7.3.0",
     "prettier": "^3.0.3",
     "typescript": "^5.2.2",
-    "vitepress": "^1.0.0-rc.13",
+    "vitepress": "^1.0.0-rc.20",
     "vue": "^3.3.4"
   },
   "husky": {
