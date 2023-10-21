@@ -7765,9 +7765,9 @@ __metadata:
   linkType: hard
 
 "@types/fabric@npm:^5.3.4":
-  version: 5.3.4
-  resolution: "@types/fabric@npm:5.3.4"
-  checksum: 0db8786a242d5e17b26180ec5647ee46bd27d792682edf96fd87e38798ca99cd3ce25ac610c1a9bf15bbc15d3d7aa42a761d5ddc046f267e907a48a0b4f225ca
+  version: 5.3.5
+  resolution: "@types/fabric@npm:5.3.5"
+  checksum: d4a62a442cd1960c9e1f3b5bb8c1acbbacc716e0759aedce86e7223523e5431bcebf459d46b1cf84543877b011c3f948af937d49cd1974b699086bd89d6e5107
   languageName: node
   linkType: hard
 
