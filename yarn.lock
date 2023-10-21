@@ -2803,9 +2803,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-lerna-scopes@npm:^17.7.0":
-  version: 17.7.0
-  resolution: "@commitlint/config-lerna-scopes@npm:17.7.0"
+"@commitlint/config-lerna-scopes@npm:^18.0.0":
+  version: 18.0.0
+  resolution: "@commitlint/config-lerna-scopes@npm:18.0.0"
   dependencies:
     "@lerna/project": ^6.0.0
     glob: ^8.0.3
@@ -2816,7 +2816,7 @@ __metadata:
   peerDependenciesMeta:
     lerna:
       optional: true
-  checksum: ff6f07da5e14c685de2281169488bdc46488843bd3f2fb8737c0b02155593526111e86cd25e661e9c98c26d86596553fd47dda1e39b81c2f63f142dcb1d9b3bf
+  checksum: 95feffac85d4961aec83be2f664089470d53d14627ebf512dbd73df51d925793ec724684d30a60deee23623ba501c862eec5bb936019afa6ce326e65e5219643
   languageName: node
   linkType: hard
 
@@ -22940,7 +22940,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@commitlint/cli": ^17.8.0
-    "@commitlint/config-lerna-scopes": ^17.7.0
+    "@commitlint/config-lerna-scopes": ^18.0.0
     "@typescript-eslint/eslint-plugin": ^6.7.5
     "@typescript-eslint/parser": ^6.7.5
     cross-env: ^7.0.3
