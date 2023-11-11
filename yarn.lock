@@ -2089,25 +2089,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/plugin-transform-runtime@npm:^7.16.4":
-  version: 7.22.9
-  resolution: "@babel/plugin-transform-runtime@npm:7.22.9"
-  dependencies:
-    "@babel/helper-module-imports": ^7.22.5
-    "@babel/helper-plugin-utils": ^7.22.5
-    babel-plugin-polyfill-corejs2: ^0.4.4
-    babel-plugin-polyfill-corejs3: ^0.8.2
-    babel-plugin-polyfill-regenerator: ^0.5.1
-    semver: ^6.3.1
-  peerDependencies:
-    "@babel/core": ^7.0.0-0
-  checksum: 2fe5e41f83015ca174feda841d77aa9012fc855c907f9b360a11927f41b100537c8c83487771769147668e797eec26d5294e972b997f4759133cc43a22a43eec
-  languageName: node
-  linkType: hard
-
-"@babel/plugin-transform-runtime@npm:^7.23.2":
-  version: 7.23.2
-  resolution: "@babel/plugin-transform-runtime@npm:7.23.2"
+"@babel/plugin-transform-runtime@npm:^7.16.4, @babel/plugin-transform-runtime@npm:^7.23.2":
+  version: 7.23.3
+  resolution: "@babel/plugin-transform-runtime@npm:7.23.3"
   dependencies:
     "@babel/helper-module-imports": ^7.22.15
     "@babel/helper-plugin-utils": ^7.22.5
@@ -2117,7 +2101,7 @@ __metadata:
     semver: ^6.3.1
   peerDependencies:
     "@babel/core": ^7.0.0-0
-  checksum: 09f4273bfe9600c67e72e26f853f11c24ee4c1cbb3935c4a28a94d388e7c0d8733479d868c333cb34e9c236f1765788c6daef7852331f5c70a3b5543fd0247a1
+  checksum: e8f8a49d69e2b7423587901564f243b98fdddf9c3186e48e9a02a65abe8f9a7dac097187c0f4df3ae1c40d43b56c66483da7da65af81d0254aee0d32075fba2c
   languageName: node
   linkType: hard
 
