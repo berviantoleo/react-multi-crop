@@ -10,7 +10,7 @@
   },
   "private": true,
   "devDependencies": {
-    "@commitlint/cli": "^17.8.0",
+    "@commitlint/cli": "^18.4.1",
     "@commitlint/config-lerna-scopes": "^18.4.0",
     "@typescript-eslint/eslint-plugin": "^6.7.5",
     "@typescript-eslint/parser": "^6.7.5",
