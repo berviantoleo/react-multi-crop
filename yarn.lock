@@ -23504,14 +23504,14 @@ __metadata:
   linkType: hard
 
 "rollup-plugin-sizes@npm:^1.0.5":
-  version: 1.0.5
-  resolution: "rollup-plugin-sizes@npm:1.0.5"
+  version: 1.0.6
+  resolution: "rollup-plugin-sizes@npm:1.0.6"
   dependencies:
     filesize: ^9.0.0
     module-details-from-path: ^1.0.3
   peerDependencies:
-    rollup: ^2 || ^3
-  checksum: 38e8e194af849636fdcfcdb60169195c5df3932bf5241a860f14680a7850ef6819a7b6b0199f55ed021786799aee67f36d73fdcbbf55aa1696e61903a561fead
+    rollup: ^2 || ^3 || ^4
+  checksum: 1f48fedc6163650c4ca19c1ca1ed64343d9c8d2e25d575858c9548e08c1f0f324cf183620003033a20cbc4bde09aa72769c705ffe027b7d5b2e78aee1b4edf37
   languageName: node
   linkType: hard
 
