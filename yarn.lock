@@ -3245,8 +3245,8 @@ __metadata:
   linkType: hard
 
 "@commitlint/config-lerna-scopes@npm:^18.4.0":
-  version: 18.4.0
-  resolution: "@commitlint/config-lerna-scopes@npm:18.4.0"
+  version: 18.4.4
+  resolution: "@commitlint/config-lerna-scopes@npm:18.4.4"
   dependencies:
     "@lerna/project": ^6.0.0
     glob: ^8.0.3
@@ -3257,7 +3257,7 @@ __metadata:
   peerDependenciesMeta:
     lerna:
       optional: true
-  checksum: 5f22c34f8d51546f9ffc81bcceac3cc0a82a75490139c0e70ad25ca3b319fa1b06060c469a4b09a45ccadf5aac2e11d6bc71857921b90cae6cd42c5eaede1d03
+  checksum: 546da1f1a843503d8a03858db99dba683ed23b2932acac3020db98de82f1082fa2f4bd65710f15dbedb03be56a96790ec965fc4b7e7f4b1a41e03d1876052659
   languageName: node
   linkType: hard
 
