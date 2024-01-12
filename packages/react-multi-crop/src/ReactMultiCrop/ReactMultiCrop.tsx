@@ -312,6 +312,26 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
         };
         let totalRendered = 0;
         for (const coord of inputObject) {
+          if (coord.style) {
+            if (coord.style.cropBackgroundColor) {
+              attribute.cropBackgroundColor = coord.style.cropBackgroundColor;
+            }
+            if (coord.style.cropBackgroundOpacity) {
+              attribute.cropBackgroundOpacity = coord.style.cropBackgroundOpacity;
+            }
+            if (coord.style.borderColor) {
+              attribute.borderColor = coord.style.borderColor;
+            }
+            if (coord.style.cornerColor) {
+              attribute.cornerColor = coord.style.cornerColor;
+            }
+            if (coord.style.cornerSize) {
+              attribute.cornerSize = coord.style.cornerSize;
+            }
+            if (coord.style.transparentCorners) {
+              attribute.transparentCorners = coord.style.transparentCorners;
+            }
+          }
           const rect = this.createObject(canvas, coord, attribute, readonly || false);
           if (rect) {
             canvas.add(rect);

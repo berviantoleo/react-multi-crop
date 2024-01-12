@@ -22,6 +22,9 @@ export default function Default(): JSX.Element {
                 id: "1",
                 rect: { x1: 0.0, y1: 0.0, x2: 0.2, y2: 0.2 },
                 rectPx: {},
+                style: {
+                  borderColor: "green",
+                },
               },
             ],
           }}
