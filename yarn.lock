@@ -5336,6 +5336,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@mui/private-theming@npm:^5.15.5":
+  version: 5.15.5
+  resolution: "@mui/private-theming@npm:5.15.5"
+  dependencies:
+    "@babel/runtime": ^7.23.8
+    "@mui/utils": ^5.15.5
+    prop-types: ^15.8.1
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: 3a5f7f190aa69a0ad69a34f77e54ee2fdcb088d21a61d4720b76d098d178e1c3f6a470fc5e7a30d351db10efbc062cb11af75b8789e2f38eaa2ca612bcb0f851
+  languageName: node
+  linkType: hard
+
 "@mui/styled-engine@npm:^5.15.4":
   version: 5.15.4
   resolution: "@mui/styled-engine@npm:5.15.4"
@@ -5358,14 +5375,14 @@ __metadata:
   linkType: hard
 
 "@mui/styles@npm:^5.15.4":
-  version: 5.15.4
-  resolution: "@mui/styles@npm:5.15.4"
+  version: 5.15.5
+  resolution: "@mui/styles@npm:5.15.5"
   dependencies:
-    "@babel/runtime": ^7.23.7
+    "@babel/runtime": ^7.23.8
     "@emotion/hash": ^0.9.1
-    "@mui/private-theming": ^5.15.4
+    "@mui/private-theming": ^5.15.5
     "@mui/types": ^7.2.13
-    "@mui/utils": ^5.15.4
+    "@mui/utils": ^5.15.5
     clsx: ^2.1.0
     csstype: ^3.1.2
     hoist-non-react-statics: ^3.3.2
@@ -5384,7 +5401,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: b492c8bbd87e6e1ab8fb72e11d7319c5212ff0026d6b1bff9e06f8da5a4943bbf6abc0512bdc5411137f577e614ac251aa566a30889307b82cb5723d870c749b
+  checksum: dc131c0e7763f7ac4fd96a1db3dd85abf59de5429a73f7cf9ed15d423fb9bb5883835c1951d36e8804da9ab2ed13d603ed349f12e7cd15885f8279d90d13511b
   languageName: node
   linkType: hard
 
@@ -5443,6 +5460,24 @@ __metadata:
     "@types/react":
       optional: true
   checksum: b23f57a08c04ba600a50906778c7bb809652b6cc9806bce2423decfd6154a5af25812ebf4b5bb6bf61218bcf399c2aea53948bc58e42f7868e90ea3d2e7005b3
+  languageName: node
+  linkType: hard
+
+"@mui/utils@npm:^5.15.5":
+  version: 5.15.5
+  resolution: "@mui/utils@npm:5.15.5"
+  dependencies:
+    "@babel/runtime": ^7.23.8
+    "@types/prop-types": ^15.7.11
+    prop-types: ^15.8.1
+    react-is: ^18.2.0
+  peerDependencies:
+    "@types/react": ^17.0.0 || ^18.0.0
+    react: ^17.0.0 || ^18.0.0
+  peerDependenciesMeta:
+    "@types/react":
+      optional: true
+  checksum: fe71ce69e23cb4c00886138da1422e4baa66959cd10f97b2aa00f7324a038b13084ea4a0da123774c0018f48ddb6ce4f3cb20a915ec3c5c1ff5495bf337f665f
   languageName: node
   linkType: hard
 
