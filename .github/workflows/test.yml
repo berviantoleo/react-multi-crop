@@ -25,7 +25,7 @@ jobs:
           node-version: ${{ matrix.node_version }}
           always-auth: true
       - name: Restore lerna
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules

@@ -24,7 +24,7 @@ jobs:
           registry-url: 'https://registry.npmjs.org'
           scope: "@berviantoleo"
       - name: Restore lerna
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
@@ -74,7 +74,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           always-auth: true
       - name: Restore lerna
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
@@ -107,7 +107,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           always-auth: true
       - name: Restore lerna
-        uses: actions/cache@v3
+        uses: actions/cache@v4
         with:
           path: |
             node_modules
