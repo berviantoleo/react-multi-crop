@@ -5271,10 +5271,10 @@ __metadata:
   linkType: hard
 
 "@mui/icons-material@npm:^5.15.4":
-  version: 5.15.4
-  resolution: "@mui/icons-material@npm:5.15.4"
+  version: 5.15.6
+  resolution: "@mui/icons-material@npm:5.15.6"
   dependencies:
-    "@babel/runtime": ^7.23.7
+    "@babel/runtime": ^7.23.8
   peerDependencies:
     "@mui/material": ^5.0.0
     "@types/react": ^17.0.0 || ^18.0.0
@@ -5282,7 +5282,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: b83be073866f610c5a005cb5bcb92ad7b29a4b5c7b4888e594b7f3cc8f322b2384dfe5b9a9761c11b63d3c2c4cfe16f58c1aa37dbb8e307ebd483e9e4fb4bc11
+  checksum: 9e48abacc7dbcf6461a1451aebd92c6f50826a464bc5f5f8251c6e0868025405d865068089878ecd96a941ddc5ca71789d3534705401fe0db72a1c9ab11df0c1
   languageName: node
   linkType: hard
 
