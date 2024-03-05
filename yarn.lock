@@ -3542,20 +3542,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-lerna-scopes@npm:^18.4.4":
-  version: 18.4.4
-  resolution: "@commitlint/config-lerna-scopes@npm:18.4.4"
+"@commitlint/config-lerna-scopes@npm:^19.0.0":
+  version: 19.0.0
+  resolution: "@commitlint/config-lerna-scopes@npm:19.0.0"
   dependencies:
     "@lerna/project": ^6.0.0
-    glob: ^8.0.3
-    import-from: 4.0.0
-    semver: 7.5.4
+    glob: ^10.3.10
+    import-from: ^4.0.0
+    semver: ^7.6.0
   peerDependencies:
     lerna: ^5.0.0 || ^6
   peerDependenciesMeta:
     lerna:
       optional: true
-  checksum: 546da1f1a843503d8a03858db99dba683ed23b2932acac3020db98de82f1082fa2f4bd65710f15dbedb03be56a96790ec965fc4b7e7f4b1a41e03d1876052659
+  checksum: f28360dfc9c9648ed5186e6e3324d69f43de6e32035c3d4fd558122fb5e1e6fd88caaf99e33606e10f16d5b9ef24bffd90e2e1c6404777e070d150b722a50658
   languageName: node
   linkType: hard
 
@@ -15854,7 +15854,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^8.0.1, glob@npm:^8.0.3":
+"glob@npm:^8.0.1":
   version: 8.1.0
   resolution: "glob@npm:8.1.0"
   dependencies:
@@ -16611,7 +16611,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"import-from@npm:4.0.0":
+"import-from@npm:^4.0.0":
   version: 4.0.0
   resolution: "import-from@npm:4.0.0"
   checksum: 1fa29c05b048da18914e91d9a529e5d9b91774bebbfab10e53f59bcc1667917672b971cf102fee857f142e5e433ce69fa1f0a596e1c7d82f9947a5ec352694b9
@@ -24095,7 +24095,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@commitlint/cli": ^18.6.0
-    "@commitlint/config-lerna-scopes": ^18.4.4
+    "@commitlint/config-lerna-scopes": ^19.0.0
     "@typescript-eslint/eslint-plugin": ^7.0.2
     "@typescript-eslint/parser": ^7.0.1
     cross-env: ^7.0.3
@@ -24372,6 +24372,17 @@ __metadata:
   bin:
     semver: bin/semver.js
   checksum: ae47d06de28836adb9d3e25f22a92943477371292d9b665fb023fae278d345d508ca1958232af086d85e0155aee22e313e100971898bbb8d5d89b8b1d4054ca2
+  languageName: node
+  linkType: hard
+
+"semver@npm:^7.6.0":
+  version: 7.6.0
+  resolution: "semver@npm:7.6.0"
+  dependencies:
+    lru-cache: ^6.0.0
+  bin:
+    semver: bin/semver.js
+  checksum: 7427f05b70786c696640edc29fdd4bc33b2acf3bbe1740b955029044f80575fc664e1a512e4113c3af21e767154a94b4aa214bf6cd6e42a1f6dba5914e0b208c
   languageName: node
   linkType: hard
 
