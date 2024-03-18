@@ -41,7 +41,7 @@
     "@storybook/addons": "^7.6.13",
     "@storybook/react": "^7.6.13",
     "@storybook/react-webpack5": "7.6.13",
-    "@storybook/source-loader": "^7.6.13",
+    "@storybook/source-loader": "^8.0.0",
     "@testing-library/jest-dom": "^6.4.2",
     "@testing-library/react": "^14.2.1",
     "@types/fabric": "^5.3.7",
