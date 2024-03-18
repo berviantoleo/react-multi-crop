@@ -3477,7 +3477,7 @@ __metadata:
     "@rollup/plugin-babel": ^6.0.4
     "@rollup/plugin-node-resolve": ^15.2.3
     "@storybook/addon-essentials": ^7.6.13
-    "@storybook/addon-links": ^7.6.13
+    "@storybook/addon-links": ^8.0.0
     "@storybook/addon-storysource": ^8.0.0
     "@storybook/addons": ^7.6.13
     "@storybook/react": ^7.6.13
@@ -7491,9 +7491,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^7.6.13":
-  version: 7.6.13
-  resolution: "@storybook/addon-links@npm:7.6.13"
+"@storybook/addon-links@npm:^8.0.0":
+  version: 8.0.0
+  resolution: "@storybook/addon-links@npm:8.0.0"
   dependencies:
     "@storybook/csf": ^0.1.2
     "@storybook/global": ^5.0.0
@@ -7503,7 +7503,7 @@ __metadata:
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 8f15704c7052afb9366339971163461ea5e9ddcd23e24b9ce936867e51d4dda47afd0115e8c97fee6030eef8410e50d73d990f400dd5f95a7df03fd25b18f75a
+  checksum: d5f0d51dfb10d65f6bfd693106c34571a2ea15f3533c720ca1c4a1d8d9aef9a6b061d300c8f29db17b1a1792ed35709bd71acc606262c87277d4c6b9c8cd12c7
   languageName: node
   linkType: hard
 
