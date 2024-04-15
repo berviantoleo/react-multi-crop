@@ -3443,7 +3443,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@berviantoleo/react-multi-crop-demo@workspace:examples/demo"
   dependencies:
-    "@berviantoleo/react-multi-crop": ^0.37.4
+    "@berviantoleo/react-multi-crop": ^0.37.5
     "@emotion/react": ^11.11.3
     "@emotion/styled": ^11.11.0
     "@mui/icons-material": ^5.15.8
@@ -3462,7 +3462,7 @@ __metadata:
   languageName: unknown
   linkType: soft
 
-"@berviantoleo/react-multi-crop@^0.37.4, @berviantoleo/react-multi-crop@workspace:packages/react-multi-crop":
+"@berviantoleo/react-multi-crop@^0.37.5, @berviantoleo/react-multi-crop@workspace:packages/react-multi-crop":
   version: 0.0.0-use.local
   resolution: "@berviantoleo/react-multi-crop@workspace:packages/react-multi-crop"
   dependencies:
