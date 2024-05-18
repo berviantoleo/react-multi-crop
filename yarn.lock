@@ -7528,13 +7528,13 @@ __metadata:
   linkType: hard
 
 "@storybook/addon-storysource@npm:^8.0.0":
-  version: 8.0.0
-  resolution: "@storybook/addon-storysource@npm:8.0.0"
+  version: 8.1.1
+  resolution: "@storybook/addon-storysource@npm:8.1.1"
   dependencies:
-    "@storybook/source-loader": 8.0.0
+    "@storybook/source-loader": 8.1.1
     estraverse: ^5.2.0
     tiny-invariant: ^1.3.1
-  checksum: f69c3a5ca6a3a41628e651cc05d74c5941fb78eee2fa61585a84d1d40c2ce761c4063d35fac7fd4bfafacc227d8e7f0a8cfcc6570b6962199c184d3de4cf1dd4
+  checksum: 63d954ecd0f56039c33bba5be57d68ec26a746fb42c2a09ea182a9e324ecb4f1ad16479f06605d24e036e13ce8fcd2ef4efd79da9a7c2b45630a363ddf8aa7bb
   languageName: node
   linkType: hard
 
@@ -7710,6 +7710,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/channels@npm:8.1.1":
+  version: 8.1.1
+  resolution: "@storybook/channels@npm:8.1.1"
+  dependencies:
+    "@storybook/client-logger": 8.1.1
+    "@storybook/core-events": 8.1.1
+    "@storybook/global": ^5.0.0
+    telejson: ^7.2.0
+    tiny-invariant: ^1.3.1
+  checksum: ee34ffa485a41a22036717377fc5b6948a09c5d45111ef5c6b4b10681bfe869b20596cf51a80c156ea62a73d1200f7ddbcb8d83b7b180048f60635c2e7fe8dda
+  languageName: node
+  linkType: hard
+
 "@storybook/cli@npm:8.0.4":
   version: 8.0.4
   resolution: "@storybook/cli@npm:8.0.4"
@@ -7781,6 +7794,15 @@ __metadata:
   dependencies:
     "@storybook/global": ^5.0.0
   checksum: 35cadb050bbcdd243c6de74c7e16e483a3df3d758564876cf70ef8571fe383209044197953a4c592437bcc8d9d87a00d4549323e623a151c8c6933105c9ff65c
+  languageName: node
+  linkType: hard
+
+"@storybook/client-logger@npm:8.1.1":
+  version: 8.1.1
+  resolution: "@storybook/client-logger@npm:8.1.1"
+  dependencies:
+    "@storybook/global": ^5.0.0
+  checksum: 69a942896d73520d20a6d5a4aa4b8c3d4d811bf9ab60e1b87cdb2ce494c35a8e4d92f1c22bf83cdeb1d6e43cf356ce9563ff9816470206d2c3f2682b60d77190
   languageName: node
   linkType: hard
 
@@ -7932,6 +7954,16 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/core-events@npm:8.1.1":
+  version: 8.1.1
+  resolution: "@storybook/core-events@npm:8.1.1"
+  dependencies:
+    "@storybook/csf": ^0.1.7
+    ts-dedent: ^2.0.0
+  checksum: 6ee283eaafe10ec1253f72a5b33fe554acc32d8e3872b036c6f8a8ade8a300cd4f44bed29a55a02fa5ee45b3fdd93f84fcf77d67413bcf864435daeb5cb5007c
+  languageName: node
+  linkType: hard
+
 "@storybook/core-server@npm:8.0.4":
   version: 8.0.4
   resolution: "@storybook/core-server@npm:8.0.4"
@@ -8046,6 +8078,15 @@ __metadata:
   dependencies:
     type-fest: ^2.19.0
   checksum: 22038dfd5e46cd9565c3dec615918c0712eb5fc5f56e9ec89cfa75d7b48667b8fcbf7e9d1f46c9f4d440eee074f1d23a84dc56a937add37b28ddf890fdedfb8a
+  languageName: node
+  linkType: hard
+
+"@storybook/csf@npm:^0.1.7":
+  version: 0.1.7
+  resolution: "@storybook/csf@npm:0.1.7"
+  dependencies:
+    type-fest: ^2.19.0
+  checksum: 0f2b32a3d3920620d032436429fff9f3a08add8e52dc735a5dfd6ce46260a12c7ec87f4fff065bf0e8baae988d1655eea25d5aaba810e7687119ac5661eaeaa4
   languageName: node
   linkType: hard
 
@@ -8361,7 +8402,20 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.0.0, @storybook/source-loader@npm:^8.0.0":
+"@storybook/source-loader@npm:8.1.1":
+  version: 8.1.1
+  resolution: "@storybook/source-loader@npm:8.1.1"
+  dependencies:
+    "@storybook/csf": ^0.1.7
+    "@storybook/types": 8.1.1
+    estraverse: ^5.2.0
+    lodash: ^4.17.21
+    prettier: ^3.1.1
+  checksum: e4aad1f2b5ac4af62b3a8a7cec83692f4da9fd59824840c3bdcad82ab3b74c91dedcd7c2182f14dd16efeb6aeb72da3bf203d306468a079aa053253468b05279
+  languageName: node
+  linkType: hard
+
+"@storybook/source-loader@npm:^8.0.0":
   version: 8.0.0
   resolution: "@storybook/source-loader@npm:8.0.0"
   dependencies:
@@ -8456,6 +8510,17 @@ __metadata:
     "@types/express": ^4.7.0
     file-system-cache: 2.3.0
   checksum: ad16e1bb1425b18847fe185c52e3c1e93a39fdea1dbb183745a59ddd731e59d2c7f9ef10672b6e7235801eea1cf19a4b4c7f67e2b9e237ab62d4bcf2a829327e
+  languageName: node
+  linkType: hard
+
+"@storybook/types@npm:8.1.1":
+  version: 8.1.1
+  resolution: "@storybook/types@npm:8.1.1"
+  dependencies:
+    "@storybook/channels": 8.1.1
+    "@types/express": ^4.7.0
+    file-system-cache: 2.3.0
+  checksum: f3b9bac528d80d714f2d510c5e71c78e1ade9bb9034a0ed0868c1b4f1685eda37cba9cf9cf43bf68845501c677fcd16d0f4b94e5a133b8ba0f76f1f43f9b6d86
   languageName: node
   linkType: hard
 
