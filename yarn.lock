@@ -7755,6 +7755,19 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/channels@npm:8.1.11":
+  version: 8.1.11
+  resolution: "@storybook/channels@npm:8.1.11"
+  dependencies:
+    "@storybook/client-logger": 8.1.11
+    "@storybook/core-events": 8.1.11
+    "@storybook/global": ^5.0.0
+    telejson: ^7.2.0
+    tiny-invariant: ^1.3.1
+  checksum: 9f4840c8f6737fe1357344400d0fd6ab85dbff4f3b3329e02dea9ebaa003f20c5a45711074aadcfc82f7e8976466196935def308e0f389c11d5bad48ab3362e5
+  languageName: node
+  linkType: hard
+
 "@storybook/channels@npm:8.1.5":
   version: 8.1.5
   resolution: "@storybook/channels@npm:8.1.5"
@@ -7821,6 +7834,15 @@ __metadata:
   dependencies:
     "@storybook/global": ^5.0.0
   checksum: 89aa3fe9dbbc3b98c56eb270665693dd28ffab9505245d401fd849fa847a7deb7ed4dea458e6839c08c86377ef387604db1c6a0f4a78292505cd39abdd5c0be1
+  languageName: node
+  linkType: hard
+
+"@storybook/client-logger@npm:8.1.11":
+  version: 8.1.11
+  resolution: "@storybook/client-logger@npm:8.1.11"
+  dependencies:
+    "@storybook/global": ^5.0.0
+  checksum: c1dac97b3bd138daed0018825ca7b36d1dff108c9c5134182b4b1bbad633b627436da7c7d557c4d5ecd9e78ccda0b2ce74d22bf8b7e59b30efe799eea05b7a15
   languageName: node
   linkType: hard
 
@@ -7966,6 +7988,16 @@ __metadata:
   dependencies:
     ts-dedent: ^2.0.0
   checksum: 43096118c0bdd0dc633f57640eb369eef021e14061bb3a4751c762e5fb623d7618fe1b00697964783b966431b695b14a862b90333fe80ae157f15f88b73b0995
+  languageName: node
+  linkType: hard
+
+"@storybook/core-events@npm:8.1.11":
+  version: 8.1.11
+  resolution: "@storybook/core-events@npm:8.1.11"
+  dependencies:
+    "@storybook/csf": ^0.1.7
+    ts-dedent: ^2.0.0
+  checksum: 3b3231b299367def8d6d9ee8dc939ad145473bbd561d495f0dac3e5cd3adb93b7e87f1d0a6787917275f8dfae8193959c872336530930ad90207b6df5de37910
   languageName: node
   linkType: hard
 
@@ -8420,7 +8452,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.1.5, @storybook/source-loader@npm:^8.1.5":
+"@storybook/source-loader@npm:8.1.5":
   version: 8.1.5
   resolution: "@storybook/source-loader@npm:8.1.5"
   dependencies:
@@ -8430,6 +8462,19 @@ __metadata:
     lodash: ^4.17.21
     prettier: ^3.1.1
   checksum: f11a0662cf2f3639200a23730eab4cf4815d999220cb5714a102aa7151c88f2c424373eafc6d8d507488f95d730358771a5b6497285ea9e8f1d7536b3847db7d
+  languageName: node
+  linkType: hard
+
+"@storybook/source-loader@npm:^8.1.5":
+  version: 8.1.11
+  resolution: "@storybook/source-loader@npm:8.1.11"
+  dependencies:
+    "@storybook/csf": ^0.1.7
+    "@storybook/types": 8.1.11
+    estraverse: ^5.2.0
+    lodash: ^4.17.21
+    prettier: ^3.1.1
+  checksum: 18129684d33574f036954849c4fbb2edb93521a4cc2ce8c42e3b020d96f84ecc15f73d735645e53d96f09f4f60c2ec01a80abe3331cbce1031c3c5b8432622cb
   languageName: node
   linkType: hard
 
@@ -8493,6 +8538,17 @@ __metadata:
     "@types/express": ^4.7.0
     file-system-cache: 2.3.0
   checksum: 3880746f80efbd64fa9a7e5cb30a82ca8ca30294edda95d0d2baefcb0f4815ec84ef8f988af628d24c0611efdf9d032371b444abe712b450de20c2db061419f4
+  languageName: node
+  linkType: hard
+
+"@storybook/types@npm:8.1.11":
+  version: 8.1.11
+  resolution: "@storybook/types@npm:8.1.11"
+  dependencies:
+    "@storybook/channels": 8.1.11
+    "@types/express": ^4.7.0
+    file-system-cache: 2.3.0
+  checksum: 99215c9dc8ffcdfd9e54182cf2fe2f6f84cc94bdfe853096876d4715c1cc926317cdb8314ebc4ee78f2b98c65de718f9350d5545d579a08ba08da01864d1291b
   languageName: node
   linkType: hard
 
