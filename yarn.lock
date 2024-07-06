@@ -3678,7 +3678,7 @@ __metadata:
     "@types/node": ^20.13.0
     "@types/react": ^18.3.3
     "@types/react-dom": ^18.3.0
-    cypress: ~13.10.0
+    cypress: ~13.13.0
     fabric: ^5.3.0
     react: ^18.3.1
     react-dom: ^18.3.1
@@ -13204,9 +13204,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cypress@npm:~13.10.0":
-  version: 13.10.0
-  resolution: "cypress@npm:13.10.0"
+"cypress@npm:~13.13.0":
+  version: 13.13.0
+  resolution: "cypress@npm:13.13.0"
   dependencies:
     "@cypress/request": ^3.0.0
     "@cypress/xvfb": ^1.2.4
@@ -13247,12 +13247,12 @@ __metadata:
     request-progress: ^3.0.0
     semver: ^7.5.3
     supports-color: ^8.1.1
-    tmp: ~0.2.1
+    tmp: ~0.2.3
     untildify: ^4.0.0
     yauzl: ^2.10.0
   bin:
     cypress: bin/cypress
-  checksum: fcb359bedb6f0c691a8fe8172a95873eaf43a42471896efff0d205c083b056de2631f7436142b7eb4f307b77f2ed9de0fe88c7905064a39fd2cd0e0352eb8148
+  checksum: 61251459daec04993d7b180d0073776d3e6d9e882e7152612b393e7834274a619cf0735fd118897aada1fb828d507966fc65ff973f596984fcd30374a07996c7
   languageName: node
   linkType: hard
 
@@ -26782,6 +26782,13 @@ __metadata:
   dependencies:
     rimraf: ^3.0.0
   checksum: 8b1214654182575124498c87ca986ac53dc76ff36e8f0e0b67139a8d221eaecfdec108c0e6ec54d76f49f1f72ab9325500b246f562b926f85bcdfca8bf35df9e
+  languageName: node
+  linkType: hard
+
+"tmp@npm:~0.2.3":
+  version: 0.2.3
+  resolution: "tmp@npm:0.2.3"
+  checksum: 73b5c96b6e52da7e104d9d44afb5d106bb1e16d9fa7d00dbeb9e6522e61b571fbdb165c756c62164be9a3bbe192b9b268c236d370a2a0955c7689cd2ae377b95
   languageName: node
   linkType: hard
 
