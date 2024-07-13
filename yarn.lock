@@ -236,8 +236,8 @@ __metadata:
   linkType: hard
 
 "@babel/cli@npm:^7.24.6":
-  version: 7.24.6
-  resolution: "@babel/cli@npm:7.24.6"
+  version: 7.24.8
+  resolution: "@babel/cli@npm:7.24.8"
   dependencies:
     "@jridgewell/trace-mapping": ^0.3.25
     "@nicolo-ribaudo/chokidar-2": 2.1.8-no-fsevents.3
@@ -258,7 +258,7 @@ __metadata:
   bin:
     babel: ./bin/babel.js
     babel-external-helpers: ./bin/babel-external-helpers.js
-  checksum: b0c9c335737e635b96695d1b26bd86afbbb2203173d6c49861f970641be8c0b6cf8022aeddb1ea3e81078e9fbb0614e8f90c8c6566fef55049c0ac5645fc019f
+  checksum: 8a1fb83d0c2959b6a83cccab55ac1b0ffd408e1959369609071dadb38c1dc99a501d58751b6e4f0c43b751e595e9868856433b01832a19f592f004dd854a8c1f
   languageName: node
   linkType: hard
 
