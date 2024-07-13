@@ -8090,6 +8090,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/csf@npm:0.1.11":
+  version: 0.1.11
+  resolution: "@storybook/csf@npm:0.1.11"
+  dependencies:
+    type-fest: ^2.19.0
+  checksum: ba2a265f62ad82a2853b069f77e974efe31bed263a640ca1dd8e6d7e194022018a67ad4a2587ae928f33ae45aaf6ffedd5925ba3fcf3fe5b7996667a918e22eb
+  languageName: node
+  linkType: hard
+
 "@storybook/csf@npm:^0.1.2":
   version: 0.1.2
   resolution: "@storybook/csf@npm:0.1.2"
@@ -8420,7 +8429,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.1.5, @storybook/source-loader@npm:^8.1.5":
+"@storybook/source-loader@npm:8.1.5":
   version: 8.1.5
   resolution: "@storybook/source-loader@npm:8.1.5"
   dependencies:
@@ -8430,6 +8439,20 @@ __metadata:
     lodash: ^4.17.21
     prettier: ^3.1.1
   checksum: f11a0662cf2f3639200a23730eab4cf4815d999220cb5714a102aa7151c88f2c424373eafc6d8d507488f95d730358771a5b6497285ea9e8f1d7536b3847db7d
+  languageName: node
+  linkType: hard
+
+"@storybook/source-loader@npm:^8.1.5":
+  version: 8.2.2
+  resolution: "@storybook/source-loader@npm:8.2.2"
+  dependencies:
+    "@storybook/csf": 0.1.11
+    estraverse: ^5.2.0
+    lodash: ^4.17.21
+    prettier: ^3.1.1
+  peerDependencies:
+    storybook: ^8.2.2
+  checksum: 6b9d3ec1b9be0a3b660d16470de94a35dff58484a1838c141bdd7c11a8a4a07a5399ccf4311d8c39a8e341613e1004a8f05cff72e040605925987b2b672ed1f3
   languageName: node
   linkType: hard
 
