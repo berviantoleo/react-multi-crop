@@ -6636,9 +6636,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@lerna/create@npm:8.1.6":
-  version: 8.1.6
-  resolution: "@lerna/create@npm:8.1.6"
+"@lerna/create@npm:8.1.7":
+  version: 8.1.7
+  resolution: "@lerna/create@npm:8.1.7"
   dependencies:
     "@npmcli/arborist": 7.5.3
     "@npmcli/package-json": 5.2.0
@@ -6698,6 +6698,7 @@ __metadata:
     slash: ^3.0.0
     ssri: ^10.0.6
     string-width: ^4.2.3
+    strip-ansi: ^6.0.1
     strong-log-transformer: 2.1.0
     tar: 6.2.1
     temp-dir: 1.0.0
@@ -6710,7 +6711,7 @@ __metadata:
     write-pkg: 4.0.0
     yargs: 17.7.2
     yargs-parser: 21.1.1
-  checksum: 13ed415ebe75ba570665074a53ff2496c44c126ca06b0a18db6bb11b525b19957ecabdf11dc059798a5d46848522b85709f2d15ee987240f1360042af0537b4c
+  checksum: ec7aa7fb5d8485ab0ae838a6aa85f33c1c41fc5da5d3ef02cb686b8a376e47f5533a59b1d83bfa4f76c6bc3d23fd9caae47f7a1f314769447eafb7c714ca6650
   languageName: node
   linkType: hard
 
@@ -20835,10 +20836,10 @@ __metadata:
   linkType: hard
 
 "lerna@npm:^8.1.6":
-  version: 8.1.6
-  resolution: "lerna@npm:8.1.6"
+  version: 8.1.7
+  resolution: "lerna@npm:8.1.7"
   dependencies:
-    "@lerna/create": 8.1.6
+    "@lerna/create": 8.1.7
     "@npmcli/arborist": 7.5.3
     "@npmcli/package-json": 5.2.0
     "@npmcli/run-script": 8.1.0
@@ -20905,6 +20906,7 @@ __metadata:
     slash: 3.0.0
     ssri: ^10.0.6
     string-width: ^4.2.3
+    strip-ansi: ^6.0.1
     strong-log-transformer: 2.1.0
     tar: 6.2.1
     temp-dir: 1.0.0
@@ -20920,7 +20922,7 @@ __metadata:
     yargs-parser: 21.1.1
   bin:
     lerna: dist/cli.js
-  checksum: d8edfd458d8529662fbfae2515fcdddc431d4379da99c69bf8448e343e2dd9a30a37c0fc3ab7628b40239f1f51d4bb037bce6d249f29fa9b871e2849130508db
+  checksum: ea74fffe1b522259ddbdecd4dc232a3201be27227d617e1f92dc440724d0559bebec2106baec65d05a1e72f53d75d4e7a39d4554bea62cb14dc1d072278fed23
   languageName: node
   linkType: hard
 
