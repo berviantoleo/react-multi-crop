@@ -4812,7 +4812,7 @@ __metadata:
     rollup-plugin-sizes: ^1.0.6
     rollup-plugin-terser: ^7.0.2
     rollup-plugin-typescript2: ^0.36.0
-    storybook: 8.2.4
+    storybook: 8.2.6
     ts-jest: ^29.2.2
     uuid: ^10.0.0
   peerDependencies:
@@ -9002,14 +9002,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/codemod@npm:8.2.4":
-  version: 8.2.4
-  resolution: "@storybook/codemod@npm:8.2.4"
+"@storybook/codemod@npm:8.2.6":
+  version: 8.2.6
+  resolution: "@storybook/codemod@npm:8.2.6"
   dependencies:
     "@babel/core": ^7.24.4
     "@babel/preset-env": ^7.24.4
     "@babel/types": ^7.24.0
-    "@storybook/core": 8.2.4
+    "@storybook/core": 8.2.6
     "@storybook/csf": 0.1.11
     "@types/cross-spawn": ^6.0.2
     cross-spawn: ^7.0.3
@@ -9019,7 +9019,7 @@ __metadata:
     prettier: ^3.1.1
     recast: ^0.23.5
     tiny-invariant: ^1.3.1
-  checksum: b0e88069335cfafa6eb82970a1ffd5535f8229a2cac88998364d4e689d66bfcb8d771107df7f9093d29d50b89bd0a8aa3f0d81d27c3e26df47637c8bae00998e
+  checksum: 7278f9103ddb04b0567ef8a8a00bc4350d2d666aa9ce1eeba2d8819abdbb1e73deab56477895a1fcd46f401605f80c65c901d5eec99515cd1571ac6378bc929f
   languageName: node
   linkType: hard
 
@@ -9117,9 +9117,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core@npm:8.2.4":
-  version: 8.2.4
-  resolution: "@storybook/core@npm:8.2.4"
+"@storybook/core@npm:8.2.6":
+  version: 8.2.6
+  resolution: "@storybook/core@npm:8.2.6"
   dependencies:
     "@storybook/csf": 0.1.11
     "@types/express": ^4.17.21
@@ -9132,7 +9132,7 @@ __metadata:
     recast: ^0.23.5
     util: ^0.12.4
     ws: ^8.2.3
-  checksum: 7f45c706cddb10f9da2e93f1b6b0f3fdc83177b6babfffe87f00d30173c359130ed22ff1eb8d4a783084b54ce53dc567f0889d6de051376905d7836ce36e8eab
+  checksum: 5fcfabbc4c17b8467a2cf4f985477c9b02b991da82dfd205358ba1bd8fecfaa595fe427da84711647689ee17263918d5ce97624842b9dba66ffc177ff7cc028a
   languageName: node
   linkType: hard
 
@@ -26982,14 +26982,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:8.2.4":
-  version: 8.2.4
-  resolution: "storybook@npm:8.2.4"
+"storybook@npm:8.2.6":
+  version: 8.2.6
+  resolution: "storybook@npm:8.2.6"
   dependencies:
     "@babel/core": ^7.24.4
     "@babel/types": ^7.24.0
-    "@storybook/codemod": 8.2.4
-    "@storybook/core": 8.2.4
+    "@storybook/codemod": 8.2.6
+    "@storybook/core": 8.2.6
     "@types/semver": ^7.3.4
     "@yarnpkg/fslib": 2.10.3
     "@yarnpkg/libzip": 2.3.0
@@ -27018,7 +27018,7 @@ __metadata:
     getstorybook: ./bin/index.cjs
     sb: ./bin/index.cjs
     storybook: ./bin/index.cjs
-  checksum: 9873ee7c3cd8a6d6f6ba0562b6cf7f5bacbd124d9b3bb8496eaa07384b4dcbecb7b15acfd9becc7025b436fa3ce01fd6af7b926f1e63c3cbb26e2124f9270921
+  checksum: ed268ede161348578b82df61b7cd757eaf1e13a8e9fc8c8e77955a3d2882fa5cee2fecbadc9a01d52dd438c9b7dd8744bb7af6a146439e0370f6e204e86273fd
   languageName: node
   linkType: hard
 
