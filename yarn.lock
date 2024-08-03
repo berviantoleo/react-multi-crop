@@ -14964,7 +14964,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"ejs@npm:^3.0.0, ejs@npm:^3.1.6, ejs@npm:^3.1.7":
+"ejs@npm:^3.1.10, ejs@npm:^3.1.6, ejs@npm:^3.1.7":
   version: 3.1.10
   resolution: "ejs@npm:3.1.10"
   dependencies:
@@ -27985,11 +27985,11 @@ __metadata:
   linkType: hard
 
 "ts-jest@npm:^29.2.2":
-  version: 29.2.2
-  resolution: "ts-jest@npm:29.2.2"
+  version: 29.2.4
+  resolution: "ts-jest@npm:29.2.4"
   dependencies:
     bs-logger: 0.x
-    ejs: ^3.0.0
+    ejs: ^3.1.10
     fast-json-stable-stringify: 2.x
     jest-util: ^29.0.0
     json5: ^2.2.3
@@ -28017,7 +28017,7 @@ __metadata:
       optional: true
   bin:
     ts-jest: cli.js
-  checksum: e8e20167ecab9d164215691ea60e946774519fd602809599d1f2abf8321a767310e9ee2cf377a346a3d6de7b8a8ac619180bb0ab06f3813e51f82973f5a94b82
+  checksum: 142246f12bb11d5edbfb5a65e298097667e2c4d390e316e356416ce00d3cd157220dbfb9de2a56b38f30776bc92ba59eff9fd78e9345ba4c6712783f27f5475a
   languageName: node
   linkType: hard
 
