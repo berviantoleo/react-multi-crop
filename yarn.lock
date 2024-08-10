@@ -28891,8 +28891,8 @@ __metadata:
   linkType: hard
 
 "vitepress@npm:^1.3.0":
-  version: 1.3.1
-  resolution: "vitepress@npm:1.3.1"
+  version: 1.3.2
+  resolution: "vitepress@npm:1.3.2"
   dependencies:
     "@docsearch/css": ^3.6.0
     "@docsearch/js": ^3.6.0
@@ -28920,7 +28920,7 @@ __metadata:
       optional: true
   bin:
     vitepress: bin/vitepress.js
-  checksum: 4f62489aa73d4e7e59c59eb20fd4908b9b95368e3d8d3ae18349874dd90f7c7476114c211f1b5a37eb387c8155c6bc1e0fbf3c2fdabdd6db838cf482954c9083
+  checksum: 8cf7e1fefbfe415b9849f9af6f2f212416a745cd7f9d1121e7741ff181a979a8860d7cef1b88417a1c909c699940c0f3895796129e8a0769c9cb116c9a41069c
   languageName: node
   linkType: hard
 
