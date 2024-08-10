@@ -9459,7 +9459,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.1.5, @storybook/source-loader@npm:^8.1.5":
+"@storybook/source-loader@npm:8.1.5":
   version: 8.1.5
   resolution: "@storybook/source-loader@npm:8.1.5"
   dependencies:
@@ -9469,6 +9469,20 @@ __metadata:
     lodash: ^4.17.21
     prettier: ^3.1.1
   checksum: f11a0662cf2f3639200a23730eab4cf4815d999220cb5714a102aa7151c88f2c424373eafc6d8d507488f95d730358771a5b6497285ea9e8f1d7536b3847db7d
+  languageName: node
+  linkType: hard
+
+"@storybook/source-loader@npm:^8.1.5":
+  version: 8.2.8
+  resolution: "@storybook/source-loader@npm:8.2.8"
+  dependencies:
+    "@storybook/csf": 0.1.11
+    estraverse: ^5.2.0
+    lodash: ^4.17.21
+    prettier: ^3.1.1
+  peerDependencies:
+    storybook: ^8.2.8
+  checksum: 40e785b19318af4532539d741ba236312e91be80788df5ea9aff61aa03b4be268b1e05eae8e11f068bb3ac418468004fcd0773422d039782255fc8032d3c869a
   languageName: node
   linkType: hard
 
