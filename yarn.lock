@@ -9044,6 +9044,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/components@npm:^8.2.9":
+  version: 8.2.9
+  resolution: "@storybook/components@npm:8.2.9"
+  peerDependencies:
+    storybook: ^8.2.9
+  checksum: 32153df19777ea751d1adb33da6e92b5647d19fd924753b2ca1c80bcc102ee0489eac7b02914a2e56406233940f6eca7f1aa3ba0c441a164cabc954679a67869
+  languageName: node
+  linkType: hard
+
 "@storybook/core-client@npm:7.6.13":
   version: 7.6.13
   resolution: "@storybook/core-client@npm:7.6.13"
@@ -9234,6 +9243,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/manager-api@npm:^8.2.9":
+  version: 8.2.9
+  resolution: "@storybook/manager-api@npm:8.2.9"
+  peerDependencies:
+    storybook: ^8.2.9
+  checksum: 5ee66ebdc88f886c05425acff2c362681a6f778e2f27023a43c6c36767ef265175c58b8f23f74684dba64477b26b310fad7cf1761e6643325325a8724f53d93c
+  languageName: node
+  linkType: hard
+
 "@storybook/mdx2-csf@npm:^1.0.0":
   version: 1.1.0
   resolution: "@storybook/mdx2-csf@npm:1.1.0"
@@ -9311,6 +9329,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/preview-api@npm:^8.2.9":
+  version: 8.2.9
+  resolution: "@storybook/preview-api@npm:8.2.9"
+  peerDependencies:
+    storybook: ^8.2.9
+  checksum: 4973ca3ede45e363a54071a200ee1aeeea9c735ee1e6ba93d46c756bae905057a0e6c30882964aee14fb1631029c5f86b2a4cb8deaee4a80aa5770bf63a00eb3
+  languageName: node
+  linkType: hard
+
 "@storybook/preview@npm:7.6.13":
   version: 7.6.13
   resolution: "@storybook/preview@npm:7.6.13"
@@ -9346,14 +9373,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/react-dom-shim@npm:8.2.2":
-  version: 8.2.2
-  resolution: "@storybook/react-dom-shim@npm:8.2.2"
+"@storybook/react-dom-shim@npm:8.2.9":
+  version: 8.2.9
+  resolution: "@storybook/react-dom-shim@npm:8.2.9"
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    storybook: ^8.2.2
-  checksum: ca37f3f7cf2df40aa96605d6408914c0871d8f19edd4daca358753372af363f767475dfcbcb669f9eabe72f19465084648f7291490bfc7fb6d15ccef0dbbd083
+    storybook: ^8.2.9
+  checksum: 85ecef5aa9af253aae6edb78eaac0e9135f8aa7b58e8a00b7913c13f7a023d7fb8585c459b15900148671236a0d38872d3fee34a48e9c04674ff9adbdede3827
   languageName: node
   linkType: hard
 
@@ -9416,11 +9443,15 @@ __metadata:
   linkType: hard
 
 "@storybook/react@npm:^8.2.2":
-  version: 8.2.2
-  resolution: "@storybook/react@npm:8.2.2"
+  version: 8.2.9
+  resolution: "@storybook/react@npm:8.2.9"
   dependencies:
+    "@storybook/components": ^8.2.9
     "@storybook/global": ^5.0.0
-    "@storybook/react-dom-shim": 8.2.2
+    "@storybook/manager-api": ^8.2.9
+    "@storybook/preview-api": ^8.2.9
+    "@storybook/react-dom-shim": 8.2.9
+    "@storybook/theming": ^8.2.9
     "@types/escodegen": ^0.0.6
     "@types/estree": ^0.0.51
     "@types/node": ^18.0.0
@@ -9439,12 +9470,12 @@ __metadata:
   peerDependencies:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    storybook: ^8.2.2
+    storybook: ^8.2.9
     typescript: ">= 4.2.x"
   peerDependenciesMeta:
     typescript:
       optional: true
-  checksum: be67141b374aa70022476249918ad90e0f0dc11bbd420da153e6270258199bceca5fbad7087b5160fc57aa28c399af65aab4f3d08ad63e8c419656e21a258dd3
+  checksum: 87a6091eccf049e7ba6408b3de47b729ab444de59cc423a2f349fcfd936f2bdf0c258297725516947803063a44ff080ff71e6606f8f3d28a12e667ccef82a760
   languageName: node
   linkType: hard
 
@@ -9484,6 +9515,15 @@ __metadata:
     react: ^16.8.0 || ^17.0.0 || ^18.0.0
     react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0
   checksum: a05e4410a2c0a1d127de033e8761aecbc5853f0f4c8f00d40cfc17eb16c38d2c67b77bc4dc818eaf26f6651e8e1b5136c4d303f45dc76d131966589afe60ecf4
+  languageName: node
+  linkType: hard
+
+"@storybook/theming@npm:^8.2.9":
+  version: 8.2.9
+  resolution: "@storybook/theming@npm:8.2.9"
+  peerDependencies:
+    storybook: ^8.2.9
+  checksum: 13d71e1b69fb254d5de6349c60c7ac0518cbaec0c26a591c820752dd5b25fe66d8a32e4b081bd9470c0b07648e478eb88ab628d10196918ee2806c9640c2ee2f
   languageName: node
   linkType: hard
 
