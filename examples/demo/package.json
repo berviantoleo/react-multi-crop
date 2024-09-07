@@ -28,7 +28,7 @@
     "@berviantoleo/react-multi-crop": "^0.38.4",
     "@emotion/react": "^11.11.4",
     "@emotion/styled": "^11.11.5",
-    "@mui/icons-material": "^5.16.1",
+    "@mui/icons-material": "^6.0.2",
     "@mui/material": "^5.16.1",
     "@mui/styles": "^5.16.1",
     "@types/jest": "^29.5.12",
