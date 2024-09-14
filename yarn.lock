@@ -4763,7 +4763,7 @@ __metadata:
     "@berviantoleo/react-multi-crop": ^0.38.4
     "@emotion/react": ^11.11.4
     "@emotion/styled": ^11.11.5
-    "@mui/icons-material": ^5.16.1
+    "@mui/icons-material": ^6.1.0
     "@mui/material": ^6.1.0
     "@mui/styles": ^5.16.1
     "@types/jest": ^29.5.12
@@ -6843,19 +6843,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@mui/icons-material@npm:^5.16.1":
-  version: 5.16.4
-  resolution: "@mui/icons-material@npm:5.16.4"
+"@mui/icons-material@npm:^6.1.0":
+  version: 6.1.0
+  resolution: "@mui/icons-material@npm:6.1.0"
   dependencies:
-    "@babel/runtime": ^7.23.9
+    "@babel/runtime": ^7.25.6
   peerDependencies:
-    "@mui/material": ^5.0.0
-    "@types/react": ^17.0.0 || ^18.0.0
-    react: ^17.0.0 || ^18.0.0
+    "@mui/material": ^6.1.0
+    "@types/react": ^17.0.0 || ^18.0.0 || ^19.0.0
+    react: ^17.0.0 || ^18.0.0 || ^19.0.0
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: b0559215a10819a082539a7ae43aedafb30bc109c5d6994ac6d748e46688d705e6b44b62693f89aea1fca3afdc6deb665d884c6bad0a2cffde9c5443027e3019
+  checksum: 5e6c03fd0203ec6353bfe9b7e506a1e7e6457145aab97fefa0a683bf0f8bea3e395c0bfb3d50818ddf3661221aa341a1c589ea8ccb3612c4d4f7e35745d698ff
   languageName: node
   linkType: hard
 
