@@ -1,5 +1,4 @@
 import { fabric } from 'fabric';
-import CSS from 'csstype';
 
 export interface ICropStyle {
   borderColor?: string;
@@ -85,7 +84,7 @@ export interface IReactMultiCropProps {
   /** @deprecated will completely remove the buttons */
   showButton?: boolean;
   /** @deprecated avoid to use this props */
-  style?: CSS.Properties;
+  style?: React.CSSProperties;
 }
 
 export interface IReactMultiCropStates {
