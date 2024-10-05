@@ -40,7 +40,7 @@
     "@storybook/addon-storysource": "^8.3.2",
     "@storybook/addons": "^7.6.17",
     "@storybook/react": "^8.3.2",
-    "@storybook/react-webpack5": "7.6.13",
+    "@storybook/react-webpack5": "8.3.5",
     "@storybook/source-loader": "^8.3.2",
     "@testing-library/jest-dom": "^6.5.0",
     "@testing-library/react": "^15.0.7",
