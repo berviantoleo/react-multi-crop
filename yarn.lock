@@ -3666,7 +3666,7 @@ __metadata:
     rollup-plugin-sizes: ^1.0.6
     rollup-plugin-terser: ^7.0.2
     rollup-plugin-typescript2: ^0.36.0
-    storybook: 8.3.2
+    storybook: 8.3.5
     ts-jest: ^29.2.5
     uuid: ^10.0.0
   peerDependencies:
@@ -8161,9 +8161,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core@npm:8.3.2":
-  version: 8.3.2
-  resolution: "@storybook/core@npm:8.3.2"
+"@storybook/core@npm:8.3.5":
+  version: 8.3.5
+  resolution: "@storybook/core@npm:8.3.5"
   dependencies:
     "@storybook/csf": ^0.1.11
     "@types/express": ^4.17.21
@@ -8178,7 +8178,7 @@ __metadata:
     semver: ^7.6.2
     util: ^0.12.5
     ws: ^8.2.3
-  checksum: 85a63eadf5cd898552393eac553df107fdd176aa7a1564f88bdc3d43842720b12f9bbbdb019f8a671c4ebe2f67d276c6c7c6b26f199f5bd0f47dcd670270b3e9
+  checksum: 6c1fbe90c95cfe9ec74499c21dfff2fdf75291123ef42f603135ba324d8674e336163275cd64521cae7040bf66d121f883550efd2e771929976cf52e1a80e4c1
   languageName: node
   linkType: hard
 
@@ -26147,16 +26147,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:8.3.2":
-  version: 8.3.2
-  resolution: "storybook@npm:8.3.2"
+"storybook@npm:8.3.5":
+  version: 8.3.5
+  resolution: "storybook@npm:8.3.5"
   dependencies:
-    "@storybook/core": 8.3.2
+    "@storybook/core": 8.3.5
   bin:
     getstorybook: ./bin/index.cjs
     sb: ./bin/index.cjs
     storybook: ./bin/index.cjs
-  checksum: ec9bb1bf8b0daa65ab602853f31ab205179ee8ccf6815f38207e17b87bda1dab6844d8729fcb85c78fa6d4b716a0a9d9542609b39f00ab1b31223a7140168b1d
+  checksum: b871c9ec1f87503eb4662c254b7a604ce7c4fdea65736afa0cfa4cfa0b4c2b628b54c437686c832dab69da5c73477bc4abd770ec35b9e71d84effc4f7efebb47
   languageName: node
   linkType: hard
 
