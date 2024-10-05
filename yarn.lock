@@ -7891,15 +7891,15 @@ __metadata:
   linkType: hard
 
 "@storybook/addon-storysource@npm:^8.3.2":
-  version: 8.3.2
-  resolution: "@storybook/addon-storysource@npm:8.3.2"
+  version: 8.3.5
+  resolution: "@storybook/addon-storysource@npm:8.3.5"
   dependencies:
-    "@storybook/source-loader": 8.3.2
+    "@storybook/source-loader": 8.3.5
     estraverse: ^5.2.0
     tiny-invariant: ^1.3.1
   peerDependencies:
-    storybook: ^8.3.2
-  checksum: 7fd53134ebac55817f4269fab7d957898b5ed3f0a206587ee2799dbfd16c4acee80396738d80f5b43fc501669d14d0a1db11684390766e5cb5565af896bc82af
+    storybook: ^8.3.5
+  checksum: f59e61a8a3d625b1819d31057214431b9ffd706def06bed4e77c2222b90dbbf50e52ad600f532fa6c957fcb3273c12d975b33368d245b49b263e43126eec4555
   languageName: node
   linkType: hard
 
@@ -8575,7 +8575,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.3.2, @storybook/source-loader@npm:^8.3.2":
+"@storybook/source-loader@npm:8.3.5":
+  version: 8.3.5
+  resolution: "@storybook/source-loader@npm:8.3.5"
+  dependencies:
+    "@storybook/csf": ^0.1.11
+    estraverse: ^5.2.0
+    lodash: ^4.17.21
+    prettier: ^3.1.1
+  peerDependencies:
+    storybook: ^8.3.5
+  checksum: cb79439021b6ce1ef11b5a57077e39afc3180d54ba41377165c3f4403c47260e62585cd856b6d811ed419014e6b23f6aba1a28f2b4bc3173ea896598543c1790
+  languageName: node
+  linkType: hard
+
+"@storybook/source-loader@npm:^8.3.2":
   version: 8.3.2
   resolution: "@storybook/source-loader@npm:8.3.2"
   dependencies:
