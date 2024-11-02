@@ -7891,15 +7891,15 @@ __metadata:
   linkType: hard
 
 "@storybook/addon-storysource@npm:^8.3.2":
-  version: 8.3.2
-  resolution: "@storybook/addon-storysource@npm:8.3.2"
+  version: 8.4.1
+  resolution: "@storybook/addon-storysource@npm:8.4.1"
   dependencies:
-    "@storybook/source-loader": 8.3.2
+    "@storybook/source-loader": 8.4.1
     estraverse: ^5.2.0
     tiny-invariant: ^1.3.1
   peerDependencies:
-    storybook: ^8.3.2
-  checksum: 7fd53134ebac55817f4269fab7d957898b5ed3f0a206587ee2799dbfd16c4acee80396738d80f5b43fc501669d14d0a1db11684390766e5cb5565af896bc82af
+    storybook: ^8.4.1
+  checksum: d1cee5353315b85887ccd9c1d12e4385594118a7fd254c17cd234e290183bd870f0e875516ee0db55022dcc88547ab22b966122442746a001a36aff47a6f5f18
   languageName: node
   linkType: hard
 
@@ -8575,7 +8575,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.3.2, @storybook/source-loader@npm:^8.3.2":
+"@storybook/source-loader@npm:8.4.1":
+  version: 8.4.1
+  resolution: "@storybook/source-loader@npm:8.4.1"
+  dependencies:
+    "@storybook/csf": ^0.1.11
+    es-toolkit: ^1.22.0
+    estraverse: ^5.2.0
+    prettier: ^3.1.1
+  peerDependencies:
+    storybook: ^8.4.1
+  checksum: b044e897a9527efd2cfd12e2e93e0ac0a936c21fb839b6f9ab3e3b1841b0af3ff580192cd7f4d5e58d333650880309fa4e6498245fb30c61aedb71aecb89f886
+  languageName: node
+  linkType: hard
+
+"@storybook/source-loader@npm:^8.3.2":
   version: 8.3.2
   resolution: "@storybook/source-loader@npm:8.3.2"
   dependencies:
@@ -14614,6 +14628,18 @@ __metadata:
     is-date-object: ^1.0.1
     is-symbol: ^1.0.2
   checksum: 4ead6671a2c1402619bdd77f3503991232ca15e17e46222b0a41a5d81aebc8740a77822f5b3c965008e631153e9ef0580540007744521e72de8e33599fca2eed
+  languageName: node
+  linkType: hard
+
+"es-toolkit@npm:^1.22.0":
+  version: 1.26.1
+  resolution: "es-toolkit@npm:1.26.1"
+  dependenciesMeta:
+    "@trivago/prettier-plugin-sort-imports@4.3.0":
+      unplugged: true
+    prettier-plugin-sort-re-exports@0.0.1:
+      unplugged: true
+  checksum: 3b70659f66c9fab95b62f6df13b1a57ff3320108a8feb2935baf3695b3d08d6c3b28694e7e6f4cefb3b84f817a5bc45e6ed147b63b1993315007d98c35c2c96f
   languageName: node
   linkType: hard
 
