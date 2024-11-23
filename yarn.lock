@@ -8575,7 +8575,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.3.2, @storybook/source-loader@npm:^8.3.2":
+"@storybook/source-loader@npm:8.3.2":
   version: 8.3.2
   resolution: "@storybook/source-loader@npm:8.3.2"
   dependencies:
@@ -8586,6 +8586,20 @@ __metadata:
   peerDependencies:
     storybook: ^8.3.2
   checksum: 8429e726294cf3fdf392599082e3db581f07d316bb5425a0e4bd3d208b9ed9ad8fc7cdf365435910442101d5d3071dd503ae4e14a58e636736410b801035d7da
+  languageName: node
+  linkType: hard
+
+"@storybook/source-loader@npm:^8.3.2":
+  version: 8.4.5
+  resolution: "@storybook/source-loader@npm:8.4.5"
+  dependencies:
+    "@storybook/csf": ^0.1.11
+    es-toolkit: ^1.22.0
+    estraverse: ^5.2.0
+    prettier: ^3.1.1
+  peerDependencies:
+    storybook: ^8.4.5
+  checksum: 3d1f0abbaa73cfb5a7ffe3d3945a38e4a041daf1af6142d7af314a59342c751c3e97c3a36990cee3581086e7b7334feef5f08fe606441e5f6f94f9724f25247e
   languageName: node
   linkType: hard
 
@@ -14614,6 +14628,18 @@ __metadata:
     is-date-object: ^1.0.1
     is-symbol: ^1.0.2
   checksum: 4ead6671a2c1402619bdd77f3503991232ca15e17e46222b0a41a5d81aebc8740a77822f5b3c965008e631153e9ef0580540007744521e72de8e33599fca2eed
+  languageName: node
+  linkType: hard
+
+"es-toolkit@npm:^1.22.0":
+  version: 1.27.0
+  resolution: "es-toolkit@npm:1.27.0"
+  dependenciesMeta:
+    "@trivago/prettier-plugin-sort-imports@4.3.0":
+      unplugged: true
+    prettier-plugin-sort-re-exports@0.0.1:
+      unplugged: true
+  checksum: b529126c524a54e38484470a6d5054dbcd17e7412c4b6ab143c72dc3ae811d81ad1117cad141021185ad17be01ddf24af26ce3117841fb46fcff5217a504bd14
   languageName: node
   linkType: hard
 
