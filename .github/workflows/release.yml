@@ -5,12 +5,12 @@ on:
       - main
 env:
   CI: true
-  NODE_VERSION: 20.x
+  NODE_VERSION: 22.x
   NPM_SITE: https://registry.npmjs.org
 jobs:
   release:
     name: Release
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -62,7 +62,7 @@ jobs:
           single-commit: true
   docs:
     name: Publish Docs
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -95,7 +95,7 @@ jobs:
 
   coverage:
     name: Coverage Upload
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-24.04
     steps:
       - name: Checkout
         uses: actions/checkout@v4
