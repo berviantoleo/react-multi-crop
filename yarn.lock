@@ -15638,8 +15638,8 @@ __metadata:
   linkType: hard
 
 "fabric@npm:^5.3.0":
-  version: 5.3.0
-  resolution: "fabric@npm:5.3.0"
+  version: 5.5.1
+  resolution: "fabric@npm:5.5.1"
   dependencies:
     canvas: "npm:^2.8.0"
     jsdom: "npm:^19.0.0"
@@ -15648,7 +15648,7 @@ __metadata:
       optional: true
     jsdom:
       optional: true
-  checksum: 10/cf172ba2b242584403079cc803fbc283c6e604af9918a9c2f16b7a48a8785d3e3e0b7114f1a9b776e8c14c350efbbab7bc4f1acacaf147b441980949079b9c6b
+  checksum: 10/224178ddf3203e27ed96513f1c5bfcefbddffb9f8746efb0dd1c41cbe7c9c77139e34f401a32dc724d2b2108fc5dd1448e95a8ebfd3039af284a154a15d5b5ee
   languageName: node
   linkType: hard
 
