@@ -15087,7 +15087,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^5.0.0":
+"eslint-plugin-react-hooks@npm:^5.1.0":
   version: 5.1.0
   resolution: "eslint-plugin-react-hooks@npm:5.1.0"
   peerDependencies:
@@ -25191,7 +25191,7 @@ __metadata:
     eslint-plugin-cypress: "npm:^4.1.0"
     eslint-plugin-prettier: "npm:^5.2.1"
     eslint-plugin-react: "npm:^7.37.2"
-    eslint-plugin-react-hooks: "npm:^5.0.0"
+    eslint-plugin-react-hooks: "npm:^5.1.0"
     husky: "npm:^9.1.7"
     lerna: "npm:^8.1.9"
     prettier: "npm:^3.4.1"
