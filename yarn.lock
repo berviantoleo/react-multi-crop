@@ -3583,7 +3583,7 @@ __metadata:
     rollup-plugin-sizes: "npm:^1.0.6"
     rollup-plugin-terser: "npm:^7.0.2"
     rollup-plugin-typescript2: "npm:^0.36.0"
-    storybook: "npm:8.4.6"
+    storybook: "npm:8.4.7"
     ts-jest: "npm:^29.2.5"
     uuid: "npm:^11.0.3"
   peerDependencies:
@@ -8125,9 +8125,9 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/core@npm:8.4.6":
-  version: 8.4.6
-  resolution: "@storybook/core@npm:8.4.6"
+"@storybook/core@npm:8.4.7":
+  version: 8.4.7
+  resolution: "@storybook/core@npm:8.4.7"
   dependencies:
     "@storybook/csf": "npm:^0.1.11"
     better-opn: "npm:^3.0.2"
@@ -8145,7 +8145,7 @@ __metadata:
   peerDependenciesMeta:
     prettier:
       optional: true
-  checksum: 10/bda4eb0c2dafe8b378447b842383c19dd7bf1e347f7d439f1129d92ee2906472ec13d28a2f8eb50b34b97be2bdf4158c3db0ba0ba64bf9c27e9b9177faa00249
+  checksum: 10/a0bc9e1ea05ae69a914e508966f27208815de7aa2a4bed010c2c194bbdf397742f83e19ffa2efd98d2c04f08854c9b0b327632f6b0a3a90d2d3dd4c5002f14c5
   languageName: node
   linkType: hard
 
@@ -26224,11 +26224,11 @@ __metadata:
   languageName: node
   linkType: hard
 
-"storybook@npm:8.4.6":
-  version: 8.4.6
-  resolution: "storybook@npm:8.4.6"
+"storybook@npm:8.4.7":
+  version: 8.4.7
+  resolution: "storybook@npm:8.4.7"
   dependencies:
-    "@storybook/core": "npm:8.4.6"
+    "@storybook/core": "npm:8.4.7"
   peerDependencies:
     prettier: ^2 || ^3
   peerDependenciesMeta:
@@ -26238,7 +26238,7 @@ __metadata:
     getstorybook: ./bin/index.cjs
     sb: ./bin/index.cjs
     storybook: ./bin/index.cjs
-  checksum: 10/7d2e430494e8dc1055e83a9c40799f77af1c3cb03207134c7f5d4de5691da742441b1712529dfcd0e64530ec321fdd052afac66903bc7c28ae378c9b583356d7
+  checksum: 10/827979504f98b69397bf91c395d0eea030d5702d0d28ccea4919a5037f628038129b287113aec9d8ecd1062e40b8b22423a300a32381c2d0b340b6960e3b42ea
   languageName: node
   linkType: hard
 
