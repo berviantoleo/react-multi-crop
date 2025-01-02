@@ -3533,7 +3533,7 @@ __metadata:
     "@types/react": "npm:^18.3.12"
     "@types/react-dom": "npm:^18.3.1"
     cypress: "npm:~13.16.0"
-    fabric: "npm:^5.3.0"
+    fabric: "npm:^5.5.1"
     react: "npm:^18.3.1"
     react-dom: "npm:^18.3.1"
     react-scripts: "npm:5.0.1"
@@ -3570,7 +3570,7 @@ __metadata:
     babel-jest: "npm:^29.7.0"
     babel-loader: "npm:^9.2.1"
     clsx: "npm:^2.1.1"
-    fabric: "npm:^5.3.0"
+    fabric: "npm:^5.5.1"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     node-sass: "npm:^9.0.0"
@@ -15637,7 +15637,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fabric@npm:^5.3.0":
+"fabric@npm:^5.5.1":
   version: 5.5.1
   resolution: "fabric@npm:5.5.1"
   dependencies:
