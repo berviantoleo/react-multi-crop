@@ -54,7 +54,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "node-sass": "^9.0.0",
     "react-test-renderer": "^19.0.0",
-    "rollup": "^4.27.4",
+    "rollup": "^4.29.1",
     "rollup-plugin-delete": "^2.1.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
     "rollup-plugin-sizes": "^1.0.6",
