@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.41.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.40.4...@berviantoleo/react-multi-crop@0.41.0) (2025-01-11)
+
+### Features
+
+- add tabIndex ([#3409](https://github.com/berviantoleo/react-multi-crop/issues/3409)) ([d283615](https://github.com/berviantoleo/react-multi-crop/commit/d2836155d80425a4faa669eeddd735d054f65623))
+
 ## [0.40.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.40.3...@berviantoleo/react-multi-crop@0.40.4) (2025-01-03)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop
