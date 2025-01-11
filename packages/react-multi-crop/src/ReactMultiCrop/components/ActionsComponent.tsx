@@ -9,7 +9,7 @@ export function ActionsComponent({
   deleteShapes,
   discardActiveObject,
   discardButton,
-}: IActionComponentProps): JSX.Element {
+}: IActionComponentProps): React.JSX.Element {
   return (
     <Container>
       <div>{addButton && React.cloneElement(addButton, { onClick: addNew })}</div>
