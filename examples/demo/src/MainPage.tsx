@@ -36,7 +36,7 @@ const useStyles = makeStyles(() =>
   }),
 );
 
-export default function MainPage(): JSX.Element {
+export default function MainPage(): React.JSX.Element {
   const theme = useTheme();
   const classes = useStyles();
   const colorMode = React.useContext(ColorModeContext);
@@ -46,7 +46,7 @@ export default function MainPage(): JSX.Element {
     setValue(newValue);
   };
 
-  let componentReact: JSX.Element;
+  let componentReact: React.JSX.Element;
   if (value === 0) {
     componentReact = <Default />;
   } else if (value === 1) {
