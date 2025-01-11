@@ -809,7 +809,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  render(): JSX.Element {
+  render(): React.JSX.Element {
     const {
       addButton,
       deleteButton,

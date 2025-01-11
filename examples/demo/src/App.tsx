@@ -4,7 +4,7 @@ import MainPage from "./MainPage";
 import { ColorModeContext } from "./context/ColorModeContext";
 import { PaletteMode } from "@mui/material";
 
-export default function App(): JSX.Element {
+export default function App(): React.JSX.Element {
   const [mode, setMode] = React.useState<PaletteMode>("dark");
   const colorMode = React.useMemo(
     () => ({
