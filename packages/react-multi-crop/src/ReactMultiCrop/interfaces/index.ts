@@ -77,11 +77,11 @@ export interface IReactMultiCropProps {
   /** @deprecated use transparentCorners in record */
   transparentCorners?: boolean;
   /** @deprecated will completely remove the buttons */
-  addButton?: JSX.Element;
+  addButton?: React.JSX.Element;
   /** @deprecated will completely remove the buttons */
-  deleteButton?: JSX.Element;
+  deleteButton?: React.JSX.Element;
   /** @deprecated will completely remove the buttons */
-  discardButton?: JSX.Element;
+  discardButton?: React.JSX.Element;
   /** @deprecated will completely remove the buttons */
   showButton?: boolean;
   /** @deprecated avoid to use this props */
@@ -125,10 +125,10 @@ export class CustomFabricRect extends fabric.Rect {
 
 /** @deprecated will completely remove the buttons */
 export interface IActionComponentProps {
-  addButton?: JSX.Element;
+  addButton?: React.JSX.Element;
   addNew(): void;
-  deleteButton?: JSX.Element;
+  deleteButton?: React.JSX.Element;
   deleteShapes(): void;
   discardActiveObject(): void;
-  discardButton?: JSX.Element;
+  discardButton?: React.JSX.Element;
 }
