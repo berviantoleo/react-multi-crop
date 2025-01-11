@@ -3619,19 +3619,19 @@ __metadata:
   linkType: hard
 
 "@commitlint/config-lerna-scopes@npm:^19.5.0":
-  version: 19.5.0
-  resolution: "@commitlint/config-lerna-scopes@npm:19.5.0"
+  version: 19.7.0
+  resolution: "@commitlint/config-lerna-scopes@npm:19.7.0"
   dependencies:
     "@lerna/project": "npm:^6.0.0"
     glob: "npm:^10.3.10"
     import-from: "npm:^4.0.0"
     semver: "npm:^7.6.0"
   peerDependencies:
-    lerna: ^5.0.0 || ^6
+    lerna: ">=5 <9"
   peerDependenciesMeta:
     lerna:
       optional: true
-  checksum: 10/766af39095e213d56f0b133579968f8b1bd1104b3a841a6b91c2bd941de684920405d5b7590dd3e0c5e6ed2194bba91be20f94bc1b96a7a6387a34728be00302
+  checksum: 10/aad64759edfb2a3b912e986301949453fc1e49e1cb3069d7d4efe72afc26cb9abf020cf11d5173f34c7e09aecf87ff4e317cce44cbc6ad9b66b964344c1e6b16
   languageName: node
   linkType: hard
 
