@@ -61,6 +61,7 @@ export interface IReactMultiCropProps {
   record?: IRecordProps;
   height?: number;
   width?: number;
+  tabIndex?: number;
   zoomChanged?(value: number): void;
   zoomLevel?: number;
   /** @deprecated use borderColor in record */
