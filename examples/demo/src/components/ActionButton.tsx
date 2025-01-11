@@ -4,7 +4,7 @@ import Grid from "@mui/material/Grid";
 
 import { ReactMultiCrop, IOutputData } from "@berviantoleo/react-multi-crop";
 
-export default function ActionButton(): JSX.Element {
+export default function ActionButton(): React.JSX.Element {
   const [cropValue, setCropValue] = React.useState<Array<IOutputData>>([]);
   return (
     <Grid container>
