@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.42.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.41.0...@berviantoleo/react-multi-crop@0.42.0) (2025-01-11)
+
+### Features
+
+- drop react 16 and support react 19 ([#3412](https://github.com/berviantoleo/react-multi-crop/issues/3412)) ([dd93e8a](https://github.com/berviantoleo/react-multi-crop/commit/dd93e8a60c40fb493925f944ec77018704e5db88))
+
 # [0.41.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.40.4...@berviantoleo/react-multi-crop@0.41.0) (2025-01-11)
 
 ### Features
