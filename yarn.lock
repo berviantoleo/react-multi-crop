@@ -7751,15 +7751,15 @@ __metadata:
   linkType: hard
 
 "@storybook/addon-storysource@npm:^8.4.6":
-  version: 8.4.6
-  resolution: "@storybook/addon-storysource@npm:8.4.6"
+  version: 8.5.2
+  resolution: "@storybook/addon-storysource@npm:8.5.2"
   dependencies:
-    "@storybook/source-loader": "npm:8.4.6"
+    "@storybook/source-loader": "npm:8.5.2"
     estraverse: "npm:^5.2.0"
     tiny-invariant: "npm:^1.3.1"
   peerDependencies:
-    storybook: ^8.4.6
-  checksum: 10/9cba187ab42411aa8eca73a74d5f155801eff5eeefc0ce244f74234c6c2653010c2fd6bb0f32ebc5ea8ad63f0d4da8ed346f14a67bc5582bff42f5b04b71a341
+    storybook: ^8.5.2
+  checksum: 10/e10010bb13b7779215db97c4c1439ad9133a2e65a8d80af0162b97d4cf6289133665eb06c9bb857d61b3090c5eb63d04c34071c9f89ca5b53c69b49da180c068
   languageName: node
   linkType: hard
 
@@ -8069,6 +8069,15 @@ __metadata:
     recast: "npm:^0.23.1"
     ts-dedent: "npm:^2.0.0"
   checksum: 10/99595f293e061e043a16aa3ac392d1fc963c3f5dcbceace2ca878430141e2fa477ac59b8a3bedc8a18fd21ae91ff59b3d2cad13c52ddf694c992a1d459df4e6f
+  languageName: node
+  linkType: hard
+
+"@storybook/csf@npm:0.1.12":
+  version: 0.1.12
+  resolution: "@storybook/csf@npm:0.1.12"
+  dependencies:
+    type-fest: "npm:^2.19.0"
+  checksum: 10/f661709de5bd68bfd4ced67df31ef26341168d6679bc13564cb024cfdbc8fdfa94d384267c20b3c858a3058b1ee8dbd71cea169245fcf7b28298890d6c3e1da4
   languageName: node
   linkType: hard
 
@@ -8424,7 +8433,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/source-loader@npm:8.4.6, @storybook/source-loader@npm:^8.4.6":
+"@storybook/source-loader@npm:8.5.2":
+  version: 8.5.2
+  resolution: "@storybook/source-loader@npm:8.5.2"
+  dependencies:
+    "@storybook/csf": "npm:0.1.12"
+    es-toolkit: "npm:^1.22.0"
+    estraverse: "npm:^5.2.0"
+    prettier: "npm:^3.1.1"
+  peerDependencies:
+    storybook: ^8.5.2
+  checksum: 10/e946d5adfa3c22f927739c199e4bb39bfeaddad883d260078df475b80d14222b74d7829e04a651c9845ab4d85265b60d56763b8b00f06c7bee44177d0ef40019
+  languageName: node
+  linkType: hard
+
+"@storybook/source-loader@npm:^8.4.6":
   version: 8.4.6
   resolution: "@storybook/source-loader@npm:8.4.6"
   dependencies:
