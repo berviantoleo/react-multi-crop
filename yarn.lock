@@ -5886,8 +5886,8 @@ __metadata:
   linkType: hard
 
 "@mui/styles@npm:^6.4.3":
-  version: 6.4.3
-  resolution: "@mui/styles@npm:6.4.3"
+  version: 6.4.4
+  resolution: "@mui/styles@npm:6.4.4"
   dependencies:
     "@babel/runtime": "npm:^7.26.0"
     "@emotion/hash": "npm:^0.9.2"
@@ -5912,7 +5912,7 @@ __metadata:
   peerDependenciesMeta:
     "@types/react":
       optional: true
-  checksum: 10/5aa3a4f1bb88b700d44e946eea31210980427848ef97b9287c896beeb2f1060a6732126f8519db4376ec1d0ab58e6095f5e95ae5f2418127d0f071979031ff7d
+  checksum: 10/38e0fd50f742046f307076c94926a6602df877e6019b49985d81e2d4832344fd8a0dcafa3d5acaf43df629be88820bbeababd97bbae98627420300dc21863b4e
   languageName: node
   linkType: hard
 
