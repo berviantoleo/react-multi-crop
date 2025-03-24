@@ -12427,7 +12427,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-config-prettier@npm:^10.0.1":
+"eslint-config-prettier@npm:^10.1.1":
   version: 10.1.1
   resolution: "eslint-config-prettier@npm:10.1.1"
   peerDependencies:
@@ -12485,7 +12485,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-cypress@npm:^4.1.0":
+"eslint-plugin-cypress@npm:^4.2.0":
   version: 4.2.0
   resolution: "eslint-plugin-cypress@npm:4.2.0"
   dependencies:
@@ -12581,7 +12581,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:^5.2.3":
+"eslint-plugin-prettier@npm:^5.2.4":
   version: 5.2.4
   resolution: "eslint-plugin-prettier@npm:5.2.4"
   dependencies:
@@ -12610,7 +12610,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-react-hooks@npm:^5.1.0":
+"eslint-plugin-react-hooks@npm:^5.2.0":
   version: 5.2.0
   resolution: "eslint-plugin-react-hooks@npm:5.2.0"
   peerDependencies:
@@ -22719,11 +22719,11 @@ __metadata:
     "@typescript-eslint/parser": "npm:^8.23.0"
     cross-env: "npm:^7.0.3"
     eslint: "npm:^9.23.0"
-    eslint-config-prettier: "npm:^10.0.1"
-    eslint-plugin-cypress: "npm:^4.1.0"
-    eslint-plugin-prettier: "npm:^5.2.3"
+    eslint-config-prettier: "npm:^10.1.1"
+    eslint-plugin-cypress: "npm:^4.2.0"
+    eslint-plugin-prettier: "npm:^5.2.4"
     eslint-plugin-react: "npm:^7.37.4"
-    eslint-plugin-react-hooks: "npm:^5.1.0"
+    eslint-plugin-react-hooks: "npm:^5.2.0"
     husky: "npm:^9.1.7"
     lerna: "npm:^8.1.9"
     prettier: "npm:^3.5.0"
