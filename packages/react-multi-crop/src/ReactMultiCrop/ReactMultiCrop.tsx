@@ -61,7 +61,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   componentDidUpdate(prevProps: any): void {
     // this.changeImage();
     const { canvas } = this.state;
@@ -347,7 +347,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   zoom(options: any): void {
     const { canvas } = this.state;
     if (!canvas) {
@@ -367,7 +367,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mouseHover(options: any): void {
     const { onHover } = this.props;
     const converter = this.shapetoStructureData.bind(this);
@@ -378,7 +378,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   mouseOut(options: any): void {
     const { onHover } = this.props;
     const target = options.target;
@@ -387,7 +387,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     }
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   selectionHandler(options: any): void {
     const { onSelect } = this.props;
     const converter = this.shapetoStructureData.bind(this);
@@ -504,7 +504,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
     this.setOutput();
   }
 
-  // eslint-disable-next-line @typescript-eslint/no-explicit-any,@typescript-eslint/explicit-module-boundary-types
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   doubleClickEvent(options: any): void {
     const { canvas } = this.state;
     if (!canvas) {

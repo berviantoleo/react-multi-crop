@@ -1,6 +1,0 @@
-node_modules/*
-packages/react-multi-crop/node_modules/*
-packages/react-multi-crop/dist/*
-docs/*
-examples/demo/build/*
-examples/demo/node_modules/*
