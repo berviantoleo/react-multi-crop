@@ -7,12 +7,12 @@ const config: StorybookConfig = {
     '@storybook/addon-links',
     '@storybook/addon-storysource',
     '@storybook/addon-essentials',
-    '@storybook/addon-webpack5-compiler-babel'
+    '@storybook/addon-webpack5-compiler-babel',
   ],
   framework: '@storybook/react-webpack5',
   docs: {
     autodocs: true,
-  }
+  },
 };
 
 export default config;

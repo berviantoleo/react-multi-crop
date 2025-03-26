@@ -31,7 +31,7 @@ export const DefaultEditable: Story = {
     cropBackgroundColor: 'yellow',
     cropBackgroundOpacity: 0.3,
     input: {
-      onChange: fn()
+      onChange: fn(),
     },
   },
 };
@@ -78,7 +78,7 @@ export const DefaultReadOnly: Story = {
       ],
     },
     input: {
-      onChange: fn()
+      onChange: fn(),
     },
   },
 };
@@ -127,7 +127,7 @@ export const ShowButton: Story = {
       ],
     },
     input: {
-      onChange: fn()
+      onChange: fn(),
     },
   },
 };

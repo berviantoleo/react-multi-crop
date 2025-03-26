@@ -1,36 +1,47 @@
-import { defineConfig, globalIgnores } from "eslint/config";
+import { globalIgnores } from "eslint/config";
 import cypress from "eslint-plugin-cypress";
 import tsParser from "@typescript-eslint/parser";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
-import eslint from '@eslint/js';
-import tseslint from 'typescript-eslint';
-import react from 'eslint-plugin-react';
-import eslintPluginPrettierRecommended from 'eslint-plugin-prettier/recommended';
-
-import { FlatCompat } from "@eslint/eslintrc";
-
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-  recommendedConfig: js.configs.recommended,
-  allConfig: js.configs.all,
-});
+import eslint from "@eslint/js";
+import globals from "globals";
+import tseslint from "typescript-eslint";
+import react from "eslint-plugin-react";
+import eslintPluginPrettierRecommended from "eslint-plugin-prettier/recommended";
 
 export default tseslint.config(
-  eslint.configs.recommended,
   {
-    files: ['**/.{ts,tsx}'],
-    rules: {
-      "@typescript-eslint/no-var-requires": "warn",
-      "@typescript-eslint/no-require-imports": "warn",
-      "@typescript-eslint/no-explicit-any": "warn"
+    languageOptions: {
+      globals: {
+        HTMLCanvasElement: true,
+        HTMLDivElement: true,
+        document: true,
+        window: true,
+        React: true,
+        cy: true,
+        ...globals.node,
+        ...globals.jest,
+        ...globals.serviceworker,
+      },
     },
-    ...tseslint.configs.recommended,
+  },
+  globalIgnores([
+    "node_modules/*",
+    "packages/react-multi-crop/node_modules/*",
+    "packages/react-multi-crop/dist/*",
+    "docs/*",
+    "examples/demo/build/*",
+    "examples/demo/node_modules/*",
+  ]),
+  eslint.configs.recommended,
+  tseslint.configs.recommended,
+  {
+    files: ["**/*.{ts,tsx}"],
+    rules: {
+      "@typescript-eslint/no-unused-vars": "warn",
+      "@typescript-eslint/no-explicit-any": "warn",
+    },
   },
   {
-    files: ['**/*.{js,jsx,mjs,cjs,ts,tsx}'],
+    files: ["**/*.{js,jsx,mjs,cjs,ts,tsx}"],
     plugins: {
       react,
     },
@@ -40,24 +51,13 @@ export default tseslint.config(
           jsx: true,
         },
       },
-      globals: {
-        ...globals.browser,
-      },
     },
     rules: {
-      "react/jsx-uses-react": "off",
-      "react/react-in-jsx-scope": "off",
+      "react/jsx-uses-react": "warn",
+      "react/react-in-jsx-scope": "warn",
     },
   },
   eslintPluginPrettierRecommended,
-  globalIgnores([
-    "node_modules/*",
-    "packages/react-multi-crop/node_modules/*",
-    "packages/react-multi-crop/dist/*",
-    "docs/*",
-    "examples/demo/build/*",
-    "examples/demo/node_modules/*",
-  ]),
   {
     plugins: {
       cypress,
@@ -80,7 +80,11 @@ export default tseslint.config(
         version: "detect",
       },
     },
-
-
+  },
+  {
+    rules: {
+      "no-unused-vars": "warn",
+      "@typescript-eslint/no-require-imports": "warn",
+    },
   },
 );
