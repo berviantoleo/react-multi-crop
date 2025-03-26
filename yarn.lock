@@ -2510,6 +2510,7 @@ __metadata:
     "@babel/runtime": "npm:^7.26.7"
     "@rollup/plugin-babel": "npm:^6.0.4"
     "@rollup/plugin-node-resolve": "npm:^16.0.0"
+    "@storybook/addon-a11y": "npm:^8.6.9"
     "@storybook/addon-essentials": "npm:^8.6.9"
     "@storybook/addon-links": "npm:^8.6.9"
     "@storybook/addon-storysource": "npm:^8.6.9"
@@ -5820,6 +5821,20 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/addon-a11y@npm:^8.6.9":
+  version: 8.6.9
+  resolution: "@storybook/addon-a11y@npm:8.6.9"
+  dependencies:
+    "@storybook/addon-highlight": "npm:8.6.9"
+    "@storybook/global": "npm:^5.0.0"
+    "@storybook/test": "npm:8.6.9"
+    axe-core: "npm:^4.2.0"
+  peerDependencies:
+    storybook: ^8.6.9
+  checksum: 10/1bb9d62672b8298824d7bfefd56866af3bd866b7fe2306e50c4ef2102d671d505f2c67f1e91a594267d557a8c1c18afa9091b018d191eab51faac762fd0d6cc1
+  languageName: node
+  linkType: hard
+
 "@storybook/addon-actions@npm:8.6.9":
   version: 8.6.9
   resolution: "@storybook/addon-actions@npm:8.6.9"
@@ -6262,7 +6277,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/test@npm:^8.6.9":
+"@storybook/test@npm:8.6.9, @storybook/test@npm:^8.6.9":
   version: 8.6.9
   resolution: "@storybook/test@npm:8.6.9"
   dependencies:
@@ -8846,6 +8861,13 @@ __metadata:
   version: 1.12.0
   resolution: "aws4@npm:1.12.0"
   checksum: 10/2b8455fe1eee87f0e7d5f32e81e7fec74dce060c72d03f528c8c631fa74209cef53aab6fede182ea17d0c9520cb1e5e3023c5fedb4f1139ae9f067fc720869a5
+  languageName: node
+  linkType: hard
+
+"axe-core@npm:^4.2.0":
+  version: 4.10.3
+  resolution: "axe-core@npm:4.10.3"
+  checksum: 10/9ff51ad0fd0fdec5c0247ea74e8ace5990b54c7f01f8fa3e5cd8ba98b0db24d8ebd7bab4a9bd4d75c28c4edcd1eac455b44c8c6c258c6a98f3d2f88bc60af4cc
   languageName: node
   linkType: hard
 
