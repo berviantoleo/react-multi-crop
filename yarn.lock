@@ -2488,7 +2488,7 @@ __metadata:
     "@types/react": "npm:^19.0.8"
     "@types/react-dom": "npm:^19.0.3"
     cypress: "npm:~14.2.0"
-    fabric: "npm:^5.5.1"
+    fabric: "npm:^6.6.1"
     react: "npm:^19.0.0"
     react-dom: "npm:^19.0.0"
     react-scripts: "npm:5.0.1"
@@ -2528,7 +2528,7 @@ __metadata:
     babel-jest: "npm:^29.7.0"
     babel-loader: "npm:^10.0.0"
     clsx: "npm:^2.1.1"
-    fabric: "npm:^5.5.1"
+    fabric: "npm:^6.6.1"
     jest: "npm:^29.7.0"
     jest-environment-jsdom: "npm:^29.7.0"
     node-sass: "npm:^9.0.0"
@@ -8153,7 +8153,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"acorn@npm:^8.1.0, acorn@npm:^8.2.4, acorn@npm:^8.5.0, acorn@npm:^8.7.1, acorn@npm:^8.8.1, acorn@npm:^8.8.2, acorn@npm:^8.9.0":
+"acorn@npm:^8.1.0, acorn@npm:^8.2.4, acorn@npm:^8.7.1, acorn@npm:^8.8.1, acorn@npm:^8.8.2, acorn@npm:^8.9.0":
   version: 8.10.0
   resolution: "acorn@npm:8.10.0"
   bin:
@@ -9756,7 +9756,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"canvas@npm:^2.8.0":
+"canvas@npm:^2.11.2":
   version: 2.11.2
   resolution: "canvas@npm:2.11.2"
   dependencies:
@@ -11055,7 +11055,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"data-urls@npm:^3.0.1, data-urls@npm:^3.0.2":
+"data-urls@npm:^3.0.2":
   version: 3.0.2
   resolution: "data-urls@npm:3.0.2"
   dependencies:
@@ -11205,7 +11205,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"decimal.js@npm:^10.2.1, decimal.js@npm:^10.3.1, decimal.js@npm:^10.4.2":
+"decimal.js@npm:^10.2.1, decimal.js@npm:^10.4.2":
   version: 10.4.3
   resolution: "decimal.js@npm:10.4.3"
   checksum: 10/de663a7bc4d368e3877db95fcd5c87b965569b58d16cdc4258c063d231ca7118748738df17cd638f7e9dd0be8e34cec08d7234b20f1f2a756a52fc5a38b188d0
@@ -13353,18 +13353,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"fabric@npm:^5.5.1":
-  version: 5.5.1
-  resolution: "fabric@npm:5.5.1"
+"fabric@npm:^6.6.1":
+  version: 6.6.1
+  resolution: "fabric@npm:6.6.1"
   dependencies:
-    canvas: "npm:^2.8.0"
-    jsdom: "npm:^19.0.0"
+    canvas: "npm:^2.11.2"
+    jsdom: "npm:^20.0.1"
   dependenciesMeta:
     canvas:
       optional: true
     jsdom:
       optional: true
-  checksum: 10/224178ddf3203e27ed96513f1c5bfcefbddffb9f8746efb0dd1c41cbe7c9c77139e34f401a32dc724d2b2108fc5dd1448e95a8ebfd3039af284a154a15d5b5ee
+  checksum: 10/3191695f9f4923b2e6eeeff52ebf4778da4f347cdf9639ce20a4736e68c6d3f23ea1342896510d9ac0d96bea7fb1979ece6a0ffdaed54c7a3b2cf266248eb978
   languageName: node
   linkType: hard
 
@@ -17410,47 +17410,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"jsdom@npm:^19.0.0":
-  version: 19.0.0
-  resolution: "jsdom@npm:19.0.0"
-  dependencies:
-    abab: "npm:^2.0.5"
-    acorn: "npm:^8.5.0"
-    acorn-globals: "npm:^6.0.0"
-    cssom: "npm:^0.5.0"
-    cssstyle: "npm:^2.3.0"
-    data-urls: "npm:^3.0.1"
-    decimal.js: "npm:^10.3.1"
-    domexception: "npm:^4.0.0"
-    escodegen: "npm:^2.0.0"
-    form-data: "npm:^4.0.0"
-    html-encoding-sniffer: "npm:^3.0.0"
-    http-proxy-agent: "npm:^5.0.0"
-    https-proxy-agent: "npm:^5.0.0"
-    is-potential-custom-element-name: "npm:^1.0.1"
-    nwsapi: "npm:^2.2.0"
-    parse5: "npm:6.0.1"
-    saxes: "npm:^5.0.1"
-    symbol-tree: "npm:^3.2.4"
-    tough-cookie: "npm:^4.0.0"
-    w3c-hr-time: "npm:^1.0.2"
-    w3c-xmlserializer: "npm:^3.0.0"
-    webidl-conversions: "npm:^7.0.0"
-    whatwg-encoding: "npm:^2.0.0"
-    whatwg-mimetype: "npm:^3.0.0"
-    whatwg-url: "npm:^10.0.0"
-    ws: "npm:^8.2.3"
-    xml-name-validator: "npm:^4.0.0"
-  peerDependencies:
-    canvas: ^2.5.0
-  peerDependenciesMeta:
-    canvas:
-      optional: true
-  checksum: 10/bbb3dc85822f4b600d9475f40cf28fbab56fc19cb237bf1ce8c66df391f7f0fcaf3fa24f9c2f44bce90f042b15616ca31da5db1d24a688482d9d45d83e7f7e24
-  languageName: node
-  linkType: hard
-
-"jsdom@npm:^20.0.0":
+"jsdom@npm:^20.0.0, jsdom@npm:^20.0.1":
   version: 20.0.3
   resolution: "jsdom@npm:20.0.3"
   dependencies:
@@ -25827,11 +25787,11 @@ __metadata:
   linkType: hard
 
 "uuid@npm:^11.0.3":
-  version: 11.0.3
-  resolution: "uuid@npm:11.0.3"
+  version: 11.1.0
+  resolution: "uuid@npm:11.1.0"
   bin:
     uuid: dist/esm/bin/uuid
-  checksum: 10/251385563195709eb0697c74a834764eef28e1656d61174e35edbd129288acb4d95a43f4ce8a77b8c2fc128e2b55924296a0945f964b05b9173469d045625ff2
+  checksum: 10/d2da43b49b154d154574891ced66d0c83fc70caaad87e043400cf644423b067542d6f3eb641b7c819224a7cd3b4c2f21906acbedd6ec9c6a05887aa9115a9cf5
   languageName: node
   linkType: hard
 
@@ -25845,11 +25805,11 @@ __metadata:
   linkType: hard
 
 "uuid@npm:^9.0.0":
-  version: 9.0.0
-  resolution: "uuid@npm:9.0.0"
+  version: 9.0.1
+  resolution: "uuid@npm:9.0.1"
   bin:
     uuid: dist/bin/uuid
-  checksum: 10/23857699a616d1b48224bc2b8440eae6e57d25463c3a0200e514ba8279dfa3bde7e92ea056122237839cfa32045e57d8f8f4a30e581d720fd72935572853ae2e
+  checksum: 10/9d0b6adb72b736e36f2b1b53da0d559125ba3e39d913b6072f6f033e0c87835b414f0836b45bcfaf2bdf698f92297fea1c3cc19b0b258bc182c9c43cc0fab9f2
   languageName: node
   linkType: hard
 
@@ -26060,15 +26020,6 @@ __metadata:
   dependencies:
     xml-name-validator: "npm:^3.0.0"
   checksum: 10/400c18b75ce6af269168f964e7d1eb196a7422e134032906540c69d83b802f38dc64e18fc259c02966a334687483f416398d2ad7ebe9d19ab434a7a0247c71c3
-  languageName: node
-  linkType: hard
-
-"w3c-xmlserializer@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "w3c-xmlserializer@npm:3.0.0"
-  dependencies:
-    xml-name-validator: "npm:^4.0.0"
-  checksum: 10/b4d73e20be283cc9975573a88979d15c08daa9c00911f8c777ef2af74eea11ba635fec18647ff0374ce880ec32ae573d17bd0f787053fc3085a530345b2feab6
   languageName: node
   linkType: hard
 
@@ -26409,16 +26360,6 @@ __metadata:
   version: 3.0.0
   resolution: "whatwg-mimetype@npm:3.0.0"
   checksum: 10/96f9f628c663c2ae05412c185ca81b3df54bcb921ab52fe9ebc0081c1720f25d770665401eb2338ab7f48c71568133845638e18a81ed52ab5d4dcef7d22b40ef
-  languageName: node
-  linkType: hard
-
-"whatwg-url@npm:^10.0.0":
-  version: 10.0.0
-  resolution: "whatwg-url@npm:10.0.0"
-  dependencies:
-    tr46: "npm:^3.0.0"
-    webidl-conversions: "npm:^7.0.0"
-  checksum: 10/3eb069ea73ef83f73effa585be1fd7c99be1d82d1bed8487cd68160e7981a4810dd8fa5f12f7e2732ae15f9975d2efa64c4ea001a8d31bd2de4d842342bdf8fc
   languageName: node
   linkType: hard
 
