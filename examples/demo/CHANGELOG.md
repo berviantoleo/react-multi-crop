@@ -3,6 +3,13 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.29.5](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.29.4...@berviantoleo/react-multi-crop-demo@0.29.5) (2025-03-26)
+
+### Bug Fixes
+
+- fix build ([709686b](https://github.com/berviantoleo/react-multi-crop/commit/709686b483a0ea66b4105878f8b6bfa99e750e04))
+- migrate eslint ([4e29a44](https://github.com/berviantoleo/react-multi-crop/commit/4e29a44400c405c000303c5125c7573ef8fe0878))
+
 ## [0.29.4](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop-demo@0.29.3...@berviantoleo/react-multi-crop-demo@0.29.4) (2025-03-09)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop-demo
