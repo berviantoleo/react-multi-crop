@@ -1,9 +1,10 @@
 import React from 'react';
 import { Meta, StoryObj } from '@storybook/react';
-import ReactMultiCrop from './ReactMultiCrop';
-import { IOutputData } from './interfaces';
+import { fn } from '@storybook/test';
 
-export default {
+import ReactMultiCrop from './ReactMultiCrop';
+
+const meta: Meta<typeof ReactMultiCrop> = {
   component: ReactMultiCrop,
   argTypes: {
     cropBackgroundColor: {
@@ -13,7 +14,9 @@ export default {
       },
     },
   },
-} as Meta<typeof ReactMultiCrop>;
+};
+
+export default meta;
 
 type Story = StoryObj<typeof ReactMultiCrop>;
 
@@ -28,9 +31,7 @@ export const DefaultEditable: Story = {
     cropBackgroundColor: 'yellow',
     cropBackgroundOpacity: 0.3,
     input: {
-      onChange(value: Array<IOutputData>) {
-        console.log(value);
-      },
+      onChange: fn()
     },
   },
 };
@@ -77,9 +78,7 @@ export const DefaultReadOnly: Story = {
       ],
     },
     input: {
-      onChange(value: Array<IOutputData>) {
-        console.log(value);
-      },
+      onChange: fn()
     },
   },
 };
@@ -128,9 +127,7 @@ export const ShowButton: Story = {
       ],
     },
     input: {
-      onChange(value: Array<IOutputData>) {
-        console.log(value);
-      },
+      onChange: fn()
     },
   },
 };

@@ -1,12 +1,18 @@
-import { StorybookConfig } from '@storybook/types';
+import { StorybookConfig } from '@storybook/react-webpack5';
 
 const config: StorybookConfig = {
   stories: ['../src/**/*.stories.@(js|jsx|ts|tsx)'],
-  addons: ['@storybook/addon-links', '@storybook/addon-storysource', '@storybook/addon-essentials'],
+  addons: [
+    '@storybook/addon-a11y',
+    '@storybook/addon-links',
+    '@storybook/addon-storysource',
+    '@storybook/addon-essentials',
+    '@storybook/addon-webpack5-compiler-babel'
+  ],
   framework: '@storybook/react-webpack5',
   docs: {
     autodocs: true,
-  },
+  }
 };
 
 export default config;

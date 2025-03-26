@@ -17,7 +17,6 @@ import Readonly from "./components/Readonly";
 import ActionButton from "./components/ActionButton";
 import { ColorModeContext } from "./context/ColorModeContext";
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 function a11yProps(index: any): Record<string, string> {
   return {
     id: `simple-tab-${index}`,
