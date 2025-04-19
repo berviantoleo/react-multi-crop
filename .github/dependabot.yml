@@ -9,6 +9,21 @@ updates:
     timezone: Asia/Jakarta
   open-pull-requests-limit: 100
   groups:
+      mui:
+        patterns:
+          - '@mui*'
+      storybook:
+        patterns:
+          - '@storybook*'
+          - 'storybook*'
+      babel:
+        patterns:
+          - '@babel*'
+          - 'babel-*'
+      rollup:
+        patterns:
+          - '@rollup*'
+          - 'rollup*'
       production-dependencies:
         dependency-type: "production"
         update-types:
