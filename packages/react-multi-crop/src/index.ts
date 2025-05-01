@@ -8,6 +8,4 @@ export {
   IRectCoord,
   ICoord,
   IAttribute,
-  ICustomFabricRect,
-  CustomFabricRect,
 } from './ReactMultiCrop/interfaces';

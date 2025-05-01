@@ -2523,7 +2523,6 @@ __metadata:
     "@testing-library/dom": "npm:^10.4.0"
     "@testing-library/jest-dom": "npm:^6.6.3"
     "@testing-library/react": "npm:^16.2.0"
-    "@types/fabric": "npm:^5.3.9"
     "@types/jest": "npm:^29.5.14"
     "@types/uuid": "npm:^10.0.0"
     babel-jest: "npm:^29.7.0"
@@ -6789,13 +6788,6 @@ __metadata:
     "@types/qs": "npm:*"
     "@types/serve-static": "npm:*"
   checksum: 10/e2959a5fecdc53f8a524891a16e66dfc330ee0519e89c2579893179db686e10cfa6079a68e0fb8fd00eedbcaf3eabfd10916461939f3bc02ef671d848532c37e
-  languageName: node
-  linkType: hard
-
-"@types/fabric@npm:^5.3.9":
-  version: 5.3.9
-  resolution: "@types/fabric@npm:5.3.9"
-  checksum: 10/71836a2d92b58117c12212136c89a75f48bfeb64e6281b350b20035ff4760c2b0806cd6bd0636f2dccabca8660fe87d1f55dca636ad00e5b2cab40fbaa1038ac
   languageName: node
   linkType: hard
 
