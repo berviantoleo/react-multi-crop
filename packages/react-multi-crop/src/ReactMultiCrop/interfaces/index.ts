@@ -1,4 +1,4 @@
-import { fabric } from 'fabric';
+import { Canvas } from 'fabric';
 
 export interface ICropStyle {
   borderColor?: string;
@@ -76,20 +76,12 @@ export interface IReactMultiCropProps {
   cropBackgroundOpacity?: number;
   /** @deprecated use transparentCorners in record */
   transparentCorners?: boolean;
-  /** @deprecated will completely remove the buttons */
-  addButton?: React.JSX.Element;
-  /** @deprecated will completely remove the buttons */
-  deleteButton?: React.JSX.Element;
-  /** @deprecated will completely remove the buttons */
-  discardButton?: React.JSX.Element;
-  /** @deprecated will completely remove the buttons */
-  showButton?: boolean;
   /** @deprecated avoid to use this props */
   style?: React.CSSProperties;
 }
 
 export interface IReactMultiCropStates {
-  canvas: fabric.Canvas | null;
+  canvas: Canvas | null;
   initial: boolean;
 }
 
@@ -104,31 +96,4 @@ export interface IAttribute {
   transparentCorners?: boolean;
   cropBackgroundColor?: string;
   cropBackgroundOpacity?: number;
-}
-
-export interface ICustomFabricRect extends fabric.IRectOptions {
-  id: string | null;
-  objectId: string;
-}
-
-export class CustomFabricRect extends fabric.Rect {
-  public id: string | null = null;
-  public objectId = '';
-  constructor(options?: ICustomFabricRect) {
-    super(options);
-    if (options) {
-      this.id = options.id;
-      this.objectId = options.objectId;
-    }
-  }
-}
-
-/** @deprecated will completely remove the buttons */
-export interface IActionComponentProps {
-  addButton?: React.JSX.Element;
-  addNew(): void;
-  deleteButton?: React.JSX.Element;
-  deleteShapes(): void;
-  discardActiveObject(): void;
-  discardButton?: React.JSX.Element;
 }

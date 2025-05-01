@@ -14,10 +14,9 @@ import Brightness4Icon from "@mui/icons-material/Brightness4";
 import Brightness7Icon from "@mui/icons-material/Brightness7";
 import Default from "./components/Default";
 import Readonly from "./components/Readonly";
-import ActionButton from "./components/ActionButton";
 import { ColorModeContext } from "./context/ColorModeContext";
 
-function a11yProps(index: any): Record<string, string> {
+function a11yProps(index: number): Record<string, string> {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
@@ -48,10 +47,8 @@ export default function MainPage(): React.JSX.Element {
   let componentReact: React.JSX.Element;
   if (value === 0) {
     componentReact = <Default />;
-  } else if (value === 1) {
-    componentReact = <Readonly />;
   } else {
-    componentReact = <ActionButton />;
+    componentReact = <Readonly />;
   }
   return (
     <div className={classes.root}>
@@ -85,7 +82,6 @@ export default function MainPage(): React.JSX.Element {
         >
           <Tab label="Default" {...a11yProps(0)} />
           <Tab label="Readonly" {...a11yProps(1)} />
-          <Tab label="With Action Button" {...a11yProps(2)} />
         </Tabs>
       </AppBar>
       {componentReact}

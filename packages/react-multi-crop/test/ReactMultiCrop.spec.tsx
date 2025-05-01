@@ -9,19 +9,6 @@ test('test render', async () => {
   expect(buttons).toBeNull();
 });
 
-test('show button', async () => {
-  render(
-    <ReactMultiCrop
-      addButton={<button>Add</button>}
-      deleteButton={<button>Delete</button>}
-      discardButton={<button>Discard</button>}
-      showButton
-    />,
-  );
-  const buttons = screen.getAllByRole('button');
-  expect(buttons).toHaveLength(3);
-});
-
 test('readonly mode', async () => {
   render(<ReactMultiCrop readonly />);
   const buttons = screen.queryByRole('button');
