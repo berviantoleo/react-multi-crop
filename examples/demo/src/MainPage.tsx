@@ -16,7 +16,7 @@ import Default from "./components/Default";
 import Readonly from "./components/Readonly";
 import { ColorModeContext } from "./context/ColorModeContext";
 
-function a11yProps(index: any): Record<string, string> {
+function a11yProps(index: number): Record<string, string> {
   return {
     id: `simple-tab-${index}`,
     "aria-controls": `simple-tabpanel-${index}`,
