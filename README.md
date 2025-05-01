@@ -20,11 +20,17 @@ Version `0.22` and newer will be hosted at [npmjs](https://www.npmjs.com/package
 * [Codesandbox.io - Typescript](https://codesandbox.io/s/react-crop-typescript-5jmo0)
 * [Demo](https://react-multi-crop.netlify.app/)
 
+## Dependencies
+
+1. fabric
+2. uuid
+
+Please refer to `peer-dependencies` for the required minimum version.
+
 ## Feature
 
 1. Keyboard event, `delete` will delete your current pointing (active) of box-crop.
 2. Mouse event, `double click` into box-crop will duplicate your box-crop.
-3. Also there are some action in button that can be used, add shape (box-crop), delete selected object (box-crop), select all (box-crop), and discard current active selection (box-crop).
 
 ## Running the Example use Docker and Vagrant
 
