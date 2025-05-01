@@ -98,9 +98,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       // prev active object
       if (prevActive !== activeObject && activeObject) {
         const dataObjects = canvas.getObjects();
-        const allSelected = dataObjects.filter(
-          (obj) => obj.objectId === activeObject,
-        );
+        const allSelected = dataObjects.filter((obj) => obj.objectId === activeObject);
         canvas.discardActiveObject();
         for (const objectSelect of allSelected) {
           canvas.setActiveObject(objectSelect);
@@ -271,7 +269,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
       if (isCrossOrigin) {
         options.crossOrigin = 'Anonymous';
       }
-      FabricImage.fromURL(image, options).then(result => {
+      FabricImage.fromURL(image, options).then((result) => {
         loadImageNow(result);
       });
     }
@@ -807,14 +805,7 @@ class ReactMultiCrop extends Component<IReactMultiCropProps, IReactMultiCropStat
   }
 
   render(): React.JSX.Element {
-    const {
-      height,
-      id,
-      readonly,
-      style,
-      width,
-      tabIndex,
-    } = this.props;
+    const { height, id, readonly, style, width, tabIndex } = this.props;
 
     return (
       <div id="canvas-wrapper" style={style}>
