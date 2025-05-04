@@ -5,8 +5,8 @@ import { ReactMultiCrop, IOutputData } from "@berviantoleo/react-multi-crop";
 export default function Default(): React.JSX.Element {
   const [cropValue, setCropValue] = React.useState<Array<IOutputData>>([]);
   return (
-    <Grid container>
-      <Grid item xs>
+    <Grid container spacing={1}>
+      <Grid size={3}>
         <ReactMultiCrop
           id="canvas"
           input={{
@@ -33,7 +33,7 @@ export default function Default(): React.JSX.Element {
           }}
         />
       </Grid>
-      <Grid item xs>
+      <Grid size={3}>
         <h3>React Multi Crop</h3>
         <h4>By Bervianto Leo P - 2021</h4>
         <h5>Crop Result</h5>
