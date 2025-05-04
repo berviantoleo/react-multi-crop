@@ -23,8 +23,8 @@ export default function Readonly(): React.JSX.Element {
   const [hoverValue, setHoverValue] = React.useState<IOutputData | null>(null);
 
   return (
-    <Grid container>
-      <Grid item xs>
+    <Grid container spacing={1}>
+      <Grid size={3}>
         <ReactMultiCrop
           id="canvasReadonly"
           image="https://picsum.photos/800"
@@ -70,7 +70,7 @@ export default function Readonly(): React.JSX.Element {
           }}
         />
       </Grid>
-      <Grid item xs>
+      <Grid size={3}>
         <h3>React Multi Crop</h3>
         <h4>By Bervianto Leo P - 2021</h4>
         <h5>Result</h5>
