@@ -12980,8 +12980,8 @@ __metadata:
   linkType: hard
 
 "fabric@npm:^6.6.4":
-  version: 6.6.5
-  resolution: "fabric@npm:6.6.5"
+  version: 6.6.6
+  resolution: "fabric@npm:6.6.6"
   dependencies:
     canvas: "npm:^2.11.2"
     jsdom: "npm:^20.0.1"
@@ -12990,7 +12990,7 @@ __metadata:
       optional: true
     jsdom:
       optional: true
-  checksum: 10/8387b61ae2b935384e60025b964cd5b685158b5d98d1faac8956ef39f8182db7f16cc20c93d166b3aec9b9ff624f7ffffbc3da4cbe958687e9a40037d1eaf87b
+  checksum: 10/c71d44fdafea45474bf98a999d35bdff9668e8874bf04ef779e5dffbeafe722a9ca381d4a2a59d120e739a75c467d36713ad23609bc762c1348987ae49c84e70
   languageName: node
   linkType: hard
 
