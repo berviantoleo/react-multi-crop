@@ -5,7 +5,7 @@ on:
       - main
 env:
   CI: true
-  NODE_VERSION: 20.x
+  NODE_VERSION: 22.x
   NPM_SITE: https://registry.npmjs.org
 jobs:
   release:
