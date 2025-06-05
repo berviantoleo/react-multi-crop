@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.42.10](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.42.9...@berviantoleo/react-multi-crop@0.42.10) (2025-06-05)
+
+### Bug Fixes
+
+- remove node-sass and move to sass ([39b894b](https://github.com/berviantoleo/react-multi-crop/commit/39b894ba702902024e111cdce43e893200483525))
+
 ## [0.42.9](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.42.8...@berviantoleo/react-multi-crop@0.42.9) (2025-05-17)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop
