@@ -30,6 +30,8 @@ jobs:
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Canvas packages
+        run: sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
       - name: Install dependencies
         run: corepack enable && corepack prepare yarn@stable --activate && yarn --immutable
       - name: Build Package
@@ -80,6 +82,8 @@ jobs:
             node_modules
             */*/node_modules
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Canvas packages
+        run: sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
       - name: Install dependencies
         run: corepack enable && corepack prepare yarn@stable --activate && yarn --immutable
       - name: Build Documentation
@@ -114,6 +118,8 @@ jobs:
             */*/node_modules
             ~/.cache/Cypress
           key: ${{ runner.os }}-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
+      - name: Install Canvas packages
+        run: sudo apt-get install build-essential libcairo2-dev libpango1.0-dev libjpeg-dev libgif-dev librsvg2-dev
       - name: Install dependencies
         run: corepack enable && corepack prepare yarn@stable --activate && yarn --immutable
       - name: Lint
