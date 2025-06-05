@@ -9,10 +9,7 @@ const config: StorybookConfig = {
     '@storybook/addon-essentials',
     '@storybook/addon-webpack5-compiler-babel',
   ],
-  framework: '@storybook/react-webpack5',
-  docs: {
-    autodocs: true,
-  },
+  framework: '@storybook/react-webpack5'
 };
 
 export default config;
