@@ -4,7 +4,7 @@ const preview: Preview = {
   parameters: {
     actions: { argTypesRegex: '^on[A-Z].*' },
     docs: {
-      tags: ['autodocs']
+      tags: ['autodocs'],
     },
   },
 };
