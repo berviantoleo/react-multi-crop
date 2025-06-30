@@ -1791,7 +1791,7 @@ __metadata:
     "@mui/material": "npm:^7.0.2"
     "@mui/styles": "npm:^6.4.3"
     "@types/jest": "npm:^29.5.14"
-    "@types/node": "npm:^22.13.1"
+    "@types/node": "npm:^24.0.7"
     "@types/react": "npm:^19.0.8"
     "@types/react-dom": "npm:^19.0.3"
     cypress: "npm:~14.4.0"
@@ -5954,21 +5954,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:*":
+"@types/node@npm:*, @types/node@npm:^24.0.7":
   version: 24.0.7
   resolution: "@types/node@npm:24.0.7"
   dependencies:
     undici-types: "npm:~7.8.0"
   checksum: 10/1df93467fcd5cf178cc381babe58f8f8a504a097fd64297241bd63fd9dbe2b750b1b4ab2bd8b8f6a2dd431d0703da7a74dee8cca5113ae2421f9a4a1ec43d9c0
-  languageName: node
-  linkType: hard
-
-"@types/node@npm:^22.13.1":
-  version: 22.15.34
-  resolution: "@types/node@npm:22.15.34"
-  dependencies:
-    undici-types: "npm:~6.21.0"
-  checksum: 10/b0fb6674f6c17e3d515531d7f787ccd6676641ba161a6a0e6a93a2d5bc2089fde492eac24b5152a11413bf07a818055a9ec9077d3200b03cf7ea9718470a8417
   languageName: node
   linkType: hard
 
@@ -22310,13 +22301,6 @@ __metadata:
   version: 1.12.1
   resolution: "underscore@npm:1.12.1"
   checksum: 10/c3bb50c61ef7dea4b9add6d48f98316f65de1075801dc8cd01ecd82122b99eb17ce0f068f00f6cc10245d5cf75c443ce96f8efc5458d7773b44af9bd7c2ccc56
-  languageName: node
-  linkType: hard
-
-"undici-types@npm:~6.21.0":
-  version: 6.21.0
-  resolution: "undici-types@npm:6.21.0"
-  checksum: 10/ec8f41aa4359d50f9b59fa61fe3efce3477cc681908c8f84354d8567bb3701fafdddf36ef6bff307024d3feb42c837cf6f670314ba37fc8145e219560e473d14
   languageName: node
   linkType: hard
 
