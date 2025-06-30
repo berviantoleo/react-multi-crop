@@ -42,3 +42,11 @@ updates:
     day: "saturday"
     timezone: Asia/Jakarta
   open-pull-requests-limit: 100
+- package-ecosystem: docker
+  directory: "/"
+  schedule:
+    interval: "weekly"
+    time: "08:00"
+    day: "saturday"
+    timezone: Asia/Jakarta
+  open-pull-requests-limit: 100
