@@ -6,7 +6,7 @@ import del from 'rollup-plugin-delete';
 import typescript from 'rollup-plugin-typescript2';
 import sizes from 'rollup-plugin-sizes';
 import { terser } from 'rollup-plugin-terser';
-import pkg from './package.json' with { type: "json" };
+import pkg from './package.json' with { type: 'json' };
 import path from 'path';
 import { fileURLToPath } from 'url';
 
