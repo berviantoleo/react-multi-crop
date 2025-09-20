@@ -45,7 +45,7 @@
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.2.0",
     "@types/jest": "^30.0.0",
-    "@types/uuid": "^10.0.0",
+    "@types/uuid": "^11.0.0",
     "babel-jest": "^30.0.2",
     "babel-loader": "^10.0.0",
     "clsx": "^2.1.1",
