@@ -2068,18 +2068,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-lerna-scopes@npm:^19.7.0":
-  version: 19.8.1
-  resolution: "@commitlint/config-lerna-scopes@npm:19.8.1"
+"@commitlint/config-lerna-scopes@npm:^20.0.0":
+  version: 20.0.0
+  resolution: "@commitlint/config-lerna-scopes@npm:20.0.0"
   dependencies:
-    "@commitlint/config-workspace-scopes": "npm:^19.8.1"
+    "@commitlint/config-workspace-scopes": "npm:^20.0.0"
     fast-glob: "npm:^3.3.3"
   peerDependencies:
     lerna: "*"
   peerDependenciesMeta:
     lerna:
       optional: true
-  checksum: 10/eb9dcb5b61c5b111b061cc67e12929da2f48afd3824d44c2b6686a88b2f826f266bdd10cfda0522e405772f7fd080720190edd41914cb1f83e267fcb5f6100f2
+  checksum: 10/f8279f1d44d9d3f4d8f9ad5e708fd3577f42cf0dc605033f1de11d22154e095a293539d8048abd4226b7d8f0d6cd9e205209a175fd538ebf77fc983b7d2c4d4b
   languageName: node
   linkType: hard
 
@@ -2093,12 +2093,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-workspace-scopes@npm:^19.8.1":
-  version: 19.8.1
-  resolution: "@commitlint/config-workspace-scopes@npm:19.8.1"
+"@commitlint/config-workspace-scopes@npm:^20.0.0":
+  version: 20.0.0
+  resolution: "@commitlint/config-workspace-scopes@npm:20.0.0"
   dependencies:
     glob: "npm:^10.3.10"
-  checksum: 10/137f87c097a49b239619200f2aa97470507ee148d36ded59399819b3a5d6c57ade123b0bc99a108b0a3e260c59d745e8289a744d9382925cb64acc8bfb18b5fc
+  checksum: 10/6949165e9b2fc7a6dce57c6a85ef7f54d16dac56a00cc5508644ba4891b31298aa3720b2ec9636b6005a76f06298d58014bf9891717a32f624efb68b9d2deb5c
   languageName: node
   linkType: hard
 
@@ -21284,7 +21284,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@commitlint/cli": "npm:^20.0.0"
-    "@commitlint/config-lerna-scopes": "npm:^19.7.0"
+    "@commitlint/config-lerna-scopes": "npm:^20.0.0"
     "@eslint/eslintrc": "npm:^3.3.1"
     "@eslint/js": "npm:^9.23.0"
     "@typescript-eslint/eslint-plugin": "npm:^8.23.0"
