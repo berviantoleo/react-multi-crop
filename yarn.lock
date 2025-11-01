@@ -2116,7 +2116,7 @@ __metadata:
     "@rollup/plugin-node-resolve": "npm:^16.0.0"
     "@rollup/plugin-typescript": "npm:^12.1.4"
     "@storybook/addon-a11y": "npm:^9.0.4"
-    "@storybook/addon-links": "npm:^9.0.4"
+    "@storybook/addon-links": "npm:^10.0.2"
     "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.5"
     "@storybook/react": "npm:^9.0.4"
     "@storybook/react-webpack5": "npm:9.1.15"
@@ -6062,18 +6062,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-links@npm:^9.0.4":
-  version: 9.1.15
-  resolution: "@storybook/addon-links@npm:9.1.15"
+"@storybook/addon-links@npm:^10.0.2":
+  version: 10.0.2
+  resolution: "@storybook/addon-links@npm:10.0.2"
   dependencies:
     "@storybook/global": "npm:^5.0.0"
   peerDependencies:
-    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0-beta
-    storybook: ^9.1.15
+    react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    storybook: ^10.0.2
   peerDependenciesMeta:
     react:
       optional: true
-  checksum: 10/028840645225363bcc81d9f8b8d7e8666b62863f37b23cf47b80e6d76fd841f033a4e0c0d2123b07b11016a9697400f8eda2271bedcea16da76e3e6301c56fc2
+  checksum: 10/aa0238eb231b85c1cd75ede14dffdba0b681fb0224a3a11d11d67fc3929097676ab5921a3949bc91ed588e0ed17d7ce06352fd791f1c185e3a48cce1393012d5
   languageName: node
   linkType: hard
 

@@ -37,7 +37,7 @@
     "@rollup/plugin-node-resolve": "^16.0.0",
     "@rollup/plugin-typescript": "^12.1.4",
     "@storybook/addon-a11y": "^9.0.4",
-    "@storybook/addon-links": "^9.0.4",
+    "@storybook/addon-links": "^10.0.2",
     "@storybook/addon-webpack5-compiler-babel": "^3.0.5",
     "@storybook/react": "^9.0.4",
     "@storybook/react-webpack5": "9.1.15",
