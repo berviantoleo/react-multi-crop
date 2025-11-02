@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+# [0.43.0](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.42.32...@berviantoleo/react-multi-crop@0.43.0) (2025-11-02)
+
+### Features
+
+- update storybook ([#3771](https://github.com/berviantoleo/react-multi-crop/issues/3771)) ([796a902](https://github.com/berviantoleo/react-multi-crop/commit/796a90201824f59f171a9b5a8867e96c6f029f3f))
+
 ## [0.42.32](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.42.31...@berviantoleo/react-multi-crop@0.42.32) (2025-10-25)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop
