@@ -1,7 +1,7 @@
 {
     "extends": "../../tsconfig.json",
     "compilerOptions": {
-      "module": "es2015",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
+      "module": "ES2022",                     /* Specify module code generation: 'none', 'commonjs', 'amd', 'system', 'umd', 'es2015', 'es2020', or 'ESNext'. */
       "jsx": "react",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
       "declaration": true,                   /* Generates corresponding '.d.ts' file. */
       "declarationDir": "./dist/types",
@@ -10,4 +10,3 @@
       "src"
     ]
   }
-  
