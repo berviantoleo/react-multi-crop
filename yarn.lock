@@ -1855,7 +1855,7 @@ __metadata:
     "@rollup/plugin-typescript": "npm:^12.1.4"
     "@storybook/addon-a11y": "npm:^10.0.2"
     "@storybook/addon-links": "npm:^10.0.2"
-    "@storybook/addon-webpack5-compiler-babel": "npm:^3.0.5"
+    "@storybook/addon-webpack5-compiler-babel": "npm:^4.0.0"
     "@storybook/react": "npm:^10.0.2"
     "@storybook/react-webpack5": "npm:10.0.7"
     "@testing-library/dom": "npm:^10.4.0"
@@ -5683,13 +5683,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@storybook/addon-webpack5-compiler-babel@npm:^3.0.5":
-  version: 3.0.6
-  resolution: "@storybook/addon-webpack5-compiler-babel@npm:3.0.6"
+"@storybook/addon-webpack5-compiler-babel@npm:^4.0.0":
+  version: 4.0.0
+  resolution: "@storybook/addon-webpack5-compiler-babel@npm:4.0.0"
   dependencies:
     "@babel/core": "npm:^7.26.0"
-    babel-loader: "npm:^9.2.1"
-  checksum: 10/a2195c7a6ed9aaa336eb2140ac370e7dfeba084038eb1aea5b2acc0a7ec5a53e460e1a9c1f5a27473e117f703ff64b450bf4fa88464cdb08670fe82df85813c4
+    babel-loader: "npm:^10.0.0"
+  checksum: 10/abe15a1cd3eedc84f51c37d330be3af86bde812fbb5b87061a0355c7e62d54992ae971a50eb6d53104aeecd052370cd02cbb47aef90d6af6f53de3facb8e0a13
   languageName: node
   linkType: hard
 
@@ -8434,19 +8434,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"babel-loader@npm:^9.2.1":
-  version: 9.2.1
-  resolution: "babel-loader@npm:9.2.1"
-  dependencies:
-    find-cache-dir: "npm:^4.0.0"
-    schema-utils: "npm:^4.0.0"
-  peerDependencies:
-    "@babel/core": ^7.12.0
-    webpack: ">=5"
-  checksum: 10/f1f24ae3c22d488630629240b0eba9c935545f82ff843c214e8f8df66e266492b7a3d4cb34ef9c9721fb174ca222e900799951c3fd82199473bc6bac52ec03a3
-  languageName: node
-  linkType: hard
-
 "babel-plugin-istanbul@npm:^6.1.1":
   version: 6.1.1
   resolution: "babel-plugin-istanbul@npm:6.1.1"
@@ -9551,13 +9538,6 @@ __metadata:
   version: 1.0.1
   resolution: "common-ancestor-path@npm:1.0.1"
   checksum: 10/1d2e4186067083d8cc413f00fc2908225f04ae4e19417ded67faa6494fb313c4fcd5b28a52326d1a62b466e2b3a4325e92c31133c5fee628cdf8856b3a57c3d7
-  languageName: node
-  linkType: hard
-
-"common-path-prefix@npm:^3.0.0":
-  version: 3.0.0
-  resolution: "common-path-prefix@npm:3.0.0"
-  checksum: 10/09c180e8d8495d42990d617f4d4b7522b5da20f6b236afe310192d401d1da8147a7835ae1ea37797ba0c2238ef3d06f3492151591451df34539fdb4b2630f2b3
   languageName: node
   linkType: hard
 
@@ -12570,16 +12550,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-cache-dir@npm:^4.0.0":
-  version: 4.0.0
-  resolution: "find-cache-dir@npm:4.0.0"
-  dependencies:
-    common-path-prefix: "npm:^3.0.0"
-    pkg-dir: "npm:^7.0.0"
-  checksum: 10/52a456a80deeb27daa3af6e06059b63bdb9cc4af4d845fc6d6229887e505ba913cd56000349caa60bc3aa59dacdb5b4c37903d4ba34c75102d83cab330b70d2f
-  languageName: node
-  linkType: hard
-
 "find-root@npm:^1.1.0":
   version: 1.1.0
   resolution: "find-root@npm:1.1.0"
@@ -12622,16 +12592,6 @@ __metadata:
     locate-path: "npm:^6.0.0"
     path-exists: "npm:^4.0.0"
   checksum: 10/07955e357348f34660bde7920783204ff5a26ac2cafcaa28bace494027158a97b9f56faaf2d89a6106211a8174db650dd9f503f9c0d526b1202d5554a00b9095
-  languageName: node
-  linkType: hard
-
-"find-up@npm:^6.3.0":
-  version: 6.3.0
-  resolution: "find-up@npm:6.3.0"
-  dependencies:
-    locate-path: "npm:^7.1.0"
-    path-exists: "npm:^5.0.0"
-  checksum: 10/4f3bdc30d41778c647e53f4923e72de5e5fb055157031f34501c5b36c2eb59f77b997edf9cb00165c6060cda7eaa2e3da82cb6be2e61d68ad3e07c4bc4cce67e
   languageName: node
   linkType: hard
 
@@ -16629,7 +16589,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"locate-path@npm:^7.1.0, locate-path@npm:^7.2.0":
+"locate-path@npm:^7.2.0":
   version: 7.2.0
   resolution: "locate-path@npm:7.2.0"
   dependencies:
@@ -18790,15 +18750,6 @@ __metadata:
   dependencies:
     find-up: "npm:^4.0.0"
   checksum: 10/9863e3f35132bf99ae1636d31ff1e1e3501251d480336edb1c211133c8d58906bed80f154a1d723652df1fda91e01c7442c2eeaf9dc83157c7ae89087e43c8d6
-  languageName: node
-  linkType: hard
-
-"pkg-dir@npm:^7.0.0":
-  version: 7.0.0
-  resolution: "pkg-dir@npm:7.0.0"
-  dependencies:
-    find-up: "npm:^6.3.0"
-  checksum: 10/94298b20a446bfbbd66604474de8a0cdd3b8d251225170970f15d9646f633e056c80520dd5b4c1d1050c9fed8f6a9e5054b141c93806439452efe72e57562c03
   languageName: node
   linkType: hard
 
