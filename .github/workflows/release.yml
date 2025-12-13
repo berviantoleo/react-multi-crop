@@ -28,7 +28,7 @@ jobs:
           scope: "@berviantoleo"
           node-version: ${{ env.NODE_VERSION }}
       - name: Restore lerna
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             node_modules
@@ -76,7 +76,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           always-auth: true
       - name: Restore lerna
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             node_modules
@@ -109,7 +109,7 @@ jobs:
           node-version: ${{ env.NODE_VERSION }}
           always-auth: true
       - name: Restore lerna
-        uses: actions/cache@v4
+        uses: actions/cache@v5
         with:
           path: |
             node_modules
