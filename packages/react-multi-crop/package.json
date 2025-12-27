@@ -71,7 +71,7 @@
   },
   "dependencies": {
     "canvas": "^3.1.2",
-    "fabric": "^6.6.4",
+    "fabric": "^7.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "uuid": "^13.0.0"
