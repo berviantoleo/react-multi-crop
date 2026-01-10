@@ -57,7 +57,7 @@ jobs:
           PUBLIC_URL: /
           DISABLE_ESLINT_PLUGIN: true
       - name: Publish Demo
-        uses: JamesIves/github-pages-deploy-action@v4.7.6
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: demo # The branch the action should deploy to.
           folder: examples/demo/build # The folder the action should deploy.
@@ -89,7 +89,7 @@ jobs:
           yarn docs
           yarn lerna run docs --scope @berviantoleo/react-multi-crop
       - name: Deploy Docs 🚀
-        uses: JamesIves/github-pages-deploy-action@v4.7.6
+        uses: JamesIves/github-pages-deploy-action@v4.8.0
         with:
           branch: gh-pages # The branch the action should deploy to.
           folder: docs # The folder the action should deploy.
