@@ -52,7 +52,7 @@ jobs:
           DISABLE_ESLINT_PLUGIN: true
       # TODO; will give the docs to artifacts
       - name: Cypress run
-        uses: cypress-io/github-action@v6
+        uses: cypress-io/github-action@v7
         with:
           start: yarn start
           wait-on: 'http://localhost:3000'
