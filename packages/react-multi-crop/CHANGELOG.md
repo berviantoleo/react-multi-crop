@@ -3,6 +3,10 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.43.12](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.43.11...@berviantoleo/react-multi-crop@0.43.12) (2026-01-31)
+
+**Note:** Version bump only for package @berviantoleo/react-multi-crop
+
 ## [0.43.11](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.43.10...@berviantoleo/react-multi-crop@0.43.11) (2026-01-24)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop
