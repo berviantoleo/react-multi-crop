@@ -35,7 +35,7 @@
     "@types/node": "^25.0.1",
     "@types/react": "^19.0.8",
     "@types/react-dom": "^19.0.3",
-    "cypress": "~15.9.0",
+    "cypress": "~15.10.0",
     "fabric": "^7.0.0",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
