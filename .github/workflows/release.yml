@@ -125,7 +125,7 @@ jobs:
           yarn lerna run test --scope @berviantoleo/react-multi-crop
           yarn lerna run build --scope @berviantoleo/react-multi-crop
       - name: Upload to Codecov
-        uses: codecov/codecov-action@v5
+        uses: codecov/codecov-action@v6
         with:
           token: ${{ secrets.CODECOV_TOKEN }} # required
 
