@@ -5,6 +5,7 @@
       "jsx": "react",                     /* Specify JSX code generation: 'preserve', 'react-native', or 'react'. */
       "declaration": true,                   /* Generates corresponding '.d.ts' file. */
       "declarationDir": "./dist/types",
+      "types": ["*"]
     },
     "include": [
       "src"
