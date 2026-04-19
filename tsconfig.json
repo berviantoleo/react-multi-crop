@@ -22,6 +22,7 @@
         "./node_modules/@types/react"
       ]
     },
+    "types": ["node", "jest"],
     "rootDir": "./"
   },
 }
