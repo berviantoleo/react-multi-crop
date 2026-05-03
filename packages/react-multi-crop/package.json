@@ -67,14 +67,14 @@
     "fabric": "^7.2.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "uuid": "^13.0.0"
+    "uuid": "^14.0.0"
   },
   "dependencies": {
     "canvas": "^3.2.3",
     "fabric": "^7.2.0",
     "react": "^19.2.4",
     "react-dom": "^19.2.4",
-    "uuid": "^13.0.0"
+    "uuid": "^14.0.0"
   },
   "license": "MIT",
   "version": "0.44.3"
