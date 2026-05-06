@@ -23125,16 +23125,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"uuid@npm:*":
-  version: 13.0.0
-  resolution: "uuid@npm:13.0.0"
-  bin:
-    uuid: dist-node/bin/uuid
-  checksum: 10/2742b24d1e00257e60612572e4d28679423469998cafbaf1fe9f1482e3edf9c40754b31bfdb3d08d71b29239f227a304588f75210b3b48f2609f0673f1feccef
-  languageName: node
-  linkType: hard
-
-"uuid@npm:^14.0.0":
+"uuid@npm:*, uuid@npm:^14.0.0":
   version: 14.0.0
   resolution: "uuid@npm:14.0.0"
   bin:
