@@ -1928,18 +1928,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-lerna-scopes@npm:^20.4.3":
-  version: 20.4.3
-  resolution: "@commitlint/config-lerna-scopes@npm:20.4.3"
+"@commitlint/config-lerna-scopes@npm:^21.0.0":
+  version: 21.0.0
+  resolution: "@commitlint/config-lerna-scopes@npm:21.0.0"
   dependencies:
-    "@commitlint/config-workspace-scopes": "npm:^20.4.3"
-    fast-glob: "npm:^3.3.3"
+    "@commitlint/config-workspace-scopes": "npm:^21.0.0"
   peerDependencies:
     lerna: "*"
   peerDependenciesMeta:
     lerna:
       optional: true
-  checksum: 10/316c01fc904770a459af599d82f190e3f9dbc461a2c0f8fd29f8381efc0829152056d006e63e526dd7a0d83d8ccd8f8d554ec88d35d3cc4f12a0fc434c76ce61
+  checksum: 10/f90ff4f272a1d00c70c2f4cd187e1132cf04f606b544614406743b8ee6c397a6463ce692a55524a6f3301f51a4d9f140b8d99cde8954e20ffc18e974b572fc3f
   languageName: node
   linkType: hard
 
@@ -1953,12 +1952,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-workspace-scopes@npm:^20.4.3":
-  version: 20.4.3
-  resolution: "@commitlint/config-workspace-scopes@npm:20.4.3"
-  dependencies:
-    glob: "npm:^11.0.0"
-  checksum: 10/3a2012806006227b068bac6a5e9d9ab714cca377a20d1f27a41390d0e1d0f21f5e5605603b900e859139dca63791fd5c5efa083ec791c334fab31843287d6d66
+"@commitlint/config-workspace-scopes@npm:^21.0.0":
+  version: 21.0.0
+  resolution: "@commitlint/config-workspace-scopes@npm:21.0.0"
+  checksum: 10/904cd47365c9166c9f27d02fef72be7f962411c28db1db89154befc792ca3e8a52f68bc3fdf41737c9d167de9e4d71004219115795e97c54a82e4e196582b6cc
   languageName: node
   linkType: hard
 
@@ -13087,7 +13084,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"glob@npm:^11.0.0, glob@npm:^11.0.3":
+"glob@npm:^11.0.3":
   version: 11.1.0
   resolution: "glob@npm:11.1.0"
   dependencies:
@@ -20597,7 +20594,7 @@ __metadata:
   resolution: "root@workspace:."
   dependencies:
     "@commitlint/cli": "npm:^20.5.0"
-    "@commitlint/config-lerna-scopes": "npm:^20.4.3"
+    "@commitlint/config-lerna-scopes": "npm:^21.0.0"
     "@eslint/eslintrc": "npm:^3.3.5"
     "@eslint/js": "npm:^10.0.1"
     "@typescript-eslint/eslint-plugin": "npm:^8.58.0"

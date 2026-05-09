@@ -11,7 +11,7 @@
   "private": true,
   "devDependencies": {
     "@commitlint/cli": "^20.5.0",
-    "@commitlint/config-lerna-scopes": "^20.4.3",
+    "@commitlint/config-lerna-scopes": "^21.0.0",
     "@eslint/eslintrc": "^3.3.5",
     "@eslint/js": "^10.0.1",
     "@typescript-eslint/eslint-plugin": "^8.58.0",
