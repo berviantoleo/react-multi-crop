@@ -12671,8 +12671,8 @@ __metadata:
   linkType: hard
 
 "fabric@npm:^7.2.0":
-  version: 7.3.1
-  resolution: "fabric@npm:7.3.1"
+  version: 7.4.0
+  resolution: "fabric@npm:7.4.0"
   dependencies:
     canvas: "npm:^3.2.0"
     jsdom: "npm:^26.1.0"
@@ -12681,7 +12681,7 @@ __metadata:
       optional: true
     jsdom:
       optional: true
-  checksum: 10/7af8e32c9332930958bbf028c91d6102b2e5aef66eb47ac635abf8a41a8fda5af3a4c36882a9fbf0cca473e61be54f62a364e9d72ac89e53b51c142fabcc256c
+  checksum: 10/d2c477d469f0111a1b7828f5f6b511ebfefc70b25b4e2e81e5a0bbbe5ed2e1051b49d45299a35dc6eaff2bf3afc7b2232f661c78af169a7b97db5a00d82b10a1
   languageName: node
   linkType: hard
 
