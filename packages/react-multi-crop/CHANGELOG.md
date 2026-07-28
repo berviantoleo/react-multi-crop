@@ -3,6 +3,12 @@
 All notable changes to this project will be documented in this file.
 See [Conventional Commits](https://conventionalcommits.org) for commit guidelines.
 
+## [0.44.12](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.44.11...@berviantoleo/react-multi-crop@0.44.12) (2026-07-28)
+
+### Bug Fixes
+
+- udpate deps babel ([#3940](https://github.com/berviantoleo/react-multi-crop/issues/3940)) ([e268680](https://github.com/berviantoleo/react-multi-crop/commit/e2686805e64aba9548457b92f763c567b4c0c885))
+
 ## [0.44.11](https://github.com/berviantoleo/react-multi-crop/compare/@berviantoleo/react-multi-crop@0.44.10...@berviantoleo/react-multi-crop@0.44.11) (2026-07-28)
 
 **Note:** Version bump only for package @berviantoleo/react-multi-crop
